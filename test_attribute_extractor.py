@@ -7,18 +7,23 @@ import json
 from appium import webdriver
 from selenium.webdriver.common.by import By
 from appium.webdriver.common.touch_action import TouchAction
+from selenium.common.exceptions import NoSuchElementException
 
-def execute_action(driver, element, dictionary):
+def execute_action(driver, el, dictionary):
     for action in dictionary["action"]:
         if action["type"] == "replaceText":
-            element.set_value(action["value"])
+            el.set_value(action["value"])
+            if driver.is_keyboard_shown():
+                driver.back()
         else:
             if action["type"] == "click":
-                element.click()
-            elif action["type"] == "longClick":
-                TouchAction(driver).long_press(element).perform()
+                el.click()
             elif action["type"] == "check":
                 continue
+            elif action["type"] == "longClick":
+                TouchAction(driver).long_press(el).perform()
+            elif action["type"] == "swipeLeft":
+                driver.execute_script("mobile: scroll", {"direction": "left", element: el, "toVisible": True})
                 
 def get_element_actions(dictionary):
     actions = []
@@ -49,7 +54,14 @@ def get_element_attributes(element, dictionary):
 def get_element(driver, dictionary, app_package):
     identifier = dictionary["get_element_by"]["type"]
     if identifier == "Id":
-        element =  driver.find_element_by_id(app_package+":id/"+dictionary["get_element_by"]["value"])
+        try:
+            element =  driver.find_element_by_id(app_package+":id/"+dictionary["get_element_by"]["value"])
+        except NoSuchElementException:
+            try:
+                element =  driver.find_element_by_id("android:id/"+dictionary["get_element_by"]["value"])
+            except NoSuchElementException:
+                print("No element with id:"+dictionary["get_element_by"]["value"]+" found on this page source.")
+                return
     elif identifier == 'ContentDescription':
         element = driver.find_element_by_android_uiautomator('new UiSelector().description(\"'+dictionary["get_element_by"]["value"]+'\")')
     elif identifier == "Text":
