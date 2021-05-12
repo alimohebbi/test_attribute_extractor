@@ -1,0 +1,14 @@
+[
+  {
+    "get_element_by": {
+      "type": "Id",
+      "value": "btn_skip"
+    },
+    "action": [
+      {
+        "type": "check",
+        "value": ""
+      }
+    ]
+  }
+]

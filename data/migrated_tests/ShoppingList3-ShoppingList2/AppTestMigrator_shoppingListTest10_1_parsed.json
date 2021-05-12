@@ -1,0 +1,122 @@
+[
+  {
+    "get_element_by": {
+      "type": "Id",
+      "value": "action_add"
+    },
+    "action": [
+      {
+        "type": "longClick",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "get_element_by": {
+      "type": "XPath",
+      "value": "/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/android.view.ViewGroup/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.TextView"
+    },
+    "action": [
+      {
+        "type": "click",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "get_element_by": {
+      "type": "XPath",
+      "value": "/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[2]/android.widget.RelativeLayout/android.widget.LinearLayout/android.widget.TableLayout"
+    },
+    "action": [
+      {
+        "type": "click",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "get_element_by": {
+      "type": "Text",
+      "value": "OK"
+    },
+    "action": [
+      {
+        "type": "click",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "get_element_by": {
+      "type": "Id",
+      "value": "action_done"
+    },
+    "action": [
+      {
+        "type": "longClick",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "get_element_by": {
+      "type": "Id",
+      "value": "search"
+    },
+    "action": [
+      {
+        "type": "longClick",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "get_element_by": {
+      "type": "XPath",
+      "value": "/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/android.view.ViewGroup/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.ImageView[2]"
+    },
+    "action": [
+      {
+        "type": "click",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "get_element_by": {
+      "type": "Id",
+      "value": "action_add"
+    },
+    "action": [
+      {
+        "type": "click",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "get_element_by": {
+      "type": "XPath",
+      "value": "/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.EditText"
+    },
+    "action": [
+      {
+        "type": "replaceText",
+        "value": "grocery"
+      }
+    ]
+  },
+  {
+    "get_element_by": {
+      "type": "Text",
+      "value": "OK"
+    },
+    "action": [
+      {
+        "type": "click",
+        "value": ""
+      }
+    ]
+  }
+]

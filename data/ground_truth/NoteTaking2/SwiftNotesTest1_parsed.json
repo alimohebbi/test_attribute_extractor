@@ -1,0 +1,86 @@
+[
+  {
+    "get_element_by": {
+      "type": "Id",
+      "value": "newNote"
+    },
+    "action": [
+      {
+        "type": "click",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "get_element_by": {
+      "type": "Id",
+      "value": "titleEdit"
+    },
+    "action": [
+      {
+        "type": "replaceText",
+        "value": "Title1"
+      }
+    ]
+  },
+  {
+    "get_element_by": {
+      "type": "Id",
+      "value": "bodyEdit"
+    },
+    "action": [
+      {
+        "type": "replaceText",
+        "value": "Note1"
+      }
+    ]
+  },
+  {
+    "get_element_by": {
+      "type": "XPath",
+      "value": "/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.view.ViewGroup/android.widget.ImageButton"
+    },
+    "action": [
+      {
+        "type": "click",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "get_element_by": {
+      "type": "Id",
+      "value": "button1"
+    },
+    "action": [
+      {
+        "type": "click",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "get_element_by": {
+      "type": "Id",
+      "value": "titleView"
+    },
+    "action": [
+      {
+        "type": "check",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "get_element_by": {
+      "type": "Id",
+      "value": "bodyView"
+    },
+    "action": [
+      {
+        "type": "check",
+        "value": ""
+      }
+    ]
+  }
+]

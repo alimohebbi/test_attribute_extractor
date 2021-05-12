@@ -1,0 +1,82 @@
+[
+  {
+    "get_element_by": {
+      "type": "Id",
+      "value": "title"
+    },
+    "action": [
+      {
+        "type": "click",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "get_element_by": {
+      "type": "XPath",
+      "value": "/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.ScrollView/android.widget.LinearLayout/android.widget.Button"
+    },
+    "action": [
+      {
+        "type": "click",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "get_element_by": {
+      "type": "Id",
+      "value": "search_button"
+    },
+    "action": [
+      {
+        "type": "click",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "get_element_by": {
+      "type": "Id",
+      "value": "search_src_text"
+    },
+    "action": [
+      {
+        "type": "replaceText",
+        "value": "to-do"
+      }
+    ]
+  },
+  {
+    "get_element_by": {
+      "type": "Id",
+      "value": "search_src_text"
+    },
+    "action": [
+      {
+        "type": "replaceText",
+        "value": "Go shopping"
+      }
+    ]
+  },
+  {
+    "action": [
+      {
+        "type": "pressBack",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "get_element_by": {
+      "type": "Id",
+      "value": "empty_hint"
+    },
+    "action": [
+      {
+        "type": "check",
+        "value": ""
+      }
+    ]
+  }
+]

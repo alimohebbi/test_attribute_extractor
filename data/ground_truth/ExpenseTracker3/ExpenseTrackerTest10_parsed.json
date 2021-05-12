@@ -1,0 +1,110 @@
+[
+  {
+    "get_element_by": {
+      "type": "ContentDescription",
+      "value": "Open navigation drawer"
+    },
+    "action": [
+      {
+        "type": "click",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "get_element_by": {
+      "type": "Id",
+      "value": "navigation_drawer"
+    },
+    "action": [
+      {
+        "type": "click",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "get_element_by": {
+      "type": "Id",
+      "value": "btn_add_income"
+    },
+    "action": [
+      {
+        "type": "click",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "get_element_by": {
+      "type": "Id",
+      "value": "text1"
+    },
+    "action": [
+      {
+        "type": "check",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "get_element_by": {
+      "type": "Id",
+      "value": "editText"
+    },
+    "action": [
+      {
+        "type": "replaceText",
+        "value": "uber"
+      }
+    ]
+  },
+  {
+    "get_element_by": {
+      "type": "Id",
+      "value": "btn_add_income"
+    },
+    "action": [
+      {
+        "type": "click",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "get_element_by": {
+      "type": "Id",
+      "value": "editText2"
+    },
+    "action": [
+      {
+        "type": "replaceText",
+        "value": "500"
+      }
+    ]
+  },
+  {
+    "get_element_by": {
+      "type": "Id",
+      "value": "btn_add_income"
+    },
+    "action": [
+      {
+        "type": "click",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "get_element_by": {
+      "type": "Id",
+      "value": "text1"
+    },
+    "action": [
+      {
+        "type": "check",
+        "value": ""
+      }
+    ]
+  }
+]

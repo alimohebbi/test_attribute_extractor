@@ -1,0 +1,46 @@
+[
+  {
+    "get_element_by": {
+      "type": "Id",
+      "value": "newNote"
+    },
+    "action": [
+      {
+        "type": "click",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "get_element_by": {
+      "type": "Id",
+      "value": "titleEdit"
+    },
+    "action": [
+      {
+        "type": "replaceText",
+        "value": "to-do"
+      }
+    ]
+  },
+  {
+    "get_element_by": {
+      "type": "Id",
+      "value": "bodyEdit"
+    },
+    "action": [
+      {
+        "type": "replaceText",
+        "value": "Go shopping"
+      }
+    ]
+  },
+  {
+    "action": [
+      {
+        "type": "pressBack",
+        "value": ""
+      }
+    ]
+  }
+]

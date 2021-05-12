@@ -1,0 +1,62 @@
+[
+  {
+    "get_element_by": {
+      "type": "Id",
+      "value": "fab"
+    },
+    "action": [
+      {
+        "type": "click",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "get_element_by": {
+      "type": "Id",
+      "value": "shoppingListNameEditText"
+    },
+    "action": [
+      {
+        "type": "replaceText",
+        "value": "Grocery"
+      }
+    ]
+  },
+  {
+    "get_element_by": {
+      "type": "Id",
+      "value": "shoppingListDescriptionEditText"
+    },
+    "action": [
+      {
+        "type": "replaceText",
+        "value": "Weekly grocery shopping"
+      }
+    ]
+  },
+  {
+    "get_element_by": {
+      "type": "Id",
+      "value": "addShoppingListButton"
+    },
+    "action": [
+      {
+        "type": "click",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "get_element_by": {
+      "type": "Id",
+      "value": "shoppingListNameTextView"
+    },
+    "action": [
+      {
+        "type": "check",
+        "value": ""
+      }
+    ]
+  }
+]

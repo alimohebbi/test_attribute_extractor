@@ -76,14 +76,7 @@ public class SwiftNotesTest1 {
                                 0)));
         appCompatEditText2.perform(replaceText("Note1"), closeSoftKeyboard());
 
-        ViewInteraction appCompatImageButton2 = onView(
-                allOf(childAtPosition(
-                        allOf(withId(R.id.toolbarEdit),
-                                childAtPosition(
-                                        withId(R.id.relativeLayoutEdit),
-                                        0)),
-                        0),
-                        isDisplayed()));
+        ViewInteraction appCompatImageButton2 = onView(withXPath("/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.view.ViewGroup/android.widget.ImageButton"));
         appCompatImageButton2.perform(click());
 
         ViewInteraction appCompatButton = onView(

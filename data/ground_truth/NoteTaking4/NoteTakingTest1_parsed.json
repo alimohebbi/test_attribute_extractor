@@ -1,0 +1,58 @@
+[
+  {
+    "get_element_by": {
+      "type": "Id",
+      "value": "notes_$_linearlayout_empty"
+    },
+    "action": [
+      {
+        "type": "click",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "get_element_by": {
+      "type": "Id",
+      "value": "editor_$_edittext_title"
+    },
+    "action": [
+      {
+        "type": "replaceText",
+        "value": "to-do"
+      }
+    ]
+  },
+  {
+    "get_element_by": {
+      "type": "Id",
+      "value": "editor_$_note_editor"
+    },
+    "action": [
+      {
+        "type": "replaceText",
+        "value": "Go shopping"
+      }
+    ]
+  },
+  {
+    "action": [
+      {
+        "type": "pressBack",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "get_element_by": {
+      "type": "Id",
+      "value": "note_item_$_textview_title"
+    },
+    "action": [
+      {
+        "type": "check",
+        "value": ""
+      }
+    ]
+  }
+]

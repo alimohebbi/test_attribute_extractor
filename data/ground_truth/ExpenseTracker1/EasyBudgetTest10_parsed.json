@@ -1,0 +1,14 @@
+[
+  {
+    "get_element_by": {
+      "type": "Id",
+      "value": "welcome_view_pager"
+    },
+    "action": [
+      {
+        "type": "swipeLeft",
+        "value": ""
+      }
+    ]
+  }
+]

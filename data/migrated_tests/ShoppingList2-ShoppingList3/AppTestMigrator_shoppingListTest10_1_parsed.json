@@ -1,0 +1,50 @@
+[
+  {
+    "get_element_by": {
+      "type": "Id",
+      "value": "btn_skip"
+    },
+    "action": [
+      {
+        "type": "click",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "get_element_by": {
+      "type": "Id",
+      "value": "fab_new_list"
+    },
+    "action": [
+      {
+        "type": "click",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "get_element_by": {
+      "type": "Id",
+      "value": "list_name"
+    },
+    "action": [
+      {
+        "type": "replaceText",
+        "value": "list"
+      }
+    ]
+  },
+  {
+    "get_element_by": {
+      "type": "XPath",
+      "value": "/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.ScrollView/android.widget.LinearLayout/android.widget.Button[2]"
+    },
+    "action": [
+      {
+        "type": "click",
+        "value": ""
+      }
+    ]
+  }
+]

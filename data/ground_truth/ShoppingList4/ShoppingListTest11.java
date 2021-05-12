@@ -47,6 +47,9 @@ public class ShoppingListTest11 {
     public void shoppingListTest11() {
         openActionBarOverflowOrOptionsMenu(getInstrumentation().getTargetContext());
 
+        ViewInteraction actionMenuItemView = onView(allOf(withContentDescription("More options"));
+        actionMenuItemView.perform(click());
+
         ViewInteraction textView = onView(
                 allOf(withId(android.R.id.title), withText("New list"),
                         isDisplayed()));
@@ -73,24 +76,6 @@ public class ShoppingListTest11 {
 
         ViewInteraction textView2 = onView(withId(android.R.id.text1));
         textView2.check(matches(allOf(withText("list1"), isDisplayed(), isEnabled())));
-
-        ViewInteraction spinner = onView(
-                allOf(withId(R.id.spinner_listfilter),
-                        childAtPosition(
-                                allOf(withId(R.id.filters),
-                                        childAtPosition(
-                                                withId(R.id.background),
-                                                0)),
-                                0),
-                        isDisplayed()));
-        spinner.perform(click());
-
-        DataInteraction checkedTextView = onData(anything())
-                .inAdapterView(childAtPosition(
-                        withClassName(is("android.widget.PopupWindow$PopupBackgroundView")),
-                        0))
-                .atPosition(0);
-        checkedTextView.perform(click());
 
         ViewInteraction button2 = onView(
                 allOf(withId(R.id.button_add_item), withText("Add"),

@@ -1,0 +1,12 @@
+,appName,appPackage,appActivity
+0,ShoppingList1,pl.com.andrzejgrzyb.shoppinglist,pl.com.andrzejgrzyb.shoppinglist.MainActivity
+1,ShoppingList2,br.com.activity,br.com.vansact.MainApp
+2,ShoppingList3,privacyfriendlyshoppinglist.secuso.org.privacyfriendlyshoppinglist,privacyfriendlyshoppinglist.secuso.org.privacyfriendlyshoppinglist.ui.tutorial.TutorialActivity
+3,ShoppingList4,org.openintents.shopping,org.openintents.shopping.ShoppingActivity
+4,ExpenseTracker1,com.benoitletondor.easybudgetapp,com.benoitletondor.easybudgetapp.view.WelcomeActivity
+5,ExpenseTracker2,luankevinferreira.expenses,luankevinferreira.expenses.MainActivity
+6,ExpenseTracker3,com.kvannli.simonkvannli.dailybudget,com.kvannli.simonkvannli.dailybudget.MainActivity
+7,ExpenseTracker4,com.blogspot.e_kanivets.moneytracker,com.blogspot.e_kanivets.moneytracker.activity.record.MainActivity
+8,NoteTaking2,com.moonpi.swiftnotes,com.moonpi.swiftnotes.MainActivity
+9,NoteTaking3,me.writeily,me.writeily.MainActivity
+10,NoteTaking4,chan.android.app.pocketnote,chan.android.app.pocketnote.MainActivity

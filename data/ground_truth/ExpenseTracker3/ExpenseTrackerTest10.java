@@ -53,7 +53,7 @@ public class ExpenseTrackerTest10 {
                         isDisplayed()));
         imageButton.perform(click());
 
-        DataInteraction textView = onData(anything())
+        DataInteraction textView = onView(anything())
                 .inAdapterView(allOf(withId(R.id.navigation_drawer),
                         childAtPosition(
                                 withId(R.id.drawer_layout),
@@ -62,7 +62,7 @@ public class ExpenseTrackerTest10 {
         textView.perform(click());
 
         ViewInteraction button = onView(
-                allOf(withId(R.id.button2), withText("ADD INCOME"),
+                allOf(withId(R.id.btn_add_income), withText("ADD INCOME"),
                         childAtPosition(
                                 childAtPosition(
                                         withClassName(is("android.widget.LinearLayout")),
@@ -72,7 +72,7 @@ public class ExpenseTrackerTest10 {
         button.perform(click());
 
         ViewInteraction textView2 = onView(
-                allOf(withId(R.id.text), withText("Currently no income..."),
+                allOf(withId(R.id.text1), withText("Currently no income..."),
                         childAtPosition(
                                 childAtPosition(
                                         IsInstanceOf.<View>instanceOf(android.widget.TableLayout.class),
@@ -92,7 +92,7 @@ public class ExpenseTrackerTest10 {
         editText.perform(replaceText("uber"), closeSoftKeyboard());
 
         ViewInteraction button2 = onView(
-                allOf(withId(R.id.button2), withText("ADD INCOME"),
+                allOf(withId(R.id.btn_add_income), withText("ADD INCOME"),
                         childAtPosition(
                                 childAtPosition(
                                         withClassName(is("android.widget.LinearLayout")),
@@ -101,14 +101,6 @@ public class ExpenseTrackerTest10 {
                         isDisplayed()));
         button2.perform(click());
 
-        ViewInteraction tableRow = onView(
-                allOf(childAtPosition(
-                        childAtPosition(
-                                IsInstanceOf.<View>instanceOf(android.widget.TableRow.class),
-                                1),
-                        0),
-                        isDisplayed()));
-        tableRow.check(matches(isDisplayed()));
 
         ViewInteraction editText2 = onView(
                 allOf(withId(R.id.editText2),
@@ -121,7 +113,7 @@ public class ExpenseTrackerTest10 {
         editText2.perform(replaceText("500"), closeSoftKeyboard());
 
         ViewInteraction button3 = onView(
-                allOf(withId(R.id.button2), withText("ADD INCOME"),
+                allOf(withId(R.id.btn_add_income), withText("ADD INCOME"),
                         childAtPosition(
                                 childAtPosition(
                                         withClassName(is("android.widget.LinearLayout")),
@@ -130,14 +122,6 @@ public class ExpenseTrackerTest10 {
                         isDisplayed()));
         button3.perform(click());
 
-        ViewInteraction tableRow2 = onView(
-                allOf(childAtPosition(
-                        childAtPosition(
-                                IsInstanceOf.<View>instanceOf(android.widget.TableRow.class),
-                                1),
-                        0),
-                        isDisplayed()));
-        tableRow2.check(matches(isDisplayed()));
 
         ViewInteraction textView3 = onView(
                 allOf(withId(R.id.text1), withText("500  MONTHLY"),

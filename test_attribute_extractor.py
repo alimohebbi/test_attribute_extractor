@@ -8,34 +8,26 @@ from appium import webdriver
 from selenium.webdriver.common.by import By
 from appium.webdriver.common.touch_action import TouchAction
 
-def get_element(driver, dictionary, app_package):
-    identifier = dictionary["get_element_by"][0]
-    if identifier == "Id":
-        element =  driver.find_element_by_id(app_package+":id/"+dictionary["get_element_by"][1])
-    elif identifier == 'ContentDescription':
-        element = driver.find_element_by_android_uiautomator('new UiSelector().description(\"'+dictionary["get_element_by"][1]+'\")')
-    elif identifier == "Text":
-        element = driver.find_element_by_android_uiautomator('new UiSelector().text(\"'+dictionary["get_element_by"][1]+'\")')
-    elif identifier == "XPath":
-        element = driver.find_element_by_xpath("/hierarchy"+dictionary["get_element_by"][1])
-    else:
-        print("Unknown identifier of the element in line: " + str(dictionary))
-        return
-    return element
-
 def execute_action(driver, element, dictionary):
     for action in dictionary["action"]:
-        if type(action) is dict and list(action.keys())[0] == "replaceText()":
-            element.set_value(list(action.values())[0])
+        if action["type"] == "replaceText":
+            element.set_value(action["value"])
         else:
-            if action == "click()":
+            if action["type"] == "click":
                 element.click()
-            elif action == "longClick()":
+            elif action["type"] == "longClick":
                 TouchAction(driver).long_press(element).perform()
-            elif action == "check()":
+            elif action["type"] == "check":
                 continue
-            elif action == "closeSoftKeyboard()":
-                driver.hide_keyboard()
+                
+def get_element_actions(dictionary):
+    actions = []
+    for action in dictionary["action"]:
+        if action["type"] == "replaceText":
+            actions.append(action["type"]+":"+action["value"])
+        else:
+            actions.append(action["type"])
+    return actions
 
 def get_element_attributes(element, dictionary):
 
@@ -48,21 +40,40 @@ def get_element_attributes(element, dictionary):
     for attr in attribute_list:
         element_attributes[attr] = element.get_attribute(attr)
     
-    element_attributes["action"] = dictionary["action"]
+    actions = get_element_actions(dictionary)
+        
+    element_attributes["action"] = actions
     
     return element_attributes
 
+def get_element(driver, dictionary, app_package):
+    identifier = dictionary["get_element_by"]["type"]
+    if identifier == "Id":
+        element =  driver.find_element_by_id(app_package+":id/"+dictionary["get_element_by"]["value"])
+    elif identifier == 'ContentDescription':
+        element = driver.find_element_by_android_uiautomator('new UiSelector().description(\"'+dictionary["get_element_by"]["value"]+'\")')
+    elif identifier == "Text":
+        element = driver.find_element_by_android_uiautomator('new UiSelector().text(\"'+dictionary["get_element_by"]["value"]+'\")')
+    elif identifier == "XPath":
+        element = driver.find_element_by_xpath("/hierarchy"+dictionary["get_element_by"]["value"])
+    elif identifier == "ClassName":
+        element = driver.find_element_by_class_name(dictionary["get_element_by"]["value"])
+    else:
+        print("Unknown identifier of the element in line: " + str(dictionary))
+        return
+    return element
+
 def get_app_name(fname):
-    category = fname.split("/")[1]
+    category = fname.split("/")[-3]
     if category == "migrated_tests":
-        return fname.split("/")[2].split("-")[1]
+        return fname.split("/")[-2].split("-")[1]
     elif category == "ground_truth":
-        return fname.split("/")[2]
+        return fname.split("/")[-2]
     else:
         print("The java file should be under directory /data/migrated_tests or /data/ground_truth")
         return
 
-def get_package_activity(fname):
+def get_package_activity(fname, df):
     app_name = get_app_name(fname)
     app_package = list(df[df["appName"] == app_name]["appPackage"])[0]
     app_activity = list(df[df["appName"] == app_name]["appActivity"])[0]
@@ -72,11 +83,11 @@ def get_package_activity(fname):
 def read_file(file):
     df = pd.read_csv("app_name_to_package_activity.csv")
     parsed_test = parse(file)
-    app_package, app_activity = get_package_activity(fname)
+    app_package, app_activity = get_package_activity(fname, df)
     caps = {
         'platformName': 'Android',
-        'platformVersion': '7.1.1',
-        'deviceName': 'emulator-5554',
+        'platformVersion': '7.0',
+        'deviceName': 'emulator-5555',
         'appPackage': app_package,
         'appActivity': app_activity,
         'autoGrantPermissions': True,

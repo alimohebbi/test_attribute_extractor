@@ -53,7 +53,8 @@ public class ShoppingListTest10 {
         actionMenuItemView.perform(click());
 
         ViewInteraction editText2 = onView(
-                allOf(childAtPosition(
+                allOf(withXPath("/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.EditText"),
+                    childAtPosition(
                         allOf(withId(android.R.id.custom),
                                 childAtPosition(
                                         withClassName(is("android.widget.FrameLayout")),

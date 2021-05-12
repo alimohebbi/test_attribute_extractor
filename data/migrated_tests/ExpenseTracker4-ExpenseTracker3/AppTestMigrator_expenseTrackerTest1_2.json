@@ -20,7 +20,7 @@
     "bounds": "[0,84][196,280]",
     "displayed": "true",
     "action": [
-      "click()"
+      "click"
     ]
   },
   {
@@ -44,7 +44,7 @@
     "bounds": "[0,84][196,280]",
     "displayed": "true",
     "action": [
-      "click()"
+      "click"
     ]
   },
   {
@@ -68,7 +68,7 @@
     "bounds": "[0,84][196,280]",
     "displayed": "true",
     "action": [
-      "click()"
+      "click"
     ]
   },
   {
@@ -92,7 +92,7 @@
     "bounds": "[0,614][840,782]",
     "displayed": "true",
     "action": [
-      "click()"
+      "click"
     ]
   },
   {
@@ -116,7 +116,7 @@
     "bounds": "[56,667][1384,835]",
     "displayed": "true",
     "action": [
-      "click()"
+      "click"
     ]
   },
   {
@@ -140,7 +140,7 @@
     "bounds": "[56,667][1384,835]",
     "displayed": "true",
     "action": [
-      "click()"
+      "click"
     ]
   },
   {
@@ -164,7 +164,7 @@
     "bounds": "[210,135][475,228]",
     "displayed": "true",
     "action": [
-      "check()"
+      "check"
     ]
   },
   {
@@ -188,10 +188,7 @@
     "bounds": "[56,491][890,649]",
     "displayed": "true",
     "action": [
-      {
-        "replaceText()": "1500"
-      },
-      "closeSoftKeyboard()"
+      "replaceText:1500"
     ]
   },
   {
@@ -215,7 +212,7 @@
     "bounds": "[56,667][1384,835]",
     "displayed": "true",
     "action": [
-      "click()"
+      "click"
     ]
   },
   {
@@ -239,7 +236,7 @@
     "bounds": "[210,135][475,228]",
     "displayed": "true",
     "action": [
-      "check()"
+      "check"
     ]
   }
 ]

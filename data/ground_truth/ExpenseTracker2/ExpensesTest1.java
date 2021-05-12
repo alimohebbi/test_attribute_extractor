@@ -54,7 +54,7 @@ public class ExpensesTest1 {
         appCompatButton.perform(click());
 
         ViewInteraction appCompatImageButton2 = onView(
-                allOf(withClassName(is("android.support.v7.widget.AppCompatImageButton")), withContentDescription("Next month"),
+                allOf(withContentDescription("Next month"),
                         childAtPosition(
                                 allOf(withClassName(is("android.widget.DayPickerView")),
                                         childAtPosition(

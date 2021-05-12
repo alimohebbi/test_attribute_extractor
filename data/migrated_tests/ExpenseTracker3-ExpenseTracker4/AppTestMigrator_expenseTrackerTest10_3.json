@@ -20,7 +20,7 @@
     "bounds": "[0,84][196,280]",
     "displayed": "true",
     "action": [
-      "click()"
+      "click"
     ]
   },
   {
@@ -44,7 +44,7 @@
     "bounds": "[966,98][1215,266]",
     "displayed": "true",
     "action": [
-      "click()"
+      "click"
     ]
   },
   {
@@ -68,7 +68,7 @@
     "bounds": "[966,98][1272,266]",
     "displayed": "true",
     "action": [
-      "click()"
+      "click"
     ]
   },
   {
@@ -92,7 +92,7 @@
     "bounds": "[0,2214][720,2392]",
     "displayed": "true",
     "action": [
-      "click()"
+      "click"
     ]
   },
   {
@@ -116,10 +116,7 @@
     "bounds": "[56,767][1384,925]",
     "displayed": "true",
     "action": [
-      {
-        "replaceText()": "uber"
-      },
-      "closeSoftKeyboard()"
+      "replaceText:uber"
     ]
   },
   {
@@ -143,7 +140,7 @@
     "bounds": "[0,84][196,280]",
     "displayed": "true",
     "action": [
-      "click()"
+      "click"
     ]
   },
   {
@@ -163,11 +160,11 @@
     "selection-start": null,
     "selection-end": null,
     "selected": "false",
-    "text": "03 May, 2021",
+    "text": "10 May, 2021",
     "bounds": "[56,429][305,486]",
     "displayed": "true",
     "action": [
-      "check()"
+      "check"
     ]
   },
   {
@@ -191,7 +188,7 @@
     "bounds": "[0,84][196,280]",
     "displayed": "true",
     "action": [
-      "click()"
+      "click"
     ]
   },
   {
@@ -215,7 +212,7 @@
     "bounds": "[0,2214][720,2392]",
     "displayed": "true",
     "action": [
-      "click()"
+      "click"
     ]
   },
   {
@@ -239,10 +236,7 @@
     "bounds": "[56,767][1384,925]",
     "displayed": "true",
     "action": [
-      {
-        "replaceText()": "500"
-      },
-      "closeSoftKeyboard()"
+      "replaceText:500"
     ]
   },
   {
@@ -266,7 +260,7 @@
     "bounds": "[0,84][196,280]",
     "displayed": "true",
     "action": [
-      "click()"
+      "click"
     ]
   },
   {
@@ -286,11 +280,11 @@
     "selection-start": null,
     "selection-end": null,
     "selected": "false",
-    "text": "03 May, 2021",
+    "text": "10 May, 2021",
     "bounds": "[56,429][305,486]",
     "displayed": "true",
     "action": [
-      "check()"
+      "check"
     ]
   },
   {
@@ -310,11 +304,11 @@
     "selection-start": null,
     "selection-end": null,
     "selected": "false",
-    "text": "03 May, 2021",
+    "text": "10 May, 2021",
     "bounds": "[56,429][305,486]",
     "displayed": "true",
     "action": [
-      "check()"
+      "check"
     ]
   }
 ]
