@@ -1,0 +1,50 @@
+[
+  {
+    "checkable": "false",
+    "checked": "false",
+    "class": "android.widget.ImageButton",
+    "clickable": "true",
+    "content-desc": "Open navigation drawer",
+    "enabled": "true",
+    "focusable": "true",
+    "focused": "false",
+    "long-clickable": "false",
+    "package": "com.kvannli.simonkvannli.dailybudget",
+    "password": "false",
+    "resource-id": null,
+    "scrollable": "false",
+    "selection-start": null,
+    "selection-end": null,
+    "selected": "false",
+    "text": "",
+    "bounds": "[0,84][196,280]",
+    "displayed": "true",
+    "action": [
+      "click"
+    ]
+  },
+  {
+    "checkable": "false",
+    "checked": "false",
+    "class": "android.widget.ListView",
+    "clickable": "false",
+    "content-desc": null,
+    "enabled": "true",
+    "focusable": "true",
+    "focused": "true",
+    "long-clickable": "false",
+    "package": "com.kvannli.simonkvannli.dailybudget",
+    "password": "false",
+    "resource-id": "com.kvannli.simonkvannli.dailybudget:id/navigation_drawer",
+    "scrollable": "false",
+    "selection-start": null,
+    "selection-end": null,
+    "selected": "false",
+    "text": "",
+    "bounds": "[0,280][840,2392]",
+    "displayed": "true",
+    "action": [
+      "click"
+    ]
+  }
+]
