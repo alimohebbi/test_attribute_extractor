@@ -1,0 +1,11 @@
+######################################## ERROR! ########################################
+No element with text: 16.27, found on this page source.
+
+
+######################################## ERROR! ########################################
+The element with the text: 16.27, did not appear after10seconds.######################################## ERROR! ########################################
+No element with text: 16.27, found on this page source.
+
+
+######################################## ERROR! ########################################
+The element with the text: 16.27, did not appear after10seconds.

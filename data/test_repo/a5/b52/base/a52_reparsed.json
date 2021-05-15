@@ -1,0 +1,54 @@
+[
+  {
+    "get_element_by": {
+      "type": "Id",
+      "value": "com.appsbyvir.tipcalculator:id/billEditText"
+    },
+    "action": [
+      {
+        "type": "clear_and_send_keys",
+        "value": "56.6"
+      }
+    ]
+  },
+  {
+    "get_element_by": {
+      "type": "Id",
+      "value": "com.appsbyvir.tipcalculator:id/tipEditText"
+    },
+    "action": [
+      {
+        "type": "clear_and_send_keys_and_hide_keyboard",
+        "value": "15"
+      }
+    ]
+  },
+  {
+    "get_element_by": {
+      "type": "Id",
+      "value": "com.appsbyvir.tipcalculator:id/splitBillEditText"
+    },
+    "action": [
+      {
+        "type": "clear_and_send_keys_and_hide_keyboard",
+        "value": "4"
+      }
+    ]
+  },
+  {
+    "get_element_by": {
+      "type": "Id",
+      "value": "com.appsbyvir.tipcalculator:id/perPersonEditText"
+    },
+    "action": [
+      {
+        "type": "wait_until_text_presence",
+        "value": {
+          "time": 10,
+          "type": "text",
+          "value": "16.27"
+        }
+      }
+    ]
+  }
+]

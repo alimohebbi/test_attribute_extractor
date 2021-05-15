@@ -1,0 +1,102 @@
+[
+  {
+    "get_element_by": {
+      "type": "Id",
+      "value": "org.secuso.privacyfriendlytodolist:id/btn_skip"
+    },
+    "action": [
+      {
+        "type": "click",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "get_element_by": {
+      "type": "Id",
+      "value": "org.secuso.privacyfriendlytodolist:id/fab_new_task"
+    },
+    "action": [
+      {
+        "type": "click",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "get_element_by": {
+      "type": "Id",
+      "value": "org.secuso.privacyfriendlytodolist:id/et_new_task_name"
+    },
+    "action": [
+      {
+        "type": "send_keys_and_hide_keyboard",
+        "value": "Sample Todo"
+      }
+    ]
+  },
+  {
+    "get_element_by": {
+      "type": "Id",
+      "value": "org.secuso.privacyfriendlytodolist:id/bt_new_task_ok"
+    },
+    "action": [
+      {
+        "type": "click",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "get_element_by": {
+      "type": "Id",
+      "value": "org.secuso.privacyfriendlytodolist:id/tv_exlv_task_name"
+    },
+    "action": [
+      {
+        "type": "wait_until_text_presence",
+        "value": {
+          "time": 10,
+          "type": "text",
+          "value": "Sample Todo"
+        }
+      }
+    ]
+  },
+  {
+    "get_element_by": {
+      "type": "Id",
+      "value": "org.secuso.privacyfriendlytodolist:id/tv_exlv_task_name"
+    },
+    "action": [
+      {
+        "type": "long_press",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "get_element_by": {
+      "type": "Id",
+      "value": "android:id/title"
+    },
+    "action": [
+      {
+        "type": "click",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "action": [
+      {
+        "type": "wait_until_text_invisible",
+        "value": {
+          "time": 10,
+          "type": "text",
+          "value": "Sample Todo"
+        }
+      }
+    ]
+  }
+]

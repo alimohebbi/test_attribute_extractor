@@ -1,0 +1,90 @@
+[
+  {
+    "get_element_by": {
+      "type": "Id",
+      "value": "douzifly.list:id/fab_add"
+    },
+    "action": [
+      {
+        "type": "click",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "get_element_by": {
+      "type": "Id",
+      "value": "douzifly.list:id/edit_text"
+    },
+    "action": [
+      {
+        "type": "send_keys_and_hide_keyboard",
+        "value": "Sample Todo"
+      }
+    ]
+  },
+  {
+    "get_element_by": {
+      "type": "Id",
+      "value": "douzifly.list:id/fab_add"
+    },
+    "action": [
+      {
+        "type": "click",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "get_element_by": {
+      "type": "Id",
+      "value": "douzifly.list:id/txt_thing"
+    },
+    "action": [
+      {
+        "type": "wait_until_text_presence",
+        "value": {
+          "time": 10,
+          "type": "text",
+          "value": "Sample Todo"
+        }
+      }
+    ]
+  },
+  {
+    "get_element_by": {
+      "type": "Id",
+      "value": "douzifly.list:id/txt_thing"
+    },
+    "action": [
+      {
+        "type": "swipe_right",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "get_element_by": {
+      "type": "Id",
+      "value": "douzifly.list:id/btn_delete"
+    },
+    "action": [
+      {
+        "type": "click",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "action": [
+      {
+        "type": "wait_until_text_invisible",
+        "value": {
+          "time": 10,
+          "type": "text",
+          "value": "Sample Todo"
+        }
+      }
+    ]
+  }
+]
