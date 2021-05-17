@@ -7,29 +7,10 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
 from appium.webdriver.common.touch_action import TouchAction
 import time
+from utils.utils import *
+import time
 
-def write_to_error_log(message, filename):
-    f = open(filename, 'a')
-    f.write(message)
 
-def write_json(data, fname, name_postfix):
-    with open(fname.replace('.json', name_postfix), 'w') as f:
-        f.write(json.dumps(data, indent=2))
-def load_json_data(fname):
-    f = open(fname,)
-    data = json.load(f)
-    return data
-
-def get_app_name(fname):
-    app_name = fname.split("/")[-1].split(".")[0]
-    return app_name
-
-def get_package_activity(fname, df):
-    app_name = get_app_name(fname)
-    app_package = list(df[df["appName"] == app_name]["appPackage"])[0]
-    app_activity = list(df[df["appName"] == app_name]["appActivity"])[0]
-
-    return app_package, app_activity
 
 def reparse_element_actions(parsed_element, log_fname):
     new_dict = {}

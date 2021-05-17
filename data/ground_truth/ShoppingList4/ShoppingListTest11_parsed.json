@@ -55,7 +55,20 @@
     "action": [
       {
         "type": "check",
-        "value": ""
+        "value": [
+          {
+            "type": "text",
+            "value": "list1"
+          },
+          {
+            "type": " isDisplayed",
+            "value": ""
+          },
+          {
+            "type": " isEnabled",
+            "value": ""
+          }
+        ]
       }
     ]
   },
@@ -115,7 +128,20 @@
     "action": [
       {
         "type": "check",
-        "value": ""
+        "value": [
+          {
+            "type": "isDisplayed",
+            "value": ""
+          },
+          {
+            "type": " withText\"item1\"",
+            "value": ""
+          },
+          {
+            "type": " isEnabled",
+            "value": ""
+          }
+        ]
       }
     ]
   }

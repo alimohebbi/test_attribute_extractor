@@ -89,7 +89,7 @@
     "selection-end": null,
     "selected": "false",
     "text": "",
-    "bounds": "[0,286][1440,2231]",
+    "bounds": "[0,286][1440,1198]",
     "displayed": "true",
     "action": [
       "replaceText:something"
@@ -161,7 +161,7 @@
     "selection-end": null,
     "selected": "false",
     "text": "note",
-    "bounds": "[308,459][1106,549]",
+    "bounds": "[308,459][1077,549]",
     "displayed": "true",
     "action": [
       "check"

@@ -67,7 +67,12 @@
     "action": [
       {
         "type": "check",
-        "value": ""
+        "value": [
+          {
+            "type": "text",
+            "value": "Title1"
+          }
+        ]
       }
     ]
   },
@@ -79,7 +84,12 @@
     "action": [
       {
         "type": "check",
-        "value": ""
+        "value": [
+          {
+            "type": "text",
+            "value": "Note1"
+          }
+        ]
       }
     ]
   }

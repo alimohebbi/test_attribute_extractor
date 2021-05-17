@@ -7,7 +7,12 @@
     "action": [
       {
         "type": "check",
-        "value": ""
+        "value": [
+          {
+            "type": "text",
+            "value": "SKIP"
+          }
+        ]
       }
     ]
   }

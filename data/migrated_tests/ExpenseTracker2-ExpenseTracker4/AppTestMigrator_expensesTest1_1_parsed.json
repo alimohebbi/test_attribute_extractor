@@ -99,7 +99,12 @@
     "action": [
       {
         "type": "check",
-        "value": ""
+        "value": [
+          {
+            "type": "isDisplayed",
+            "value": ""
+          }
+        ]
       }
     ]
   }

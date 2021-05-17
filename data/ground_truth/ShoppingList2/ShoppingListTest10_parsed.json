@@ -43,7 +43,12 @@
     "action": [
       {
         "type": "check",
-        "value": ""
+        "value": [
+          {
+            "type": "text",
+            "value": "list"
+          }
+        ]
       }
     ]
   }

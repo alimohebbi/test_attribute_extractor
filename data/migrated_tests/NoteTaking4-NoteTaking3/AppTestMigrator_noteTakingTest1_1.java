@@ -42,6 +42,12 @@ public class AppTestMigrator_noteTakingTest1_1 {
     public void apptestmigrator_notetakingtest1_1() {
         openActionBarOverflowOrOptionsMenu(getInstrumentation().getTargetContext());
         
+        onView(withId(R.id.search_button)).perform(click());
+        
+        onView(withId(R.id.search_close_btn)).perform(click());
+        
+        onView(withXPath("/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.RelativeLayout/android.view.ViewGroup/android.support.v7.widget.LinearLayoutCompat/android.widget.ImageView")).perform(longClick());
+ 
         onView(allOf(withId(R.id.title), withText("Import from device"))).perform(click());
         
         onView(withXPath("/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.ScrollView/android.widget.LinearLayout/android.widget.Button")).perform(click());

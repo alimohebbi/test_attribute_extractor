@@ -31,7 +31,12 @@
     "action": [
       {
         "type": "check",
-        "value": ""
+        "value": [
+          {
+            "type": "text",
+            "value": "Field can't be empty."
+          }
+        ]
       }
     ]
   },
@@ -67,7 +72,12 @@
     "action": [
       {
         "type": "check",
-        "value": ""
+        "value": [
+          {
+            "type": "text",
+            "value": "Field can't be empty."
+          }
+        ]
       }
     ]
   },
@@ -115,7 +125,12 @@
     "action": [
       {
         "type": "check",
-        "value": ""
+        "value": [
+          {
+            "type": "text",
+            "value": "GRA"
+          }
+        ]
       }
     ]
   }

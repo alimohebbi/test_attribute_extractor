@@ -79,7 +79,20 @@
     "action": [
       {
         "type": "check",
-        "value": ""
+        "value": [
+          {
+            "type": "text",
+            "value": "note"
+          },
+          {
+            "type": " isDisplayed",
+            "value": ""
+          },
+          {
+            "type": " isEnabled",
+            "value": ""
+          }
+        ]
       }
     ]
   }

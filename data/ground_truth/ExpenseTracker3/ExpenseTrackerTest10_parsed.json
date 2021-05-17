@@ -43,7 +43,12 @@
     "action": [
       {
         "type": "check",
-        "value": ""
+        "value": [
+          {
+            "type": "text",
+            "value": "Currently no income..."
+          }
+        ]
       }
     ]
   },
@@ -103,7 +108,12 @@
     "action": [
       {
         "type": "check",
-        "value": ""
+        "value": [
+          {
+            "type": "text",
+            "value": "500  MONTHLY"
+          }
+        ]
       }
     ]
   }

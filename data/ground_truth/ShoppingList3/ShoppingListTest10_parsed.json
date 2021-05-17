@@ -55,7 +55,12 @@
     "action": [
       {
         "type": "check",
-        "value": ""
+        "value": [
+          {
+            "type": "text",
+            "value": "grocery"
+          }
+        ]
       }
     ]
   }

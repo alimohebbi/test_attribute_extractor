@@ -1,6 +1,7 @@
 import glob
 import pandas as pd
 from utils.parser import parse
+from utils.utils import *
 import time
 import unittest
 import json
@@ -9,18 +10,14 @@ from selenium.webdriver.common.by import By
 from appium.webdriver.common.touch_action import TouchAction
 from selenium.common.exceptions import NoSuchElementException
 
-def write_jsons(attribute_list, file):
-    with open(file.replace('.java', '.json'), 'w') as f:
-        f.write(json.dumps(attribute_list, indent=2))
-
 def execute_replace_text(action, element, driver):
     element.set_value(action["value"])
     if driver.is_keyboard_shown():
         driver.back()
 
-def execute_action(driver, el, dictionary):
+def execute_action(driver, el, parsed_event, log_fname):
     executed = True
-    for action in dictionary["action"]:
+    for action in parsed_event["action"]:
         if action["type"] == "replaceText":
             execute_replace_text(action, el, driver)
         elif action["type"] == "click":
@@ -28,170 +25,157 @@ def execute_action(driver, el, dictionary):
         elif action["type"] == "check":
             continue
         elif action["type"] == "longClick":
-            TouchAction(driver).long_press(el).perform()
- #       elif action["type"] == "swipeLeft":
-#driver.execute_script("mobile: scroll", {"direction": "left", element: el, "toVisible": True})
-        elif action["type"] == "check":
-            pass
+            TouchAction(driver).long_press(el).release().perform()
+        #       elif action["type"] == "swipeLeft":
+        #driver.execute_script("mobile: scroll", {"direction": "left", element: el, "toVisible": True})
         else:
             executed = False
-            print("Unknown event: "+str(action["type"]))
+            write_to_error_log("Unhendled event: "+str(action["type"])+", in line: "+str(parsed_event), log_fname)
     return executed
                 
-def get_element_actions(dictionary):
+def set_element_actions(parsed_event, element_attributes):
     actions = []
-    for action in dictionary["action"]:
+    for action in parsed_event["action"]:
         if action["type"] == "replaceText":
             actions.append(action["type"]+":"+action["value"])
         else:
             actions.append(action["type"])
-    return actions
 
-def get_element_attributes(element, dictionary):
+    element_attributes["action"] = actions
+    return element_attributes
 
-    element_attributes = {}
-    
+def set_element_appium_attributes(parsed_event, element_attributes):   
     attribute_list =  ["checkable", "checked", "class", "clickable", "content-desc", "enabled", "focusable",
     "focused","long-clickable", "package", "password", "resource-id", "scrollable","selection-start",
     "selection-end", "selected", "text", "bounds", "displayed"]
     
     for attr in attribute_list:
         element_attributes[attr] = element.get_attribute(attr)
-    
-    actions = get_element_actions(dictionary)
-    element_attributes["action"] = actions
+
+    return element_attributes
+
+def get_element_attributes(element, parsed_event):
+    element_attributes = {}
+
+    element_attributes = set_element_appium_attributes(parsed_event, element_attributes)
+    element_attributes = set_element_actions(parsed_event, element_attributes)
     
     return element_attributes
 
-def get_element_by_id(driver, dictionary, app_package):
+def get_element_by_id(driver, resource_id, app_package, log_fname):
     try:
-        element =  driver.find_element_by_id(app_package+":id/"+dictionary["get_element_by"]["value"])
+        element =  driver.find_element_by_id(app_package+":id/"+str(resource_id))
         return element
     except NoSuchElementException:
         try:
-            element =  driver.find_element_by_id("android:id/"+dictionary["get_element_by"]["value"])
+            element =  driver.find_element_by_id("android:id/"+str(resource_id))
             return element
         except NoSuchElementException:
-            print("No element with id:"+dictionary["get_element_by"]["value"]+" found on this page source.")
+            error_message = 40*"#"+" ERROR! "+40*"#"+"\nNo element with id: "+str(resource_id)+", was found on this page source."+"\n\n\n"
+            write_to_error_log(error_message, log_fname)
             return None
 
-def get_element_by_content_desc(driver, dictionary, app_package):
+def get_element_by_content_desc(driver, content_desc, log_fname):
     try:
-        element = driver.find_element_by_android_uiautomator('new UiSelector().description(\"'+dictionary["get_element_by"]["value"]+'\")')
+        element = driver.find_element_by_android_uiautomator('new UiSelector().description(\"'+str(content_desc)+'\")')
         return element
     except:
-        print("No element with content description:"+dictionary["get_element_by"]["value"]+" found on this page source.")
+        error_message = 40*"#"+" ERROR! "+40*"#"+"\nNo element with content description: "+str(content_desc)+", was found on this page source."+"\n\n\n"
+        write_to_error_log(error_message, log_fname)
         return None
 
-def get_element_by_text(driver, dictionary, app_package):
+def get_element_by_text(driver, text, log_fname):
     try:
-        element = driver.find_element_by_android_uiautomator('new UiSelector().text(\"'+dictionary["get_element_by"]["value"]+'\")')
+        element = driver.find_element_by_android_uiautomator('new UiSelector().text(\"'str(text)+'\")')
         return element
     except:
-        print("No element with text:"+dictionary["get_element_by"]["value"]+" found on this page source.")
+        error_message = 40*"#"+" ERROR! "+40*"#"+"\nNo element with text: "+str(text)+", was found on this page source."+"\n\n\n"
+        write_to_error_log(error_message, log_fname)
         return None
 
-def get_element_by_xpath(driver, dictionary, app_package):
+def get_element_by_xpath(driver, xpath, log_fname):
     try:
-        element = driver.find_element_by_xpath("/hierarchy"+dictionary["get_element_by"]["value"])
+        element = driver.find_element_by_xpath("/hierarchy"str(xpath))
         return element
     except:
-        print("No element with xpath:"+dictionary["get_element_by"]["value"]+" found on this page source.")
+        error_message = 40*"#"+" ERROR! "+40*"#"+"\nNo element with xpath: "+str(xpath)+", was found on this page source."+"\n\n\n"
+        write_to_error_log(error_message, log_fname)
         return None
 
-def get_element_by_class_name(driver, dictionary, app_package):
+def get_element_by_class_name(driver, class_name, log_fname):
     try:
-        element = driver.find_element_by_class_name(dictionary["get_element_by"]["value"])
+        element = driver.find_element_by_class_name(class_name)
         return element
     except:
-        print("No element with id:"+dictionary["get_element_by"]["value"]+" found on this page source.")
+        error_message = 40*"#"+" ERROR! "+40*"#"+"\nNo element with class name: "+str(class_name)+", was found on this page source."+"\n\n\n"
+        write_to_error_log(error_message, log_fname)
         return None
 
-def get_element(driver, dictionary, app_package):
-    identifier = dictionary["get_element_by"]["type"]
+def get_element(driver, parsed_event, app_package, log_fname):
+    identifier = parsed_event["get_element_by"]["type"]
+    value = parsed_event["get_element_by"]["value"]
     if identifier == "Id":
-        element = get_element_by_id(driver, dictionary, app_package)    
+        element = get_element_by_id(driver, value, app_package, log_fname)    
     elif identifier == 'ContentDescription':
-        element = get_element_by_content_desc(driver, dictionary, app_package)
+        element = get_element_by_content_desc(driver, value, log_fname)
     elif identifier == "Text":
-        element = get_element_by_text(driver, dictionary, app_package)
+        element = get_element_by_text(driver, value, log_fname)
     elif identifier == "XPath":
-        element = get_element_by_xpath(driver, dictionary, app_package)
+        element = get_element_by_xpath(driver, value, log_fname)
     elif identifier == "ClassName":
-        element = get_element_by_class_name(driver, dictionary, app_package)
+        element = get_element_by_class_name(driver, value, log_fname)
     else:
-        print("Unknown identifier of the element in line: " + str(dictionary))
+        error_message = 40*"#"+" ERROR! "+40*"#"+"\nUnknown identifier of the element: "+str(identifier)+", in line: "+str(parsed_event)+"\n\n\n"
+        write_to_error_log(error_message, log_fname)
         return None
     return element
 
-def get_attribute_list(parsed_test, app_package, driver):
-    attribute_list = []
+def get_element_attributes_list(parsed_test, app_package, driver, log_fname):
+    element_attributes_list = []
     completed = True
-    for line in parsed_test:
-        if len(line) !=1:
-            el = get_element(driver, line, app_package)
+    for parsed_event in parsed_test:
+        if len(parsed_event) == 1:
+            driver.back()
+        else:
+            el = get_element(driver, parsed_event, app_package, log_fname)
             if el is None:
                 completed = False
                 break
-            attribute_list.append(get_element_attributes(el, line))
-            executed = execute_action(driver, el, line)
+            element_attributes_list.append(get_element_attributes(el, parsed_event))
+            executed = execute_action(driver, el, parsed_event, log_fname)
             if not executed:
                 completed = False
                 break
-        else:
-            driver.back()
         time.sleep(5)
-    return attribute_list, completed
+    return element_attributes_list, completed
 
-def get_app_name(fname):
-    category = fname.split("/")[-3]
-    if category == "migrated_tests":
-        return fname.split("/")[-2].split("-")[1]
-    elif category == "ground_truth":
-        return fname.split("/")[-2]
-    else:
-        print("The java file should be under directory /data/migrated_tests or /data/ground_truth")
-        return
-
-def get_package_activity(fname, df):
-    app_name = get_app_name(fname)
-    app_package = list(df[df["appName"] == app_name]["appPackage"])[0]
-    app_activity = list(df[df["appName"] == app_name]["appActivity"])[0]
-
-    return app_package, app_activity
-
-def read_file(file):
-    df = pd.read_csv("app_name_to_package_activity.csv")
-    parsed_test = parse(file)
-    app_package, app_activity = get_package_activity(file, df)
-    caps = {
-        'platformName': 'Android',
-        'platformVersion': '7.0',
-        'deviceName': 'emulator-5555',
-        'appPackage': app_package,
-        'appActivity': app_activity,
-        'autoGrantPermissions': True,
-        'noReset': False,
-        "newCommandTimeout": 3000
-    }
-    return parsed_test, caps, app_package
+def check_run_possible(app_package, caps):
+    if app_package is None:
+        print("UNABLE TO RUN THE TEST FOR THE FILE :"+str(file)+".")
+        return False, None
+    try:
+        driver = webdriver.Remote('http://localhost:4723/wd/hub', caps)
+    except:
+        print("UNABLE TO GRAB THE DRIVER WITH CAPABILITIES :"+str(caps)+".")
+        return False, None
+    return True, driver
 
 def main():
     files = glob.glob('data/*/*/*.java')
     for file in files:
-        start_time = time.time()
         print(file.split("/")[-2:])
-        parsed_test, caps, app_package = read_file(file)
-        try:
-            driver = webdriver.Remote('http://localhost:4723/wd/hub', caps)
-        except:
-            continue
-        attribute_list, completed = get_attribute_list(parsed_test, app_package, driver)
-        if completed == False:
-            print("ERROR!\n"+40*"#")
-            print("Unable to run the whole test for the :"+str(file))
-        write_jsons(attribute_list, file)
-        print(str(time.time() - start_time)+" seconds\n")
+        log_fname = file.replace('.json', "_log.txt")
+        start_time = time.time()
+        caps, app_package = get_caps(file)
+        run_possible, driver = check_run_possible(app_package, caps)
+        if run_possible:
+            parsed_test = parse(file)
+            element_attributes_list, completed = get_element_attributes_list(parsed_test, app_package, driver, log_fname)
+            if completed == False:
+                write_to_error_log("STOPPING THE EXECUTION OF THE TEST!", log_fname)
+                print("UNABLE TO RUN THE WHOLE TEST FOR THE FILE :"+str(file)+"."++"PLEASE CHECK THE ERROR LOG!")
+            write_json(element_attributes_list, file, '.json')
+            print(str(time.time() - start_time)+" seconds\n")
 
 if __name__ == '__main__':
     main()

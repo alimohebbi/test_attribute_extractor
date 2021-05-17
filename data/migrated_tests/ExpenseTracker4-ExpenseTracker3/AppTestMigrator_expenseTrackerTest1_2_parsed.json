@@ -79,7 +79,12 @@
     "action": [
       {
         "type": "check",
-        "value": ""
+        "value": [
+          {
+            "type": "text",
+            "value": "INCOME"
+          }
+        ]
       }
     ]
   },
@@ -115,7 +120,12 @@
     "action": [
       {
         "type": "check",
-        "value": ""
+        "value": [
+          {
+            "type": "text",
+            "value": "INCOME"
+          }
+        ]
       }
     ]
   }
