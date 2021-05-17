@@ -90,9 +90,7 @@ def get_test_section(lines):
         if not seen_test and '@Test' in line:
             seen_test = True
         elif seen_test:
-            if '{' in line:
-                continue
-            elif '}' in line:
+            if "private static Matcher<View> childAtPosition(" in line:
                 break
             else:
                 expression += line.strip()

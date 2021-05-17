@@ -10,5 +10,106 @@
         "value": ""
       }
     ]
+  },
+  {
+    "get_element_by": {
+      "type": "Id",
+      "value": "onboarding_screen2_next_button"
+    },
+    "action": [
+      {
+        "type": "click",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "get_element_by": {
+      "type": "Id",
+      "value": "onboarding_screen3_next_button"
+    },
+    "action": [
+      {
+        "type": "click",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "get_element_by": {
+      "type": "Id",
+      "value": "onboarding_screen4_next_button"
+    },
+    "action": [
+      {
+        "type": "click",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "get_element_by": {
+      "type": "Id",
+      "value": "fab_expand_menu_button"
+    },
+    "action": [
+      {
+        "type": "click",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "get_element_by": {
+      "type": "Id",
+      "value": "fab_new_expense"
+    },
+    "action": [
+      {
+        "type": "click",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "get_element_by": {
+      "type": "Id",
+      "value": "description_edittext"
+    },
+    "action": [
+      {
+        "type": "replaceText",
+        "value": "Entertainment"
+      }
+    ]
+  },
+  {
+    "get_element_by": {
+      "type": "Id",
+      "value": "amount_edittext"
+    },
+    "action": [
+      {
+        "type": "replaceText",
+        "value": "45"
+      }
+    ]
+  },
+  {
+    "get_element_by": {
+      "type": "Text",
+      "value": "No income or expense yet."
+    },
+    "action": [
+      {
+        "type": "check",
+        "value": [
+          {
+            "type": "text",
+            "value": "No income or expense yet."
+          }
+        ]
+      }
+    ]
   }
 ]
