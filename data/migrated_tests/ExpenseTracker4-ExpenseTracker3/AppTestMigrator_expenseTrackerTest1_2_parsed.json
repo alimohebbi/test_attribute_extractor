@@ -1,9 +1,11 @@
 [
   {
-    "get_element_by": {
-      "type": "ContentDescription",
-      "value": "Open navigation drawer"
-    },
+    "get_element_by": [
+      {
+        "type": "ContentDescription",
+        "value": "Open navigation drawer"
+      }
+    ],
     "action": [
       {
         "type": "click",
@@ -12,10 +14,12 @@
     ]
   },
   {
-    "get_element_by": {
-      "type": "ContentDescription",
-      "value": "Close navigation drawer"
-    },
+    "get_element_by": [
+      {
+        "type": "ContentDescription",
+        "value": "Close navigation drawer"
+      }
+    ],
     "action": [
       {
         "type": "click",
@@ -24,10 +28,12 @@
     ]
   },
   {
-    "get_element_by": {
-      "type": "ContentDescription",
-      "value": "Open navigation drawer"
-    },
+    "get_element_by": [
+      {
+        "type": "ContentDescription",
+        "value": "Open navigation drawer"
+      }
+    ],
     "action": [
       {
         "type": "click",
@@ -36,10 +42,12 @@
     ]
   },
   {
-    "get_element_by": {
-      "type": "XPath",
-      "value": "/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[2]/android.support.v4.widget.DrawerLayout/android.widget.ListView/android.widget.TextView[3]"
-    },
+    "get_element_by": [
+      {
+        "type": "XPath",
+        "value": "/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[2]/android.support.v4.widget.DrawerLayout/android.widget.ListView/android.widget.TextView[3]"
+      }
+    ],
     "action": [
       {
         "type": "click",
@@ -48,10 +56,12 @@
     ]
   },
   {
-    "get_element_by": {
-      "type": "Id",
-      "value": "button2"
-    },
+    "get_element_by": [
+      {
+        "type": "Id",
+        "value": "button2"
+      }
+    ],
     "action": [
       {
         "type": "click",
@@ -60,10 +70,12 @@
     ]
   },
   {
-    "get_element_by": {
-      "type": "Id",
-      "value": "button2"
-    },
+    "get_element_by": [
+      {
+        "type": "Id",
+        "value": "button2"
+      }
+    ],
     "action": [
       {
         "type": "click",
@@ -72,10 +84,12 @@
     ]
   },
   {
-    "get_element_by": {
-      "type": "Text",
-      "value": "INCOME"
-    },
+    "get_element_by": [
+      {
+        "type": "Text",
+        "value": "INCOME"
+      }
+    ],
     "action": [
       {
         "type": "check",
@@ -89,10 +103,12 @@
     ]
   },
   {
-    "get_element_by": {
-      "type": "Id",
-      "value": "editText2"
-    },
+    "get_element_by": [
+      {
+        "type": "Id",
+        "value": "editText2"
+      }
+    ],
     "action": [
       {
         "type": "replaceText",
@@ -101,10 +117,12 @@
     ]
   },
   {
-    "get_element_by": {
-      "type": "Id",
-      "value": "button2"
-    },
+    "get_element_by": [
+      {
+        "type": "Id",
+        "value": "button2"
+      }
+    ],
     "action": [
       {
         "type": "click",
@@ -113,10 +131,12 @@
     ]
   },
   {
-    "get_element_by": {
-      "type": "Text",
-      "value": "INCOME"
-    },
+    "get_element_by": [
+      {
+        "type": "Text",
+        "value": "INCOME"
+      }
+    ],
     "action": [
       {
         "type": "check",

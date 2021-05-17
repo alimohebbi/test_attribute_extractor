@@ -1,9 +1,11 @@
 [
   {
-    "get_element_by": {
-      "type": "Id",
-      "value": "search_button"
-    },
+    "get_element_by": [
+      {
+        "type": "Id",
+        "value": "search_button"
+      }
+    ],
     "action": [
       {
         "type": "click",
@@ -12,10 +14,12 @@
     ]
   },
   {
-    "get_element_by": {
-      "type": "Id",
-      "value": "search_close_btn"
-    },
+    "get_element_by": [
+      {
+        "type": "Id",
+        "value": "search_close_btn"
+      }
+    ],
     "action": [
       {
         "type": "click",
@@ -24,10 +28,12 @@
     ]
   },
   {
-    "get_element_by": {
-      "type": "XPath",
-      "value": "/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.RelativeLayout/android.view.ViewGroup/android.support.v7.widget.LinearLayoutCompat/android.widget.ImageView"
-    },
+    "get_element_by": [
+      {
+        "type": "XPath",
+        "value": "/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.RelativeLayout/android.view.ViewGroup/android.support.v7.widget.LinearLayoutCompat/android.widget.ImageView"
+      }
+    ],
     "action": [
       {
         "type": "longClick",
@@ -36,10 +42,16 @@
     ]
   },
   {
-    "get_element_by": {
-      "type": "Id",
-      "value": "title"
-    },
+    "get_element_by": [
+      {
+        "type": "Id",
+        "value": "title"
+      },
+      {
+        "type": "Text",
+        "value": "Import from device"
+      }
+    ],
     "action": [
       {
         "type": "click",
@@ -48,10 +60,12 @@
     ]
   },
   {
-    "get_element_by": {
-      "type": "XPath",
-      "value": "/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.ScrollView/android.widget.LinearLayout/android.widget.Button"
-    },
+    "get_element_by": [
+      {
+        "type": "XPath",
+        "value": "/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.ScrollView/android.widget.LinearLayout/android.widget.Button"
+      }
+    ],
     "action": [
       {
         "type": "click",
@@ -60,10 +74,12 @@
     ]
   },
   {
-    "get_element_by": {
-      "type": "Id",
-      "value": "search_button"
-    },
+    "get_element_by": [
+      {
+        "type": "Id",
+        "value": "search_button"
+      }
+    ],
     "action": [
       {
         "type": "click",
@@ -72,10 +88,12 @@
     ]
   },
   {
-    "get_element_by": {
-      "type": "Id",
-      "value": "search_src_text"
-    },
+    "get_element_by": [
+      {
+        "type": "Id",
+        "value": "search_src_text"
+      }
+    ],
     "action": [
       {
         "type": "replaceText",
@@ -84,10 +102,12 @@
     ]
   },
   {
-    "get_element_by": {
-      "type": "Id",
-      "value": "search_src_text"
-    },
+    "get_element_by": [
+      {
+        "type": "Id",
+        "value": "search_src_text"
+      }
+    ],
     "action": [
       {
         "type": "replaceText",
@@ -104,10 +124,12 @@
     ]
   },
   {
-    "get_element_by": {
-      "type": "Id",
-      "value": "empty_hint"
-    },
+    "get_element_by": [
+      {
+        "type": "Id",
+        "value": "empty_hint"
+      }
+    ],
     "action": [
       {
         "type": "check",

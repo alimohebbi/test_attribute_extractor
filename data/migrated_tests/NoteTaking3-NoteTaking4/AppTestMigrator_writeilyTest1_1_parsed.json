@@ -1,9 +1,11 @@
 [
   {
-    "get_element_by": {
-      "type": "ContentDescription",
-      "value": "Search"
-    },
+    "get_element_by": [
+      {
+        "type": "ContentDescription",
+        "value": "Search"
+      }
+    ],
     "action": [
       {
         "type": "click",
@@ -12,10 +14,12 @@
     ]
   },
   {
-    "get_element_by": {
-      "type": "Text",
-      "value": "Add Note"
-    },
+    "get_element_by": [
+      {
+        "type": "Text",
+        "value": "Add Note"
+      }
+    ],
     "action": [
       {
         "type": "click",
@@ -24,10 +28,12 @@
     ]
   },
   {
-    "get_element_by": {
-      "type": "Id",
-      "value": "editor_$_edittext_title"
-    },
+    "get_element_by": [
+      {
+        "type": "Id",
+        "value": "editor_$_edittext_title"
+      }
+    ],
     "action": [
       {
         "type": "replaceText",
@@ -36,10 +42,12 @@
     ]
   },
   {
-    "get_element_by": {
-      "type": "Id",
-      "value": "editor_$_note_editor"
-    },
+    "get_element_by": [
+      {
+        "type": "Id",
+        "value": "editor_$_note_editor"
+      }
+    ],
     "action": [
       {
         "type": "replaceText",
@@ -48,10 +56,12 @@
     ]
   },
   {
-    "get_element_by": {
-      "type": "Text",
-      "value": "Pocket Note"
-    },
+    "get_element_by": [
+      {
+        "type": "Text",
+        "value": "Pocket Note"
+      }
+    ],
     "action": [
       {
         "type": "click",
@@ -60,10 +70,12 @@
     ]
   },
   {
-    "get_element_by": {
-      "type": "Text",
-      "value": "Pocket Note"
-    },
+    "get_element_by": [
+      {
+        "type": "Text",
+        "value": "Pocket Note"
+      }
+    ],
     "action": [
       {
         "type": "click",
@@ -72,10 +84,12 @@
     ]
   },
   {
-    "get_element_by": {
-      "type": "XPath",
-      "value": "/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/android.view.ViewGroup/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.ImageView"
-    },
+    "get_element_by": [
+      {
+        "type": "XPath",
+        "value": "/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/android.view.ViewGroup/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.ImageView"
+      }
+    ],
     "action": [
       {
         "type": "click",
@@ -84,10 +98,12 @@
     ]
   },
   {
-    "get_element_by": {
-      "type": "Id",
-      "value": "editor_$_button_pick_color"
-    },
+    "get_element_by": [
+      {
+        "type": "Id",
+        "value": "editor_$_button_pick_color"
+      }
+    ],
     "action": [
       {
         "type": "click",
@@ -96,10 +112,12 @@
     ]
   },
   {
-    "get_element_by": {
-      "type": "XPath",
-      "value": "/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.ListView/android.widget.LinearLayout/android.widget.TextView"
-    },
+    "get_element_by": [
+      {
+        "type": "XPath",
+        "value": "/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.ListView/android.widget.LinearLayout/android.widget.TextView"
+      }
+    ],
     "action": [
       {
         "type": "click",
@@ -108,10 +126,12 @@
     ]
   },
   {
-    "get_element_by": {
-      "type": "XPath",
-      "value": "/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.ListView/android.widget.LinearLayout[2]/android.widget.TextView"
-    },
+    "get_element_by": [
+      {
+        "type": "XPath",
+        "value": "/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.ListView/android.widget.LinearLayout[2]/android.widget.TextView"
+      }
+    ],
     "action": [
       {
         "type": "click",
@@ -120,10 +140,12 @@
     ]
   },
   {
-    "get_element_by": {
-      "type": "XPath",
-      "value": "/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.ListView/android.widget.LinearLayout[3]/android.widget.TextView"
-    },
+    "get_element_by": [
+      {
+        "type": "XPath",
+        "value": "/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.ListView/android.widget.LinearLayout[3]/android.widget.TextView"
+      }
+    ],
     "action": [
       {
         "type": "click",
@@ -132,10 +154,12 @@
     ]
   },
   {
-    "get_element_by": {
-      "type": "XPath",
-      "value": "/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.ListView/android.widget.LinearLayout[4]/android.widget.TextView"
-    },
+    "get_element_by": [
+      {
+        "type": "XPath",
+        "value": "/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.ListView/android.widget.LinearLayout[4]/android.widget.TextView"
+      }
+    ],
     "action": [
       {
         "type": "click",
@@ -144,10 +168,12 @@
     ]
   },
   {
-    "get_element_by": {
-      "type": "XPath",
-      "value": "/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.ListView/android.widget.LinearLayout[5]/android.widget.TextView"
-    },
+    "get_element_by": [
+      {
+        "type": "XPath",
+        "value": "/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.ListView/android.widget.LinearLayout[5]/android.widget.TextView"
+      }
+    ],
     "action": [
       {
         "type": "click",
@@ -156,10 +182,12 @@
     ]
   },
   {
-    "get_element_by": {
-      "type": "XPath",
-      "value": "/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.ListView/android.widget.LinearLayout[6]/android.widget.TextView"
-    },
+    "get_element_by": [
+      {
+        "type": "XPath",
+        "value": "/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.ListView/android.widget.LinearLayout[6]/android.widget.TextView"
+      }
+    ],
     "action": [
       {
         "type": "click",
@@ -168,10 +196,12 @@
     ]
   },
   {
-    "get_element_by": {
-      "type": "XPath",
-      "value": "/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.ListView/android.widget.LinearLayout[7]/android.widget.TextView"
-    },
+    "get_element_by": [
+      {
+        "type": "XPath",
+        "value": "/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.ListView/android.widget.LinearLayout[7]/android.widget.TextView"
+      }
+    ],
     "action": [
       {
         "type": "click",
@@ -180,10 +210,12 @@
     ]
   },
   {
-    "get_element_by": {
-      "type": "XPath",
-      "value": "/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.ListView/android.widget.LinearLayout[8]/android.widget.TextView"
-    },
+    "get_element_by": [
+      {
+        "type": "XPath",
+        "value": "/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.ListView/android.widget.LinearLayout[8]/android.widget.TextView"
+      }
+    ],
     "action": [
       {
         "type": "click",
@@ -192,10 +224,12 @@
     ]
   },
   {
-    "get_element_by": {
-      "type": "XPath",
-      "value": "/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.ListView/android.widget.LinearLayout[9]/android.widget.TextView"
-    },
+    "get_element_by": [
+      {
+        "type": "XPath",
+        "value": "/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.ListView/android.widget.LinearLayout[9]/android.widget.TextView"
+      }
+    ],
     "action": [
       {
         "type": "click",
@@ -220,10 +254,12 @@
     ]
   },
   {
-    "get_element_by": {
-      "type": "ContentDescription",
-      "value": "Clear query"
-    },
+    "get_element_by": [
+      {
+        "type": "ContentDescription",
+        "value": "Clear query"
+      }
+    ],
     "action": [
       {
         "type": "click",
@@ -232,10 +268,12 @@
     ]
   },
   {
-    "get_element_by": {
-      "type": "ContentDescription",
-      "value": "Search"
-    },
+    "get_element_by": [
+      {
+        "type": "ContentDescription",
+        "value": "Search"
+      }
+    ],
     "action": [
       {
         "type": "click",
@@ -244,10 +282,12 @@
     ]
   },
   {
-    "get_element_by": {
-      "type": "Id",
-      "value": "notes_menu_$_add"
-    },
+    "get_element_by": [
+      {
+        "type": "Id",
+        "value": "notes_menu_$_add"
+      }
+    ],
     "action": [
       {
         "type": "longClick",
@@ -256,10 +296,12 @@
     ]
   },
   {
-    "get_element_by": {
-      "type": "XPath",
-      "value": "/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/android.view.ViewGroup/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.ImageView"
-    },
+    "get_element_by": [
+      {
+        "type": "XPath",
+        "value": "/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/android.view.ViewGroup/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.ImageView"
+      }
+    ],
     "action": [
       {
         "type": "click",
@@ -268,10 +310,12 @@
     ]
   },
   {
-    "get_element_by": {
-      "type": "ContentDescription",
-      "value": "Clear query"
-    },
+    "get_element_by": [
+      {
+        "type": "ContentDescription",
+        "value": "Clear query"
+      }
+    ],
     "action": [
       {
         "type": "click",
@@ -280,10 +324,16 @@
     ]
   },
   {
-    "get_element_by": {
-      "type": "Id",
-      "value": "navmenuitem_label"
-    },
+    "get_element_by": [
+      {
+        "type": "Id",
+        "value": "navmenuitem_label"
+      },
+      {
+        "type": "Text",
+        "value": "Settings"
+      }
+    ],
     "action": [
       {
         "type": "click",
@@ -292,10 +342,12 @@
     ]
   },
   {
-    "get_element_by": {
-      "type": "XPath",
-      "value": "/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/android.view.ViewGroup/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.ImageView"
-    },
+    "get_element_by": [
+      {
+        "type": "XPath",
+        "value": "/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/android.view.ViewGroup/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.ImageView"
+      }
+    ],
     "action": [
       {
         "type": "click",
@@ -304,10 +356,12 @@
     ]
   },
   {
-    "get_element_by": {
-      "type": "XPath",
-      "value": "/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/android.view.ViewGroup/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.ImageView"
-    },
+    "get_element_by": [
+      {
+        "type": "XPath",
+        "value": "/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/android.view.ViewGroup/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.ImageView"
+      }
+    ],
     "action": [
       {
         "type": "click",
@@ -316,10 +370,12 @@
     ]
   },
   {
-    "get_element_by": {
-      "type": "Id",
-      "value": "settings_$_textview_photo_title"
-    },
+    "get_element_by": [
+      {
+        "type": "Id",
+        "value": "settings_$_textview_photo_title"
+      }
+    ],
     "action": [
       {
         "type": "click",
@@ -328,330 +384,16 @@
     ]
   },
   {
-    "get_element_by": {
-      "type": "Id",
-      "value": "purple_dialog_row_$_textview_item"
-    },
-    "action": [
+    "get_element_by": [
       {
-        "type": "click",
-        "value": ""
-      }
-    ]
-  },
-  {
-    "action": [
+        "type": "Id",
+        "value": "purple_dialog_row_$_textview_item"
+      },
       {
-        "type": "pressBack",
-        "value": ""
+        "type": "Text",
+        "value": "Choose photo"
       }
-    ]
-  },
-  {
-    "get_element_by": {
-      "type": "Id",
-      "value": "settings_$_button_pick_color"
-    },
-    "action": [
-      {
-        "type": "click",
-        "value": ""
-      }
-    ]
-  },
-  {
-    "get_element_by": {
-      "type": "XPath",
-      "value": "/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.GridView/android.widget.LinearLayout[2]/android.widget.ImageView"
-    },
-    "action": [
-      {
-        "type": "click",
-        "value": ""
-      }
-    ]
-  },
-  {
-    "get_element_by": {
-      "type": "Id",
-      "value": "settings_$_button_rate"
-    },
-    "action": [
-      {
-        "type": "click",
-        "value": ""
-      }
-    ]
-  },
-  {
-    "get_element_by": {
-      "type": "XPath",
-      "value": "/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[2]/android.support.v4.widget.DrawerLayout/android.widget.RelativeLayout/android.widget.ScrollView/android.widget.LinearLayout/android.widget.RelativeLayout/android.widget.Spinner/android.widget.LinearLayout/android.widget.TextView"
-    },
-    "action": [
-      {
-        "type": "click",
-        "value": ""
-      }
-    ]
-  },
-  {
-    "get_element_by": {
-      "type": "Id",
-      "value": "option_row_$_textview_item"
-    },
-    "action": [
-      {
-        "type": "click",
-        "value": ""
-      }
-    ]
-  },
-  {
-    "get_element_by": {
-      "type": "XPath",
-      "value": "/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/android.view.ViewGroup/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.ImageView"
-    },
-    "action": [
-      {
-        "type": "click",
-        "value": ""
-      }
-    ]
-  },
-  {
-    "get_element_by": {
-      "type": "XPath",
-      "value": "/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/android.view.ViewGroup/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.ImageView"
-    },
-    "action": [
-      {
-        "type": "click",
-        "value": ""
-      }
-    ]
-  },
-  {
-    "get_element_by": {
-      "type": "XPath",
-      "value": "/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/android.view.ViewGroup/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.ImageView[2]"
-    },
-    "action": [
-      {
-        "type": "click",
-        "value": ""
-      }
-    ]
-  },
-  {
-    "get_element_by": {
-      "type": "XPath",
-      "value": "/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/android.view.ViewGroup/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.ImageView[2]"
-    },
-    "action": [
-      {
-        "type": "click",
-        "value": ""
-      }
-    ]
-  },
-  {
-    "get_element_by": {
-      "type": "Text",
-      "value": "Pocket Note"
-    },
-    "action": [
-      {
-        "type": "click",
-        "value": ""
-      }
-    ]
-  },
-  {
-    "get_element_by": {
-      "type": "Text",
-      "value": "Pocket Note"
-    },
-    "action": [
-      {
-        "type": "click",
-        "value": ""
-      }
-    ]
-  },
-  {
-    "get_element_by": {
-      "type": "Id",
-      "value": "settings_$_button_pick_color"
-    },
-    "action": [
-      {
-        "type": "click",
-        "value": ""
-      }
-    ]
-  },
-  {
-    "get_element_by": {
-      "type": "XPath",
-      "value": "/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.GridView/android.widget.LinearLayout[3]/android.widget.ImageView"
-    },
-    "action": [
-      {
-        "type": "click",
-        "value": ""
-      }
-    ]
-  },
-  {
-    "get_element_by": {
-      "type": "Id",
-      "value": "settings_$_button_rate"
-    },
-    "action": [
-      {
-        "type": "click",
-        "value": ""
-      }
-    ]
-  },
-  {
-    "get_element_by": {
-      "type": "XPath",
-      "value": "/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[2]/android.support.v4.widget.DrawerLayout/android.widget.RelativeLayout/android.widget.ScrollView/android.widget.LinearLayout/android.widget.RelativeLayout/android.widget.Spinner/android.widget.LinearLayout/android.widget.TextView"
-    },
-    "action": [
-      {
-        "type": "click",
-        "value": ""
-      }
-    ]
-  },
-  {
-    "get_element_by": {
-      "type": "Id",
-      "value": "option_row_$_textview_item"
-    },
-    "action": [
-      {
-        "type": "click",
-        "value": ""
-      }
-    ]
-  },
-  {
-    "get_element_by": {
-      "type": "XPath",
-      "value": "/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/android.view.ViewGroup/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.ImageView"
-    },
-    "action": [
-      {
-        "type": "click",
-        "value": ""
-      }
-    ]
-  },
-  {
-    "get_element_by": {
-      "type": "XPath",
-      "value": "/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/android.view.ViewGroup/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.ImageView"
-    },
-    "action": [
-      {
-        "type": "click",
-        "value": ""
-      }
-    ]
-  },
-  {
-    "get_element_by": {
-      "type": "XPath",
-      "value": "/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/android.view.ViewGroup/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.ImageView[2]"
-    },
-    "action": [
-      {
-        "type": "click",
-        "value": ""
-      }
-    ]
-  },
-  {
-    "get_element_by": {
-      "type": "XPath",
-      "value": "/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/android.view.ViewGroup/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.ImageView[2]"
-    },
-    "action": [
-      {
-        "type": "click",
-        "value": ""
-      }
-    ]
-  },
-  {
-    "get_element_by": {
-      "type": "Text",
-      "value": "Pocket Note"
-    },
-    "action": [
-      {
-        "type": "click",
-        "value": ""
-      }
-    ]
-  },
-  {
-    "get_element_by": {
-      "type": "Text",
-      "value": "Pocket Note"
-    },
-    "action": [
-      {
-        "type": "click",
-        "value": ""
-      }
-    ]
-  },
-  {
-    "get_element_by": {
-      "type": "Id",
-      "value": "settings_$_button_pick_color"
-    },
-    "action": [
-      {
-        "type": "click",
-        "value": ""
-      }
-    ]
-  },
-  {
-    "get_element_by": {
-      "type": "XPath",
-      "value": "/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.GridView/android.widget.LinearLayout[4]/android.widget.ImageView"
-    },
-    "action": [
-      {
-        "type": "click",
-        "value": ""
-      }
-    ]
-  },
-  {
-    "get_element_by": {
-      "type": "Id",
-      "value": "settings_$_button_rate"
-    },
-    "action": [
-      {
-        "type": "click",
-        "value": ""
-      }
-    ]
-  },
-  {
-    "get_element_by": {
-      "type": "XPath",
-      "value": "/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[2]/android.support.v4.widget.DrawerLayout/android.widget.RelativeLayout/android.widget.ScrollView/android.widget.LinearLayout/android.widget.RelativeLayout/android.widget.Spinner/android.widget.LinearLayout/android.widget.TextView"
-    },
+    ],
     "action": [
       {
         "type": "click",
@@ -668,10 +410,12 @@
     ]
   },
   {
-    "get_element_by": {
-      "type": "Text",
-      "value": "Default color"
-    },
+    "get_element_by": [
+      {
+        "type": "Id",
+        "value": "settings_$_button_pick_color"
+      }
+    ],
     "action": [
       {
         "type": "click",
@@ -680,10 +424,12 @@
     ]
   },
   {
-    "get_element_by": {
-      "type": "XPath",
-      "value": "/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.GridView/android.widget.LinearLayout[5]/android.widget.ImageView"
-    },
+    "get_element_by": [
+      {
+        "type": "XPath",
+        "value": "/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.GridView/android.widget.LinearLayout[2]/android.widget.ImageView"
+      }
+    ],
     "action": [
       {
         "type": "click",
@@ -692,10 +438,12 @@
     ]
   },
   {
-    "get_element_by": {
-      "type": "XPath",
-      "value": "/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[2]/android.support.v4.widget.DrawerLayout/android.widget.RelativeLayout/android.widget.ScrollView/android.widget.LinearLayout/android.widget.LinearLayout[2]/android.widget.Spinner/android.widget.LinearLayout/android.widget.TextView"
-    },
+    "get_element_by": [
+      {
+        "type": "Id",
+        "value": "settings_$_button_rate"
+      }
+    ],
     "action": [
       {
         "type": "click",
@@ -704,10 +452,392 @@
     ]
   },
   {
-    "get_element_by": {
-      "type": "Id",
-      "value": "notes_menu_$_add"
-    },
+    "get_element_by": [
+      {
+        "type": "XPath",
+        "value": "/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[2]/android.support.v4.widget.DrawerLayout/android.widget.RelativeLayout/android.widget.ScrollView/android.widget.LinearLayout/android.widget.RelativeLayout/android.widget.Spinner/android.widget.LinearLayout/android.widget.TextView"
+      }
+    ],
+    "action": [
+      {
+        "type": "click",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "get_element_by": [
+      {
+        "type": "Id",
+        "value": "option_row_$_textview_item"
+      },
+      {
+        "type": "Text",
+        "value": "By alphabet"
+      }
+    ],
+    "action": [
+      {
+        "type": "click",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "get_element_by": [
+      {
+        "type": "XPath",
+        "value": "/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/android.view.ViewGroup/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.ImageView"
+      }
+    ],
+    "action": [
+      {
+        "type": "click",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "get_element_by": [
+      {
+        "type": "XPath",
+        "value": "/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/android.view.ViewGroup/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.ImageView"
+      }
+    ],
+    "action": [
+      {
+        "type": "click",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "get_element_by": [
+      {
+        "type": "XPath",
+        "value": "/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/android.view.ViewGroup/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.ImageView[2]"
+      }
+    ],
+    "action": [
+      {
+        "type": "click",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "get_element_by": [
+      {
+        "type": "XPath",
+        "value": "/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/android.view.ViewGroup/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.ImageView[2]"
+      }
+    ],
+    "action": [
+      {
+        "type": "click",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "get_element_by": [
+      {
+        "type": "Text",
+        "value": "Pocket Note"
+      }
+    ],
+    "action": [
+      {
+        "type": "click",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "get_element_by": [
+      {
+        "type": "Text",
+        "value": "Pocket Note"
+      }
+    ],
+    "action": [
+      {
+        "type": "click",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "get_element_by": [
+      {
+        "type": "Id",
+        "value": "settings_$_button_pick_color"
+      }
+    ],
+    "action": [
+      {
+        "type": "click",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "get_element_by": [
+      {
+        "type": "XPath",
+        "value": "/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.GridView/android.widget.LinearLayout[3]/android.widget.ImageView"
+      }
+    ],
+    "action": [
+      {
+        "type": "click",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "get_element_by": [
+      {
+        "type": "Id",
+        "value": "settings_$_button_rate"
+      }
+    ],
+    "action": [
+      {
+        "type": "click",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "get_element_by": [
+      {
+        "type": "XPath",
+        "value": "/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[2]/android.support.v4.widget.DrawerLayout/android.widget.RelativeLayout/android.widget.ScrollView/android.widget.LinearLayout/android.widget.RelativeLayout/android.widget.Spinner/android.widget.LinearLayout/android.widget.TextView"
+      }
+    ],
+    "action": [
+      {
+        "type": "click",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "get_element_by": [
+      {
+        "type": "Id",
+        "value": "option_row_$_textview_item"
+      },
+      {
+        "type": "Text",
+        "value": "By color"
+      }
+    ],
+    "action": [
+      {
+        "type": "click",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "get_element_by": [
+      {
+        "type": "XPath",
+        "value": "/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/android.view.ViewGroup/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.ImageView"
+      }
+    ],
+    "action": [
+      {
+        "type": "click",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "get_element_by": [
+      {
+        "type": "XPath",
+        "value": "/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/android.view.ViewGroup/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.ImageView"
+      }
+    ],
+    "action": [
+      {
+        "type": "click",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "get_element_by": [
+      {
+        "type": "XPath",
+        "value": "/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/android.view.ViewGroup/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.ImageView[2]"
+      }
+    ],
+    "action": [
+      {
+        "type": "click",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "get_element_by": [
+      {
+        "type": "XPath",
+        "value": "/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/android.view.ViewGroup/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.ImageView[2]"
+      }
+    ],
+    "action": [
+      {
+        "type": "click",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "get_element_by": [
+      {
+        "type": "Text",
+        "value": "Pocket Note"
+      }
+    ],
+    "action": [
+      {
+        "type": "click",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "get_element_by": [
+      {
+        "type": "Text",
+        "value": "Pocket Note"
+      }
+    ],
+    "action": [
+      {
+        "type": "click",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "get_element_by": [
+      {
+        "type": "Id",
+        "value": "settings_$_button_pick_color"
+      }
+    ],
+    "action": [
+      {
+        "type": "click",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "get_element_by": [
+      {
+        "type": "XPath",
+        "value": "/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.GridView/android.widget.LinearLayout[4]/android.widget.ImageView"
+      }
+    ],
+    "action": [
+      {
+        "type": "click",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "get_element_by": [
+      {
+        "type": "Id",
+        "value": "settings_$_button_rate"
+      }
+    ],
+    "action": [
+      {
+        "type": "click",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "get_element_by": [
+      {
+        "type": "XPath",
+        "value": "/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[2]/android.support.v4.widget.DrawerLayout/android.widget.RelativeLayout/android.widget.ScrollView/android.widget.LinearLayout/android.widget.RelativeLayout/android.widget.Spinner/android.widget.LinearLayout/android.widget.TextView"
+      }
+    ],
+    "action": [
+      {
+        "type": "click",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "action": [
+      {
+        "type": "pressBack",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "get_element_by": [
+      {
+        "type": "Text",
+        "value": "Default color"
+      }
+    ],
+    "action": [
+      {
+        "type": "click",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "get_element_by": [
+      {
+        "type": "XPath",
+        "value": "/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.GridView/android.widget.LinearLayout[5]/android.widget.ImageView"
+      }
+    ],
+    "action": [
+      {
+        "type": "click",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "get_element_by": [
+      {
+        "type": "XPath",
+        "value": "/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[2]/android.support.v4.widget.DrawerLayout/android.widget.RelativeLayout/android.widget.ScrollView/android.widget.LinearLayout/android.widget.LinearLayout[2]/android.widget.Spinner/android.widget.LinearLayout/android.widget.TextView"
+      }
+    ],
+    "action": [
+      {
+        "type": "click",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "get_element_by": [
+      {
+        "type": "Id",
+        "value": "notes_menu_$_add"
+      }
+    ],
     "action": [
       {
         "type": "longClick",
@@ -716,10 +846,12 @@
     ]
   },
   {
-    "get_element_by": {
-      "type": "Text",
-      "value": "Pocket Note"
-    },
+    "get_element_by": [
+      {
+        "type": "Text",
+        "value": "Pocket Note"
+      }
+    ],
     "action": [
       {
         "type": "click",
@@ -728,10 +860,12 @@
     ]
   },
   {
-    "get_element_by": {
-      "type": "ContentDescription",
-      "value": "Search"
-    },
+    "get_element_by": [
+      {
+        "type": "ContentDescription",
+        "value": "Search"
+      }
+    ],
     "action": [
       {
         "type": "click",
@@ -740,10 +874,16 @@
     ]
   },
   {
-    "get_element_by": {
-      "type": "Id",
-      "value": "navmenuitem_label"
-    },
+    "get_element_by": [
+      {
+        "type": "Id",
+        "value": "navmenuitem_label"
+      },
+      {
+        "type": "Text",
+        "value": "Settings"
+      }
+    ],
     "action": [
       {
         "type": "click",
@@ -752,10 +892,12 @@
     ]
   },
   {
-    "get_element_by": {
-      "type": "Id",
-      "value": "settings_$_button_pick_color"
-    },
+    "get_element_by": [
+      {
+        "type": "Id",
+        "value": "settings_$_button_pick_color"
+      }
+    ],
     "action": [
       {
         "type": "click",
@@ -764,10 +906,12 @@
     ]
   },
   {
-    "get_element_by": {
-      "type": "XPath",
-      "value": "/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.GridView/android.widget.LinearLayout[6]/android.widget.ImageView"
-    },
+    "get_element_by": [
+      {
+        "type": "XPath",
+        "value": "/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.GridView/android.widget.LinearLayout[6]/android.widget.ImageView"
+      }
+    ],
     "action": [
       {
         "type": "click",
@@ -776,10 +920,12 @@
     ]
   },
   {
-    "get_element_by": {
-      "type": "Id",
-      "value": "settings_$_button_rate"
-    },
+    "get_element_by": [
+      {
+        "type": "Id",
+        "value": "settings_$_button_rate"
+      }
+    ],
     "action": [
       {
         "type": "click",
@@ -788,186 +934,12 @@
     ]
   },
   {
-    "get_element_by": {
-      "type": "XPath",
-      "value": "/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[2]/android.support.v4.widget.DrawerLayout/android.widget.RelativeLayout/android.widget.ScrollView/android.widget.LinearLayout/android.widget.RelativeLayout/android.widget.Spinner/android.widget.LinearLayout/android.widget.TextView"
-    },
-    "action": [
+    "get_element_by": [
       {
-        "type": "click",
-        "value": ""
+        "type": "XPath",
+        "value": "/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[2]/android.support.v4.widget.DrawerLayout/android.widget.RelativeLayout/android.widget.ScrollView/android.widget.LinearLayout/android.widget.RelativeLayout/android.widget.Spinner/android.widget.LinearLayout/android.widget.TextView"
       }
-    ]
-  },
-  {
-    "action": [
-      {
-        "type": "pressBack",
-        "value": ""
-      }
-    ]
-  },
-  {
-    "get_element_by": {
-      "type": "Text",
-      "value": "Default color"
-    },
-    "action": [
-      {
-        "type": "click",
-        "value": ""
-      }
-    ]
-  },
-  {
-    "get_element_by": {
-      "type": "XPath",
-      "value": "/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.GridView/android.widget.LinearLayout[7]/android.widget.ImageView"
-    },
-    "action": [
-      {
-        "type": "click",
-        "value": ""
-      }
-    ]
-  },
-  {
-    "get_element_by": {
-      "type": "XPath",
-      "value": "/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[2]/android.support.v4.widget.DrawerLayout/android.widget.RelativeLayout/android.widget.ScrollView/android.widget.LinearLayout/android.widget.LinearLayout[2]/android.widget.Spinner/android.widget.LinearLayout/android.widget.TextView"
-    },
-    "action": [
-      {
-        "type": "click",
-        "value": ""
-      }
-    ]
-  },
-  {
-    "get_element_by": {
-      "type": "Id",
-      "value": "option_row_$_textview_item"
-    },
-    "action": [
-      {
-        "type": "click",
-        "value": ""
-      }
-    ]
-  },
-  {
-    "get_element_by": {
-      "type": "XPath",
-      "value": "/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/android.view.ViewGroup/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.ImageView"
-    },
-    "action": [
-      {
-        "type": "click",
-        "value": ""
-      }
-    ]
-  },
-  {
-    "get_element_by": {
-      "type": "XPath",
-      "value": "/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/android.view.ViewGroup/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.ImageView"
-    },
-    "action": [
-      {
-        "type": "click",
-        "value": ""
-      }
-    ]
-  },
-  {
-    "get_element_by": {
-      "type": "XPath",
-      "value": "/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/android.view.ViewGroup/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.ImageView[2]"
-    },
-    "action": [
-      {
-        "type": "click",
-        "value": ""
-      }
-    ]
-  },
-  {
-    "get_element_by": {
-      "type": "XPath",
-      "value": "/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/android.view.ViewGroup/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.ImageView[2]"
-    },
-    "action": [
-      {
-        "type": "click",
-        "value": ""
-      }
-    ]
-  },
-  {
-    "get_element_by": {
-      "type": "Text",
-      "value": "Pocket Note"
-    },
-    "action": [
-      {
-        "type": "click",
-        "value": ""
-      }
-    ]
-  },
-  {
-    "get_element_by": {
-      "type": "Text",
-      "value": "Pocket Note"
-    },
-    "action": [
-      {
-        "type": "click",
-        "value": ""
-      }
-    ]
-  },
-  {
-    "get_element_by": {
-      "type": "Id",
-      "value": "settings_$_button_pick_color"
-    },
-    "action": [
-      {
-        "type": "click",
-        "value": ""
-      }
-    ]
-  },
-  {
-    "get_element_by": {
-      "type": "XPath",
-      "value": "/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.GridView/android.widget.LinearLayout[8]/android.widget.ImageView"
-    },
-    "action": [
-      {
-        "type": "click",
-        "value": ""
-      }
-    ]
-  },
-  {
-    "get_element_by": {
-      "type": "Id",
-      "value": "settings_$_button_rate"
-    },
-    "action": [
-      {
-        "type": "click",
-        "value": ""
-      }
-    ]
-  },
-  {
-    "get_element_by": {
-      "type": "XPath",
-      "value": "/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[2]/android.support.v4.widget.DrawerLayout/android.widget.RelativeLayout/android.widget.ScrollView/android.widget.LinearLayout/android.widget.RelativeLayout/android.widget.Spinner/android.widget.LinearLayout/android.widget.TextView"
-    },
+    ],
     "action": [
       {
         "type": "click",
@@ -984,10 +956,198 @@
     ]
   },
   {
-    "get_element_by": {
-      "type": "Text",
-      "value": "Default color"
-    },
+    "get_element_by": [
+      {
+        "type": "Text",
+        "value": "Default color"
+      }
+    ],
+    "action": [
+      {
+        "type": "click",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "get_element_by": [
+      {
+        "type": "XPath",
+        "value": "/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.GridView/android.widget.LinearLayout[7]/android.widget.ImageView"
+      }
+    ],
+    "action": [
+      {
+        "type": "click",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "get_element_by": [
+      {
+        "type": "XPath",
+        "value": "/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[2]/android.support.v4.widget.DrawerLayout/android.widget.RelativeLayout/android.widget.ScrollView/android.widget.LinearLayout/android.widget.LinearLayout[2]/android.widget.Spinner/android.widget.LinearLayout/android.widget.TextView"
+      }
+    ],
+    "action": [
+      {
+        "type": "click",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "get_element_by": [
+      {
+        "type": "Id",
+        "value": "option_row_$_textview_item"
+      },
+      {
+        "type": "Text",
+        "value": "As grid view"
+      }
+    ],
+    "action": [
+      {
+        "type": "click",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "get_element_by": [
+      {
+        "type": "XPath",
+        "value": "/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/android.view.ViewGroup/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.ImageView"
+      }
+    ],
+    "action": [
+      {
+        "type": "click",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "get_element_by": [
+      {
+        "type": "XPath",
+        "value": "/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/android.view.ViewGroup/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.ImageView"
+      }
+    ],
+    "action": [
+      {
+        "type": "click",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "get_element_by": [
+      {
+        "type": "XPath",
+        "value": "/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/android.view.ViewGroup/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.ImageView[2]"
+      }
+    ],
+    "action": [
+      {
+        "type": "click",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "get_element_by": [
+      {
+        "type": "XPath",
+        "value": "/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/android.view.ViewGroup/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.ImageView[2]"
+      }
+    ],
+    "action": [
+      {
+        "type": "click",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "get_element_by": [
+      {
+        "type": "Text",
+        "value": "Pocket Note"
+      }
+    ],
+    "action": [
+      {
+        "type": "click",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "get_element_by": [
+      {
+        "type": "Text",
+        "value": "Pocket Note"
+      }
+    ],
+    "action": [
+      {
+        "type": "click",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "get_element_by": [
+      {
+        "type": "Id",
+        "value": "settings_$_button_pick_color"
+      }
+    ],
+    "action": [
+      {
+        "type": "click",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "get_element_by": [
+      {
+        "type": "XPath",
+        "value": "/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.GridView/android.widget.LinearLayout[8]/android.widget.ImageView"
+      }
+    ],
+    "action": [
+      {
+        "type": "click",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "get_element_by": [
+      {
+        "type": "Id",
+        "value": "settings_$_button_rate"
+      }
+    ],
+    "action": [
+      {
+        "type": "click",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "get_element_by": [
+      {
+        "type": "XPath",
+        "value": "/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[2]/android.support.v4.widget.DrawerLayout/android.widget.RelativeLayout/android.widget.ScrollView/android.widget.LinearLayout/android.widget.RelativeLayout/android.widget.Spinner/android.widget.LinearLayout/android.widget.TextView"
+      }
+    ],
     "action": [
       {
         "type": "click",
@@ -1004,10 +1164,12 @@
     ]
   },
   {
-    "get_element_by": {
-      "type": "XPath",
-      "value": "/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[2]/android.support.v4.widget.DrawerLayout/android.widget.RelativeLayout/android.widget.ScrollView/android.widget.LinearLayout/android.widget.LinearLayout[2]/android.widget.Spinner/android.widget.LinearLayout/android.widget.TextView"
-    },
+    "get_element_by": [
+      {
+        "type": "Text",
+        "value": "Default color"
+      }
+    ],
     "action": [
       {
         "type": "click",
@@ -1024,10 +1186,12 @@
     ]
   },
   {
-    "get_element_by": {
-      "type": "Text",
-      "value": "Master password"
-    },
+    "get_element_by": [
+      {
+        "type": "XPath",
+        "value": "/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[2]/android.support.v4.widget.DrawerLayout/android.widget.RelativeLayout/android.widget.ScrollView/android.widget.LinearLayout/android.widget.LinearLayout[2]/android.widget.Spinner/android.widget.LinearLayout/android.widget.TextView"
+      }
+    ],
     "action": [
       {
         "type": "click",
@@ -1044,10 +1208,12 @@
     ]
   },
   {
-    "get_element_by": {
-      "type": "Id",
-      "value": "settings_$_imageview_photo"
-    },
+    "get_element_by": [
+      {
+        "type": "Text",
+        "value": "Master password"
+      }
+    ],
     "action": [
       {
         "type": "click",
@@ -1064,10 +1230,12 @@
     ]
   },
   {
-    "get_element_by": {
-      "type": "Id",
-      "value": "settings_$_textview_display_name_title"
-    },
+    "get_element_by": [
+      {
+        "type": "Id",
+        "value": "settings_$_imageview_photo"
+      }
+    ],
     "action": [
       {
         "type": "click",
@@ -1084,46 +1252,12 @@
     ]
   },
   {
-    "action": [
+    "get_element_by": [
       {
-        "type": "pressBack",
-        "value": ""
+        "type": "Id",
+        "value": "settings_$_textview_display_name_title"
       }
-    ]
-  },
-  {
-    "get_element_by": {
-      "type": "Id",
-      "value": "settings_$_textview_display_name"
-    },
-    "action": [
-      {
-        "type": "click",
-        "value": ""
-      }
-    ]
-  },
-  {
-    "action": [
-      {
-        "type": "pressBack",
-        "value": ""
-      }
-    ]
-  },
-  {
-    "action": [
-      {
-        "type": "pressBack",
-        "value": ""
-      }
-    ]
-  },
-  {
-    "get_element_by": {
-      "type": "Id",
-      "value": "settings_$_textview_photo_title"
-    },
+    ],
     "action": [
       {
         "type": "click",
@@ -1148,10 +1282,12 @@
     ]
   },
   {
-    "get_element_by": {
-      "type": "Id",
-      "value": "settings_$_button_pick_color"
-    },
+    "get_element_by": [
+      {
+        "type": "Id",
+        "value": "settings_$_textview_display_name"
+      }
+    ],
     "action": [
       {
         "type": "click",
@@ -1168,22 +1304,20 @@
     ]
   },
   {
-    "get_element_by": {
-      "type": "Id",
-      "value": "settings_$_button_rate"
-    },
     "action": [
       {
-        "type": "click",
+        "type": "pressBack",
         "value": ""
       }
     ]
   },
   {
-    "get_element_by": {
-      "type": "XPath",
-      "value": "/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[2]/android.support.v4.widget.DrawerLayout/android.widget.RelativeLayout/android.widget.ScrollView/android.widget.LinearLayout/android.widget.RelativeLayout/android.widget.Spinner/android.widget.LinearLayout/android.widget.TextView"
-    },
+    "get_element_by": [
+      {
+        "type": "Id",
+        "value": "settings_$_textview_photo_title"
+      }
+    ],
     "action": [
       {
         "type": "click",
@@ -1200,10 +1334,20 @@
     ]
   },
   {
-    "get_element_by": {
-      "type": "Text",
-      "value": "Default color"
-    },
+    "action": [
+      {
+        "type": "pressBack",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "get_element_by": [
+      {
+        "type": "Id",
+        "value": "settings_$_button_pick_color"
+      }
+    ],
     "action": [
       {
         "type": "click",
@@ -1220,10 +1364,12 @@
     ]
   },
   {
-    "get_element_by": {
-      "type": "XPath",
-      "value": "/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[2]/android.support.v4.widget.DrawerLayout/android.widget.RelativeLayout/android.widget.ScrollView/android.widget.LinearLayout/android.widget.LinearLayout[2]/android.widget.Spinner/android.widget.LinearLayout/android.widget.TextView"
-    },
+    "get_element_by": [
+      {
+        "type": "Id",
+        "value": "settings_$_button_rate"
+      }
+    ],
     "action": [
       {
         "type": "click",
@@ -1232,10 +1378,70 @@
     ]
   },
   {
-    "get_element_by": {
-      "type": "ContentDescription",
-      "value": "Search"
-    },
+    "get_element_by": [
+      {
+        "type": "XPath",
+        "value": "/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[2]/android.support.v4.widget.DrawerLayout/android.widget.RelativeLayout/android.widget.ScrollView/android.widget.LinearLayout/android.widget.RelativeLayout/android.widget.Spinner/android.widget.LinearLayout/android.widget.TextView"
+      }
+    ],
+    "action": [
+      {
+        "type": "click",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "action": [
+      {
+        "type": "pressBack",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "get_element_by": [
+      {
+        "type": "Text",
+        "value": "Default color"
+      }
+    ],
+    "action": [
+      {
+        "type": "click",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "action": [
+      {
+        "type": "pressBack",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "get_element_by": [
+      {
+        "type": "XPath",
+        "value": "/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[2]/android.support.v4.widget.DrawerLayout/android.widget.RelativeLayout/android.widget.ScrollView/android.widget.LinearLayout/android.widget.LinearLayout[2]/android.widget.Spinner/android.widget.LinearLayout/android.widget.TextView"
+      }
+    ],
+    "action": [
+      {
+        "type": "click",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "get_element_by": [
+      {
+        "type": "ContentDescription",
+        "value": "Search"
+      }
+    ],
     "action": [
       {
         "type": "click",

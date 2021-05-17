@@ -1,9 +1,11 @@
 [
   {
-    "get_element_by": {
-      "type": "Id",
-      "value": "welcome_view_pager"
-    },
+    "get_element_by": [
+      {
+        "type": "Id",
+        "value": "welcome_view_pager"
+      }
+    ],
     "action": [
       {
         "type": "swipeLeft",
@@ -12,10 +14,20 @@
     ]
   },
   {
-    "get_element_by": {
-      "type": "Id",
-      "value": "onboarding_screen2_next_button"
-    },
+    "get_element_by": [
+      {
+        "type": "Id",
+        "value": "onboarding_screen2_next_button"
+      },
+      {
+        "type": "Text",
+        "value": "Go with $"
+      },
+      {
+        "type": "isDisplayed",
+        "value": ""
+      }
+    ],
     "action": [
       {
         "type": "click",
@@ -24,10 +36,12 @@
     ]
   },
   {
-    "get_element_by": {
-      "type": "Id",
-      "value": "onboarding_screen3_next_button"
-    },
+    "get_element_by": [
+      {
+        "type": "Id",
+        "value": "onboarding_screen3_next_button"
+      }
+    ],
     "action": [
       {
         "type": "click",
@@ -36,10 +50,20 @@
     ]
   },
   {
-    "get_element_by": {
-      "type": "Id",
-      "value": "onboarding_screen4_next_button"
-    },
+    "get_element_by": [
+      {
+        "type": "Id",
+        "value": "onboarding_screen4_next_button"
+      },
+      {
+        "type": "Text",
+        "value": "Let's go!"
+      },
+      {
+        "type": "isDisplayed",
+        "value": ""
+      }
+    ],
     "action": [
       {
         "type": "click",
@@ -48,10 +72,12 @@
     ]
   },
   {
-    "get_element_by": {
-      "type": "Id",
-      "value": "fab_expand_menu_button"
-    },
+    "get_element_by": [
+      {
+        "type": "Id",
+        "value": "fab_expand_menu_button"
+      }
+    ],
     "action": [
       {
         "type": "click",
@@ -60,10 +86,12 @@
     ]
   },
   {
-    "get_element_by": {
-      "type": "Id",
-      "value": "fab_new_expense"
-    },
+    "get_element_by": [
+      {
+        "type": "Id",
+        "value": "fab_new_expense"
+      }
+    ],
     "action": [
       {
         "type": "click",
@@ -72,10 +100,12 @@
     ]
   },
   {
-    "get_element_by": {
-      "type": "Id",
-      "value": "description_edittext"
-    },
+    "get_element_by": [
+      {
+        "type": "Id",
+        "value": "description_edittext"
+      }
+    ],
     "action": [
       {
         "type": "replaceText",
@@ -84,10 +114,12 @@
     ]
   },
   {
-    "get_element_by": {
-      "type": "Id",
-      "value": "amount_edittext"
-    },
+    "get_element_by": [
+      {
+        "type": "Id",
+        "value": "amount_edittext"
+      }
+    ],
     "action": [
       {
         "type": "replaceText",
@@ -96,10 +128,12 @@
     ]
   },
   {
-    "get_element_by": {
-      "type": "Text",
-      "value": "No income or expense yet."
-    },
+    "get_element_by": [
+      {
+        "type": "Text",
+        "value": "No income or expense yet."
+      }
+    ],
     "action": [
       {
         "type": "check",

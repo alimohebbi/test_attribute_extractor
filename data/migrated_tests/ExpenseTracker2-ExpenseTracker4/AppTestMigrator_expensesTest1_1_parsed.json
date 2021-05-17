@@ -1,9 +1,11 @@
 [
   {
-    "get_element_by": {
-      "type": "ContentDescription",
-      "value": "Open navigation drawer"
-    },
+    "get_element_by": [
+      {
+        "type": "ContentDescription",
+        "value": "Open navigation drawer"
+      }
+    ],
     "action": [
       {
         "type": "click",
@@ -20,10 +22,12 @@
     ]
   },
   {
-    "get_element_by": {
-      "type": "Id",
-      "value": "btn_add_income"
-    },
+    "get_element_by": [
+      {
+        "type": "Id",
+        "value": "btn_add_income"
+      }
+    ],
     "action": [
       {
         "type": "click",
@@ -32,10 +36,12 @@
     ]
   },
   {
-    "get_element_by": {
-      "type": "Id",
-      "value": "action_done"
-    },
+    "get_element_by": [
+      {
+        "type": "Id",
+        "value": "action_done"
+      }
+    ],
     "action": [
       {
         "type": "click",
@@ -44,10 +50,12 @@
     ]
   },
   {
-    "get_element_by": {
-      "type": "Id",
-      "value": "tv_date"
-    },
+    "get_element_by": [
+      {
+        "type": "Id",
+        "value": "tv_date"
+      }
+    ],
     "action": [
       {
         "type": "click",
@@ -56,10 +64,12 @@
     ]
   },
   {
-    "get_element_by": {
-      "type": "ContentDescription",
-      "value": "Next month"
-    },
+    "get_element_by": [
+      {
+        "type": "ContentDescription",
+        "value": "Next month"
+      }
+    ],
     "action": [
       {
         "type": "click",
@@ -68,10 +78,12 @@
     ]
   },
   {
-    "get_element_by": {
-      "type": "Text",
-      "value": "OK"
-    },
+    "get_element_by": [
+      {
+        "type": "Text",
+        "value": "OK"
+      }
+    ],
     "action": [
       {
         "type": "click",
@@ -80,10 +92,12 @@
     ]
   },
   {
-    "get_element_by": {
-      "type": "ContentDescription",
-      "value": "Navigate up"
-    },
+    "get_element_by": [
+      {
+        "type": "ContentDescription",
+        "value": "Navigate up"
+      }
+    ],
     "action": [
       {
         "type": "click",
@@ -92,10 +106,12 @@
     ]
   },
   {
-    "get_element_by": {
-      "type": "Id",
-      "value": "tv_period"
-    },
+    "get_element_by": [
+      {
+        "type": "Id",
+        "value": "tv_period"
+      }
+    ],
     "action": [
       {
         "type": "check",

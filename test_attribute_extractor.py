@@ -64,12 +64,12 @@ def get_element_attributes(element, parsed_event):
 
 def get_element_by_id(driver, resource_id, app_package, log_fname):
     try:
-        element =  driver.find_element_by_id(app_package+":id/"+str(resource_id))
-        return element
+        elements =  driver.find_elements_by_id(app_package+":id/"+str(resource_id))
+        return elements
     except NoSuchElementException:
         try:
-            element =  driver.find_element_by_id("android:id/"+str(resource_id))
-            return element
+            elements =  driver.find_elements_by_id("android:id/"+str(resource_id))
+            return elements
         except NoSuchElementException:
             error_message = 40*"#"+" ERROR! "+40*"#"+"\nNo element with id: "+str(resource_id)+", was found on this page source."+"\n\n\n"
             write_to_error_log(error_message, log_fname)
@@ -77,8 +77,8 @@ def get_element_by_id(driver, resource_id, app_package, log_fname):
 
 def get_element_by_content_desc(driver, content_desc, log_fname):
     try:
-        element = driver.find_element_by_android_uiautomator('new UiSelector().description(\"'+str(content_desc)+'\")')
-        return element
+        elements = driver.find_elements_by_android_uiautomator('new UiSelector().description(\"'+str(content_desc)+'\")')
+        return elements
     except:
         error_message = 40*"#"+" ERROR! "+40*"#"+"\nNo element with content description: "+str(content_desc)+", was found on this page source."+"\n\n\n"
         write_to_error_log(error_message, log_fname)
@@ -86,8 +86,8 @@ def get_element_by_content_desc(driver, content_desc, log_fname):
 
 def get_element_by_text(driver, text, log_fname):
     try:
-        element = driver.find_element_by_android_uiautomator('new UiSelector().text(\"'str(text)+'\")')
-        return element
+        elements = driver.find_elements_by_android_uiautomator('new UiSelector().text(\"'str(text)+'\")')
+        return elements
     except:
         error_message = 40*"#"+" ERROR! "+40*"#"+"\nNo element with text: "+str(text)+", was found on this page source."+"\n\n\n"
         write_to_error_log(error_message, log_fname)
@@ -95,8 +95,8 @@ def get_element_by_text(driver, text, log_fname):
 
 def get_element_by_xpath(driver, xpath, log_fname):
     try:
-        element = driver.find_element_by_xpath("/hierarchy"str(xpath))
-        return element
+        elements = driver.find_element_by_xpath("/hierarchy"str(xpath))
+        return elements
     except:
         error_message = 40*"#"+" ERROR! "+40*"#"+"\nNo element with xpath: "+str(xpath)+", was found on this page source."+"\n\n\n"
         write_to_error_log(error_message, log_fname)
@@ -104,8 +104,8 @@ def get_element_by_xpath(driver, xpath, log_fname):
 
 def get_element_by_class_name(driver, class_name, log_fname):
     try:
-        element = driver.find_element_by_class_name(class_name)
-        return element
+        elements = driver.find_element_by_class_name(class_name)
+        return elements
     except:
         error_message = 40*"#"+" ERROR! "+40*"#"+"\nNo element with class name: "+str(class_name)+", was found on this page source."+"\n\n\n"
         write_to_error_log(error_message, log_fname)

@@ -1,9 +1,15 @@
 [
   {
-    "get_element_by": {
-      "type": "Id",
-      "value": "action_add"
-    },
+    "get_element_by": [
+      {
+        "type": "Id",
+        "value": "action_add"
+      },
+      {
+        "type": "ContentDescription",
+        "value": "New list"
+      }
+    ],
     "action": [
       {
         "type": "click",
@@ -12,10 +18,12 @@
     ]
   },
   {
-    "get_element_by": {
-      "type": "XPath",
-      "value": "/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.EditText"
-    },
+    "get_element_by": [
+      {
+        "type": "XPath",
+        "value": "/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.EditText"
+      }
+    ],
     "action": [
       {
         "type": "replaceText",
@@ -24,10 +32,16 @@
     ]
   },
   {
-    "get_element_by": {
-      "type": "Id",
-      "value": "button1"
-    },
+    "get_element_by": [
+      {
+        "type": "Id",
+        "value": "button1"
+      },
+      {
+        "type": "Text",
+        "value": "OK"
+      }
+    ],
     "action": [
       {
         "type": "click",
@@ -36,10 +50,16 @@
     ]
   },
   {
-    "get_element_by": {
-      "type": "Text",
-      "value": "list"
-    },
+    "get_element_by": [
+      {
+        "type": "ClassName",
+        "value": "android.widget.TextView"
+      },
+      {
+        "type": "Text",
+        "value": "list"
+      }
+    ],
     "action": [
       {
         "type": "check",

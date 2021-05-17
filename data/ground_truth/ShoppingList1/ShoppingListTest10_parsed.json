@@ -1,9 +1,11 @@
 [
   {
-    "get_element_by": {
-      "type": "Id",
-      "value": "fab"
-    },
+    "get_element_by": [
+      {
+        "type": "Id",
+        "value": "fab"
+      }
+    ],
     "action": [
       {
         "type": "click",
@@ -12,10 +14,12 @@
     ]
   },
   {
-    "get_element_by": {
-      "type": "Id",
-      "value": "shoppingListNameEditText"
-    },
+    "get_element_by": [
+      {
+        "type": "Id",
+        "value": "shoppingListNameEditText"
+      }
+    ],
     "action": [
       {
         "type": "replaceText",
@@ -24,10 +28,12 @@
     ]
   },
   {
-    "get_element_by": {
-      "type": "Id",
-      "value": "shoppingListDescriptionEditText"
-    },
+    "get_element_by": [
+      {
+        "type": "Id",
+        "value": "shoppingListDescriptionEditText"
+      }
+    ],
     "action": [
       {
         "type": "replaceText",
@@ -36,10 +42,16 @@
     ]
   },
   {
-    "get_element_by": {
-      "type": "Id",
-      "value": "addShoppingListButton"
-    },
+    "get_element_by": [
+      {
+        "type": "Id",
+        "value": "addShoppingListButton"
+      },
+      {
+        "type": "Text",
+        "value": "Save"
+      }
+    ],
     "action": [
       {
         "type": "click",
@@ -48,10 +60,16 @@
     ]
   },
   {
-    "get_element_by": {
-      "type": "Id",
-      "value": "shoppingListNameTextView"
-    },
+    "get_element_by": [
+      {
+        "type": "Id",
+        "value": "shoppingListNameTextView"
+      },
+      {
+        "type": "Text",
+        "value": "Grocery"
+      }
+    ],
     "action": [
       {
         "type": "check",

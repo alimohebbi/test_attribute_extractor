@@ -1,9 +1,11 @@
 [
   {
-    "get_element_by": {
-      "type": "Id",
-      "value": "notes_$_linearlayout_empty"
-    },
+    "get_element_by": [
+      {
+        "type": "Id",
+        "value": "notes_$_linearlayout_empty"
+      }
+    ],
     "action": [
       {
         "type": "click",
@@ -12,10 +14,12 @@
     ]
   },
   {
-    "get_element_by": {
-      "type": "Id",
-      "value": "editor_$_edittext_title"
-    },
+    "get_element_by": [
+      {
+        "type": "Id",
+        "value": "editor_$_edittext_title"
+      }
+    ],
     "action": [
       {
         "type": "replaceText",
@@ -24,10 +28,12 @@
     ]
   },
   {
-    "get_element_by": {
-      "type": "Id",
-      "value": "editor_$_note_editor"
-    },
+    "get_element_by": [
+      {
+        "type": "Id",
+        "value": "editor_$_note_editor"
+      }
+    ],
     "action": [
       {
         "type": "replaceText",
@@ -44,10 +50,16 @@
     ]
   },
   {
-    "get_element_by": {
-      "type": "Id",
-      "value": "note_item_$_textview_title"
-    },
+    "get_element_by": [
+      {
+        "type": "Id",
+        "value": "note_item_$_textview_title"
+      },
+      {
+        "type": "Text",
+        "value": "to-do"
+      }
+    ],
     "action": [
       {
         "type": "check",

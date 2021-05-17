@@ -1,9 +1,15 @@
 [
   {
-    "get_element_by": {
-      "type": "Id",
-      "value": "btn_skip"
-    },
+    "get_element_by": [
+      {
+        "type": "Id",
+        "value": "btn_skip"
+      },
+      {
+        "type": "Text",
+        "value": "Skip"
+      }
+    ],
     "action": [
       {
         "type": "click",
@@ -12,10 +18,12 @@
     ]
   },
   {
-    "get_element_by": {
-      "type": "Id",
-      "value": "fab_new_list"
-    },
+    "get_element_by": [
+      {
+        "type": "Id",
+        "value": "fab_new_list"
+      }
+    ],
     "action": [
       {
         "type": "click",
@@ -24,10 +32,12 @@
     ]
   },
   {
-    "get_element_by": {
-      "type": "Id",
-      "value": "list_name"
-    },
+    "get_element_by": [
+      {
+        "type": "Id",
+        "value": "list_name"
+      }
+    ],
     "action": [
       {
         "type": "replaceText",
@@ -36,10 +46,16 @@
     ]
   },
   {
-    "get_element_by": {
-      "type": "Id",
-      "value": "button1"
-    },
+    "get_element_by": [
+      {
+        "type": "Id",
+        "value": "button1"
+      },
+      {
+        "type": "Text",
+        "value": "Okay"
+      }
+    ],
     "action": [
       {
         "type": "click",
@@ -48,10 +64,16 @@
     ]
   },
   {
-    "get_element_by": {
-      "type": "Text",
-      "value": "grocery"
-    },
+    "get_element_by": [
+      {
+        "type": "Text",
+        "value": "grocery"
+      },
+      {
+        "type": "isDisplayed",
+        "value": ""
+      }
+    ],
     "action": [
       {
         "type": "check",

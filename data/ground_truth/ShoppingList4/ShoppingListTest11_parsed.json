@@ -1,9 +1,11 @@
 [
   {
-    "get_element_by": {
-      "type": "ContentDescription",
-      "value": "More options"
-    },
+    "get_element_by": [
+      {
+        "type": "ContentDescription",
+        "value": "More options"
+      }
+    ],
     "action": [
       {
         "type": "click",
@@ -12,10 +14,20 @@
     ]
   },
   {
-    "get_element_by": {
-      "type": "Id",
-      "value": "title"
-    },
+    "get_element_by": [
+      {
+        "type": "Id",
+        "value": "title"
+      },
+      {
+        "type": "Text",
+        "value": "New list"
+      },
+      {
+        "type": "isDisplayed",
+        "value": ""
+      }
+    ],
     "action": [
       {
         "type": "click",
@@ -24,10 +36,12 @@
     ]
   },
   {
-    "get_element_by": {
-      "type": "Id",
-      "value": "edittext"
-    },
+    "get_element_by": [
+      {
+        "type": "Id",
+        "value": "edittext"
+      }
+    ],
     "action": [
       {
         "type": "replaceText",
@@ -36,10 +50,16 @@
     ]
   },
   {
-    "get_element_by": {
-      "type": "Id",
-      "value": "button1"
-    },
+    "get_element_by": [
+      {
+        "type": "Id",
+        "value": "button1"
+      },
+      {
+        "type": "Text",
+        "value": "OK"
+      }
+    ],
     "action": [
       {
         "type": "click",
@@ -48,10 +68,12 @@
     ]
   },
   {
-    "get_element_by": {
-      "type": "Id",
-      "value": "text1"
-    },
+    "get_element_by": [
+      {
+        "type": "Id",
+        "value": "text1"
+      }
+    ],
     "action": [
       {
         "type": "check",
@@ -73,10 +95,20 @@
     ]
   },
   {
-    "get_element_by": {
-      "type": "Id",
-      "value": "button_add_item"
-    },
+    "get_element_by": [
+      {
+        "type": "Id",
+        "value": "button_add_item"
+      },
+      {
+        "type": "Text",
+        "value": "Add"
+      },
+      {
+        "type": "isDisplayed",
+        "value": ""
+      }
+    ],
     "action": [
       {
         "type": "click",
@@ -85,10 +117,16 @@
     ]
   },
   {
-    "get_element_by": {
-      "type": "Id",
-      "value": "button1"
-    },
+    "get_element_by": [
+      {
+        "type": "Id",
+        "value": "button1"
+      },
+      {
+        "type": "Text",
+        "value": "OK"
+      }
+    ],
     "action": [
       {
         "type": "click",
@@ -97,10 +135,12 @@
     ]
   },
   {
-    "get_element_by": {
-      "type": "Id",
-      "value": "autocomplete_add_item"
-    },
+    "get_element_by": [
+      {
+        "type": "Id",
+        "value": "autocomplete_add_item"
+      }
+    ],
     "action": [
       {
         "type": "replaceText",
@@ -109,10 +149,20 @@
     ]
   },
   {
-    "get_element_by": {
-      "type": "Id",
-      "value": "button_add_item"
-    },
+    "get_element_by": [
+      {
+        "type": "Id",
+        "value": "button_add_item"
+      },
+      {
+        "type": "Text",
+        "value": "Add"
+      },
+      {
+        "type": "isDisplayed",
+        "value": ""
+      }
+    ],
     "action": [
       {
         "type": "click",
@@ -121,10 +171,12 @@
     ]
   },
   {
-    "get_element_by": {
-      "type": "Id",
-      "value": "name"
-    },
+    "get_element_by": [
+      {
+        "type": "Id",
+        "value": "name"
+      }
+    ],
     "action": [
       {
         "type": "check",

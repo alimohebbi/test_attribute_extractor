@@ -1,9 +1,15 @@
 [
   {
-    "get_element_by": {
-      "type": "Id",
-      "value": "newNote"
-    },
+    "get_element_by": [
+      {
+        "type": "Id",
+        "value": "newNote"
+      },
+      {
+        "type": "ContentDescription",
+        "value": "New note"
+      }
+    ],
     "action": [
       {
         "type": "click",
@@ -12,10 +18,12 @@
     ]
   },
   {
-    "get_element_by": {
-      "type": "Id",
-      "value": "titleEdit"
-    },
+    "get_element_by": [
+      {
+        "type": "Id",
+        "value": "titleEdit"
+      }
+    ],
     "action": [
       {
         "type": "replaceText",
@@ -24,10 +32,12 @@
     ]
   },
   {
-    "get_element_by": {
-      "type": "Id",
-      "value": "bodyEdit"
-    },
+    "get_element_by": [
+      {
+        "type": "Id",
+        "value": "bodyEdit"
+      }
+    ],
     "action": [
       {
         "type": "replaceText",
@@ -36,10 +46,12 @@
     ]
   },
   {
-    "get_element_by": {
-      "type": "XPath",
-      "value": "/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.view.ViewGroup/android.widget.ImageButton"
-    },
+    "get_element_by": [
+      {
+        "type": "XPath",
+        "value": "/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.view.ViewGroup/android.widget.ImageButton"
+      }
+    ],
     "action": [
       {
         "type": "click",
@@ -48,10 +60,16 @@
     ]
   },
   {
-    "get_element_by": {
-      "type": "Id",
-      "value": "button1"
-    },
+    "get_element_by": [
+      {
+        "type": "Id",
+        "value": "button1"
+      },
+      {
+        "type": "Text",
+        "value": "Yes"
+      }
+    ],
     "action": [
       {
         "type": "click",
@@ -60,10 +78,16 @@
     ]
   },
   {
-    "get_element_by": {
-      "type": "Id",
-      "value": "titleView"
-    },
+    "get_element_by": [
+      {
+        "type": "Id",
+        "value": "titleView"
+      },
+      {
+        "type": "Text",
+        "value": "Title1"
+      }
+    ],
     "action": [
       {
         "type": "check",
@@ -77,10 +101,16 @@
     ]
   },
   {
-    "get_element_by": {
-      "type": "Id",
-      "value": "bodyView"
-    },
+    "get_element_by": [
+      {
+        "type": "Id",
+        "value": "bodyView"
+      },
+      {
+        "type": "Text",
+        "value": "Note1"
+      }
+    ],
     "action": [
       {
         "type": "check",

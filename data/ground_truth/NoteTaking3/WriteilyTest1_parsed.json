@@ -1,9 +1,11 @@
 [
   {
-    "get_element_by": {
-      "type": "Id",
-      "value": "fab_expand_menu_button"
-    },
+    "get_element_by": [
+      {
+        "type": "Id",
+        "value": "fab_expand_menu_button"
+      }
+    ],
     "action": [
       {
         "type": "click",
@@ -12,10 +14,12 @@
     ]
   },
   {
-    "get_element_by": {
-      "type": "Id",
-      "value": "create_note"
-    },
+    "get_element_by": [
+      {
+        "type": "Id",
+        "value": "create_note"
+      }
+    ],
     "action": [
       {
         "type": "click",
@@ -24,10 +28,12 @@
     ]
   },
   {
-    "get_element_by": {
-      "type": "Id",
-      "value": "edit_note_title"
-    },
+    "get_element_by": [
+      {
+        "type": "Id",
+        "value": "edit_note_title"
+      }
+    ],
     "action": [
       {
         "type": "replaceText",
@@ -36,10 +42,12 @@
     ]
   },
   {
-    "get_element_by": {
-      "type": "Id",
-      "value": "note_content"
-    },
+    "get_element_by": [
+      {
+        "type": "Id",
+        "value": "note_content"
+      }
+    ],
     "action": [
       {
         "type": "replaceText",
@@ -48,10 +56,16 @@
     ]
   },
   {
-    "get_element_by": {
-      "type": "Id",
-      "value": "action_preview"
-    },
+    "get_element_by": [
+      {
+        "type": "Id",
+        "value": "action_preview"
+      },
+      {
+        "type": "ContentDescription",
+        "value": "Preview"
+      }
+    ],
     "action": [
       {
         "type": "click",
@@ -60,10 +74,12 @@
     ]
   },
   {
-    "get_element_by": {
-      "type": "ContentDescription",
-      "value": "Navigate up"
-    },
+    "get_element_by": [
+      {
+        "type": "ContentDescription",
+        "value": "Navigate up"
+      }
+    ],
     "action": [
       {
         "type": "click",
@@ -72,10 +88,16 @@
     ]
   },
   {
-    "get_element_by": {
-      "type": "Id",
-      "value": "note_title"
-    },
+    "get_element_by": [
+      {
+        "type": "Id",
+        "value": "note_title"
+      },
+      {
+        "type": "Text",
+        "value": "note"
+      }
+    ],
     "action": [
       {
         "type": "check",

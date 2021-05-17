@@ -1,9 +1,11 @@
 [
   {
-    "get_element_by": {
-      "type": "Id",
-      "value": "newNote"
-    },
+    "get_element_by": [
+      {
+        "type": "Id",
+        "value": "newNote"
+      }
+    ],
     "action": [
       {
         "type": "click",
@@ -12,10 +14,12 @@
     ]
   },
   {
-    "get_element_by": {
-      "type": "Id",
-      "value": "titleEdit"
-    },
+    "get_element_by": [
+      {
+        "type": "Id",
+        "value": "titleEdit"
+      }
+    ],
     "action": [
       {
         "type": "replaceText",
@@ -24,10 +28,12 @@
     ]
   },
   {
-    "get_element_by": {
-      "type": "Id",
-      "value": "bodyEdit"
-    },
+    "get_element_by": [
+      {
+        "type": "Id",
+        "value": "bodyEdit"
+      }
+    ],
     "action": [
       {
         "type": "replaceText",

@@ -1,9 +1,11 @@
 [
   {
-    "get_element_by": {
-      "type": "ContentDescription",
-      "value": "Open navigation drawer"
-    },
+    "get_element_by": [
+      {
+        "type": "ContentDescription",
+        "value": "Open navigation drawer"
+      }
+    ],
     "action": [
       {
         "type": "click",
@@ -12,10 +14,12 @@
     ]
   },
   {
-    "get_element_by": {
-      "type": "Id",
-      "value": "navigation_drawer"
-    },
+    "get_element_by": [
+      {
+        "type": "Id",
+        "value": "navigation_drawer"
+      }
+    ],
     "action": [
       {
         "type": "click",
@@ -24,10 +28,16 @@
     ]
   },
   {
-    "get_element_by": {
-      "type": "Id",
-      "value": "btn_add_income"
-    },
+    "get_element_by": [
+      {
+        "type": "Id",
+        "value": "btn_add_income"
+      },
+      {
+        "type": "Text",
+        "value": "ADD INCOME"
+      }
+    ],
     "action": [
       {
         "type": "click",
@@ -36,10 +46,16 @@
     ]
   },
   {
-    "get_element_by": {
-      "type": "Id",
-      "value": "text1"
-    },
+    "get_element_by": [
+      {
+        "type": "Id",
+        "value": "text1"
+      },
+      {
+        "type": "Text",
+        "value": "Currently no income..."
+      }
+    ],
     "action": [
       {
         "type": "check",
@@ -53,10 +69,12 @@
     ]
   },
   {
-    "get_element_by": {
-      "type": "Id",
-      "value": "editText"
-    },
+    "get_element_by": [
+      {
+        "type": "Id",
+        "value": "editText"
+      }
+    ],
     "action": [
       {
         "type": "replaceText",
@@ -65,10 +83,16 @@
     ]
   },
   {
-    "get_element_by": {
-      "type": "Id",
-      "value": "btn_add_income"
-    },
+    "get_element_by": [
+      {
+        "type": "Id",
+        "value": "btn_add_income"
+      },
+      {
+        "type": "Text",
+        "value": "ADD INCOME"
+      }
+    ],
     "action": [
       {
         "type": "click",
@@ -77,10 +101,12 @@
     ]
   },
   {
-    "get_element_by": {
-      "type": "Id",
-      "value": "editText2"
-    },
+    "get_element_by": [
+      {
+        "type": "Id",
+        "value": "editText2"
+      }
+    ],
     "action": [
       {
         "type": "replaceText",
@@ -89,10 +115,16 @@
     ]
   },
   {
-    "get_element_by": {
-      "type": "Id",
-      "value": "btn_add_income"
-    },
+    "get_element_by": [
+      {
+        "type": "Id",
+        "value": "btn_add_income"
+      },
+      {
+        "type": "Text",
+        "value": "ADD INCOME"
+      }
+    ],
     "action": [
       {
         "type": "click",
@@ -101,10 +133,16 @@
     ]
   },
   {
-    "get_element_by": {
-      "type": "Id",
-      "value": "text1"
-    },
+    "get_element_by": [
+      {
+        "type": "Id",
+        "value": "text1"
+      },
+      {
+        "type": "Text",
+        "value": "500  MONTHLY"
+      }
+    ],
     "action": [
       {
         "type": "check",

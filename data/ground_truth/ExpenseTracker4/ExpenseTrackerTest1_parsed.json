@@ -1,9 +1,15 @@
 [
   {
-    "get_element_by": {
-      "type": "Id",
-      "value": "btn_add_income"
-    },
+    "get_element_by": [
+      {
+        "type": "Id",
+        "value": "btn_add_income"
+      },
+      {
+        "type": "Text",
+        "value": "Add income"
+      }
+    ],
     "action": [
       {
         "type": "click",
@@ -12,10 +18,16 @@
     ]
   },
   {
-    "get_element_by": {
-      "type": "Id",
-      "value": "action_done"
-    },
+    "get_element_by": [
+      {
+        "type": "Id",
+        "value": "action_done"
+      },
+      {
+        "type": "ContentDescription",
+        "value": "Add"
+      }
+    ],
     "action": [
       {
         "type": "click",
@@ -24,10 +36,16 @@
     ]
   },
   {
-    "get_element_by": {
-      "type": "Id",
-      "value": "textinput_error"
-    },
+    "get_element_by": [
+      {
+        "type": "Id",
+        "value": "textinput_error"
+      },
+      {
+        "type": "Text",
+        "value": "Field can't be empty."
+      }
+    ],
     "action": [
       {
         "type": "check",
@@ -41,10 +59,12 @@
     ]
   },
   {
-    "get_element_by": {
-      "type": "Id",
-      "value": "et_price"
-    },
+    "get_element_by": [
+      {
+        "type": "Id",
+        "value": "et_price"
+      }
+    ],
     "action": [
       {
         "type": "replaceText",
@@ -53,10 +73,16 @@
     ]
   },
   {
-    "get_element_by": {
-      "type": "Id",
-      "value": "action_done"
-    },
+    "get_element_by": [
+      {
+        "type": "Id",
+        "value": "action_done"
+      },
+      {
+        "type": "ContentDescription",
+        "value": "Add"
+      }
+    ],
     "action": [
       {
         "type": "click",
@@ -65,10 +91,16 @@
     ]
   },
   {
-    "get_element_by": {
-      "type": "Id",
-      "value": "textinput_error"
-    },
+    "get_element_by": [
+      {
+        "type": "Id",
+        "value": "textinput_error"
+      },
+      {
+        "type": "Text",
+        "value": "Field can't be empty."
+      }
+    ],
     "action": [
       {
         "type": "check",
@@ -82,10 +114,16 @@
     ]
   },
   {
-    "get_element_by": {
-      "type": "Id",
-      "value": "et_title"
-    },
+    "get_element_by": [
+      {
+        "type": "Id",
+        "value": "et_title"
+      },
+      {
+        "type": "isDisplayed",
+        "value": ""
+      }
+    ],
     "action": [
       {
         "type": "replaceText",
@@ -94,10 +132,16 @@
     ]
   },
   {
-    "get_element_by": {
-      "type": "Id",
-      "value": "et_category"
-    },
+    "get_element_by": [
+      {
+        "type": "Id",
+        "value": "et_category"
+      },
+      {
+        "type": "isDisplayed",
+        "value": ""
+      }
+    ],
     "action": [
       {
         "type": "replaceText",
@@ -106,10 +150,16 @@
     ]
   },
   {
-    "get_element_by": {
-      "type": "Id",
-      "value": "action_done"
-    },
+    "get_element_by": [
+      {
+        "type": "Id",
+        "value": "action_done"
+      },
+      {
+        "type": "ContentDescription",
+        "value": "Add"
+      }
+    ],
     "action": [
       {
         "type": "click",
@@ -118,10 +168,16 @@
     ]
   },
   {
-    "get_element_by": {
-      "type": "Id",
-      "value": "tv_title"
-    },
+    "get_element_by": [
+      {
+        "type": "Id",
+        "value": "tv_title"
+      },
+      {
+        "type": "Text",
+        "value": "GRA"
+      }
+    ],
     "action": [
       {
         "type": "check",
