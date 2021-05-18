@@ -2,7 +2,7 @@
   {
     "get_element_by": [
       {
-        "type": "Id",
+        "type": "resource-id",
         "value": "btn_skip"
       }
     ],
@@ -16,7 +16,7 @@
   {
     "get_element_by": [
       {
-        "type": "Id",
+        "type": "resource-id",
         "value": "fab_new_list"
       }
     ],
@@ -30,7 +30,7 @@
   {
     "get_element_by": [
       {
-        "type": "Id",
+        "type": "resource-id",
         "value": "list_name"
       }
     ],

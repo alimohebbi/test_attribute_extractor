@@ -1,6 +1,6 @@
 import re
 import glob
-from utils import *
+from utils.utils import *
 
 def contains_id(line):
     return not re.search(r'R.id\.(.*?)\)', line) is None
@@ -47,8 +47,7 @@ def extract_action(parsed_event, line):
             parsed_event = extract_checks(line, parsed_event)          
     return parsed_event
 
-def get_selector_section(line):
-    
+def get_selector_section(line):  
     if "perform" in line:
         selector_section = line.split("perform")[0][:-2]
     elif "check" in line:
@@ -60,7 +59,7 @@ def add_selector(selector, selector_list):
         widget_identifier = "isDisplayed"
         value = ""
     elif contains_id(selector):
-        widget_identifier = "Id"
+        widget_identifier = "resource-id"
         value = re.search(r'R.id\.(.*?)\)', selector).group(1)
     elif "with" in selector:
         widget_identifier = re.search(r'with(.*?)\(', selector).group(1)
@@ -68,8 +67,9 @@ def add_selector(selector, selector_list):
     elif "IsInstanceOf" in selector:
         widget_identifier = "ClassName"
         value = re.search(r'instanceOf\((.*?)\.class', selector).group(1)
+    else:
+        return selector_list
     selector_list.append({"type": widget_identifier, "value":value})
-    
     return selector_list
 
 def extract_get_element_by(parsed_event, line):

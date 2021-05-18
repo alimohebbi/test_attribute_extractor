@@ -58,7 +58,7 @@
   {
     "get_element_by": [
       {
-        "type": "Id",
+        "type": "resource-id",
         "value": "button2"
       }
     ],
@@ -72,7 +72,7 @@
   {
     "get_element_by": [
       {
-        "type": "Id",
+        "type": "resource-id",
         "value": "button2"
       }
     ],

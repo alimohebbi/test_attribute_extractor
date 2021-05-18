@@ -30,7 +30,7 @@
   {
     "get_element_by": [
       {
-        "type": "Id",
+        "type": "resource-id",
         "value": "editor_$_edittext_title"
       }
     ],
@@ -44,7 +44,7 @@
   {
     "get_element_by": [
       {
-        "type": "Id",
+        "type": "resource-id",
         "value": "editor_$_note_editor"
       }
     ],
@@ -100,7 +100,7 @@
   {
     "get_element_by": [
       {
-        "type": "Id",
+        "type": "resource-id",
         "value": "editor_$_button_pick_color"
       }
     ],
@@ -284,7 +284,7 @@
   {
     "get_element_by": [
       {
-        "type": "Id",
+        "type": "resource-id",
         "value": "notes_menu_$_add"
       }
     ],
@@ -326,7 +326,7 @@
   {
     "get_element_by": [
       {
-        "type": "Id",
+        "type": "resource-id",
         "value": "navmenuitem_label"
       },
       {
@@ -372,7 +372,7 @@
   {
     "get_element_by": [
       {
-        "type": "Id",
+        "type": "resource-id",
         "value": "settings_$_textview_photo_title"
       }
     ],
@@ -386,7 +386,7 @@
   {
     "get_element_by": [
       {
-        "type": "Id",
+        "type": "resource-id",
         "value": "purple_dialog_row_$_textview_item"
       },
       {
@@ -412,7 +412,7 @@
   {
     "get_element_by": [
       {
-        "type": "Id",
+        "type": "resource-id",
         "value": "settings_$_button_pick_color"
       }
     ],
@@ -440,7 +440,7 @@
   {
     "get_element_by": [
       {
-        "type": "Id",
+        "type": "resource-id",
         "value": "settings_$_button_rate"
       }
     ],
@@ -468,7 +468,7 @@
   {
     "get_element_by": [
       {
-        "type": "Id",
+        "type": "resource-id",
         "value": "option_row_$_textview_item"
       },
       {
@@ -570,7 +570,7 @@
   {
     "get_element_by": [
       {
-        "type": "Id",
+        "type": "resource-id",
         "value": "settings_$_button_pick_color"
       }
     ],
@@ -598,7 +598,7 @@
   {
     "get_element_by": [
       {
-        "type": "Id",
+        "type": "resource-id",
         "value": "settings_$_button_rate"
       }
     ],
@@ -626,7 +626,7 @@
   {
     "get_element_by": [
       {
-        "type": "Id",
+        "type": "resource-id",
         "value": "option_row_$_textview_item"
       },
       {
@@ -728,7 +728,7 @@
   {
     "get_element_by": [
       {
-        "type": "Id",
+        "type": "resource-id",
         "value": "settings_$_button_pick_color"
       }
     ],
@@ -756,7 +756,7 @@
   {
     "get_element_by": [
       {
-        "type": "Id",
+        "type": "resource-id",
         "value": "settings_$_button_rate"
       }
     ],
@@ -834,7 +834,7 @@
   {
     "get_element_by": [
       {
-        "type": "Id",
+        "type": "resource-id",
         "value": "notes_menu_$_add"
       }
     ],
@@ -876,7 +876,7 @@
   {
     "get_element_by": [
       {
-        "type": "Id",
+        "type": "resource-id",
         "value": "navmenuitem_label"
       },
       {
@@ -894,7 +894,7 @@
   {
     "get_element_by": [
       {
-        "type": "Id",
+        "type": "resource-id",
         "value": "settings_$_button_pick_color"
       }
     ],
@@ -922,7 +922,7 @@
   {
     "get_element_by": [
       {
-        "type": "Id",
+        "type": "resource-id",
         "value": "settings_$_button_rate"
       }
     ],
@@ -1000,7 +1000,7 @@
   {
     "get_element_by": [
       {
-        "type": "Id",
+        "type": "resource-id",
         "value": "option_row_$_textview_item"
       },
       {
@@ -1102,7 +1102,7 @@
   {
     "get_element_by": [
       {
-        "type": "Id",
+        "type": "resource-id",
         "value": "settings_$_button_pick_color"
       }
     ],
@@ -1130,7 +1130,7 @@
   {
     "get_element_by": [
       {
-        "type": "Id",
+        "type": "resource-id",
         "value": "settings_$_button_rate"
       }
     ],
@@ -1232,7 +1232,7 @@
   {
     "get_element_by": [
       {
-        "type": "Id",
+        "type": "resource-id",
         "value": "settings_$_imageview_photo"
       }
     ],
@@ -1254,7 +1254,7 @@
   {
     "get_element_by": [
       {
-        "type": "Id",
+        "type": "resource-id",
         "value": "settings_$_textview_display_name_title"
       }
     ],
@@ -1284,7 +1284,7 @@
   {
     "get_element_by": [
       {
-        "type": "Id",
+        "type": "resource-id",
         "value": "settings_$_textview_display_name"
       }
     ],
@@ -1314,7 +1314,7 @@
   {
     "get_element_by": [
       {
-        "type": "Id",
+        "type": "resource-id",
         "value": "settings_$_textview_photo_title"
       }
     ],
@@ -1344,7 +1344,7 @@
   {
     "get_element_by": [
       {
-        "type": "Id",
+        "type": "resource-id",
         "value": "settings_$_button_pick_color"
       }
     ],
@@ -1366,7 +1366,7 @@
   {
     "get_element_by": [
       {
-        "type": "Id",
+        "type": "resource-id",
         "value": "settings_$_button_rate"
       }
     ],

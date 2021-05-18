@@ -2,7 +2,7 @@
   {
     "get_element_by": [
       {
-        "type": "Id",
+        "type": "resource-id",
         "value": "fab_expand_menu_button"
       }
     ],
@@ -16,7 +16,7 @@
   {
     "get_element_by": [
       {
-        "type": "Id",
+        "type": "resource-id",
         "value": "create_note"
       }
     ],
@@ -30,7 +30,7 @@
   {
     "get_element_by": [
       {
-        "type": "Id",
+        "type": "resource-id",
         "value": "edit_note_title"
       }
     ],
@@ -44,7 +44,7 @@
   {
     "get_element_by": [
       {
-        "type": "Id",
+        "type": "resource-id",
         "value": "note_content"
       }
     ],
@@ -58,7 +58,7 @@
   {
     "get_element_by": [
       {
-        "type": "Id",
+        "type": "resource-id",
         "value": "action_preview"
       },
       {
@@ -90,7 +90,7 @@
   {
     "get_element_by": [
       {
-        "type": "Id",
+        "type": "resource-id",
         "value": "note_title"
       },
       {

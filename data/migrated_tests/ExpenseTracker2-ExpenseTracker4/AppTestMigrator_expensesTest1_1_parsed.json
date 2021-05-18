@@ -24,7 +24,7 @@
   {
     "get_element_by": [
       {
-        "type": "Id",
+        "type": "resource-id",
         "value": "btn_add_income"
       }
     ],
@@ -38,7 +38,7 @@
   {
     "get_element_by": [
       {
-        "type": "Id",
+        "type": "resource-id",
         "value": "action_done"
       }
     ],
@@ -52,7 +52,7 @@
   {
     "get_element_by": [
       {
-        "type": "Id",
+        "type": "resource-id",
         "value": "tv_date"
       }
     ],
@@ -108,7 +108,7 @@
   {
     "get_element_by": [
       {
-        "type": "Id",
+        "type": "resource-id",
         "value": "tv_period"
       }
     ],

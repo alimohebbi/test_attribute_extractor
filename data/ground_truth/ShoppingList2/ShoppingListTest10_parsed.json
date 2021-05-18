@@ -2,7 +2,7 @@
   {
     "get_element_by": [
       {
-        "type": "Id",
+        "type": "resource-id",
         "value": "action_add"
       },
       {
@@ -34,7 +34,7 @@
   {
     "get_element_by": [
       {
-        "type": "Id",
+        "type": "resource-id",
         "value": "button1"
       },
       {

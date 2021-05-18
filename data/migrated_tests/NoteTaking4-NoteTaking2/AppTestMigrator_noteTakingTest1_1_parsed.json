@@ -2,7 +2,7 @@
   {
     "get_element_by": [
       {
-        "type": "Id",
+        "type": "resource-id",
         "value": "newNote"
       }
     ],
@@ -16,7 +16,7 @@
   {
     "get_element_by": [
       {
-        "type": "Id",
+        "type": "resource-id",
         "value": "titleEdit"
       }
     ],
@@ -30,7 +30,7 @@
   {
     "get_element_by": [
       {
-        "type": "Id",
+        "type": "resource-id",
         "value": "bodyEdit"
       }
     ],

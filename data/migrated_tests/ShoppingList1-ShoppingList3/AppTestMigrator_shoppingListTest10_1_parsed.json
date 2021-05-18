@@ -2,7 +2,7 @@
   {
     "get_element_by": [
       {
-        "type": "Id",
+        "type": "resource-id",
         "value": "btn_skip"
       }
     ],

@@ -16,8 +16,8 @@
   {
     "get_element_by": [
       {
-        "type": "Id",
-        "value": "navigation_drawer"
+        "type": "Text",
+        "value": "INCOME"
       }
     ],
     "action": [
@@ -30,8 +30,8 @@
   {
     "get_element_by": [
       {
-        "type": "Id",
-        "value": "btn_add_income"
+        "type": "resource-id",
+        "value": "button2"
       },
       {
         "type": "Text",
@@ -48,8 +48,8 @@
   {
     "get_element_by": [
       {
-        "type": "Id",
-        "value": "text1"
+        "type": "resource-id",
+        "value": "text"
       },
       {
         "type": "Text",
@@ -71,7 +71,7 @@
   {
     "get_element_by": [
       {
-        "type": "Id",
+        "type": "resource-id",
         "value": "editText"
       }
     ],
@@ -85,8 +85,8 @@
   {
     "get_element_by": [
       {
-        "type": "Id",
-        "value": "btn_add_income"
+        "type": "resource-id",
+        "value": "button2"
       },
       {
         "type": "Text",
@@ -103,7 +103,7 @@
   {
     "get_element_by": [
       {
-        "type": "Id",
+        "type": "resource-id",
         "value": "editText2"
       }
     ],
@@ -117,8 +117,8 @@
   {
     "get_element_by": [
       {
-        "type": "Id",
-        "value": "btn_add_income"
+        "type": "resource-id",
+        "value": "button2"
       },
       {
         "type": "Text",
@@ -135,7 +135,7 @@
   {
     "get_element_by": [
       {
-        "type": "Id",
+        "type": "resource-id",
         "value": "text1"
       },
       {

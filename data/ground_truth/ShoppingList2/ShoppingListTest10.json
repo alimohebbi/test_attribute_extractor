@@ -76,7 +76,7 @@
     "checked": "false",
     "class": "android.widget.TextView",
     "clickable": "false",
-    "content-desc": "",
+    "content-desc": null,
     "enabled": "true",
     "focusable": "false",
     "focused": "false",

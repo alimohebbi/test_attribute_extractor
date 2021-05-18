@@ -2,7 +2,7 @@
   {
     "get_element_by": [
       {
-        "type": "Id",
+        "type": "resource-id",
         "value": "welcome_view_pager"
       }
     ],
@@ -16,7 +16,7 @@
   {
     "get_element_by": [
       {
-        "type": "Id",
+        "type": "resource-id",
         "value": "onboarding_screen2_next_button"
       },
       {
@@ -38,7 +38,7 @@
   {
     "get_element_by": [
       {
-        "type": "Id",
+        "type": "resource-id",
         "value": "onboarding_screen3_next_button"
       }
     ],
@@ -52,7 +52,7 @@
   {
     "get_element_by": [
       {
-        "type": "Id",
+        "type": "resource-id",
         "value": "onboarding_screen4_next_button"
       },
       {
@@ -74,7 +74,7 @@
   {
     "get_element_by": [
       {
-        "type": "Id",
+        "type": "resource-id",
         "value": "fab_expand_menu_button"
       }
     ],
@@ -88,7 +88,7 @@
   {
     "get_element_by": [
       {
-        "type": "Id",
+        "type": "resource-id",
         "value": "fab_new_expense"
       }
     ],
@@ -102,7 +102,7 @@
   {
     "get_element_by": [
       {
-        "type": "Id",
+        "type": "resource-id",
         "value": "description_edittext"
       }
     ],
@@ -116,7 +116,7 @@
   {
     "get_element_by": [
       {
-        "type": "Id",
+        "type": "resource-id",
         "value": "amount_edittext"
       }
     ],

@@ -1,5 +1,7 @@
 import json
 import re
+import pandas as pd
+
 def write_to_error_log(message, filename):
     f = open(filename, 'a')
     f.write(message)
@@ -30,7 +32,7 @@ def get_app_name(fname):
         print("Application not recognized!"+"\n"+"The test file should be under directory \"/data/migrated_tests\",  \"/data/ground_truth\" or \"/data/craftdroid_tests\"")
         return None
 
-def get_package_activity(fname, df):
+def get_package_activity(fname):
     app_name = get_app_name(fname)
     if app_name is None:
         return None, None
@@ -39,10 +41,10 @@ def get_package_activity(fname, df):
     if len(sliced_df) == 0:
         print("No application with the name : "+str(app_name)+" can be found in app_name_to_package_activity.csv.")
         return None, None
-    app_package = list(["appPackage"])[0]
-    app_activity = list(df[df["appName"] == app_name]["appActivity"])[0]
+    app_package = sliced_df.iloc[0]["appPackage"]
+    app_activity = sliced_df.iloc[0]["appActivity"]
 
-    return app_package, app_activit
+    return app_package, app_activity
 
 def get_capabilities(app_package, app_activity, no_reset):
     caps = {
@@ -57,7 +59,7 @@ def get_capabilities(app_package, app_activity, no_reset):
     }
     return caps
 
-def get_caps(file): 
-    app_package, app_activity = get_package_activity(file)
+def get_caps(fname): 
+    app_package, app_activity = get_package_activity(fname)
     caps = get_capabilities(app_package, app_activity, False)
     return caps, app_package

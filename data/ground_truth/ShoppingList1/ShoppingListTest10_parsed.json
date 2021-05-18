@@ -2,7 +2,7 @@
   {
     "get_element_by": [
       {
-        "type": "Id",
+        "type": "resource-id",
         "value": "fab"
       }
     ],
@@ -16,7 +16,7 @@
   {
     "get_element_by": [
       {
-        "type": "Id",
+        "type": "resource-id",
         "value": "shoppingListNameEditText"
       }
     ],
@@ -30,7 +30,7 @@
   {
     "get_element_by": [
       {
-        "type": "Id",
+        "type": "resource-id",
         "value": "shoppingListDescriptionEditText"
       }
     ],
@@ -44,7 +44,7 @@
   {
     "get_element_by": [
       {
-        "type": "Id",
+        "type": "resource-id",
         "value": "addShoppingListButton"
       },
       {
@@ -62,7 +62,7 @@
   {
     "get_element_by": [
       {
-        "type": "Id",
+        "type": "resource-id",
         "value": "shoppingListNameTextView"
       },
       {
