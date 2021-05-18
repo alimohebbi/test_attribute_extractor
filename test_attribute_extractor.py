@@ -14,6 +14,27 @@ def execute_replace_text(action, element, driver):
     if driver.is_keyboard_shown():
         driver.back()
 
+def execute_check(conditions, el, log_fname):
+    matched = True
+    for condition in conditions:    
+        condition["type"] = condition["type"].replace(" ", "")
+        if condition["type"] =="isDisplayed":
+            if el.get_attribute("displayed") != 'true':
+                matched = False
+        elif condition["type"] =="isEnabled":
+            if el.get_attribute("enabled") != 'true':
+                matched = False
+        elif condition["type"] == "text":
+            if condition["value"].lower() != el.get_attribute("text").lower():
+                matched = False
+        else:
+            error_message = 40*"#"+" ERROR! "+40*"#"+"\nUnknown attribute for check: "+str(condition)+"\n\n\n"
+            write_to_error_log(error_message, log_fname)
+    if matched == False:
+        error_message = 40*"#"+" ERROR! "+40*"#"+"\nConditions not fully satisfied in: "+str(conditions)+"\n\n\n"
+        write_to_error_log(error_message, log_fname)
+    return matched
+
 def execute_action(driver, el, parsed_event, log_fname):
     executed = True
     for action in parsed_event["action"]:
@@ -22,7 +43,7 @@ def execute_action(driver, el, parsed_event, log_fname):
         elif action["type"] == "click":
             el.click()
         elif action["type"] == "check":
-            continue
+            execute_check(action["value"], el, log_fname)
         elif action["type"] == "longClick":
             TouchAction(driver).long_press(el).release().perform()
         #       elif action["type"] == "swipeLeft":

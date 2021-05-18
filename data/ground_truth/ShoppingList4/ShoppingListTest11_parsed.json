@@ -186,8 +186,8 @@
             "value": ""
           },
           {
-            "type": " withText\"item1\"",
-            "value": ""
+            "type": "text",
+            "value": "item1"
           },
           {
             "type": " isEnabled",

@@ -6,7 +6,7 @@ def contains_id(line):
     return not re.search(r'R.id\.(.*?)\)', line) is None
 
 def extract_check(value, check):
-    if check.startswith("with"):
+    if check.replace(" ", "").startswith("with"):
         value.append({"type":re.search(r'with(.*?)\(', check).group(1).lower(), "value":re.search(r'\"(.*?)\"', check).group(1)})
     else:
         value.append({"type": re.sub('[()]', '', check), "value": ""})
