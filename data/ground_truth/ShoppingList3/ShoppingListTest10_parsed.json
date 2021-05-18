@@ -8,6 +8,10 @@
       {
         "type": "Text",
         "value": "Skip"
+      },
+      {
+        "type": "isDisplayed",
+        "value": ""
       }
     ],
     "action": [
@@ -22,6 +26,10 @@
       {
         "type": "resource-id",
         "value": "fab_new_list"
+      },
+      {
+        "type": "isDisplayed",
+        "value": ""
       }
     ],
     "action": [
@@ -36,6 +44,10 @@
       {
         "type": "resource-id",
         "value": "list_name"
+      },
+      {
+        "type": "isDisplayed",
+        "value": ""
       }
     ],
     "action": [

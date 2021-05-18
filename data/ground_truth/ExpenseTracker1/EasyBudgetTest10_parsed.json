@@ -4,6 +4,10 @@
       {
         "type": "resource-id",
         "value": "welcome_view_pager"
+      },
+      {
+        "type": "isDisplayed",
+        "value": ""
       }
     ],
     "action": [
@@ -76,6 +80,10 @@
       {
         "type": "resource-id",
         "value": "fab_expand_menu_button"
+      },
+      {
+        "type": "isDisplayed",
+        "value": ""
       }
     ],
     "action": [
@@ -90,6 +98,10 @@
       {
         "type": "resource-id",
         "value": "fab_new_expense"
+      },
+      {
+        "type": "isDisplayed",
+        "value": ""
       }
     ],
     "action": [
@@ -104,6 +116,10 @@
       {
         "type": "resource-id",
         "value": "description_edittext"
+      },
+      {
+        "type": "isDisplayed",
+        "value": ""
       }
     ],
     "action": [
@@ -118,6 +134,10 @@
       {
         "type": "resource-id",
         "value": "amount_edittext"
+      },
+      {
+        "type": "isDisplayed",
+        "value": ""
       }
     ],
     "action": [
@@ -132,6 +152,10 @@
       {
         "type": "Text",
         "value": "No income or expense yet."
+      },
+      {
+        "type": "isDisplayed",
+        "value": ""
       }
     ],
     "action": [

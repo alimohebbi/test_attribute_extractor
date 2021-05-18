@@ -40,6 +40,10 @@
       {
         "type": "resource-id",
         "value": "edittext"
+      },
+      {
+        "type": "isDisplayed",
+        "value": ""
       }
     ],
     "action": [
@@ -125,6 +129,10 @@
       {
         "type": "Text",
         "value": "OK"
+      },
+      {
+        "type": "isDisplayed",
+        "value": ""
       }
     ],
     "action": [
@@ -139,6 +147,10 @@
       {
         "type": "resource-id",
         "value": "autocomplete_add_item"
+      },
+      {
+        "type": "isDisplayed",
+        "value": ""
       }
     ],
     "action": [

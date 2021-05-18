@@ -8,6 +8,10 @@
       {
         "type": "ContentDescription",
         "value": "New note"
+      },
+      {
+        "type": "isDisplayed",
+        "value": ""
       }
     ],
     "action": [
@@ -22,6 +26,10 @@
       {
         "type": "resource-id",
         "value": "titleEdit"
+      },
+      {
+        "type": "isDisplayed",
+        "value": ""
       }
     ],
     "action": [
@@ -86,6 +94,10 @@
       {
         "type": "Text",
         "value": "Title1"
+      },
+      {
+        "type": "isDisplayed",
+        "value": ""
       }
     ],
     "action": [
@@ -109,6 +121,10 @@
       {
         "type": "Text",
         "value": "Note1"
+      },
+      {
+        "type": "isDisplayed",
+        "value": ""
       }
     ],
     "action": [

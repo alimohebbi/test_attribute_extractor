@@ -8,6 +8,10 @@
       {
         "type": "Text",
         "value": "Add income"
+      },
+      {
+        "type": "isDisplayed",
+        "value": ""
       }
     ],
     "action": [
@@ -26,6 +30,10 @@
       {
         "type": "ContentDescription",
         "value": "Add"
+      },
+      {
+        "type": "isDisplayed",
+        "value": ""
       }
     ],
     "action": [
@@ -44,6 +52,10 @@
       {
         "type": "Text",
         "value": "Field can't be empty."
+      },
+      {
+        "type": "isDisplayed",
+        "value": ""
       }
     ],
     "action": [
@@ -63,6 +75,10 @@
       {
         "type": "resource-id",
         "value": "et_price"
+      },
+      {
+        "type": "isDisplayed",
+        "value": ""
       }
     ],
     "action": [
@@ -81,6 +97,10 @@
       {
         "type": "ContentDescription",
         "value": "Add"
+      },
+      {
+        "type": "isDisplayed",
+        "value": ""
       }
     ],
     "action": [
@@ -99,6 +119,10 @@
       {
         "type": "Text",
         "value": "Field can't be empty."
+      },
+      {
+        "type": "isDisplayed",
+        "value": ""
       }
     ],
     "action": [
@@ -158,6 +182,10 @@
       {
         "type": "ContentDescription",
         "value": "Add"
+      },
+      {
+        "type": "isDisplayed",
+        "value": ""
       }
     ],
     "action": [
@@ -176,6 +204,10 @@
       {
         "type": "Text",
         "value": "GRA"
+      },
+      {
+        "type": "isDisplayed",
+        "value": ""
       }
     ],
     "action": [

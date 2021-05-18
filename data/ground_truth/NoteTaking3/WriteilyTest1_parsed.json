@@ -4,6 +4,10 @@
       {
         "type": "resource-id",
         "value": "fab_expand_menu_button"
+      },
+      {
+        "type": "isDisplayed",
+        "value": ""
       }
     ],
     "action": [
@@ -18,6 +22,10 @@
       {
         "type": "resource-id",
         "value": "create_note"
+      },
+      {
+        "type": "isDisplayed",
+        "value": ""
       }
     ],
     "action": [
@@ -32,6 +40,10 @@
       {
         "type": "resource-id",
         "value": "edit_note_title"
+      },
+      {
+        "type": "isDisplayed",
+        "value": ""
       }
     ],
     "action": [
@@ -64,6 +76,10 @@
       {
         "type": "ContentDescription",
         "value": "Preview"
+      },
+      {
+        "type": "isDisplayed",
+        "value": ""
       }
     ],
     "action": [
@@ -78,6 +94,10 @@
       {
         "type": "ContentDescription",
         "value": "Navigate up"
+      },
+      {
+        "type": "isDisplayed",
+        "value": ""
       }
     ],
     "action": [
@@ -96,6 +116,10 @@
       {
         "type": "Text",
         "value": "note"
+      },
+      {
+        "type": "isDisplayed",
+        "value": ""
       }
     ],
     "action": [

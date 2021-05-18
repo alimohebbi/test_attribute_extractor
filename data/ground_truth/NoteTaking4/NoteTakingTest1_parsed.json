@@ -4,6 +4,10 @@
       {
         "type": "resource-id",
         "value": "notes_$_linearlayout_empty"
+      },
+      {
+        "type": "isDisplayed",
+        "value": ""
       }
     ],
     "action": [
@@ -18,6 +22,10 @@
       {
         "type": "resource-id",
         "value": "editor_$_edittext_title"
+      },
+      {
+        "type": "isDisplayed",
+        "value": ""
       }
     ],
     "action": [
@@ -32,6 +40,10 @@
       {
         "type": "resource-id",
         "value": "editor_$_note_editor"
+      },
+      {
+        "type": "isDisplayed",
+        "value": ""
       }
     ],
     "action": [
@@ -58,6 +70,10 @@
       {
         "type": "Text",
         "value": "to-do"
+      },
+      {
+        "type": "isDisplayed",
+        "value": ""
       }
     ],
     "action": [

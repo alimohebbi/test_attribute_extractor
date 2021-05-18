@@ -4,6 +4,10 @@
       {
         "type": "resource-id",
         "value": "fab"
+      },
+      {
+        "type": "isDisplayed",
+        "value": ""
       }
     ],
     "action": [
@@ -32,6 +36,10 @@
       {
         "type": "ContentDescription",
         "value": "Next month"
+      },
+      {
+        "type": "isDisplayed",
+        "value": ""
       }
     ],
     "action": [

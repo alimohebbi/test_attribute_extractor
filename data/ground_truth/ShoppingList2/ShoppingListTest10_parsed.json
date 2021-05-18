@@ -8,6 +8,10 @@
       {
         "type": "ContentDescription",
         "value": "New list"
+      },
+      {
+        "type": "isDisplayed",
+        "value": ""
       }
     ],
     "action": [
@@ -22,6 +26,10 @@
       {
         "type": "XPath",
         "value": "/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.EditText"
+      },
+      {
+        "type": "isDisplayed",
+        "value": ""
       }
     ],
     "action": [
@@ -40,6 +48,10 @@
       {
         "type": "Text",
         "value": "OK"
+      },
+      {
+        "type": "isDisplayed",
+        "value": ""
       }
     ],
     "action": [
@@ -58,6 +70,10 @@
       {
         "type": "Text",
         "value": "list"
+      },
+      {
+        "type": "isDisplayed",
+        "value": ""
       }
     ],
     "action": [

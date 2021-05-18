@@ -4,6 +4,10 @@
       {
         "type": "ContentDescription",
         "value": "Open navigation drawer"
+      },
+      {
+        "type": "isDisplayed",
+        "value": ""
       }
     ],
     "action": [
@@ -36,6 +40,10 @@
       {
         "type": "Text",
         "value": "ADD INCOME"
+      },
+      {
+        "type": "isDisplayed",
+        "value": ""
       }
     ],
     "action": [
@@ -54,6 +62,10 @@
       {
         "type": "Text",
         "value": "Currently no income..."
+      },
+      {
+        "type": "isDisplayed",
+        "value": ""
       }
     ],
     "action": [
@@ -73,6 +85,10 @@
       {
         "type": "resource-id",
         "value": "editText"
+      },
+      {
+        "type": "isDisplayed",
+        "value": ""
       }
     ],
     "action": [
@@ -91,6 +107,10 @@
       {
         "type": "Text",
         "value": "ADD INCOME"
+      },
+      {
+        "type": "isDisplayed",
+        "value": ""
       }
     ],
     "action": [
@@ -105,6 +125,10 @@
       {
         "type": "resource-id",
         "value": "editText2"
+      },
+      {
+        "type": "isDisplayed",
+        "value": ""
       }
     ],
     "action": [
@@ -123,6 +147,10 @@
       {
         "type": "Text",
         "value": "ADD INCOME"
+      },
+      {
+        "type": "isDisplayed",
+        "value": ""
       }
     ],
     "action": [
@@ -141,6 +169,10 @@
       {
         "type": "Text",
         "value": "500  MONTHLY"
+      },
+      {
+        "type": "isDisplayed",
+        "value": ""
       }
     ],
     "action": [

@@ -47,7 +47,24 @@ def extract_action(parsed_event, line):
             parsed_event = extract_checks(line, parsed_event)          
     return parsed_event
 
+def remove_child_addressing(line):  
+    start = line.find("childAtPosition")
+    if start == -1:
+        return line
+    cnt = 1
+    for i in range(start+16, len(line)):
+        char = line[i]
+        if char == "(":
+            cnt+=1
+        elif char == ")":
+            cnt -= 1
+        if cnt == 0:
+            end = i
+            break
+    return line.replace(line[start:end+2], "")
+
 def get_selector_section(line):  
+    line = remove_child_addressing(line)
     if "perform" in line:
         selector_section = line.split("perform")[0][:-2]
     elif "check" in line:
@@ -88,7 +105,7 @@ def rearrange_lines(lines):
             variable_name = sides[0].split(' ')[-1]
             if variable_name in lines[i + 1]:
                 dot_index = lines[i + 1].find('.')
-                lines[i] = lines[i].split("childAtPosition")[0]
+                #lines[i] = lines[i].split("childAtPosition")[0]
                 lines[i] += lines[i + 1][dot_index:]
     return lines
 
@@ -99,7 +116,7 @@ def parse_test_section(lines):
         if "onView" in line or line.replace(" ", "") == "pressBack();":
             parsed_event = {}
             if "onView" in line:
-                new_dict = extract_get_element_by(parsed_event, line)
+                parsed_event = extract_get_element_by(parsed_event, line)
             parsed_event = extract_action(parsed_event, line)
             parsed_event_list.append(parsed_event)
     return parsed_event_list
