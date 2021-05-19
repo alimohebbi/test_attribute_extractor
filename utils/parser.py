@@ -38,7 +38,7 @@ def extract_perform(line, parsed_event):
 
 def extract_action(parsed_event, line):
     if "onView" not in line:
-        if line.replace(" ", "") == "pressBack();":
+        if "pressBack();" in line:
             parsed_event["action"] = [{"type": "pressBack", "value":""}]
     else:
         if "perform" in line:
@@ -113,7 +113,7 @@ def parse_test_section(lines):
     lines = rearrange_lines(lines)
     parsed_event_list = []
     for line in lines:
-        if "onView" in line or line.replace(" ", "") == "pressBack();":
+        if "onView" in line or "pressBack();" in line:
             parsed_event = {}
             if "onView" in line:
                 parsed_event = extract_get_element_by(parsed_event, line)

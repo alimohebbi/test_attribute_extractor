@@ -14,18 +14,18 @@ def execute_replace_text(action, element, driver):
     if driver.is_keyboard_shown():
         driver.back()
 
-def execute_check(conditions, el, log_fname):
+def execute_check(conditions, element, log_fname):
     matched = True
     for condition in conditions:    
         condition["type"] = condition["type"].replace(" ", "")
         if condition["type"] =="isDisplayed":
-            if el.get_attribute("displayed") != 'true':
+            if element.get_attribute("displayed") != 'true':
                 matched = False
         elif condition["type"] =="isEnabled":
-            if el.get_attribute("enabled") != 'true':
+            if element.get_attribute("enabled") != 'true':
                 matched = False
         elif condition["type"] == "text":
-            if condition["value"].lower() != el.get_attribute("text").lower():
+            if condition["value"].lower() != element.get_attribute("text").lower():
                 matched = False
         else:
             error_message = 40*"#"+" ERROR! "+40*"#"+"\nUnknown attribute for check: "+str(condition)+"\n\n\n"
@@ -35,6 +35,32 @@ def execute_check(conditions, el, log_fname):
         write_to_error_log(error_message, log_fname)
     return matched
 
+def execute_swipe(action, element, driver):
+    direction = action.split("swipe")[1].lower()
+    location = element.location
+    size = element.size
+    if direction == "left":
+        start_x = location['x']+50
+        start_y = location['y']+int(size['height']/2)
+        end_x = int(location['x']-size['width']*(2.0/3))
+        end_y = start_y
+    elif direction == "right":
+        start_x = location['x']+50
+        start_y = location['y']+int(size['height']/2)
+        end_x = int(location['x']+size['width']*(2.0/3))
+        end_y = start_y
+    elif direction == "up":
+        start_x = location['x']+int(size['width']/2)
+        start_y = location['y']+50
+        end_x = start_x
+        end_y = int(location['y']-size['height']*(2.0/3))
+    elif direction == "down":
+        start_x = location['x']+int(size['width']/2)
+        start_y = location['y']+50
+        end_x = start_x
+        end_y = int(location['y']+size['height']*(2.0/3))
+    TouchAction(driver).press(element, start_x, start_y).move_to(element, end_x, end_y).release().perform()
+        
 def execute_action(driver, el, parsed_event, log_fname):
     executed = True
     for action in parsed_event["action"]:
@@ -46,8 +72,8 @@ def execute_action(driver, el, parsed_event, log_fname):
             execute_check(action["value"], el, log_fname)
         elif action["type"] == "longClick":
             TouchAction(driver).long_press(el).release().perform()
-        #       elif action["type"] == "swipeLeft":
-        #driver.execute_script("mobile: scroll", {"direction": "left", element: el, "toVisible": True})
+        elif action["type"].startswith("swipe"):
+            execute_swipe(action["type"], el, driver)
         else:
             executed = False
             write_to_error_log("Unhendled event: "+str(action["type"])+", in line: "+str(parsed_event), log_fname)

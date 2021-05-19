@@ -148,6 +148,14 @@
     ]
   },
   {
+    "action": [
+      {
+        "type": "pressBack",
+        "value": ""
+      }
+    ]
+  },
+  {
     "get_element_by": [
       {
         "type": "Text",
