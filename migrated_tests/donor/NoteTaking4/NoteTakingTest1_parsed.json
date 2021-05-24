@@ -1,0 +1,92 @@
+[
+  {
+    "get_element_by": [
+      {
+        "type": "resource-id",
+        "value": "notes_$_linearlayout_empty"
+      },
+      {
+        "type": "isdisplayed",
+        "value": ""
+      }
+    ],
+    "action": [
+      {
+        "type": "click",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "get_element_by": [
+      {
+        "type": "resource-id",
+        "value": "editor_$_edittext_title"
+      },
+      {
+        "type": "isdisplayed",
+        "value": ""
+      }
+    ],
+    "action": [
+      {
+        "type": "replaceText",
+        "value": "to-do"
+      }
+    ]
+  },
+  {
+    "get_element_by": [
+      {
+        "type": "resource-id",
+        "value": "editor_$_note_editor"
+      },
+      {
+        "type": "isdisplayed",
+        "value": ""
+      }
+    ],
+    "action": [
+      {
+        "type": "replaceText",
+        "value": "Go shopping"
+      }
+    ]
+  },
+  {
+    "get_element_by": [],
+    "action": [
+      {
+        "type": "pressBack",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "get_element_by": [
+      {
+        "type": "resource-id",
+        "value": "note_item_$_textview_title"
+      },
+      {
+        "type": "text",
+        "value": "to-do"
+      },
+      {
+        "type": "isdisplayed",
+        "value": ""
+      }
+    ],
+    "action": [
+      {
+        "type": "check",
+        "value": [
+          {
+            "type": "text",
+            "value": "to-do"
+          }
+        ]
+      }
+    ]
+  }
+]

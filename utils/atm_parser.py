@@ -69,6 +69,8 @@ def get_selector_section(line):
         selector_section = line.split("perform")[0][:-2]
     elif "check" in line:
         selector_section = line.split("check")[0][:-2]
+    elif "pressBack();" in line:
+        selector_section = ""
     return selector_section
 
 def add_selector(selector, selector_list):
@@ -105,7 +107,6 @@ def rearrange_lines(lines):
             variable_name = sides[0].split(' ')[-1]
             if variable_name in lines[i + 1]:
                 dot_index = lines[i + 1].find('.')
-                #lines[i] = lines[i].split("childAtPosition")[0]
                 lines[i] += lines[i + 1][dot_index:]
     return lines
 

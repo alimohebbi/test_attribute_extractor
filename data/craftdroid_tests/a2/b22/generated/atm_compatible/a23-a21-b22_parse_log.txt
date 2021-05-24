@@ -1,4 +1,0 @@
-######################################## ERROR! ########################################
-For the element : {'class': '', 'resource-id': '', 'text': '', 'content-desc': '', 'clickable': '', 'password': '', 'parent_text': '', 'sibling_text': '', 'stepping_events': [{'class': 'android.widget.ImageButton', 'resource-id': 'makeToDoFloatingActionButton', 'id-prefix': 'com.rubenroy.minimaltodo:id/', 'text': '', 'content-desc': '', 'clickable': 'true', 'password': 'false', 'parent_text': '', 'sibling_text': '', 'action': ['click'], 'activity': '.AddToDoActivity', 'package': 'com.rubenroy.minimaltodo', 'event_type': 'stepping'}], 'package': 'com.rubenroy.minimaltodo', 'activity': '.MainActivity', 'event_type': 'oracle', 'score': 0.5, 'action': ['wait_until_text_invisible', 10, 'text', 'Sample Todo']}, there are no selectors by which we can find the element.
-
-

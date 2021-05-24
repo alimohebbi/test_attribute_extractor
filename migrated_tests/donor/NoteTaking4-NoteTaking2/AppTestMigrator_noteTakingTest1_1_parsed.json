@@ -1,0 +1,53 @@
+[
+  {
+    "get_element_by": [
+      {
+        "type": "resource-id",
+        "value": "newNote"
+      }
+    ],
+    "action": [
+      {
+        "type": "click",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "get_element_by": [
+      {
+        "type": "resource-id",
+        "value": "titleEdit"
+      }
+    ],
+    "action": [
+      {
+        "type": "replaceText",
+        "value": "to-do"
+      }
+    ]
+  },
+  {
+    "get_element_by": [
+      {
+        "type": "resource-id",
+        "value": "bodyEdit"
+      }
+    ],
+    "action": [
+      {
+        "type": "replaceText",
+        "value": "Go shopping"
+      }
+    ]
+  },
+  {
+    "get_element_by": [],
+    "action": [
+      {
+        "type": "pressBack",
+        "value": ""
+      }
+    ]
+  }
+]

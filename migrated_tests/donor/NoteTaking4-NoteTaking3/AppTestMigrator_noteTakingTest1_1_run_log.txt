@@ -1,0 +1,5 @@
+######################################## ERROR! ########################################
+No element with id: empty_hint, was found on this page source.
+
+
+STOPPING THE EXECUTION OF THE TEST!

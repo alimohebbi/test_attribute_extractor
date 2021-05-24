@@ -246,6 +246,7 @@ def get_element_attributes_list(parsed_test, app_package, driver, log_fname):
     return element_attributes_list, completed
 
 def run_craftdroid(file, caps, app_package, driver):
+    start_time = time.time()
     print(file.split("/")[-1])
     log_fname = file.replace(file.split("/")[-1], "atm_compatible/"+file.split("/")[-1]+"_run_log.txt")
     parsed_test = craftdroid_parse(file)
@@ -259,6 +260,7 @@ def run_craftdroid(file, caps, app_package, driver):
         print(str(time.time() - start_time)+" seconds\n")
 
 def run_atm(file, caps, app_package, driver):
+    start_time = time.time()
     print('/'.join(file.split("/")[-2:]))
     log_fname = file.replace(file[-5:], "_run_log.txt")
     parsed_test = atm_parse(file)
@@ -284,9 +286,9 @@ def check_run_possible(app_package, caps):
 
 def main():
     files = glob.glob('data/*/*/*.java')
-    files.extend("data/craftdroid_tests/*/b*2/base/atm_compatible/*.json")
+    files.extend(glob.glob("data/craftdroid_tests/*/b*2/base/*.json"))
     for file in files:
-        start_time = time.time()
+        print(file)
         caps, app_package = get_caps(file)
         run_possible, driver = check_run_possible(app_package, caps)
         if run_possible:
