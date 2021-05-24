@@ -3,14 +3,10 @@
     "get_element_by": [
       {
         "type": "resource-id",
-        "value": "action_add"
+        "value": "fab"
       },
       {
-        "type": "ContentDescription",
-        "value": "New list"
-      },
-      {
-        "type": "isDisplayed",
+        "type": "isdisplayed",
         "value": ""
       }
     ],
@@ -24,18 +20,32 @@
   {
     "get_element_by": [
       {
-        "type": "XPath",
-        "value": "/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.EditText"
+        "type": "resource-id",
+        "value": "date_picker"
+      }
+    ],
+    "action": [
+      {
+        "type": "click",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "get_element_by": [
+      {
+        "type": "contentdescription",
+        "value": "Next month"
       },
       {
-        "type": "isDisplayed",
+        "type": "isdisplayed",
         "value": ""
       }
     ],
     "action": [
       {
-        "type": "replaceText",
-        "value": "list"
+        "type": "click",
+        "value": ""
       }
     ]
   },
@@ -46,12 +56,8 @@
         "value": "button1"
       },
       {
-        "type": "Text",
+        "type": "text",
         "value": "OK"
-      },
-      {
-        "type": "isDisplayed",
-        "value": ""
       }
     ],
     "action": [
@@ -64,16 +70,26 @@
   {
     "get_element_by": [
       {
-        "type": "ClassName",
-        "value": "android.widget.TextView"
+        "type": "resource-id",
+        "value": "save_expense"
       },
       {
-        "type": "Text",
-        "value": "list"
-      },
+        "type": "text",
+        "value": "Save"
+      }
+    ],
+    "action": [
       {
-        "type": "isDisplayed",
+        "type": "click",
         "value": ""
+      }
+    ]
+  },
+  {
+    "get_element_by": [
+      {
+        "type": "text",
+        "value": "Expenses"
       }
     ],
     "action": [
@@ -81,8 +97,8 @@
         "type": "check",
         "value": [
           {
-            "type": "text",
-            "value": "list"
+            "type": "isDisplayed",
+            "value": ""
           }
         ]
       }

@@ -73,16 +73,16 @@ def get_selector_section(line):
 
 def add_selector(selector, selector_list):
     if "isDisplayed()" in selector:
-        widget_identifier = "isDisplayed"
+        widget_identifier = "isdisplayed"
         value = ""
     elif contains_id(selector):
         widget_identifier = "resource-id"
         value = re.search(r'R.id\.(.*?)\)', selector).group(1)
     elif "with" in selector:
-        widget_identifier = re.search(r'with(.*?)\(', selector).group(1)
+        widget_identifier = re.search(r'with(.*?)\(', selector).group(1).lower()
         value = re.search(r'\"(.*?)\"', selector).group(1)
     elif "IsInstanceOf" in selector:
-        widget_identifier = "ClassName"
+        widget_identifier = "classname"
         value = re.search(r'instanceOf\((.*?)\.class', selector).group(1)
     else:
         return selector_list
@@ -115,8 +115,7 @@ def parse_test_section(lines):
     for line in lines:
         if "onView" in line or "pressBack();" in line:
             parsed_event = {}
-            if "onView" in line:
-                parsed_event = extract_get_element_by(parsed_event, line)
+            parsed_event = extract_get_element_by(parsed_event, line)
             parsed_event = extract_action(parsed_event, line)
             parsed_event_list.append(parsed_event)
     return parsed_event_list
@@ -139,18 +138,18 @@ def get_test_section(lines):
                 expression = ''
     return test
 
-def parse(fname):
+def atm_parse(fname):
     lines = read_file(fname)
     section = get_test_section(lines)
     parsed_test = parse_test_section(section)
-    write_json(parsed_test, fname, '_parsed.json')
+    write_json(parsed_test, fname.replace(fname[-5:], '_parsed.json'))
     return parsed_test
 
 def main():
     files = glob.glob('../data/*/*/*.java')
     for file in files:
         print(file)
-        parse(file)
+        atmparse(file)
 
 if __name__ == '__main__':
     main()

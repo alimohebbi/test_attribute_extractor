@@ -6,7 +6,7 @@
         "value": "fab_expand_menu_button"
       },
       {
-        "type": "isDisplayed",
+        "type": "isdisplayed",
         "value": ""
       }
     ],
@@ -24,7 +24,7 @@
         "value": "create_note"
       },
       {
-        "type": "isDisplayed",
+        "type": "isdisplayed",
         "value": ""
       }
     ],
@@ -42,7 +42,7 @@
         "value": "edit_note_title"
       },
       {
-        "type": "isDisplayed",
+        "type": "isdisplayed",
         "value": ""
       }
     ],
@@ -74,11 +74,11 @@
         "value": "action_preview"
       },
       {
-        "type": "ContentDescription",
+        "type": "contentdescription",
         "value": "Preview"
       },
       {
-        "type": "isDisplayed",
+        "type": "isdisplayed",
         "value": ""
       }
     ],
@@ -92,11 +92,11 @@
   {
     "get_element_by": [
       {
-        "type": "ContentDescription",
+        "type": "contentdescription",
         "value": "Navigate up"
       },
       {
-        "type": "isDisplayed",
+        "type": "isdisplayed",
         "value": ""
       }
     ],
@@ -114,11 +114,11 @@
         "value": "note_title"
       },
       {
-        "type": "Text",
+        "type": "text",
         "value": "note"
       },
       {
-        "type": "isDisplayed",
+        "type": "isdisplayed",
         "value": ""
       }
     ],

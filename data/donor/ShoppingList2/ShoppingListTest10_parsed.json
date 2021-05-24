@@ -3,10 +3,14 @@
     "get_element_by": [
       {
         "type": "resource-id",
-        "value": "fab"
+        "value": "action_add"
       },
       {
-        "type": "isDisplayed",
+        "type": "contentdescription",
+        "value": "New list"
+      },
+      {
+        "type": "isdisplayed",
         "value": ""
       }
     ],
@@ -20,32 +24,18 @@
   {
     "get_element_by": [
       {
-        "type": "resource-id",
-        "value": "date_picker"
-      }
-    ],
-    "action": [
-      {
-        "type": "click",
-        "value": ""
-      }
-    ]
-  },
-  {
-    "get_element_by": [
-      {
-        "type": "ContentDescription",
-        "value": "Next month"
+        "type": "xpath",
+        "value": "/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.EditText"
       },
       {
-        "type": "isDisplayed",
+        "type": "isdisplayed",
         "value": ""
       }
     ],
     "action": [
       {
-        "type": "click",
-        "value": ""
+        "type": "replaceText",
+        "value": "list"
       }
     ]
   },
@@ -56,26 +46,12 @@
         "value": "button1"
       },
       {
-        "type": "Text",
+        "type": "text",
         "value": "OK"
-      }
-    ],
-    "action": [
-      {
-        "type": "click",
-        "value": ""
-      }
-    ]
-  },
-  {
-    "get_element_by": [
-      {
-        "type": "resource-id",
-        "value": "save_expense"
       },
       {
-        "type": "Text",
-        "value": "Save"
+        "type": "isdisplayed",
+        "value": ""
       }
     ],
     "action": [
@@ -88,8 +64,16 @@
   {
     "get_element_by": [
       {
-        "type": "Text",
-        "value": "Expenses"
+        "type": "classname",
+        "value": "android.widget.TextView"
+      },
+      {
+        "type": "text",
+        "value": "list"
+      },
+      {
+        "type": "isdisplayed",
+        "value": ""
       }
     ],
     "action": [
@@ -97,8 +81,8 @@
         "type": "check",
         "value": [
           {
-            "type": "isDisplayed",
-            "value": ""
+            "type": "text",
+            "value": "list"
           }
         ]
       }

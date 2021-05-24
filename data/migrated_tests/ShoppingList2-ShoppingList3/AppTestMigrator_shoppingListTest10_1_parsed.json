@@ -44,7 +44,7 @@
   {
     "get_element_by": [
       {
-        "type": "XPath",
+        "type": "xpath",
         "value": "/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.ScrollView/android.widget.LinearLayout/android.widget.Button[2]"
       }
     ],

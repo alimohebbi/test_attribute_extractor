@@ -16,7 +16,7 @@
   {
     "get_element_by": [
       {
-        "type": "XPath",
+        "type": "xpath",
         "value": "/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/android.view.ViewGroup/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.TextView"
       }
     ],
@@ -30,7 +30,7 @@
   {
     "get_element_by": [
       {
-        "type": "XPath",
+        "type": "xpath",
         "value": "/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[2]/android.widget.RelativeLayout/android.widget.LinearLayout/android.widget.TableLayout"
       }
     ],
@@ -44,7 +44,7 @@
   {
     "get_element_by": [
       {
-        "type": "Text",
+        "type": "text",
         "value": "OK"
       }
     ],
@@ -86,7 +86,7 @@
   {
     "get_element_by": [
       {
-        "type": "XPath",
+        "type": "xpath",
         "value": "/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/android.view.ViewGroup/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.ImageView[2]"
       }
     ],
@@ -114,7 +114,7 @@
   {
     "get_element_by": [
       {
-        "type": "XPath",
+        "type": "xpath",
         "value": "/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.EditText"
       }
     ],
@@ -128,7 +128,7 @@
   {
     "get_element_by": [
       {
-        "type": "Text",
+        "type": "text",
         "value": "OK"
       }
     ],

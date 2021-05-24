@@ -6,11 +6,11 @@
         "value": "newNote"
       },
       {
-        "type": "ContentDescription",
+        "type": "contentdescription",
         "value": "New note"
       },
       {
-        "type": "isDisplayed",
+        "type": "isdisplayed",
         "value": ""
       }
     ],
@@ -28,7 +28,7 @@
         "value": "titleEdit"
       },
       {
-        "type": "isDisplayed",
+        "type": "isdisplayed",
         "value": ""
       }
     ],
@@ -56,7 +56,7 @@
   {
     "get_element_by": [
       {
-        "type": "XPath",
+        "type": "xpath",
         "value": "/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.view.ViewGroup/android.widget.ImageButton"
       }
     ],
@@ -74,7 +74,7 @@
         "value": "button1"
       },
       {
-        "type": "Text",
+        "type": "text",
         "value": "Yes"
       }
     ],
@@ -92,11 +92,11 @@
         "value": "titleView"
       },
       {
-        "type": "Text",
+        "type": "text",
         "value": "Title1"
       },
       {
-        "type": "isDisplayed",
+        "type": "isdisplayed",
         "value": ""
       }
     ],
@@ -119,11 +119,11 @@
         "value": "bodyView"
       },
       {
-        "type": "Text",
+        "type": "text",
         "value": "Note1"
       },
       {
-        "type": "isDisplayed",
+        "type": "isdisplayed",
         "value": ""
       }
     ],

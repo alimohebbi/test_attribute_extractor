@@ -2,7 +2,7 @@
   {
     "get_element_by": [
       {
-        "type": "ContentDescription",
+        "type": "contentdescription",
         "value": "Open navigation drawer"
       }
     ],
@@ -24,7 +24,7 @@
   {
     "get_element_by": [
       {
-        "type": "Text",
+        "type": "text",
         "value": "Week"
       }
     ],
@@ -38,7 +38,7 @@
   {
     "get_element_by": [
       {
-        "type": "Text",
+        "type": "text",
         "value": "Day"
       }
     ],
@@ -80,7 +80,7 @@
   {
     "get_element_by": [
       {
-        "type": "ContentDescription",
+        "type": "contentdescription",
         "value": "Navigate up"
       }
     ],
@@ -113,7 +113,7 @@
   {
     "get_element_by": [
       {
-        "type": "ContentDescription",
+        "type": "contentdescription",
         "value": "Open navigation drawer"
       }
     ],
@@ -163,7 +163,7 @@
   {
     "get_element_by": [
       {
-        "type": "ContentDescription",
+        "type": "contentdescription",
         "value": "Navigate up"
       }
     ],

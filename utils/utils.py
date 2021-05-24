@@ -6,10 +6,6 @@ def write_to_error_log(message, filename):
     f = open(filename, 'a')
     f.write(message)
 
-def write_json(data, fname, name_postfix):
-    with open(fname.replace(fname[-5:], name_postfix), 'w') as f:
-        f.write(json.dumps(data, indent=2))
-
 def write_json(data, new_name):
     with open(new_name, 'w') as f:
         f.write(json.dumps(data, indent=2))
@@ -28,7 +24,7 @@ def get_app_name(fname):
     category = fname.split("/")[-3]
     if category == "migrated_tests":
         return fname.split("/")[-2].split("-")[1]
-    elif category == "ground_truth":
+    elif category == "donor":
         return fname.split("/")[-2]
     else:
         category = fname.split("/")[-5]

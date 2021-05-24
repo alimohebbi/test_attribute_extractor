@@ -3,10 +3,10 @@
     "get_element_by": [
       {
         "type": "resource-id",
-        "value": "notes_$_linearlayout_empty"
+        "value": "fab"
       },
       {
-        "type": "isDisplayed",
+        "type": "isdisplayed",
         "value": ""
       }
     ],
@@ -21,17 +21,17 @@
     "get_element_by": [
       {
         "type": "resource-id",
-        "value": "editor_$_edittext_title"
+        "value": "shoppingListNameEditText"
       },
       {
-        "type": "isDisplayed",
+        "type": "isdisplayed",
         "value": ""
       }
     ],
     "action": [
       {
         "type": "replaceText",
-        "value": "to-do"
+        "value": "Grocery"
       }
     ]
   },
@@ -39,24 +39,38 @@
     "get_element_by": [
       {
         "type": "resource-id",
-        "value": "editor_$_note_editor"
+        "value": "shoppingListDescriptionEditText"
       },
       {
-        "type": "isDisplayed",
+        "type": "isdisplayed",
         "value": ""
       }
     ],
     "action": [
       {
         "type": "replaceText",
-        "value": "Go shopping"
+        "value": "Weekly grocery shopping"
       }
     ]
   },
   {
+    "get_element_by": [
+      {
+        "type": "resource-id",
+        "value": "addShoppingListButton"
+      },
+      {
+        "type": "text",
+        "value": "Save"
+      },
+      {
+        "type": "isdisplayed",
+        "value": ""
+      }
+    ],
     "action": [
       {
-        "type": "pressBack",
+        "type": "click",
         "value": ""
       }
     ]
@@ -65,14 +79,14 @@
     "get_element_by": [
       {
         "type": "resource-id",
-        "value": "note_item_$_textview_title"
+        "value": "shoppingListNameTextView"
       },
       {
-        "type": "Text",
-        "value": "to-do"
+        "type": "text",
+        "value": "Grocery"
       },
       {
-        "type": "isDisplayed",
+        "type": "isdisplayed",
         "value": ""
       }
     ],
@@ -82,7 +96,7 @@
         "value": [
           {
             "type": "text",
-            "value": "to-do"
+            "value": "Grocery"
           }
         ]
       }

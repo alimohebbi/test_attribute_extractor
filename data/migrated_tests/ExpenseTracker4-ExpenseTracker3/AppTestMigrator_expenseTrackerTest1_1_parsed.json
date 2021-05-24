@@ -2,7 +2,7 @@
   {
     "get_element_by": [
       {
-        "type": "ContentDescription",
+        "type": "contentdescription",
         "value": "Open navigation drawer"
       }
     ],
@@ -16,7 +16,7 @@
   {
     "get_element_by": [
       {
-        "type": "ContentDescription",
+        "type": "contentdescription",
         "value": "Close navigation drawer"
       }
     ],
@@ -30,7 +30,7 @@
   {
     "get_element_by": [
       {
-        "type": "ContentDescription",
+        "type": "contentdescription",
         "value": "Open navigation drawer"
       }
     ],
@@ -44,7 +44,7 @@
   {
     "get_element_by": [
       {
-        "type": "XPath",
+        "type": "xpath",
         "value": "/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[2]/android.support.v4.widget.DrawerLayout/android.widget.ListView/android.widget.TextView[3]"
       }
     ],

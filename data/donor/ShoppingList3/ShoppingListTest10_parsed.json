@@ -6,11 +6,11 @@
         "value": "btn_skip"
       },
       {
-        "type": "Text",
+        "type": "text",
         "value": "Skip"
       },
       {
-        "type": "isDisplayed",
+        "type": "isdisplayed",
         "value": ""
       }
     ],
@@ -28,7 +28,7 @@
         "value": "fab_new_list"
       },
       {
-        "type": "isDisplayed",
+        "type": "isdisplayed",
         "value": ""
       }
     ],
@@ -46,7 +46,7 @@
         "value": "list_name"
       },
       {
-        "type": "isDisplayed",
+        "type": "isdisplayed",
         "value": ""
       }
     ],
@@ -64,7 +64,7 @@
         "value": "button1"
       },
       {
-        "type": "Text",
+        "type": "text",
         "value": "Okay"
       }
     ],
@@ -78,11 +78,11 @@
   {
     "get_element_by": [
       {
-        "type": "Text",
+        "type": "text",
         "value": "grocery"
       },
       {
-        "type": "isDisplayed",
+        "type": "isdisplayed",
         "value": ""
       }
     ],

@@ -67,7 +67,7 @@ def extract_get_element_by(parsed_element, log_fname):
     new_parsed_elemetn["get_element_by"] = selector_list
     return new_parsed_elemetn
 
-def parse(fname):
+def craftdroid_parse(fname):
 
 	log_fname = fname.replace(fname.split("/")[-1], "atm_compatible/"+fname.split("/")[-1].split(".")[0]+"_parse_log.txt")
 	data = load_json_data(fname)
@@ -83,7 +83,7 @@ def main():
     files = glob.glob('../data/craftdroid_tests/*/*/*/*.json')
     for file in files:
         print(file)
-        parse(file)
+        craftdroid_parse(file)
 
 if __name__ == '__main__':
     main()

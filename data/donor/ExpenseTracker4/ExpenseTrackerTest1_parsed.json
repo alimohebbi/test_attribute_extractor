@@ -2,29 +2,15 @@
   {
     "get_element_by": [
       {
-        "type": "ContentDescription",
-        "value": "More options"
-      }
-    ],
-    "action": [
-      {
-        "type": "click",
-        "value": ""
-      }
-    ]
-  },
-  {
-    "get_element_by": [
-      {
         "type": "resource-id",
-        "value": "title"
+        "value": "btn_add_income"
       },
       {
-        "type": "Text",
-        "value": "New list"
+        "type": "text",
+        "value": "Add income"
       },
       {
-        "type": "isDisplayed",
+        "type": "isdisplayed",
         "value": ""
       }
     ],
@@ -39,29 +25,15 @@
     "get_element_by": [
       {
         "type": "resource-id",
-        "value": "edittext"
+        "value": "action_done"
       },
       {
-        "type": "isDisplayed",
+        "type": "contentdescription",
+        "value": "Add"
+      },
+      {
+        "type": "isdisplayed",
         "value": ""
-      }
-    ],
-    "action": [
-      {
-        "type": "replaceText",
-        "value": "list1"
-      }
-    ]
-  },
-  {
-    "get_element_by": [
-      {
-        "type": "resource-id",
-        "value": "button1"
-      },
-      {
-        "type": "Text",
-        "value": "OK"
       }
     ],
     "action": [
@@ -75,7 +47,15 @@
     "get_element_by": [
       {
         "type": "resource-id",
-        "value": "text1"
+        "value": "textinput_error"
+      },
+      {
+        "type": "text",
+        "value": "Field can't be empty."
+      },
+      {
+        "type": "isdisplayed",
+        "value": ""
       }
     ],
     "action": [
@@ -84,15 +64,7 @@
         "value": [
           {
             "type": "text",
-            "value": "list1"
-          },
-          {
-            "type": " isDisplayed",
-            "value": ""
-          },
-          {
-            "type": " isEnabled",
-            "value": ""
+            "value": "Field can't be empty."
           }
         ]
       }
@@ -102,61 +74,17 @@
     "get_element_by": [
       {
         "type": "resource-id",
-        "value": "button_add_item"
+        "value": "et_price"
       },
       {
-        "type": "Text",
-        "value": "Add"
-      },
-      {
-        "type": "isDisplayed",
-        "value": ""
-      }
-    ],
-    "action": [
-      {
-        "type": "click",
-        "value": ""
-      }
-    ]
-  },
-  {
-    "get_element_by": [
-      {
-        "type": "resource-id",
-        "value": "button1"
-      },
-      {
-        "type": "Text",
-        "value": "OK"
-      },
-      {
-        "type": "isDisplayed",
-        "value": ""
-      }
-    ],
-    "action": [
-      {
-        "type": "click",
-        "value": ""
-      }
-    ]
-  },
-  {
-    "get_element_by": [
-      {
-        "type": "resource-id",
-        "value": "autocomplete_add_item"
-      },
-      {
-        "type": "isDisplayed",
+        "type": "isdisplayed",
         "value": ""
       }
     ],
     "action": [
       {
         "type": "replaceText",
-        "value": "item1"
+        "value": "1500"
       }
     ]
   },
@@ -164,14 +92,14 @@
     "get_element_by": [
       {
         "type": "resource-id",
-        "value": "button_add_item"
+        "value": "action_done"
       },
       {
-        "type": "Text",
+        "type": "contentdescription",
         "value": "Add"
       },
       {
-        "type": "isDisplayed",
+        "type": "isdisplayed",
         "value": ""
       }
     ],
@@ -186,7 +114,15 @@
     "get_element_by": [
       {
         "type": "resource-id",
-        "value": "name"
+        "value": "textinput_error"
+      },
+      {
+        "type": "text",
+        "value": "Field can't be empty."
+      },
+      {
+        "type": "isdisplayed",
+        "value": ""
       }
     ],
     "action": [
@@ -194,16 +130,93 @@
         "type": "check",
         "value": [
           {
-            "type": "isDisplayed",
-            "value": ""
-          },
+            "type": "text",
+            "value": "Field can't be empty."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "get_element_by": [
+      {
+        "type": "resource-id",
+        "value": "et_title"
+      },
+      {
+        "type": "isdisplayed",
+        "value": ""
+      }
+    ],
+    "action": [
+      {
+        "type": "replaceText",
+        "value": "GRA"
+      }
+    ]
+  },
+  {
+    "get_element_by": [
+      {
+        "type": "resource-id",
+        "value": "et_category"
+      },
+      {
+        "type": "isdisplayed",
+        "value": ""
+      }
+    ],
+    "action": [
+      {
+        "type": "replaceText",
+        "value": "General"
+      }
+    ]
+  },
+  {
+    "get_element_by": [
+      {
+        "type": "resource-id",
+        "value": "action_done"
+      },
+      {
+        "type": "contentdescription",
+        "value": "Add"
+      },
+      {
+        "type": "isdisplayed",
+        "value": ""
+      }
+    ],
+    "action": [
+      {
+        "type": "click",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "get_element_by": [
+      {
+        "type": "resource-id",
+        "value": "tv_title"
+      },
+      {
+        "type": "text",
+        "value": "GRA"
+      },
+      {
+        "type": "isdisplayed",
+        "value": ""
+      }
+    ],
+    "action": [
+      {
+        "type": "check",
+        "value": [
           {
             "type": "text",
-            "value": "item1"
-          },
-          {
-            "type": " isEnabled",
-            "value": ""
+            "value": "GRA"
           }
         ]
       }

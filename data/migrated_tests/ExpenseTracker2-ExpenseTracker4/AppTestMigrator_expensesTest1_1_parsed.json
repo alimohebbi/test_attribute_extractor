@@ -2,7 +2,7 @@
   {
     "get_element_by": [
       {
-        "type": "ContentDescription",
+        "type": "contentdescription",
         "value": "Open navigation drawer"
       }
     ],
@@ -66,7 +66,7 @@
   {
     "get_element_by": [
       {
-        "type": "ContentDescription",
+        "type": "contentdescription",
         "value": "Next month"
       }
     ],
@@ -80,7 +80,7 @@
   {
     "get_element_by": [
       {
-        "type": "Text",
+        "type": "text",
         "value": "OK"
       }
     ],
@@ -94,7 +94,7 @@
   {
     "get_element_by": [
       {
-        "type": "ContentDescription",
+        "type": "contentdescription",
         "value": "Navigate up"
       }
     ],

@@ -2,11 +2,11 @@
   {
     "get_element_by": [
       {
-        "type": "ContentDescription",
+        "type": "contentdescription",
         "value": "Open navigation drawer"
       },
       {
-        "type": "isDisplayed",
+        "type": "isdisplayed",
         "value": ""
       }
     ],
@@ -20,7 +20,7 @@
   {
     "get_element_by": [
       {
-        "type": "Text",
+        "type": "text",
         "value": "INCOME"
       }
     ],
@@ -38,11 +38,11 @@
         "value": "button2"
       },
       {
-        "type": "Text",
+        "type": "text",
         "value": "ADD INCOME"
       },
       {
-        "type": "isDisplayed",
+        "type": "isdisplayed",
         "value": ""
       }
     ],
@@ -60,11 +60,11 @@
         "value": "text"
       },
       {
-        "type": "Text",
+        "type": "text",
         "value": "Currently no income..."
       },
       {
-        "type": "isDisplayed",
+        "type": "isdisplayed",
         "value": ""
       }
     ],
@@ -87,7 +87,7 @@
         "value": "editText"
       },
       {
-        "type": "isDisplayed",
+        "type": "isdisplayed",
         "value": ""
       }
     ],
@@ -105,11 +105,11 @@
         "value": "button2"
       },
       {
-        "type": "Text",
+        "type": "text",
         "value": "ADD INCOME"
       },
       {
-        "type": "isDisplayed",
+        "type": "isdisplayed",
         "value": ""
       }
     ],
@@ -127,7 +127,7 @@
         "value": "editText2"
       },
       {
-        "type": "isDisplayed",
+        "type": "isdisplayed",
         "value": ""
       }
     ],
@@ -145,11 +145,11 @@
         "value": "button2"
       },
       {
-        "type": "Text",
+        "type": "text",
         "value": "ADD INCOME"
       },
       {
-        "type": "isDisplayed",
+        "type": "isdisplayed",
         "value": ""
       }
     ],
@@ -167,11 +167,11 @@
         "value": "text1"
       },
       {
-        "type": "Text",
+        "type": "text",
         "value": "500  MONTHLY"
       },
       {
-        "type": "isDisplayed",
+        "type": "isdisplayed",
         "value": ""
       }
     ],

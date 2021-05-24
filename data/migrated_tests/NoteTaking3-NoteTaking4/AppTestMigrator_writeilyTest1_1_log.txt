@@ -1,17 +1,17 @@
 ######################################## ERROR! ########################################
-More than one element was found given the widget selector in line: {'get_element_by': [{'type': 'XPath', 'value': '/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.ListView/android.widget.LinearLayout/android.widget.TextView'}], 'action': [{'type': 'click', 'value': ''}]}
+More than one element was found given the widget selector in line: {'get_element_by': [{'type': 'xpath', 'value': '/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.ListView/android.widget.LinearLayout/android.widget.TextView'}], 'action': [{'type': 'click', 'value': ''}]}
 
 
 ######################################## ERROR! ########################################
-More than one element was found given the widget selector in line: {'get_element_by': [{'type': 'XPath', 'value': '/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/android.view.ViewGroup/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.ImageView'}], 'action': [{'type': 'click', 'value': ''}]}
+More than one element was found given the widget selector in line: {'get_element_by': [{'type': 'xpath', 'value': '/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/android.view.ViewGroup/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.ImageView'}], 'action': [{'type': 'click', 'value': ''}]}
 
 
 ######################################## ERROR! ########################################
-More than one element was found given the widget selector in line: {'get_element_by': [{'type': 'XPath', 'value': '/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/android.view.ViewGroup/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.ImageView'}], 'action': [{'type': 'click', 'value': ''}]}
+More than one element was found given the widget selector in line: {'get_element_by': [{'type': 'xpath', 'value': '/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/android.view.ViewGroup/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.ImageView'}], 'action': [{'type': 'click', 'value': ''}]}
 
 
 ######################################## ERROR! ########################################
-More than one element was found given the widget selector in line: {'get_element_by': [{'type': 'XPath', 'value': '/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/android.view.ViewGroup/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.ImageView'}], 'action': [{'type': 'click', 'value': ''}]}
+More than one element was found given the widget selector in line: {'get_element_by': [{'type': 'xpath', 'value': '/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/android.view.ViewGroup/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.ImageView'}], 'action': [{'type': 'click', 'value': ''}]}
 
 
 ######################################## ERROR! ########################################

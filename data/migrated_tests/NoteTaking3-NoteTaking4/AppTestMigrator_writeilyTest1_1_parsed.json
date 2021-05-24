@@ -2,7 +2,7 @@
   {
     "get_element_by": [
       {
-        "type": "ContentDescription",
+        "type": "contentdescription",
         "value": "Search"
       }
     ],
@@ -16,7 +16,7 @@
   {
     "get_element_by": [
       {
-        "type": "Text",
+        "type": "text",
         "value": "Add Note"
       }
     ],
@@ -58,7 +58,7 @@
   {
     "get_element_by": [
       {
-        "type": "Text",
+        "type": "text",
         "value": "Pocket Note"
       }
     ],
@@ -72,7 +72,7 @@
   {
     "get_element_by": [
       {
-        "type": "Text",
+        "type": "text",
         "value": "Pocket Note"
       }
     ],
@@ -86,7 +86,7 @@
   {
     "get_element_by": [
       {
-        "type": "XPath",
+        "type": "xpath",
         "value": "/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/android.view.ViewGroup/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.ImageView"
       }
     ],
@@ -114,7 +114,7 @@
   {
     "get_element_by": [
       {
-        "type": "XPath",
+        "type": "xpath",
         "value": "/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.ListView/android.widget.LinearLayout/android.widget.TextView"
       }
     ],
@@ -128,7 +128,7 @@
   {
     "get_element_by": [
       {
-        "type": "XPath",
+        "type": "xpath",
         "value": "/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.ListView/android.widget.LinearLayout[2]/android.widget.TextView"
       }
     ],
@@ -142,7 +142,7 @@
   {
     "get_element_by": [
       {
-        "type": "XPath",
+        "type": "xpath",
         "value": "/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.ListView/android.widget.LinearLayout[3]/android.widget.TextView"
       }
     ],
@@ -156,7 +156,7 @@
   {
     "get_element_by": [
       {
-        "type": "XPath",
+        "type": "xpath",
         "value": "/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.ListView/android.widget.LinearLayout[4]/android.widget.TextView"
       }
     ],
@@ -170,7 +170,7 @@
   {
     "get_element_by": [
       {
-        "type": "XPath",
+        "type": "xpath",
         "value": "/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.ListView/android.widget.LinearLayout[5]/android.widget.TextView"
       }
     ],
@@ -184,7 +184,7 @@
   {
     "get_element_by": [
       {
-        "type": "XPath",
+        "type": "xpath",
         "value": "/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.ListView/android.widget.LinearLayout[6]/android.widget.TextView"
       }
     ],
@@ -198,7 +198,7 @@
   {
     "get_element_by": [
       {
-        "type": "XPath",
+        "type": "xpath",
         "value": "/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.ListView/android.widget.LinearLayout[7]/android.widget.TextView"
       }
     ],
@@ -212,7 +212,7 @@
   {
     "get_element_by": [
       {
-        "type": "XPath",
+        "type": "xpath",
         "value": "/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.ListView/android.widget.LinearLayout[8]/android.widget.TextView"
       }
     ],
@@ -226,7 +226,7 @@
   {
     "get_element_by": [
       {
-        "type": "XPath",
+        "type": "xpath",
         "value": "/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.ListView/android.widget.LinearLayout[9]/android.widget.TextView"
       }
     ],
@@ -256,7 +256,7 @@
   {
     "get_element_by": [
       {
-        "type": "ContentDescription",
+        "type": "contentdescription",
         "value": "Clear query"
       }
     ],
@@ -270,7 +270,7 @@
   {
     "get_element_by": [
       {
-        "type": "ContentDescription",
+        "type": "contentdescription",
         "value": "Search"
       }
     ],
@@ -298,7 +298,7 @@
   {
     "get_element_by": [
       {
-        "type": "XPath",
+        "type": "xpath",
         "value": "/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/android.view.ViewGroup/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.ImageView"
       }
     ],
@@ -312,7 +312,7 @@
   {
     "get_element_by": [
       {
-        "type": "ContentDescription",
+        "type": "contentdescription",
         "value": "Clear query"
       }
     ],
@@ -330,7 +330,7 @@
         "value": "navmenuitem_label"
       },
       {
-        "type": "Text",
+        "type": "text",
         "value": "Settings"
       }
     ],
@@ -344,7 +344,7 @@
   {
     "get_element_by": [
       {
-        "type": "XPath",
+        "type": "xpath",
         "value": "/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/android.view.ViewGroup/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.ImageView"
       }
     ],
@@ -358,7 +358,7 @@
   {
     "get_element_by": [
       {
-        "type": "XPath",
+        "type": "xpath",
         "value": "/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/android.view.ViewGroup/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.ImageView"
       }
     ],
@@ -390,7 +390,7 @@
         "value": "purple_dialog_row_$_textview_item"
       },
       {
-        "type": "Text",
+        "type": "text",
         "value": "Choose photo"
       }
     ],
@@ -426,7 +426,7 @@
   {
     "get_element_by": [
       {
-        "type": "XPath",
+        "type": "xpath",
         "value": "/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.GridView/android.widget.LinearLayout[2]/android.widget.ImageView"
       }
     ],
@@ -454,7 +454,7 @@
   {
     "get_element_by": [
       {
-        "type": "XPath",
+        "type": "xpath",
         "value": "/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[2]/android.support.v4.widget.DrawerLayout/android.widget.RelativeLayout/android.widget.ScrollView/android.widget.LinearLayout/android.widget.RelativeLayout/android.widget.Spinner/android.widget.LinearLayout/android.widget.TextView"
       }
     ],
@@ -472,7 +472,7 @@
         "value": "option_row_$_textview_item"
       },
       {
-        "type": "Text",
+        "type": "text",
         "value": "By alphabet"
       }
     ],
@@ -486,7 +486,7 @@
   {
     "get_element_by": [
       {
-        "type": "XPath",
+        "type": "xpath",
         "value": "/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/android.view.ViewGroup/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.ImageView"
       }
     ],
@@ -500,7 +500,7 @@
   {
     "get_element_by": [
       {
-        "type": "XPath",
+        "type": "xpath",
         "value": "/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/android.view.ViewGroup/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.ImageView"
       }
     ],
@@ -514,7 +514,7 @@
   {
     "get_element_by": [
       {
-        "type": "XPath",
+        "type": "xpath",
         "value": "/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/android.view.ViewGroup/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.ImageView[2]"
       }
     ],
@@ -528,7 +528,7 @@
   {
     "get_element_by": [
       {
-        "type": "XPath",
+        "type": "xpath",
         "value": "/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/android.view.ViewGroup/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.ImageView[2]"
       }
     ],
@@ -542,7 +542,7 @@
   {
     "get_element_by": [
       {
-        "type": "Text",
+        "type": "text",
         "value": "Pocket Note"
       }
     ],
@@ -556,7 +556,7 @@
   {
     "get_element_by": [
       {
-        "type": "Text",
+        "type": "text",
         "value": "Pocket Note"
       }
     ],
@@ -584,7 +584,7 @@
   {
     "get_element_by": [
       {
-        "type": "XPath",
+        "type": "xpath",
         "value": "/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.GridView/android.widget.LinearLayout[3]/android.widget.ImageView"
       }
     ],
@@ -612,7 +612,7 @@
   {
     "get_element_by": [
       {
-        "type": "XPath",
+        "type": "xpath",
         "value": "/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[2]/android.support.v4.widget.DrawerLayout/android.widget.RelativeLayout/android.widget.ScrollView/android.widget.LinearLayout/android.widget.RelativeLayout/android.widget.Spinner/android.widget.LinearLayout/android.widget.TextView"
       }
     ],
@@ -630,7 +630,7 @@
         "value": "option_row_$_textview_item"
       },
       {
-        "type": "Text",
+        "type": "text",
         "value": "By color"
       }
     ],
@@ -644,7 +644,7 @@
   {
     "get_element_by": [
       {
-        "type": "XPath",
+        "type": "xpath",
         "value": "/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/android.view.ViewGroup/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.ImageView"
       }
     ],
@@ -658,7 +658,7 @@
   {
     "get_element_by": [
       {
-        "type": "XPath",
+        "type": "xpath",
         "value": "/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/android.view.ViewGroup/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.ImageView"
       }
     ],
@@ -672,7 +672,7 @@
   {
     "get_element_by": [
       {
-        "type": "XPath",
+        "type": "xpath",
         "value": "/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/android.view.ViewGroup/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.ImageView[2]"
       }
     ],
@@ -686,7 +686,7 @@
   {
     "get_element_by": [
       {
-        "type": "XPath",
+        "type": "xpath",
         "value": "/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/android.view.ViewGroup/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.ImageView[2]"
       }
     ],
@@ -700,7 +700,7 @@
   {
     "get_element_by": [
       {
-        "type": "Text",
+        "type": "text",
         "value": "Pocket Note"
       }
     ],
@@ -714,7 +714,7 @@
   {
     "get_element_by": [
       {
-        "type": "Text",
+        "type": "text",
         "value": "Pocket Note"
       }
     ],
@@ -742,7 +742,7 @@
   {
     "get_element_by": [
       {
-        "type": "XPath",
+        "type": "xpath",
         "value": "/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.GridView/android.widget.LinearLayout[4]/android.widget.ImageView"
       }
     ],
@@ -770,7 +770,7 @@
   {
     "get_element_by": [
       {
-        "type": "XPath",
+        "type": "xpath",
         "value": "/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[2]/android.support.v4.widget.DrawerLayout/android.widget.RelativeLayout/android.widget.ScrollView/android.widget.LinearLayout/android.widget.RelativeLayout/android.widget.Spinner/android.widget.LinearLayout/android.widget.TextView"
       }
     ],
@@ -792,7 +792,7 @@
   {
     "get_element_by": [
       {
-        "type": "Text",
+        "type": "text",
         "value": "Default color"
       }
     ],
@@ -806,7 +806,7 @@
   {
     "get_element_by": [
       {
-        "type": "XPath",
+        "type": "xpath",
         "value": "/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.GridView/android.widget.LinearLayout[5]/android.widget.ImageView"
       }
     ],
@@ -820,7 +820,7 @@
   {
     "get_element_by": [
       {
-        "type": "XPath",
+        "type": "xpath",
         "value": "/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[2]/android.support.v4.widget.DrawerLayout/android.widget.RelativeLayout/android.widget.ScrollView/android.widget.LinearLayout/android.widget.LinearLayout[2]/android.widget.Spinner/android.widget.LinearLayout/android.widget.TextView"
       }
     ],
@@ -848,7 +848,7 @@
   {
     "get_element_by": [
       {
-        "type": "Text",
+        "type": "text",
         "value": "Pocket Note"
       }
     ],
@@ -862,7 +862,7 @@
   {
     "get_element_by": [
       {
-        "type": "ContentDescription",
+        "type": "contentdescription",
         "value": "Search"
       }
     ],
@@ -880,7 +880,7 @@
         "value": "navmenuitem_label"
       },
       {
-        "type": "Text",
+        "type": "text",
         "value": "Settings"
       }
     ],
@@ -908,7 +908,7 @@
   {
     "get_element_by": [
       {
-        "type": "XPath",
+        "type": "xpath",
         "value": "/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.GridView/android.widget.LinearLayout[6]/android.widget.ImageView"
       }
     ],
@@ -936,7 +936,7 @@
   {
     "get_element_by": [
       {
-        "type": "XPath",
+        "type": "xpath",
         "value": "/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[2]/android.support.v4.widget.DrawerLayout/android.widget.RelativeLayout/android.widget.ScrollView/android.widget.LinearLayout/android.widget.RelativeLayout/android.widget.Spinner/android.widget.LinearLayout/android.widget.TextView"
       }
     ],
@@ -958,7 +958,7 @@
   {
     "get_element_by": [
       {
-        "type": "Text",
+        "type": "text",
         "value": "Default color"
       }
     ],
@@ -972,7 +972,7 @@
   {
     "get_element_by": [
       {
-        "type": "XPath",
+        "type": "xpath",
         "value": "/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.GridView/android.widget.LinearLayout[7]/android.widget.ImageView"
       }
     ],
@@ -986,7 +986,7 @@
   {
     "get_element_by": [
       {
-        "type": "XPath",
+        "type": "xpath",
         "value": "/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[2]/android.support.v4.widget.DrawerLayout/android.widget.RelativeLayout/android.widget.ScrollView/android.widget.LinearLayout/android.widget.LinearLayout[2]/android.widget.Spinner/android.widget.LinearLayout/android.widget.TextView"
       }
     ],
@@ -1004,7 +1004,7 @@
         "value": "option_row_$_textview_item"
       },
       {
-        "type": "Text",
+        "type": "text",
         "value": "As grid view"
       }
     ],
@@ -1018,7 +1018,7 @@
   {
     "get_element_by": [
       {
-        "type": "XPath",
+        "type": "xpath",
         "value": "/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/android.view.ViewGroup/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.ImageView"
       }
     ],
@@ -1032,7 +1032,7 @@
   {
     "get_element_by": [
       {
-        "type": "XPath",
+        "type": "xpath",
         "value": "/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/android.view.ViewGroup/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.ImageView"
       }
     ],
@@ -1046,7 +1046,7 @@
   {
     "get_element_by": [
       {
-        "type": "XPath",
+        "type": "xpath",
         "value": "/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/android.view.ViewGroup/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.ImageView[2]"
       }
     ],
@@ -1060,7 +1060,7 @@
   {
     "get_element_by": [
       {
-        "type": "XPath",
+        "type": "xpath",
         "value": "/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/android.view.ViewGroup/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.ImageView[2]"
       }
     ],
@@ -1074,7 +1074,7 @@
   {
     "get_element_by": [
       {
-        "type": "Text",
+        "type": "text",
         "value": "Pocket Note"
       }
     ],
@@ -1088,7 +1088,7 @@
   {
     "get_element_by": [
       {
-        "type": "Text",
+        "type": "text",
         "value": "Pocket Note"
       }
     ],
@@ -1116,7 +1116,7 @@
   {
     "get_element_by": [
       {
-        "type": "XPath",
+        "type": "xpath",
         "value": "/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.GridView/android.widget.LinearLayout[8]/android.widget.ImageView"
       }
     ],
@@ -1144,7 +1144,7 @@
   {
     "get_element_by": [
       {
-        "type": "XPath",
+        "type": "xpath",
         "value": "/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[2]/android.support.v4.widget.DrawerLayout/android.widget.RelativeLayout/android.widget.ScrollView/android.widget.LinearLayout/android.widget.RelativeLayout/android.widget.Spinner/android.widget.LinearLayout/android.widget.TextView"
       }
     ],
@@ -1166,7 +1166,7 @@
   {
     "get_element_by": [
       {
-        "type": "Text",
+        "type": "text",
         "value": "Default color"
       }
     ],
@@ -1188,7 +1188,7 @@
   {
     "get_element_by": [
       {
-        "type": "XPath",
+        "type": "xpath",
         "value": "/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[2]/android.support.v4.widget.DrawerLayout/android.widget.RelativeLayout/android.widget.ScrollView/android.widget.LinearLayout/android.widget.LinearLayout[2]/android.widget.Spinner/android.widget.LinearLayout/android.widget.TextView"
       }
     ],
@@ -1210,7 +1210,7 @@
   {
     "get_element_by": [
       {
-        "type": "Text",
+        "type": "text",
         "value": "Master password"
       }
     ],
@@ -1380,7 +1380,7 @@
   {
     "get_element_by": [
       {
-        "type": "XPath",
+        "type": "xpath",
         "value": "/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[2]/android.support.v4.widget.DrawerLayout/android.widget.RelativeLayout/android.widget.ScrollView/android.widget.LinearLayout/android.widget.RelativeLayout/android.widget.Spinner/android.widget.LinearLayout/android.widget.TextView"
       }
     ],
@@ -1402,7 +1402,7 @@
   {
     "get_element_by": [
       {
-        "type": "Text",
+        "type": "text",
         "value": "Default color"
       }
     ],
@@ -1424,7 +1424,7 @@
   {
     "get_element_by": [
       {
-        "type": "XPath",
+        "type": "xpath",
         "value": "/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[2]/android.support.v4.widget.DrawerLayout/android.widget.RelativeLayout/android.widget.ScrollView/android.widget.LinearLayout/android.widget.LinearLayout[2]/android.widget.Spinner/android.widget.LinearLayout/android.widget.TextView"
       }
     ],
@@ -1438,7 +1438,7 @@
   {
     "get_element_by": [
       {
-        "type": "ContentDescription",
+        "type": "contentdescription",
         "value": "Search"
       }
     ],
