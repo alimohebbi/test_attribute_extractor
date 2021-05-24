@@ -1,0 +1,115 @@
+[
+  {
+    "get_element_by": [
+      {
+        "type": "resource-id",
+        "value": "org.secuso.privacyfriendlytodolist:id/btn_skip"
+      },
+      {
+        "type": "Text",
+        "value": "Skip"
+      },
+      {
+        "type": "ClassName",
+        "value": "android.widget.Button"
+      }
+    ],
+    "action": [
+      {
+        "type": "click",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "get_element_by": [
+      {
+        "type": "resource-id",
+        "value": "org.secuso.privacyfriendlytodolist:id/fab_new_task"
+      },
+      {
+        "type": "ClassName",
+        "value": "android.widget.ImageButton"
+      }
+    ],
+    "action": [
+      {
+        "type": "click",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "get_element_by": [
+      {
+        "type": "resource-id",
+        "value": "org.secuso.privacyfriendlytodolist:id/et_new_task_description"
+      },
+      {
+        "type": "Text",
+        "value": "Description"
+      },
+      {
+        "type": "ClassName",
+        "value": "android.widget.EditText"
+      }
+    ],
+    "action": [
+      {
+        "type": "replaceText",
+        "value": "Sample Todo"
+      }
+    ]
+  },
+  {
+    "get_element_by": [
+      {
+        "type": "resource-id",
+        "value": "org.secuso.privacyfriendlytodolist:id/bt_new_task_ok"
+      },
+      {
+        "type": "Text",
+        "value": "Okay"
+      },
+      {
+        "type": "ClassName",
+        "value": "android.widget.Button"
+      }
+    ],
+    "action": [
+      {
+        "type": "click",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "get_element_by": [
+      {
+        "type": "resource-id",
+        "value": "org.secuso.privacyfriendlytodolist:id/tv_new_task_listchoose"
+      },
+      {
+        "type": "Text",
+        "value": "Click to select!"
+      },
+      {
+        "type": "ClassName",
+        "value": "android.widget.TextView"
+      }
+    ],
+    "action": [
+      {
+        "type": "wait",
+        "value": 10
+      },
+      {
+        "type": "check_element_presence",
+        "value": {
+          "type": "xpath",
+          "value": "//android.widget.TextView[@text=\"Click to select!\"]"
+        }
+      }
+    ]
+  }
+]

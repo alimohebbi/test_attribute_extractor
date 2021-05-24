@@ -10,6 +10,10 @@ def write_json(data, fname, name_postfix):
     with open(fname.replace(fname[-5:], name_postfix), 'w') as f:
         f.write(json.dumps(data, indent=2))
 
+def write_json(data, new_name):
+    with open(new_name, 'w') as f:
+        f.write(json.dumps(data, indent=2))
+
 def load_json_data(fname):
     f = open(fname,)
     data = json.load(f)
@@ -26,11 +30,13 @@ def get_app_name(fname):
         return fname.split("/")[-2].split("-")[1]
     elif category == "ground_truth":
         return fname.split("/")[-2]
-    elif category == "craftdroid_tests":
-        return fname.split("/")[-1].split(".")[0]
     else:
-        print("Application not recognized!"+"\n"+"The test file should be under directory \"/data/migrated_tests\",  \"/data/ground_truth\" or \"/data/craftdroid_tests\"")
-        return None
+        category = fname.split("/")[-5]
+        if category == "craftdroid_tests":
+            return fname.split("/")[-1].split(".")[0]
+        else:
+            print("Application not recognized!"+"\n"+"The test file should be under directory \"/data/migrated_tests\",  \"/data/ground_truth\" or \"/data/craftdroid_tests\"")
+            return None
 
 def get_package_activity(fname):
     app_name = get_app_name(fname)

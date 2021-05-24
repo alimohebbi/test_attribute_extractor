@@ -1,0 +1,137 @@
+[
+  {
+    "get_element_by": [
+      {
+        "type": "resource-id",
+        "value": "com.my.mail:id/subject"
+      },
+      {
+        "type": "Text",
+        "value": "Another rabbit hole"
+      },
+      {
+        "type": "ClassName",
+        "value": "android.widget.TextView"
+      }
+    ],
+    "action": [
+      {
+        "type": "wait",
+        "value": 10
+      },
+      {
+        "type": "check",
+        "value": {
+          "type": "text",
+          "value": "Another rabbit hole"
+        }
+      }
+    ]
+  },
+  {
+    "get_element_by": [
+      {
+        "type": "resource-id",
+        "value": "com.my.mail:id/toolbar_action_search"
+      },
+      {
+        "type": "ContentDescription",
+        "value": "Search"
+      },
+      {
+        "type": "ClassName",
+        "value": "android.widget.TextView"
+      }
+    ],
+    "action": [
+      {
+        "type": "click",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "get_element_by": [
+      {
+        "type": "resource-id",
+        "value": "com.my.mail:id/search_text"
+      },
+      {
+        "type": "Text",
+        "value": "Search Text"
+      },
+      {
+        "type": "ClassName",
+        "value": "android.widget.EditText"
+      }
+    ],
+    "action": [
+      {
+        "type": "wait",
+        "value": 10
+      },
+      {
+        "type": "check_element_presence",
+        "value": {
+          "type": "id",
+          "value": "search_text"
+        }
+      }
+    ]
+  },
+  {
+    "get_element_by": [
+      {
+        "type": "resource-id",
+        "value": "com.my.mail:id/search_text"
+      },
+      {
+        "type": "Text",
+        "value": "Search Text"
+      },
+      {
+        "type": "ClassName",
+        "value": "android.widget.EditText"
+      }
+    ],
+    "action": [
+      {
+        "type": "replaceText",
+        "value": "Automated"
+      },
+      {
+        "type": "enter",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "get_element_by": [
+      {
+        "type": "resource-id",
+        "value": "com.my.mail:id/subject"
+      },
+      {
+        "type": "Text",
+        "value": "Automated Software Engineering"
+      },
+      {
+        "type": "ClassName",
+        "value": "android.widget.TextView"
+      }
+    ],
+    "action": [
+      {
+        "type": "wait",
+        "value": 10
+      },
+      {
+        "type": "check",
+        "value": {
+          "type": "text",
+          "value": "Automated Software Engineering"
+        }
+      }
+    ]
+  }
+]

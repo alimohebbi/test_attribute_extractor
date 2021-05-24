@@ -1,0 +1,4 @@
+######################################## ERROR! ########################################
+For the element : {'class': '', 'resource-id': '', 'text': '', 'content-desc': '', 'clickable': '', 'password': '', 'parent_text': '', 'sibling_text': '', 'tid': 'a21', 'package': 'com.rubenroy.minimaltodo', 'activity': '.MainActivity', 'ignorable': 'false', 'event_type': 'oracle', 'action': ['wait_until_text_invisible', 10, 'text', 'Sample Todo']}, there are no selectors by which we can find the element.
+
+

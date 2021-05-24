@@ -1,0 +1,195 @@
+[
+  {
+    "get_element_by": [
+      {
+        "type": "resource-id",
+        "value": "com.my.mail:id/folder_name"
+      },
+      {
+        "type": "Text",
+        "value": "Inbox"
+      },
+      {
+        "type": "ClassName",
+        "value": "android.widget.TextView"
+      }
+    ],
+    "action": [
+      {
+        "type": "wait",
+        "value": 15
+      },
+      {
+        "type": "check",
+        "value": {
+          "type": "text",
+          "value": "Inbox"
+        }
+      }
+    ]
+  },
+  {
+    "get_element_by": [
+      {
+        "type": "resource-id",
+        "value": "com.my.mail:id/toolbar_action_new"
+      },
+      {
+        "type": "ContentDescription",
+        "value": "New Message"
+      },
+      {
+        "type": "ClassName",
+        "value": "android.widget.TextView"
+      }
+    ],
+    "action": [
+      {
+        "type": "click",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "get_element_by": [
+      {
+        "type": "resource-id",
+        "value": "com.my.mail:id/edit_text_to"
+      },
+      {
+        "type": "Text",
+        "value": "\u200b"
+      },
+      {
+        "type": "ClassName",
+        "value": "android.widget.EditText"
+      }
+    ],
+    "action": [
+      {
+        "type": "wait",
+        "value": 15
+      },
+      {
+        "type": "check_element_presence",
+        "value": {
+          "type": "id",
+          "value": "edit_text_to"
+        }
+      }
+    ]
+  },
+  {
+    "get_element_by": [
+      {
+        "type": "resource-id",
+        "value": "com.my.mail:id/edit_text_to"
+      },
+      {
+        "type": "Text",
+        "value": "\u200b"
+      },
+      {
+        "type": "ClassName",
+        "value": "android.widget.EditText"
+      }
+    ],
+    "action": [
+      {
+        "type": "replaceText",
+        "value": "uci.seal@gmail.com"
+      }
+    ]
+  },
+  {
+    "get_element_by": [
+      {
+        "type": "resource-id",
+        "value": "com.my.mail:id/subject"
+      },
+      {
+        "type": "ClassName",
+        "value": "android.widget.EditText"
+      }
+    ],
+    "action": [
+      {
+        "type": "replaceText",
+        "value": "ICSTSuperCool"
+      }
+    ]
+  },
+  {
+    "get_element_by": [
+      {
+        "type": "resource-id",
+        "value": "com.my.mail:id/mailbox_create_new_body"
+      },
+      {
+        "type": "Text",
+        "value": "\n\n--\nSent from myMail for Android"
+      },
+      {
+        "type": "ClassName",
+        "value": "android.widget.EditText"
+      }
+    ],
+    "action": [
+      {
+        "type": "replaceText",
+        "value": "ICSTSuperCoolBody"
+      }
+    ]
+  },
+  {
+    "get_element_by": [
+      {
+        "type": "resource-id",
+        "value": "com.my.mail:id/toolbar_action_send"
+      },
+      {
+        "type": "ContentDescription",
+        "value": "Send"
+      },
+      {
+        "type": "ClassName",
+        "value": "android.widget.TextView"
+      }
+    ],
+    "action": [
+      {
+        "type": "click",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "get_element_by": [
+      {
+        "type": "resource-id",
+        "value": "com.my.mail:id/subject"
+      },
+      {
+        "type": "Text",
+        "value": "ICSTSuperCool"
+      },
+      {
+        "type": "ClassName",
+        "value": "android.widget.TextView"
+      }
+    ],
+    "action": [
+      {
+        "type": "wait",
+        "value": 20
+      },
+      {
+        "type": "check",
+        "value": {
+          "type": "text",
+          "value": "ICSTSuperCool"
+        }
+      }
+    ]
+  }
+]

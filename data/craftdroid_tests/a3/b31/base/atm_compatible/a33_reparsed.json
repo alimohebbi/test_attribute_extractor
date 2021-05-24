@@ -1,0 +1,201 @@
+[
+  {
+    "get_element_by": [
+      {
+        "type": "resource-id",
+        "value": "com.rainbowshops:id/button_sign_up"
+      },
+      {
+        "type": "Text",
+        "value": "Join"
+      },
+      {
+        "type": "ClassName",
+        "value": "android.widget.Button"
+      }
+    ],
+    "action": [
+      {
+        "type": "wait",
+        "value": 20
+      },
+      {
+        "type": "check_element_presence",
+        "value": {
+          "type": "id",
+          "value": "com.rainbowshops:id/button_sign_up"
+        }
+      }
+    ]
+  },
+  {
+    "get_element_by": [
+      {
+        "type": "resource-id",
+        "value": "com.rainbowshops:id/button_sign_up"
+      },
+      {
+        "type": "Text",
+        "value": "Join"
+      },
+      {
+        "type": "ClassName",
+        "value": "android.widget.Button"
+      }
+    ],
+    "action": [
+      {
+        "type": "click",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "get_element_by": [
+      {
+        "type": "resource-id",
+        "value": "com.rainbowshops:id/text_email"
+      },
+      {
+        "type": "ClassName",
+        "value": "android.widget.EditText"
+      }
+    ],
+    "action": [
+      {
+        "type": "wait",
+        "value": 20
+      },
+      {
+        "type": "check_element_presence",
+        "value": {
+          "type": "id",
+          "value": "com.rainbowshops:id/text_email"
+        }
+      }
+    ]
+  },
+  {
+    "get_element_by": [
+      {
+        "type": "resource-id",
+        "value": "com.rainbowshops:id/text_email"
+      },
+      {
+        "type": "ClassName",
+        "value": "android.widget.EditText"
+      }
+    ],
+    "action": [
+      {
+        "type": "replaceText",
+        "value": "p198573se@sxwabw.al.net"
+      }
+    ]
+  },
+  {
+    "get_element_by": [
+      {
+        "type": "resource-id",
+        "value": "com.rainbowshops:id/text_password"
+      },
+      {
+        "type": "ClassName",
+        "value": "android.widget.EditText"
+      }
+    ],
+    "action": [
+      {
+        "type": "replaceText",
+        "value": "1qaz2wsX"
+      }
+    ]
+  },
+  {
+    "get_element_by": [
+      {
+        "type": "resource-id",
+        "value": "com.rainbowshops:id/text_last_name"
+      },
+      {
+        "type": "ClassName",
+        "value": "android.widget.EditText"
+      }
+    ],
+    "action": [
+      {
+        "type": "replaceText",
+        "value": "Labfellow"
+      }
+    ]
+  },
+  {
+    "get_element_by": [
+      {
+        "type": "resource-id",
+        "value": "com.rainbowshops:id/text_first_name"
+      },
+      {
+        "type": "ClassName",
+        "value": "android.widget.EditText"
+      }
+    ],
+    "action": [
+      {
+        "type": "replaceText",
+        "value": "Sealbot"
+      }
+    ]
+  },
+  {
+    "get_element_by": [
+      {
+        "type": "resource-id",
+        "value": "com.rainbowshops:id/button_sign_up"
+      },
+      {
+        "type": "Text",
+        "value": "Create Account"
+      },
+      {
+        "type": "ClassName",
+        "value": "android.widget.Button"
+      }
+    ],
+    "action": [
+      {
+        "type": "click",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "get_element_by": [
+      {
+        "type": "resource-id",
+        "value": "com.rainbowshops:id/text_customer_name"
+      },
+      {
+        "type": "Text",
+        "value": "Hi Sealbot"
+      },
+      {
+        "type": "ClassName",
+        "value": "android.widget.TextView"
+      }
+    ],
+    "action": [
+      {
+        "type": "wait",
+        "value": 10
+      },
+      {
+        "type": "check",
+        "value": {
+          "type": "text",
+          "value": "Sealbot"
+        }
+      }
+    ]
+  }
+]

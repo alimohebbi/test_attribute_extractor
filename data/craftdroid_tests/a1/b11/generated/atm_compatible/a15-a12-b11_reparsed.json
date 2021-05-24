@@ -1,0 +1,97 @@
+[
+  {
+    "get_element_by": [
+      {
+        "type": "resource-id",
+        "value": "com.android.browser:id/tab_switcher"
+      },
+      {
+        "type": "ContentDescription",
+        "value": "Page manager"
+      },
+      {
+        "type": "ClassName",
+        "value": "android.widget.ImageButton"
+      }
+    ],
+    "action": [
+      {
+        "type": "click",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "get_element_by": [
+      {
+        "type": "resource-id",
+        "value": "com.android.browser:id/url"
+      },
+      {
+        "type": "Text",
+        "value": "https://www.google.com/webhp?client=ms-android-google&source=android-home"
+      },
+      {
+        "type": "ClassName",
+        "value": "android.widget.EditText"
+      }
+    ],
+    "action": [
+      {
+        "type": "click",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "get_element_by": [
+      {
+        "type": "resource-id",
+        "value": "com.android.browser:id/url"
+      },
+      {
+        "type": "Text",
+        "value": "https://www.google.com/webhp?client=ms-android-google&source=android-home"
+      },
+      {
+        "type": "ClassName",
+        "value": "android.widget.EditText"
+      }
+    ],
+    "action": [
+      {
+        "type": "replaceText",
+        "value": "https://www.ics.uci.edu"
+      },
+      {
+        "type": "enter",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "get_element_by": [
+      {
+        "type": "ContentDescription",
+        "value": "Donald Bren School of Information and Computer Sciences"
+      },
+      {
+        "type": "ClassName",
+        "value": "android.view.View"
+      }
+    ],
+    "action": [
+      {
+        "type": "wait",
+        "value": 10
+      },
+      {
+        "type": "check_element_presence",
+        "value": {
+          "type": "xpath",
+          "value": "//android.view.View[@content-desc=\"Donald Bren School of Information and Computer Sciences\"]"
+        }
+      }
+    ]
+  }
+]

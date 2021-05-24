@@ -1,0 +1,75 @@
+[
+  {
+    "get_element_by": [
+      {
+        "type": "resource-id",
+        "value": "anti.tip:id/bill"
+      },
+      {
+        "type": "Text",
+        "value": "0.00"
+      },
+      {
+        "type": "ClassName",
+        "value": "android.widget.EditText"
+      }
+    ],
+    "action": [
+      {
+        "type": "replaceText",
+        "value": "56.6"
+      }
+    ]
+  },
+  {
+    "get_element_by": [
+      {
+        "type": "resource-id",
+        "value": "anti.tip:id/percent"
+      },
+      {
+        "type": "Text",
+        "value": "15"
+      },
+      {
+        "type": "ClassName",
+        "value": "android.widget.EditText"
+      }
+    ],
+    "action": [
+      {
+        "type": "replaceText",
+        "value": "15"
+      }
+    ]
+  },
+  {
+    "get_element_by": [
+      {
+        "type": "resource-id",
+        "value": "anti.tip:id/total"
+      },
+      {
+        "type": "Text",
+        "value": "65.09"
+      },
+      {
+        "type": "ClassName",
+        "value": "android.widget.EditText"
+      }
+    ],
+    "action": [
+      {
+        "type": "wait",
+        "value": 10
+      },
+      {
+        "type": "check",
+        "value": {
+          "type": "text",
+          "value": "65.09"
+        }
+      }
+    ]
+  }
+]

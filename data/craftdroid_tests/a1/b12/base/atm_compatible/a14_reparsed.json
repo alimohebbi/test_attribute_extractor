@@ -1,0 +1,183 @@
+[
+  {
+    "get_element_by": [
+      {
+        "type": "resource-id",
+        "value": "de.baumann.browser:id/floatButton_ok"
+      },
+      {
+        "type": "ClassName",
+        "value": "android.widget.ImageButton"
+      }
+    ],
+    "action": [
+      {
+        "type": "click",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "get_element_by": [
+      {
+        "type": "resource-id",
+        "value": "de.baumann.browser:id/main_omnibox_input"
+      },
+      {
+        "type": "Text",
+        "value": "Search or type URL"
+      },
+      {
+        "type": "ClassName",
+        "value": "android.widget.EditText"
+      }
+    ],
+    "action": [
+      {
+        "type": "click",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "get_element_by": [
+      {
+        "type": "resource-id",
+        "value": "de.baumann.browser:id/main_omnibox_input"
+      },
+      {
+        "type": "Text",
+        "value": "Search or type URL"
+      },
+      {
+        "type": "ClassName",
+        "value": "android.widget.EditText"
+      }
+    ],
+    "action": [
+      {
+        "type": "replaceText",
+        "value": "https://www.ics.uci.edu"
+      },
+      {
+        "type": "enter",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "get_element_by": [
+      {
+        "type": "ContentDescription",
+        "value": "Donald Bren School of Information and Computer Sciences"
+      },
+      {
+        "type": "ClassName",
+        "value": "android.view.View"
+      }
+    ],
+    "action": [
+      {
+        "type": "wait",
+        "value": 10
+      },
+      {
+        "type": "check_element_presence",
+        "value": {
+          "type": "xpath",
+          "value": "//android.view.View[@content-desc=\"Donald Bren School of Information and Computer Sciences\"]"
+        }
+      }
+    ]
+  },
+  {
+    "get_element_by": [
+      {
+        "type": "resource-id",
+        "value": "de.baumann.browser:id/main_omnibox_input"
+      },
+      {
+        "type": "Text",
+        "value": "https://www.ics.uci.edu/"
+      },
+      {
+        "type": "ClassName",
+        "value": "android.widget.EditText"
+      }
+    ],
+    "action": [
+      {
+        "type": "replaceText",
+        "value": "https://uci.edu"
+      },
+      {
+        "type": "enter",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "get_element_by": [
+      {
+        "type": "ContentDescription",
+        "value": "UCI homepage"
+      },
+      {
+        "type": "ClassName",
+        "value": "android.view.View"
+      }
+    ],
+    "action": [
+      {
+        "type": "wait",
+        "value": 10
+      },
+      {
+        "type": "check_element_presence",
+        "value": {
+          "type": "xpath",
+          "value": "//android.view.View[@content-desc=\"UCI homepage\"]"
+        }
+      }
+    ]
+  },
+  {
+    "get_element_by": [
+      {
+        "type": "ClassName",
+        "value": "SYS_EVENT"
+      }
+    ],
+    "action": [
+      {
+        "type": "pressBack",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "get_element_by": [
+      {
+        "type": "ContentDescription",
+        "value": "Donald Bren School of Information and Computer Sciences"
+      },
+      {
+        "type": "ClassName",
+        "value": "android.view.View"
+      }
+    ],
+    "action": [
+      {
+        "type": "wait",
+        "value": 10
+      },
+      {
+        "type": "check_element_presence",
+        "value": {
+          "type": "xpath",
+          "value": "//android.view.View[@content-desc=\"Donald Bren School of Information and Computer Sciences\"]"
+        }
+      }
+    ]
+  }
+]

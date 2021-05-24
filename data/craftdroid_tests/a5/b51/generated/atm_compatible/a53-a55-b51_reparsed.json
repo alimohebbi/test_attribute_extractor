@@ -1,0 +1,119 @@
+[
+  {
+    "get_element_by": [
+      {
+        "type": "resource-id",
+        "value": "com.jpstudiosonline.tipcalculator:id/btCalculate"
+      },
+      {
+        "type": "Text",
+        "value": "Calculate"
+      },
+      {
+        "type": "ClassName",
+        "value": "android.widget.Button"
+      }
+    ],
+    "action": [
+      {
+        "type": "click",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "get_element_by": [
+      {
+        "type": "resource-id",
+        "value": "com.jpstudiosonline.tipcalculator:id/etBillTotal"
+      },
+      {
+        "type": "Text",
+        "value": "1"
+      },
+      {
+        "type": "ClassName",
+        "value": "android.widget.EditText"
+      }
+    ],
+    "action": [
+      {
+        "type": "replaceText",
+        "value": "56.6"
+      }
+    ]
+  },
+  {
+    "get_element_by": [
+      {
+        "type": "resource-id",
+        "value": "com.jpstudiosonline.tipcalculator:id/etTipAmount"
+      },
+      {
+        "type": "Text",
+        "value": "15"
+      },
+      {
+        "type": "ClassName",
+        "value": "android.widget.EditText"
+      }
+    ],
+    "action": [
+      {
+        "type": "replaceText",
+        "value": "15"
+      }
+    ]
+  },
+  {
+    "get_element_by": [
+      {
+        "type": "resource-id",
+        "value": "com.jpstudiosonline.tipcalculator:id/btCalculate"
+      },
+      {
+        "type": "Text",
+        "value": "Calculate"
+      },
+      {
+        "type": "ClassName",
+        "value": "android.widget.Button"
+      }
+    ],
+    "action": [
+      {
+        "type": "click",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "get_element_by": [
+      {
+        "type": "resource-id",
+        "value": "com.jpstudiosonline.tipcalculator:id/tvTotalWithTip"
+      },
+      {
+        "type": "Text",
+        "value": "$ 65.09"
+      },
+      {
+        "type": "ClassName",
+        "value": "android.widget.TextView"
+      }
+    ],
+    "action": [
+      {
+        "type": "wait",
+        "value": 10
+      },
+      {
+        "type": "check",
+        "value": {
+          "type": "text",
+          "value": "65.09"
+        }
+      }
+    ]
+  }
+]

@@ -1,0 +1,202 @@
+[
+  {
+    "get_element_by": [
+      {
+        "type": "resource-id",
+        "value": "com.yelp.android:id/hot_button_profile"
+      },
+      {
+        "type": "Text",
+        "value": "Me"
+      },
+      {
+        "type": "ContentDescription",
+        "value": "Me"
+      },
+      {
+        "type": "ClassName",
+        "value": "android.widget.TextView"
+      }
+    ],
+    "action": [
+      {
+        "type": "click",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "get_element_by": [
+      {
+        "type": "resource-id",
+        "value": "com.yelp.android:id/sign_up_button"
+      },
+      {
+        "type": "Text",
+        "value": "Sign Up"
+      },
+      {
+        "type": "ClassName",
+        "value": "android.widget.Button"
+      }
+    ],
+    "action": [
+      {
+        "type": "wait",
+        "value": 15
+      },
+      {
+        "type": "check_element_presence",
+        "value": {
+          "type": "id",
+          "value": "sign_up_button"
+        }
+      }
+    ]
+  },
+  {
+    "get_element_by": [
+      {
+        "type": "resource-id",
+        "value": "com.yelp.android:id/sign_up_button"
+      },
+      {
+        "type": "Text",
+        "value": "Sign Up"
+      },
+      {
+        "type": "ClassName",
+        "value": "android.widget.Button"
+      }
+    ],
+    "action": [
+      {
+        "type": "click",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "get_element_by": [
+      {
+        "type": "resource-id",
+        "value": "com.yelp.android:id/fb_sign_up"
+      },
+      {
+        "type": "Text",
+        "value": "Sign up with Facebook"
+      },
+      {
+        "type": "ClassName",
+        "value": "android.widget.Button"
+      }
+    ],
+    "action": [
+      {
+        "type": "wait",
+        "value": 15
+      },
+      {
+        "type": "check_element_presence",
+        "value": {
+          "type": "id",
+          "value": "fb_sign_up"
+        }
+      }
+    ]
+  },
+  {
+    "get_element_by": [
+      {
+        "type": "resource-id",
+        "value": "com.yelp.android:id/fb_sign_up"
+      },
+      {
+        "type": "Text",
+        "value": "Sign up with Facebook"
+      },
+      {
+        "type": "ClassName",
+        "value": "android.widget.Button"
+      }
+    ],
+    "action": [
+      {
+        "type": "click",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "get_element_by": [
+      {
+        "type": "ClassName",
+        "value": "EMPTY_EVENT"
+      }
+    ]
+  },
+  {
+    "get_element_by": [
+      {
+        "type": "ClassName",
+        "value": "EMPTY_EVENT"
+      }
+    ]
+  },
+  {
+    "get_element_by": [
+      {
+        "type": "ClassName",
+        "value": "EMPTY_EVENT"
+      }
+    ]
+  },
+  {
+    "get_element_by": [
+      {
+        "type": "ClassName",
+        "value": "EMPTY_EVENT"
+      }
+    ]
+  },
+  {
+    "get_element_by": [
+      {
+        "type": "ClassName",
+        "value": "EMPTY_EVENT"
+      }
+    ]
+  },
+  {
+    "get_element_by": [
+      {
+        "type": "ClassName",
+        "value": "EMPTY_EVENT"
+      }
+    ]
+  },
+  {
+    "get_element_by": [
+      {
+        "type": "ClassName",
+        "value": "EMPTY_EVENT"
+      }
+    ]
+  },
+  {
+    "get_element_by": [
+      {
+        "type": "ClassName",
+        "value": "EMPTY_EVENT"
+      }
+    ]
+  },
+  {
+    "get_element_by": [
+      {
+        "type": "ClassName",
+        "value": "EMPTY_EVENT"
+      }
+    ]
+  }
+]

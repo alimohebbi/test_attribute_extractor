@@ -1,0 +1,187 @@
+[
+  {
+    "get_element_by": [
+      {
+        "type": "resource-id",
+        "value": "com.contextlogic.wish:id/sign_in_fragment_forgot_password_button"
+      },
+      {
+        "type": "Text",
+        "value": "Forgot Password?"
+      },
+      {
+        "type": "ClassName",
+        "value": "android.widget.TextView"
+      }
+    ],
+    "action": [
+      {
+        "type": "wait",
+        "value": 10
+      },
+      {
+        "type": "check_element_presence",
+        "value": {
+          "type": "id",
+          "value": "sign_in_fragment_forgot_password_button"
+        }
+      }
+    ]
+  },
+  {
+    "get_element_by": [
+      {
+        "type": "resource-id",
+        "value": "com.contextlogic.wish:id/sign_in_fragment_forgot_password_button"
+      },
+      {
+        "type": "Text",
+        "value": "Forgot Password?"
+      },
+      {
+        "type": "ClassName",
+        "value": "android.widget.TextView"
+      }
+    ],
+    "action": [
+      {
+        "type": "click",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "get_element_by": [
+      {
+        "type": "ClassName",
+        "value": "EMPTY_EVENT"
+      }
+    ]
+  },
+  {
+    "get_element_by": [
+      {
+        "type": "resource-id",
+        "value": "com.contextlogic.wish:id/forgot_password_fragment_reset_password_button"
+      },
+      {
+        "type": "Text",
+        "value": "Reset Password"
+      },
+      {
+        "type": "ClassName",
+        "value": "android.widget.TextView"
+      }
+    ],
+    "action": [
+      {
+        "type": "click",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "get_element_by": [
+      {
+        "type": "Text",
+        "value": "OK"
+      },
+      {
+        "type": "ClassName",
+        "value": "android.widget.Button"
+      }
+    ],
+    "action": [
+      {
+        "type": "click",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "get_element_by": [
+      {
+        "type": "ClassName",
+        "value": "EMPTY_EVENT"
+      }
+    ]
+  },
+  {
+    "get_element_by": [
+      {
+        "type": "ClassName",
+        "value": "EMPTY_EVENT"
+      }
+    ]
+  },
+  {
+    "get_element_by": [
+      {
+        "type": "resource-id",
+        "value": "com.contextlogic.wish:id/forgot_password_fragment_email_text"
+      },
+      {
+        "type": "Text",
+        "value": "Email"
+      },
+      {
+        "type": "ClassName",
+        "value": "android.widget.EditText"
+      }
+    ],
+    "action": [
+      {
+        "type": "replaceText",
+        "value": "uci.seal@gmail.com"
+      }
+    ]
+  },
+  {
+    "get_element_by": [
+      {
+        "type": "resource-id",
+        "value": "com.contextlogic.wish:id/forgot_password_fragment_reset_password_button"
+      },
+      {
+        "type": "Text",
+        "value": "Reset Password"
+      },
+      {
+        "type": "ClassName",
+        "value": "android.widget.TextView"
+      }
+    ],
+    "action": [
+      {
+        "type": "click",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "get_element_by": [
+      {
+        "type": "Text",
+        "value": "OK"
+      },
+      {
+        "type": "ClassName",
+        "value": "android.widget.Button"
+      }
+    ],
+    "action": [
+      {
+        "type": "click",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "get_element_by": [
+      {
+        "type": "ClassName",
+        "value": "EMPTY_EVENT"
+      }
+    ]
+  }
+]
