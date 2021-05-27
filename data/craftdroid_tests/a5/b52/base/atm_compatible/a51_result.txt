@@ -1,0 +1,102 @@
+[
+  {
+    "checkable": "false",
+    "checked": "false",
+    "class": "android.widget.EditText",
+    "clickable": "true",
+    "content-desc": null,
+    "enabled": "true",
+    "focusable": "true",
+    "focused": "true",
+    "long-clickable": "true",
+    "package": "anti.tip",
+    "password": "false",
+    "resource-id": "anti.tip:id/bill",
+    "scrollable": "false",
+    "selection-start": "0",
+    "selection-end": "4",
+    "selected": "false",
+    "text": "0.00",
+    "bounds": "[720,131][1440,347]",
+    "displayed": "true",
+    "action": [
+      "clear",
+      "replaceText: 56.6"
+    ]
+  },
+  {
+    "checkable": "false",
+    "checked": "false",
+    "class": "android.widget.EditText",
+    "clickable": "true",
+    "content-desc": null,
+    "enabled": "true",
+    "focusable": "true",
+    "focused": "false",
+    "long-clickable": "true",
+    "package": "anti.tip",
+    "password": "false",
+    "resource-id": "anti.tip:id/percent",
+    "scrollable": "false",
+    "selection-start": null,
+    "selection-end": null,
+    "selected": "false",
+    "text": "15",
+    "bounds": "[720,563][1440,779]",
+    "displayed": "true",
+    "action": [
+      "clear",
+      "replaceText: 15"
+    ]
+  },
+  {
+    "checkable": "false",
+    "checked": "false",
+    "class": "android.widget.EditText",
+    "clickable": "true",
+    "content-desc": null,
+    "enabled": "true",
+    "focusable": "true",
+    "focused": "false",
+    "long-clickable": "true",
+    "package": "anti.tip",
+    "password": "false",
+    "resource-id": "anti.tip:id/people",
+    "scrollable": "false",
+    "selection-start": null,
+    "selection-end": null,
+    "selected": "false",
+    "text": "1",
+    "bounds": "[720,347][1440,563]",
+    "displayed": "true",
+    "action": [
+      "clear",
+      "replaceText: 4"
+    ]
+  },
+  {
+    "checkable": "false",
+    "checked": "false",
+    "class": "android.widget.EditText",
+    "clickable": "true",
+    "content-desc": null,
+    "enabled": "true",
+    "focusable": "false",
+    "focused": "false",
+    "long-clickable": "true",
+    "package": "anti.tip",
+    "password": "false",
+    "resource-id": "anti.tip:id/each",
+    "scrollable": "false",
+    "selection-start": null,
+    "selection-end": null,
+    "selected": "false",
+    "text": "16.27",
+    "bounds": "[720,1211][1440,1427]",
+    "displayed": "true",
+    "action": [
+      "wait",
+      "check"
+    ]
+  }
+]

@@ -1,9 +1,0 @@
-######################################## ERROR! ########################################
-No element with content description: Next month, was found on this page source.
-
-
-######################################## ERROR! ########################################
-None of the elements fully matches the given widget selectors in line: {'get_element_by': [{'type': 'contentdescription', 'value': 'Next month'}, {'type': 'isdisplayed', 'value': ''}], 'action': [{'type': 'click', 'value': ''}]}
-
-
-STOPPING THE EXECUTION OF THE TEST!

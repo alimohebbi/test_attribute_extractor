@@ -1,0 +1,5 @@
+######################################## ERROR! ########################################
+None of the elements fully matches the given widget selectors in line: {'action': [{'type': 'wait', 'value': 15}, {'type': 'check_element_presence', 'value': [{'type': 'id', 'value': 'com.rainbowshops:id/button_log_in'}]}], 'get_element_by': [{'type': 'resource-id', 'value': 'com.rainbowshops:id/button_log_in'}, {'type': 'text', 'value': 'Log In'}, {'type': 'classname', 'value': 'android.widget.Button'}]}
+
+
+STOPPING THE EXECUTION OF THE TEST!

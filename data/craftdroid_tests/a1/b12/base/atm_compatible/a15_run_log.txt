@@ -1,0 +1,5 @@
+######################################## ERROR! ########################################
+None of the elements fully matches the given widget selectors in line: {'action': [{'type': 'wait', 'value': 10}, {'type': 'check_element_presence', 'value': [{'type': 'xpath', 'value': '//android.view.View[@content-desc="Donald Bren School of Information and Computer Sciences"]'}]}], 'get_element_by': [{'type': 'contentdescription', 'value': 'Donald Bren School of Information and Computer Sciences'}, {'type': 'classname', 'value': 'android.view.View'}]}
+
+
+STOPPING THE EXECUTION OF THE TEST!

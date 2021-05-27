@@ -1,0 +1,5 @@
+######################################## ERROR! ########################################
+None of the elements fully matches the given widget selectors in line: {'action': [{'type': 'clear', 'value': ''}, {'type': 'replaceText', 'value': '56.6'}], 'get_element_by': [{'type': 'resource-id', 'value': 'com.appsbyvir.tipcalculator:id/billEditText'}, {'type': 'classname', 'value': 'android.widget.EditText'}]}
+
+
+STOPPING THE EXECUTION OF THE TEST!

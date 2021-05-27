@@ -1,0 +1,123 @@
+[
+  {
+    "checkable": "false",
+    "checked": "false",
+    "class": "android.widget.ImageButton",
+    "clickable": "true",
+    "content-desc": null,
+    "enabled": "true",
+    "focusable": "true",
+    "focused": "false",
+    "long-clickable": "false",
+    "package": "com.woefe.shoppinglist",
+    "password": "false",
+    "resource-id": "com.woefe.shoppinglist:id/fab_add",
+    "scrollable": "false",
+    "selection-start": null,
+    "selection-end": null,
+    "selected": "false",
+    "text": "",
+    "bounds": "[1188,2140][1384,2336]",
+    "displayed": "true",
+    "action": [
+      "click"
+    ]
+  },
+  {
+    "checkable": "false",
+    "checked": "false",
+    "class": "android.widget.EditText",
+    "clickable": "true",
+    "content-desc": null,
+    "enabled": "true",
+    "focusable": "true",
+    "focused": "true",
+    "long-clickable": "true",
+    "package": "com.woefe.shoppinglist",
+    "password": "false",
+    "resource-id": "com.woefe.shoppinglist:id/new_item_description",
+    "scrollable": "false",
+    "selection-start": null,
+    "selection-end": null,
+    "selected": "false",
+    "text": "New Item",
+    "bounds": "[7,2059][1433,2217]",
+    "displayed": "true",
+    "action": [
+      "replaceText: Sample Todo"
+    ]
+  },
+  {
+    "checkable": "false",
+    "checked": "false",
+    "class": "android.widget.ImageButton",
+    "clickable": "true",
+    "content-desc": "Done",
+    "enabled": "true",
+    "focusable": "true",
+    "focused": "false",
+    "long-clickable": "false",
+    "package": "com.woefe.shoppinglist",
+    "password": "false",
+    "resource-id": "com.woefe.shoppinglist:id/button_add_new_item",
+    "scrollable": "false",
+    "selection-start": null,
+    "selection-end": null,
+    "selected": "false",
+    "text": "",
+    "bounds": "[1167,2217][1433,2385]",
+    "displayed": "true",
+    "action": [
+      "click"
+    ]
+  },
+  {
+    "checkable": "false",
+    "checked": "false",
+    "class": "android.widget.TextView",
+    "clickable": "false",
+    "content-desc": null,
+    "enabled": "true",
+    "focusable": "false",
+    "focused": "false",
+    "long-clickable": "false",
+    "package": "com.woefe.shoppinglist",
+    "password": "false",
+    "resource-id": "com.woefe.shoppinglist:id/text_description",
+    "scrollable": "false",
+    "selection-start": null,
+    "selection-end": null,
+    "selected": "false",
+    "text": "Sample Todo",
+    "bounds": "[42,322][912,425]",
+    "displayed": "true",
+    "action": [
+      "wait",
+      "check"
+    ]
+  },
+  {
+    "checkable": "false",
+    "checked": "false",
+    "class": "android.widget.TextView",
+    "clickable": "false",
+    "content-desc": null,
+    "enabled": "true",
+    "focusable": "false",
+    "focused": "false",
+    "long-clickable": "false",
+    "package": "com.woefe.shoppinglist",
+    "password": "false",
+    "resource-id": "com.woefe.shoppinglist:id/text_description",
+    "scrollable": "false",
+    "selection-start": null,
+    "selection-end": null,
+    "selected": "false",
+    "text": "Sample Todo",
+    "bounds": "[42,322][912,425]",
+    "displayed": "true",
+    "action": [
+      "swiperight"
+    ]
+  }
+]

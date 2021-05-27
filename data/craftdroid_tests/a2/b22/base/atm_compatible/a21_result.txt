@@ -1,0 +1,123 @@
+[
+  {
+    "checkable": "false",
+    "checked": "false",
+    "class": "android.widget.ImageButton",
+    "clickable": "true",
+    "content-desc": null,
+    "enabled": "true",
+    "focusable": "true",
+    "focused": "false",
+    "long-clickable": "false",
+    "package": "com.rubenroy.minimaltodo",
+    "password": "false",
+    "resource-id": "com.rubenroy.minimaltodo:id/addToDoItemFAB",
+    "scrollable": "false",
+    "selection-start": null,
+    "selection-end": null,
+    "selected": "false",
+    "text": "",
+    "bounds": "[1188,2140][1384,2336]",
+    "displayed": "true",
+    "action": [
+      "click"
+    ]
+  },
+  {
+    "checkable": "false",
+    "checked": "false",
+    "class": "android.widget.EditText",
+    "clickable": "true",
+    "content-desc": null,
+    "enabled": "true",
+    "focusable": "true",
+    "focused": "true",
+    "long-clickable": "true",
+    "package": "com.rubenroy.minimaltodo",
+    "password": "false",
+    "resource-id": "com.rubenroy.minimaltodo:id/userToDoEditText",
+    "scrollable": "false",
+    "selection-start": null,
+    "selection-end": null,
+    "selected": "false",
+    "text": "",
+    "bounds": "[112,487][1328,645]",
+    "displayed": "true",
+    "action": [
+      "replaceText: Sample Todo"
+    ]
+  },
+  {
+    "checkable": "false",
+    "checked": "false",
+    "class": "android.widget.ImageButton",
+    "clickable": "true",
+    "content-desc": null,
+    "enabled": "true",
+    "focusable": "true",
+    "focused": "false",
+    "long-clickable": "false",
+    "package": "com.rubenroy.minimaltodo",
+    "password": "false",
+    "resource-id": "com.rubenroy.minimaltodo:id/makeToDoFloatingActionButton",
+    "scrollable": "false",
+    "selection-start": null,
+    "selection-end": null,
+    "selected": "false",
+    "text": "",
+    "bounds": "[1188,710][1384,906]",
+    "displayed": "true",
+    "action": [
+      "click"
+    ]
+  },
+  {
+    "checkable": "false",
+    "checked": "false",
+    "class": "android.widget.TextView",
+    "clickable": "false",
+    "content-desc": null,
+    "enabled": "true",
+    "focusable": "false",
+    "focused": "false",
+    "long-clickable": "false",
+    "package": "com.rubenroy.minimaltodo",
+    "password": "false",
+    "resource-id": "com.rubenroy.minimaltodo:id/toDoListItemTextview",
+    "scrollable": "false",
+    "selection-start": null,
+    "selection-end": null,
+    "selected": "false",
+    "text": "Sample Todo",
+    "bounds": "[270,354][1440,430]",
+    "displayed": "true",
+    "action": [
+      "wait",
+      "check"
+    ]
+  },
+  {
+    "checkable": "false",
+    "checked": "false",
+    "class": "android.widget.TextView",
+    "clickable": "false",
+    "content-desc": null,
+    "enabled": "true",
+    "focusable": "false",
+    "focused": "false",
+    "long-clickable": "false",
+    "package": "com.rubenroy.minimaltodo",
+    "password": "false",
+    "resource-id": "com.rubenroy.minimaltodo:id/toDoListItemTextview",
+    "scrollable": "false",
+    "selection-start": null,
+    "selection-end": null,
+    "selected": "false",
+    "text": "Sample Todo",
+    "bounds": "[270,354][1440,430]",
+    "displayed": "true",
+    "action": [
+      "swiperight"
+    ]
+  }
+]

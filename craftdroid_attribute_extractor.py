@@ -15,7 +15,6 @@ import time
 def reparse_element_actions(parsed_element, log_fname):
     new_dict = {}
     action = parsed_element["action"][0]
-    print(action)
     if action == "click" or action == "long_press" or action.startswith("swipe"):
         new_dict["type"] = action
         new_dict["value"] = ""
@@ -24,8 +23,7 @@ def reparse_element_actions(parsed_element, log_fname):
         new_dict["value"] = parsed_element["action"][1]
     elif action.startswith("wait"):
         new_dict["type"] = action
-        new_dict["value"] = {"time":parsed_element["action"][1],\
-        "type": parsed_element["action"][2], "value": parsed_element["action"][3]}
+        new_dict["value"] = {"time":parsed_element["action"][1],"type": parsed_element["action"][2], "value": parsed_element["action"][3]}
     elif action == "KEY_BACK":
         new_dict["type"] = "pressback"
         new_dict["value"] = ""

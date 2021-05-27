@@ -1,0 +1,111 @@
+[
+  {
+    "action": [
+      {
+        "type": "clear",
+        "value": ""
+      },
+      {
+        "type": "replaceText",
+        "value": "56.6"
+      }
+    ],
+    "get_element_by": [
+      {
+        "type": "resource-id",
+        "value": "anti.tip:id/bill"
+      },
+      {
+        "type": "text",
+        "value": "0.00"
+      },
+      {
+        "type": "classname",
+        "value": "android.widget.EditText"
+      }
+    ]
+  },
+  {
+    "action": [
+      {
+        "type": "clear",
+        "value": ""
+      },
+      {
+        "type": "replaceText",
+        "value": "15"
+      }
+    ],
+    "get_element_by": [
+      {
+        "type": "resource-id",
+        "value": "anti.tip:id/percent"
+      },
+      {
+        "type": "text",
+        "value": "15"
+      },
+      {
+        "type": "classname",
+        "value": "android.widget.EditText"
+      }
+    ]
+  },
+  {
+    "action": [
+      {
+        "type": "clear",
+        "value": ""
+      },
+      {
+        "type": "replaceText",
+        "value": "4"
+      }
+    ],
+    "get_element_by": [
+      {
+        "type": "resource-id",
+        "value": "anti.tip:id/people"
+      },
+      {
+        "type": "text",
+        "value": "1"
+      },
+      {
+        "type": "classname",
+        "value": "android.widget.EditText"
+      }
+    ]
+  },
+  {
+    "action": [
+      {
+        "type": "wait",
+        "value": 10
+      },
+      {
+        "type": "check",
+        "value": [
+          {
+            "type": "text",
+            "value": "16.27"
+          }
+        ]
+      }
+    ],
+    "get_element_by": [
+      {
+        "type": "resource-id",
+        "value": "anti.tip:id/each"
+      },
+      {
+        "type": "text",
+        "value": "16.27"
+      },
+      {
+        "type": "classname",
+        "value": "android.widget.EditText"
+      }
+    ]
+  }
+]

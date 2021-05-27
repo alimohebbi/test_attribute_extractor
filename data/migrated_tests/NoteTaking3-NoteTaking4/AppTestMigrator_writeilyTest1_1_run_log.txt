@@ -1,0 +1,5 @@
+######################################## ERROR! ########################################
+No element with selector: {'type': 'xpath', 'value': '/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[2]/android.support.v4.widget.DrawerLayout/android.widget.RelativeLayout/android.widget.ScrollView/android.widget.LinearLayout/android.widget.RelativeLayout/android.widget.Spinner/android.widget.LinearLayout/android.widget.TextView'}, was found on this page source.
+
+
+STOPPING THE EXECUTION OF THE TEST!
