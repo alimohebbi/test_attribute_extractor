@@ -1,5 +1,42 @@
 [
   {
+    "class": "android.widget.ImageButton",
+    "resource-id": "",
+    "text": "",
+    "content-desc": "",
+    "xpath":"/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.support.v4.widget.DrawerLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.LinearLayout/android.view.ViewGroup/android.widget.ImageButton",
+    "clickable": "",
+    "password": "",
+    "parent_text": "",
+    "sibling_text": "",
+    "tid": "",
+    "package": "com.rainbowshops",
+    "activity": ".activity.MainActivity",
+    "ignorable": "",
+    "event_type": "",
+    "action": [
+      "click"
+    ]
+  },
+  {
+    "class": "android.widget.CheckedTextView",
+    "resource-id": "com.rainbowshops:id/design_menu_item_text",
+    "text": "Profile",
+    "content-desc": "",
+    "clickable": "",
+    "password": "",
+    "parent_text": "",
+    "sibling_text": "",
+    "tid": "",
+    "package": "com.rainbowshops",
+    "activity": ".activity.MainActivity",
+    "ignorable": "",
+    "event_type": "",
+    "action": [
+      "click"
+    ]
+  },
+  {
     "class": "android.widget.Button",
     "resource-id": "com.rainbowshops:id/button_log_in",
     "text": "Log In",

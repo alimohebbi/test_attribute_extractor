@@ -1,0 +1,163 @@
+[
+  {
+    "get_element_by": [
+      {
+        "type": "ClassName",
+        "value": "EMPTY_EVENT"
+      }
+    ]
+  },
+  {
+    "get_element_by": [
+      {
+        "type": "resource-id",
+        "value": "com.contextlogic.geek:id/login_fragment_create_account_button"
+      },
+      {
+        "type": "Text",
+        "value": "Create Account"
+      },
+      {
+        "type": "ClassName",
+        "value": "android.widget.TextView"
+      }
+    ],
+    "action": [
+      {
+        "type": "click",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "get_element_by": [
+      {
+        "type": "ContentDescription",
+        "value": "Navigate up"
+      },
+      {
+        "type": "ClassName",
+        "value": "android.widget.ImageButton"
+      }
+    ],
+    "action": [
+      {
+        "type": "click",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "get_element_by": [
+      {
+        "type": "resource-id",
+        "value": "com.contextlogic.geek:id/login_fragment_sign_in_button"
+      },
+      {
+        "type": "Text",
+        "value": "Sign In"
+      },
+      {
+        "type": "ClassName",
+        "value": "android.widget.TextView"
+      }
+    ],
+    "action": [
+      {
+        "type": "click",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "get_element_by": [
+      {
+        "type": "resource-id",
+        "value": "com.contextlogic.geek:id/sign_in_fragment_password_text"
+      },
+      {
+        "type": "ClassName",
+        "value": "android.widget.EditText"
+      }
+    ],
+    "action": [
+      {
+        "type": "wait",
+        "value": 15
+      },
+      {
+        "type": "check_element_presence",
+        "value": {
+          "type": "id",
+          "value": "sign_in_fragment_password_text"
+        }
+      }
+    ]
+  },
+  {
+    "get_element_by": [
+      {
+        "type": "resource-id",
+        "value": "com.contextlogic.geek:id/sign_in_fragment_password_text"
+      },
+      {
+        "type": "ClassName",
+        "value": "android.widget.EditText"
+      }
+    ],
+    "action": [
+      {
+        "type": "replaceText",
+        "value": "1qaz2wsX"
+      }
+    ]
+  },
+  {
+    "get_element_by": [
+      {
+        "type": "resource-id",
+        "value": "com.contextlogic.geek:id/sign_in_fragment_email_text"
+      },
+      {
+        "type": "Text",
+        "value": "Email"
+      },
+      {
+        "type": "ClassName",
+        "value": "android.widget.EditText"
+      }
+    ],
+    "action": [
+      {
+        "type": "replaceText",
+        "value": "uci.seal@gmail.com"
+      }
+    ]
+  },
+  {
+    "get_element_by": [
+      {
+        "type": "ContentDescription",
+        "value": "Navigate up"
+      },
+      {
+        "type": "ClassName",
+        "value": "android.widget.ImageButton"
+      }
+    ],
+    "action": [
+      {
+        "type": "click",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "get_element_by": [
+      {
+        "type": "ClassName",
+        "value": "EMPTY_EVENT"
+      }
+    ]
+  }
+]

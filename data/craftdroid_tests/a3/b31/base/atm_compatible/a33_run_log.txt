@@ -1,9 +1,5 @@
 ######################################## ERROR! ########################################
-For check_element_presence, The element with selector: {'type': 'id', 'value': 'com.rainbowshops:id/button_sign_up'}, was not found!
-
-
-######################################## ERROR! ########################################
-None of the elements fully matches the given widget selectors in line: {'action': [{'type': 'click', 'value': ''}], 'get_element_by': [{'type': 'resource-id', 'value': 'com.rainbowshops:id/button_sign_up'}, {'type': 'text', 'value': 'Join'}, {'type': 'classname', 'value': 'android.widget.Button'}]}
+None of the elements fully matches the given widget selectors in line: {'action': [{'type': 'wait', 'value': 5}, {'type': 'check', 'value': [{'type': 'text', 'value': 'Sealbot'}]}], 'get_element_by': [{'type': 'resource-id', 'value': 'com.rainbowshops:id/text_customer_name'}, {'type': 'text', 'value': 'Hi Sealbot'}, {'type': 'classname', 'value': 'android.widget.TextView'}]}
 
 
 STOPPING THE EXECUTION OF THE TEST!

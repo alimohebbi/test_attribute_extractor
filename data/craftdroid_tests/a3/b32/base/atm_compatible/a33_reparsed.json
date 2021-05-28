@@ -2,6 +2,46 @@
   {
     "action": [
       {
+        "type": "click",
+        "value": ""
+      }
+    ],
+    "get_element_by": [
+      {
+        "type": "xpath",
+        "value": "/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.support.v4.widget.DrawerLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.LinearLayout/android.view.ViewGroup/android.widget.ImageButton"
+      },
+      {
+        "type": "classname",
+        "value": "android.widget.ImageButton"
+      }
+    ]
+  },
+  {
+    "action": [
+      {
+        "type": "click",
+        "value": ""
+      }
+    ],
+    "get_element_by": [
+      {
+        "type": "resource-id",
+        "value": "com.rainbowshops:id/design_menu_item_text"
+      },
+      {
+        "type": "text",
+        "value": "Profile"
+      },
+      {
+        "type": "classname",
+        "value": "android.widget.CheckedTextView"
+      }
+    ]
+  },
+  {
+    "action": [
+      {
         "type": "wait",
         "value": 10
       },
