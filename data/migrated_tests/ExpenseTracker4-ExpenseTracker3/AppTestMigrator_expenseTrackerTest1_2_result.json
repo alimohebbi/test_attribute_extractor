@@ -17,7 +17,7 @@
     "selection-end": null,
     "selected": "false",
     "text": "",
-    "bounds": "[0,84][196,280]",
+    "bounds": "[0,63][147,210]",
     "displayed": "true",
     "action": [
       "click"
@@ -41,7 +41,7 @@
     "selection-end": null,
     "selected": "false",
     "text": "",
-    "bounds": "[0,84][196,280]",
+    "bounds": "[0,63][147,210]",
     "displayed": "true",
     "action": [
       "click"
@@ -65,7 +65,7 @@
     "selection-end": null,
     "selected": "false",
     "text": "",
-    "bounds": "[0,84][196,280]",
+    "bounds": "[0,63][147,210]",
     "displayed": "true",
     "action": [
       "click"
@@ -89,7 +89,7 @@
     "selection-end": null,
     "selected": "false",
     "text": "INCOME",
-    "bounds": "[0,614][840,782]",
+    "bounds": "[0,460][630,586]",
     "displayed": "true",
     "action": [
       "click"
@@ -113,7 +113,7 @@
     "selection-end": null,
     "selected": "false",
     "text": "ADD INCOME",
-    "bounds": "[56,667][1384,835]",
+    "bounds": "[42,498][1038,624]",
     "displayed": "true",
     "action": [
       "click"
@@ -137,7 +137,7 @@
     "selection-end": null,
     "selected": "false",
     "text": "ADD INCOME",
-    "bounds": "[56,667][1384,835]",
+    "bounds": "[42,498][1038,624]",
     "displayed": "true",
     "action": [
       "click"
@@ -161,7 +161,7 @@
     "selection-end": null,
     "selected": "false",
     "text": "INCOME",
-    "bounds": "[210,135][475,228]",
+    "bounds": "[157,101][358,172]",
     "displayed": "true",
     "action": [
       "check"
@@ -185,7 +185,7 @@
     "selection-end": null,
     "selected": "false",
     "text": "Amount",
-    "bounds": "[56,491][890,649]",
+    "bounds": "[42,367][668,485]",
     "displayed": "true",
     "action": [
       "replaceText: 1500"
@@ -209,7 +209,7 @@
     "selection-end": null,
     "selected": "false",
     "text": "ADD INCOME",
-    "bounds": "[56,667][1384,835]",
+    "bounds": "[42,498][1038,624]",
     "displayed": "true",
     "action": [
       "click"
@@ -233,7 +233,7 @@
     "selection-end": null,
     "selected": "false",
     "text": "INCOME",
-    "bounds": "[210,135][475,228]",
+    "bounds": "[157,101][358,172]",
     "displayed": "true",
     "action": [
       "check"

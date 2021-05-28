@@ -65,7 +65,7 @@
     "action": [
       {
         "type": "wait",
-        "value": 10
+        "value": 5
       },
       {
         "type": "check",
@@ -118,7 +118,7 @@
     "action": [
       {
         "type": "wait",
-        "value": 10
+        "value": 5
       },
       {
         "type": "check_element_invisible",

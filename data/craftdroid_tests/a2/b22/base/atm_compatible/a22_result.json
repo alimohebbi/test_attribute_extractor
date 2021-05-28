@@ -17,7 +17,7 @@
     "selection-end": null,
     "selected": "false",
     "text": "",
-    "bounds": "[1152,2090][1384,2336]",
+    "bounds": "[863,1567][1038,1752]",
     "displayed": "true",
     "action": [
       "click"
@@ -41,7 +41,7 @@
     "selection-end": null,
     "selected": "false",
     "text": "Title",
-    "bounds": "[35,84][1405,229]",
+    "bounds": "[26,63][1054,172]",
     "displayed": "true",
     "action": [
       "replaceText: Sample Todo"
@@ -65,7 +65,7 @@
     "selection-end": null,
     "selected": "false",
     "text": "",
-    "bounds": "[1152,2090][1384,2336]",
+    "bounds": "[863,1567][1038,1752]",
     "displayed": "true",
     "action": [
       "click"
@@ -89,7 +89,7 @@
     "selection-end": null,
     "selected": "false",
     "text": "Sample Todo",
-    "bounds": "[122,349][1339,422]",
+    "bounds": "[91,262][1004,316]",
     "displayed": "true",
     "action": [
       "wait",
@@ -114,7 +114,7 @@
     "selection-end": null,
     "selected": "false",
     "text": "Sample Todo",
-    "bounds": "[122,349][1339,422]",
+    "bounds": "[91,262][1004,316]",
     "displayed": "true",
     "action": [
       "swiperight"
@@ -138,7 +138,7 @@
     "selection-end": null,
     "selected": "false",
     "text": "DELETE",
-    "bounds": "[45,293][1395,486]",
+    "bounds": "[33,220][1047,364]",
     "displayed": "true",
     "action": [
       "click"

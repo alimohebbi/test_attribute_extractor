@@ -1,5 +1,13 @@
 [
   {
+    "class": "android.widget.Button",
+    "resource-id": "android:id/button2",
+    "text": "Skip",
+    "action": [
+      "click"
+    ]
+  },
+  {
     "class": "android.widget.EditText",
     "resource-id": "com.appsbyvir.tipcalculator:id/billEditText",
     "text": "",

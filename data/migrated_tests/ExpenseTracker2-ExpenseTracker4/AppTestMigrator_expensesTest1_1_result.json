@@ -17,7 +17,7 @@
     "selection-end": null,
     "selected": "false",
     "text": "",
-    "bounds": "[0,84][196,280]",
+    "bounds": "[0,63][147,210]",
     "displayed": "true",
     "action": [
       "click"
@@ -41,7 +41,7 @@
     "selection-end": null,
     "selected": "false",
     "text": "ADD INCOME",
-    "bounds": "[0,2214][720,2392]",
+    "bounds": "[0,1659][540,1794]",
     "displayed": "true",
     "action": [
       "click"
@@ -65,7 +65,7 @@
     "selection-end": null,
     "selected": "false",
     "text": "",
-    "bounds": "[1272,98][1440,266]",
+    "bounds": "[953,73][1080,199]",
     "displayed": "true",
     "action": [
       "click"
@@ -88,8 +88,8 @@
     "selection-start": null,
     "selection-end": null,
     "selected": "false",
-    "text": "2021-05-27",
-    "bounds": "[56,393][404,533]",
+    "text": "2021-05-28",
+    "bounds": "[42,295][311,400]",
     "displayed": "true",
     "action": [
       "click"
@@ -113,7 +113,7 @@
     "selection-end": null,
     "selected": "false",
     "text": "",
-    "bounds": "[1008,746][1176,914]",
+    "bounds": "[756,559][882,685]",
     "displayed": "true",
     "action": [
       "click"
@@ -137,7 +137,7 @@
     "selection-end": null,
     "selected": "false",
     "text": "OK",
-    "bounds": "[958,1908][1182,2076]",
+    "bounds": "[718,1432][886,1558]",
     "displayed": "true",
     "action": [
       "click"
@@ -161,7 +161,7 @@
     "selection-end": null,
     "selected": "false",
     "text": "",
-    "bounds": "[0,84][196,280]",
+    "bounds": "[0,63][147,210]",
     "displayed": "true",
     "action": [
       "click"
@@ -185,7 +185,7 @@
     "selection-end": null,
     "selected": "false",
     "text": "23 May, 2021 - 29 May, 2021",
-    "bounds": "[56,429][586,486]",
+    "bounds": "[42,323][441,366]",
     "displayed": "true",
     "action": [
       "check"

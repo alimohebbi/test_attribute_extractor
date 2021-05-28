@@ -81,7 +81,7 @@
     "action": [
       {
         "type": "wait",
-        "value": 10
+        "value": 5
       },
       {
         "type": "check",

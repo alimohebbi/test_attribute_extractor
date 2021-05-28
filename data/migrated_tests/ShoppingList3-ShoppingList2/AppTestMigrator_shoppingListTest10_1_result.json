@@ -17,7 +17,7 @@
     "selection-end": null,
     "selected": "false",
     "text": "",
-    "bounds": "[1048,84][1244,252]",
+    "bounds": "[785,63][932,189]",
     "displayed": "true",
     "action": [
       "longClick"
@@ -41,7 +41,7 @@
     "selection-end": null,
     "selected": "false",
     "text": "Shopping List",
-    "bounds": "[169,125][551,210]",
+    "bounds": "[127,94][410,157]",
     "displayed": "true",
     "action": [
       "click"
@@ -65,7 +65,7 @@
     "selection-end": null,
     "selected": "false",
     "text": "",
-    "bounds": "[18,270][1422,448]",
+    "bounds": "[13,202][1067,334]",
     "displayed": "true",
     "action": [
       "click"
@@ -89,7 +89,7 @@
     "selection-end": null,
     "selected": "false",
     "text": "OK",
-    "bounds": "[721,1494][1347,1662]",
+    "bounds": "[541,1121][1010,1247]",
     "displayed": "true",
     "action": [
       "click"
@@ -113,7 +113,7 @@
     "selection-end": null,
     "selected": "false",
     "text": "",
-    "bounds": "[852,84][1048,252]",
+    "bounds": "[638,63][785,189]",
     "displayed": "true",
     "action": [
       "longClick"
@@ -137,7 +137,7 @@
     "selection-end": null,
     "selected": "false",
     "text": "",
-    "bounds": "[1048,84][1244,252]",
+    "bounds": "[785,63][932,189]",
     "displayed": "true",
     "action": [
       "longClick"
@@ -161,7 +161,7 @@
     "selection-end": null,
     "selected": "false",
     "text": "",
-    "bounds": "[43,112][155,224]",
+    "bounds": "[32,84][116,168]",
     "displayed": "true",
     "action": [
       "click"
@@ -185,7 +185,7 @@
     "selection-end": null,
     "selected": "false",
     "text": "",
-    "bounds": "[1048,84][1244,252]",
+    "bounds": "[785,63][932,189]",
     "displayed": "true",
     "action": [
       "click"
@@ -209,7 +209,7 @@
     "selection-end": null,
     "selected": "false",
     "text": "",
-    "bounds": "[93,1268][1347,1406]",
+    "bounds": "[70,951][1010,1053]",
     "displayed": "true",
     "action": [
       "replaceText: grocery"
@@ -233,7 +233,7 @@
     "selection-end": null,
     "selected": "false",
     "text": "OK",
-    "bounds": "[721,1494][1347,1662]",
+    "bounds": "[541,1121][1010,1247]",
     "displayed": "true",
     "action": [
       "click"

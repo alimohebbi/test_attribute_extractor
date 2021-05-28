@@ -164,7 +164,7 @@
     "bounds": "[105,353][1335,502]",
     "displayed": "true",
     "action": [
-      "replaceText:Entertainment"
+      "replaceText: Entertainment"
     ]
   },
   {
@@ -188,7 +188,7 @@
     "bounds": "[105,593][720,742]",
     "displayed": "true",
     "action": [
-      "replaceText:45"
+      "replaceText: 45"
     ]
   },
   {

@@ -17,7 +17,7 @@
     "selection-end": null,
     "selected": "false",
     "text": "",
-    "bounds": "[1153,2105][1349,2301]",
+    "bounds": "[865,1579][1012,1726]",
     "displayed": "true",
     "action": [
       "click"
@@ -41,7 +41,7 @@
     "selection-end": null,
     "selected": "false",
     "text": "Shopping list name",
-    "bounds": "[56,336][1384,494]",
+    "bounds": "[42,252][1038,370]",
     "displayed": "true",
     "action": [
       "replaceText: Grocery"
@@ -65,7 +65,7 @@
     "selection-end": null,
     "selected": "false",
     "text": "Description",
-    "bounds": "[56,494][1384,652]",
+    "bounds": "[42,370][1038,488]",
     "displayed": "true",
     "action": [
       "replaceText: Weekly grocery shopping"
@@ -89,7 +89,7 @@
     "selection-end": null,
     "selected": "false",
     "text": "SAVE",
-    "bounds": "[566,652][874,820]",
+    "bounds": "[424,488][655,614]",
     "displayed": "true",
     "action": [
       "click"
@@ -113,7 +113,7 @@
     "selection-end": null,
     "selected": "false",
     "text": "Grocery",
-    "bounds": "[203,371][1075,456]",
+    "bounds": "[152,278][806,341]",
     "displayed": "true",
     "action": [
       "check"

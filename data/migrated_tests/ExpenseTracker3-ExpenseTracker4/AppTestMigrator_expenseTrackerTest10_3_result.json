@@ -17,7 +17,7 @@
     "selection-end": null,
     "selected": "false",
     "text": "",
-    "bounds": "[0,84][196,280]",
+    "bounds": "[0,63][147,210]",
     "displayed": "true",
     "action": [
       "click"
@@ -41,7 +41,7 @@
     "selection-end": null,
     "selected": "false",
     "text": "Week",
-    "bounds": "[966,98][1215,266]",
+    "bounds": "[724,73][909,199]",
     "displayed": "true",
     "action": [
       "click"
@@ -65,7 +65,7 @@
     "selection-end": null,
     "selected": "false",
     "text": "Day",
-    "bounds": "[966,98][1272,266]",
+    "bounds": "[724,73][954,199]",
     "displayed": "true",
     "action": [
       "click"
@@ -89,7 +89,7 @@
     "selection-end": null,
     "selected": "false",
     "text": "ADD INCOME",
-    "bounds": "[0,2214][720,2392]",
+    "bounds": "[0,1659][540,1794]",
     "displayed": "true",
     "action": [
       "click"
@@ -113,7 +113,7 @@
     "selection-end": null,
     "selected": "false",
     "text": "",
-    "bounds": "[56,767][1384,925]",
+    "bounds": "[42,576][1038,694]",
     "displayed": "true",
     "action": [
       "replaceText: uber"
@@ -137,7 +137,7 @@
     "selection-end": null,
     "selected": "false",
     "text": "",
-    "bounds": "[0,84][196,280]",
+    "bounds": "[0,63][147,210]",
     "displayed": "true",
     "action": [
       "click"
@@ -160,8 +160,8 @@
     "selection-start": null,
     "selection-end": null,
     "selected": "false",
-    "text": "27 May, 2021",
-    "bounds": "[56,429][305,486]",
+    "text": "28 May, 2021",
+    "bounds": "[42,323][229,366]",
     "displayed": "true",
     "action": [
       "check"
@@ -185,7 +185,7 @@
     "selection-end": null,
     "selected": "false",
     "text": "",
-    "bounds": "[0,84][196,280]",
+    "bounds": "[0,63][147,210]",
     "displayed": "true",
     "action": [
       "click"
@@ -209,7 +209,7 @@
     "selection-end": null,
     "selected": "false",
     "text": "ADD INCOME",
-    "bounds": "[0,2214][720,2392]",
+    "bounds": "[0,1659][540,1794]",
     "displayed": "true",
     "action": [
       "click"
@@ -233,7 +233,7 @@
     "selection-end": null,
     "selected": "false",
     "text": "",
-    "bounds": "[56,767][1384,925]",
+    "bounds": "[42,576][1038,694]",
     "displayed": "true",
     "action": [
       "replaceText: 500"
@@ -257,7 +257,7 @@
     "selection-end": null,
     "selected": "false",
     "text": "",
-    "bounds": "[0,84][196,280]",
+    "bounds": "[0,63][147,210]",
     "displayed": "true",
     "action": [
       "click"
@@ -280,8 +280,8 @@
     "selection-start": null,
     "selection-end": null,
     "selected": "false",
-    "text": "27 May, 2021",
-    "bounds": "[56,429][305,486]",
+    "text": "28 May, 2021",
+    "bounds": "[42,323][229,366]",
     "displayed": "true",
     "action": [
       "check"
@@ -304,8 +304,8 @@
     "selection-start": null,
     "selection-end": null,
     "selected": "false",
-    "text": "27 May, 2021",
-    "bounds": "[56,429][305,486]",
+    "text": "28 May, 2021",
+    "bounds": "[42,323][229,366]",
     "displayed": "true",
     "action": [
       "check"

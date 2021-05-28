@@ -2,22 +2,22 @@
   {
     "checkable": "false",
     "checked": "false",
-    "class": "android.widget.ImageButton",
+    "class": "android.widget.EditText",
     "clickable": "true",
-    "content-desc": "New note",
+    "content-desc": null,
     "enabled": "true",
     "focusable": "true",
     "focused": "false",
-    "long-clickable": "false",
-    "package": "com.moonpi.swiftnotes",
+    "long-clickable": "true",
+    "package": "com.stoutner.privacybrowser.standard",
     "password": "false",
-    "resource-id": "com.moonpi.swiftnotes:id/newNote",
+    "resource-id": "com.stoutner.privacybrowser.standard:id/url_edittext",
     "scrollable": "false",
     "selection-start": null,
     "selection-end": null,
     "selected": "false",
-    "text": "",
-    "bounds": "[830,1544][1001,1715]",
+    "text": "https://duckduckgo.com/?kao=-1&kak=-1",
+    "bounds": "[268,77][843,195]",
     "displayed": "true",
     "action": [
       "click"
@@ -33,18 +33,19 @@
     "focusable": "true",
     "focused": "true",
     "long-clickable": "true",
-    "package": "com.moonpi.swiftnotes",
+    "package": "com.stoutner.privacybrowser.standard",
     "password": "false",
-    "resource-id": "com.moonpi.swiftnotes:id/titleEdit",
+    "resource-id": "com.stoutner.privacybrowser.standard:id/url_edittext",
     "scrollable": "false",
-    "selection-start": null,
-    "selection-end": null,
+    "selection-start": "0",
+    "selection-end": "37",
     "selected": "false",
-    "text": "Title",
-    "bounds": "[0,210][1080,341]",
+    "text": "https://duckduckgo.com/?kao=-1&kak=-1",
+    "bounds": "[268,77][843,195]",
     "displayed": "true",
     "action": [
-      "replaceText: to-do"
+      "replaceText: https://www.ics.uci.edu",
+      "enter"
     ]
   },
   {
@@ -57,18 +58,19 @@
     "focusable": "true",
     "focused": "false",
     "long-clickable": "true",
-    "package": "com.moonpi.swiftnotes",
+    "package": "com.stoutner.privacybrowser.standard",
     "password": "false",
-    "resource-id": "com.moonpi.swiftnotes:id/bodyEdit",
+    "resource-id": "com.stoutner.privacybrowser.standard:id/url_edittext",
     "scrollable": "false",
     "selection-start": null,
     "selection-end": null,
     "selected": "false",
-    "text": "Note",
-    "bounds": "[0,362][1080,425]",
+    "text": "https://www.ics.uci.edu/",
+    "bounds": "[268,77][843,195]",
     "displayed": "true",
     "action": [
-      "replaceText: Go shopping"
+      "replaceText: https://uci.edu",
+      "enter"
     ]
   }
 ]

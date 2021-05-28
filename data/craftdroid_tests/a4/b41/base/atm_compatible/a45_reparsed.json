@@ -2,78 +2,31 @@
   {
     "action": [
       {
-        "type": "clear",
-        "value": ""
+        "type": "wait",
+        "value": 5
       },
       {
-        "type": "replaceText",
-        "value": "56.6"
+        "type": "check",
+        "value": [
+          {
+            "type": "text",
+            "value": "Another rabbit hole"
+          }
+        ]
       }
     ],
     "get_element_by": [
       {
         "type": "resource-id",
-        "value": "com.jpstudiosonline.tipcalculator:id/etBillTotal"
+        "value": "park.outlook.sign.in.client:id/subject"
       },
       {
         "type": "text",
-        "value": "1"
+        "value": "Another rabbit hole"
       },
       {
         "type": "classname",
-        "value": "android.widget.EditText"
-      }
-    ]
-  },
-  {
-    "action": [
-      {
-        "type": "clear",
-        "value": ""
-      },
-      {
-        "type": "replaceText",
-        "value": "15"
-      }
-    ],
-    "get_element_by": [
-      {
-        "type": "resource-id",
-        "value": "com.jpstudiosonline.tipcalculator:id/etTipAmount"
-      },
-      {
-        "type": "text",
-        "value": "15"
-      },
-      {
-        "type": "classname",
-        "value": "android.widget.EditText"
-      }
-    ]
-  },
-  {
-    "action": [
-      {
-        "type": "clear",
-        "value": ""
-      },
-      {
-        "type": "replaceText",
-        "value": "4"
-      }
-    ],
-    "get_element_by": [
-      {
-        "type": "resource-id",
-        "value": "com.jpstudiosonline.tipcalculator:id/etPerson"
-      },
-      {
-        "type": "text",
-        "value": "1"
-      },
-      {
-        "type": "classname",
-        "value": "android.widget.EditText"
+        "value": "android.widget.TextView"
       }
     ]
   },
@@ -87,15 +40,72 @@
     "get_element_by": [
       {
         "type": "resource-id",
-        "value": "com.jpstudiosonline.tipcalculator:id/btCalculate"
+        "value": "park.outlook.sign.in.client:id/toolbar_action_search"
       },
       {
-        "type": "text",
-        "value": "Calculate"
+        "type": "contentdescription",
+        "value": "Search"
       },
       {
         "type": "classname",
-        "value": "android.widget.Button"
+        "value": "android.widget.TextView"
+      }
+    ]
+  },
+  {
+    "action": [
+      {
+        "type": "wait",
+        "value": 5
+      },
+      {
+        "type": "check_element_presence",
+        "value": [
+          {
+            "type": "id",
+            "value": "search_text"
+          }
+        ]
+      }
+    ],
+    "get_element_by": [
+      {
+        "type": "resource-id",
+        "value": "park.outlook.sign.in.client:id/search_text"
+      },
+      {
+        "type": "text",
+        "value": "Search Text"
+      },
+      {
+        "type": "classname",
+        "value": "android.widget.EditText"
+      }
+    ]
+  },
+  {
+    "action": [
+      {
+        "type": "replaceText",
+        "value": "Automated"
+      },
+      {
+        "type": "enter",
+        "value": ""
+      }
+    ],
+    "get_element_by": [
+      {
+        "type": "resource-id",
+        "value": "park.outlook.sign.in.client:id/search_text"
+      },
+      {
+        "type": "text",
+        "value": "Search Text"
+      },
+      {
+        "type": "classname",
+        "value": "android.widget.EditText"
       }
     ]
   },
@@ -110,7 +120,7 @@
         "value": [
           {
             "type": "text",
-            "value": "16.27"
+            "value": "Automated Software Engineering"
           }
         ]
       }
@@ -118,11 +128,11 @@
     "get_element_by": [
       {
         "type": "resource-id",
-        "value": "com.jpstudiosonline.tipcalculator:id/tvPersonPay"
+        "value": "park.outlook.sign.in.client:id/subject"
       },
       {
         "type": "text",
-        "value": "$ 16.27"
+        "value": "Automated Software Engineering"
       },
       {
         "type": "classname",

@@ -17,7 +17,7 @@
     "selection-end": null,
     "selected": "false",
     "text": "ADD INCOME",
-    "bounds": "[0,2214][720,2392]",
+    "bounds": "[0,1659][540,1794]",
     "displayed": "true",
     "action": [
       "click"
@@ -41,7 +41,7 @@
     "selection-end": null,
     "selected": "false",
     "text": "",
-    "bounds": "[1272,98][1440,266]",
+    "bounds": "[953,73][1080,199]",
     "displayed": "true",
     "action": [
       "click"
@@ -65,7 +65,7 @@
     "selection-end": null,
     "selected": "false",
     "text": "Field can't be empty.",
-    "bounds": "[70,729][447,786]",
+    "bounds": "[52,547][340,590]",
     "displayed": "true",
     "action": [
       "check"
@@ -89,7 +89,7 @@
     "selection-end": null,
     "selected": "false",
     "text": "",
-    "bounds": "[56,571][1384,729]",
+    "bounds": "[42,429][1038,547]",
     "displayed": "true",
     "action": [
       "replaceText: 1500"
@@ -113,7 +113,7 @@
     "selection-end": null,
     "selected": "false",
     "text": "",
-    "bounds": "[1272,98][1440,266]",
+    "bounds": "[953,73][1080,199]",
     "displayed": "true",
     "action": [
       "click"
@@ -137,7 +137,7 @@
     "selection-end": null,
     "selected": "false",
     "text": "Field can't be empty.",
-    "bounds": "[70,1121][447,1178]",
+    "bounds": "[52,841][340,884]",
     "displayed": "true",
     "action": [
       "check"
@@ -161,7 +161,7 @@
     "selection-end": null,
     "selected": "false",
     "text": "",
-    "bounds": "[56,767][1384,925]",
+    "bounds": "[42,576][1038,694]",
     "displayed": "true",
     "action": [
       "replaceText: GRA"
@@ -185,7 +185,7 @@
     "selection-end": null,
     "selected": "false",
     "text": "",
-    "bounds": "[56,963][1384,1121]",
+    "bounds": "[42,723][1038,841]",
     "displayed": "true",
     "action": [
       "replaceText: General"
@@ -209,7 +209,7 @@
     "selection-end": null,
     "selected": "false",
     "text": "",
-    "bounds": "[1272,98][1440,266]",
+    "bounds": "[953,73][1080,199]",
     "displayed": "true",
     "action": [
       "click"
@@ -233,7 +233,7 @@
     "selection-end": null,
     "selected": "false",
     "text": "GRA",
-    "bounds": "[56,972][499,1056]",
+    "bounds": "[42,736][374,800]",
     "displayed": "true",
     "action": [
       "check"

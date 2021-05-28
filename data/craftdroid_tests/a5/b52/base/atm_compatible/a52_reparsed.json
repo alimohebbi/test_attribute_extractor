@@ -2,6 +2,28 @@
   {
     "action": [
       {
+        "type": "click",
+        "value": ""
+      }
+    ],
+    "get_element_by": [
+      {
+        "type": "resource-id",
+        "value": "android:id/button2"
+      },
+      {
+        "type": "text",
+        "value": "Skip"
+      },
+      {
+        "type": "classname",
+        "value": "android.widget.Button"
+      }
+    ]
+  },
+  {
+    "action": [
+      {
         "type": "clear",
         "value": ""
       },
@@ -77,7 +99,7 @@
     "action": [
       {
         "type": "wait",
-        "value": 10
+        "value": 5
       },
       {
         "type": "check",

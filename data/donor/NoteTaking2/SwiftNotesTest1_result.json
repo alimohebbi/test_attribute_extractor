@@ -17,7 +17,7 @@
     "selection-end": null,
     "selected": "false",
     "text": "",
-    "bounds": "[1107,2059][1335,2287]",
+    "bounds": "[830,1544][1001,1715]",
     "displayed": "true",
     "action": [
       "click"
@@ -41,7 +41,7 @@
     "selection-end": null,
     "selected": "false",
     "text": "Title",
-    "bounds": "[0,280][1440,455]",
+    "bounds": "[0,210][1080,341]",
     "displayed": "true",
     "action": [
       "replaceText: Title1"
@@ -65,7 +65,7 @@
     "selection-end": null,
     "selected": "false",
     "text": "Note",
-    "bounds": "[0,483][1440,568]",
+    "bounds": "[0,362][1080,425]",
     "displayed": "true",
     "action": [
       "replaceText: Note1"
@@ -89,7 +89,7 @@
     "selection-end": null,
     "selected": "false",
     "text": "",
-    "bounds": "[0,84][196,280]",
+    "bounds": "[0,63][147,210]",
     "displayed": "true",
     "action": [
       "click"
@@ -113,7 +113,7 @@
     "selection-end": null,
     "selected": "false",
     "text": "YES",
-    "bounds": "[1081,1238][1305,1406]",
+    "bounds": "[810,928][978,1054]",
     "displayed": "true",
     "action": [
       "click"
@@ -137,7 +137,7 @@
     "selection-end": null,
     "selected": "false",
     "text": "Title1",
-    "bounds": "[91,326][1198,471]",
+    "bounds": "[68,244][899,353]",
     "displayed": "true",
     "action": [
       "check"
@@ -161,7 +161,7 @@
     "selection-end": null,
     "selected": "false",
     "text": "Note1",
-    "bounds": "[91,471][1198,584]",
+    "bounds": "[68,353][899,437]",
     "displayed": "true",
     "action": [
       "check"

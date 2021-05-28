@@ -6,7 +6,7 @@
         "value": "welcome_view_pager"
       },
       {
-        "type": "isDisplayed",
+        "type": "isdisplayed",
         "value": ""
       }
     ],
@@ -24,11 +24,11 @@
         "value": "onboarding_screen2_next_button"
       },
       {
-        "type": "Text",
+        "type": "text",
         "value": "Go with $"
       },
       {
-        "type": "isDisplayed",
+        "type": "isdisplayed",
         "value": ""
       }
     ],
@@ -60,11 +60,11 @@
         "value": "onboarding_screen4_next_button"
       },
       {
-        "type": "Text",
+        "type": "text",
         "value": "Let's go!"
       },
       {
-        "type": "isDisplayed",
+        "type": "isdisplayed",
         "value": ""
       }
     ],
@@ -82,7 +82,7 @@
         "value": "fab_expand_menu_button"
       },
       {
-        "type": "isDisplayed",
+        "type": "isdisplayed",
         "value": ""
       }
     ],
@@ -100,7 +100,7 @@
         "value": "fab_new_expense"
       },
       {
-        "type": "isDisplayed",
+        "type": "isdisplayed",
         "value": ""
       }
     ],
@@ -118,7 +118,7 @@
         "value": "description_edittext"
       },
       {
-        "type": "isDisplayed",
+        "type": "isdisplayed",
         "value": ""
       }
     ],
@@ -136,7 +136,7 @@
         "value": "amount_edittext"
       },
       {
-        "type": "isDisplayed",
+        "type": "isdisplayed",
         "value": ""
       }
     ],
@@ -148,6 +148,7 @@
     ]
   },
   {
+    "get_element_by": [],
     "action": [
       {
         "type": "pressBack",
@@ -158,11 +159,11 @@
   {
     "get_element_by": [
       {
-        "type": "Text",
+        "type": "text",
         "value": "No income or expense yet."
       },
       {
-        "type": "isDisplayed",
+        "type": "isdisplayed",
         "value": ""
       }
     ],

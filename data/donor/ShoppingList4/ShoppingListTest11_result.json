@@ -17,7 +17,7 @@
     "selection-end": null,
     "selected": "false",
     "text": "",
-    "bounds": "[1300,98][1440,266]",
+    "bounds": "[975,73][1080,199]",
     "displayed": "true",
     "action": [
       "click"
@@ -41,7 +41,7 @@
     "selection-end": null,
     "selected": "false",
     "text": "New list",
-    "bounds": "[796,144][1370,220]",
+    "bounds": "[597,107][1028,164]",
     "displayed": "true",
     "action": [
       "click"
@@ -65,7 +65,7 @@
     "selection-end": null,
     "selected": "false",
     "text": "e.g. wishlist, family list",
-    "bounds": "[111,1148][1329,1306]",
+    "bounds": "[83,861][997,979]",
     "displayed": "true",
     "action": [
       "replaceText: list1"
@@ -89,7 +89,7 @@
     "selection-end": null,
     "selected": "false",
     "text": "OK",
-    "bounds": "[1081,1338][1305,1506]",
+    "bounds": "[810,1003][978,1129]",
     "displayed": "true",
     "action": [
       "click"
@@ -113,7 +113,7 @@
     "selection-end": null,
     "selected": "false",
     "text": "list1",
-    "bounds": "[0,284][1272,360]",
+    "bounds": "[0,213][954,270]",
     "displayed": "true",
     "action": [
       "check"
@@ -137,7 +137,7 @@
     "selection-end": null,
     "selected": "false",
     "text": "ADD",
-    "bounds": "[1132,2224][1440,2392]",
+    "bounds": "[849,1668][1080,1794]",
     "displayed": "true",
     "action": [
       "click"
@@ -161,7 +161,7 @@
     "selection-end": null,
     "selected": "false",
     "text": "OK",
-    "bounds": "[204,1238][1236,1406]",
+    "bounds": "[153,928][927,1054]",
     "displayed": "true",
     "action": [
       "click"
@@ -185,7 +185,7 @@
     "selection-end": null,
     "selected": "false",
     "text": "",
-    "bounds": "[70,2225][1132,2383]",
+    "bounds": "[53,1669][849,1787]",
     "displayed": "true",
     "action": [
       "replaceText: item1"
@@ -209,7 +209,7 @@
     "selection-end": null,
     "selected": "false",
     "text": "ADD",
-    "bounds": "[1132,2224][1440,2392]",
+    "bounds": "[849,1668][1080,1794]",
     "displayed": "true",
     "action": [
       "click"
@@ -233,7 +233,7 @@
     "selection-end": null,
     "selected": "false",
     "text": "item1",
-    "bounds": "[217,371][419,478]",
+    "bounds": "[163,278][317,359]",
     "displayed": "true",
     "action": [
       "check"

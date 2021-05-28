@@ -3,10 +3,10 @@ from utils.utils import *
 
 def extract_selector_list(selector_list, parsed_element, log_fname):
 	keys = parsed_element.keys()
-	if("resource-id" in keys and parsed_element["resource-id"]!=""):
-		selector_list.append({"type": "resource-id", "value":parsed_element["resource-id"]})
 	if("xpath" in keys and parsed_element["xpath"]!=""):
 		selector_list.append({"type": "xpath", "value":parsed_element["xpath"]})
+	if("resource-id" in keys and parsed_element["resource-id"]!=""):
+		selector_list.append({"type": "resource-id", "value":parsed_element["resource-id"]})
 	if("text" in keys and parsed_element["text"]!=""):
 		selector_list.append({"type": "text", "value":parsed_element["text"]})
 	if("content-desc" in keys and parsed_element["content-desc"]!=""):
@@ -14,16 +14,10 @@ def extract_selector_list(selector_list, parsed_element, log_fname):
 	if("class" in keys and parsed_element["class"]!=""):
 		selector_list.append({"type": "classname", "value":parsed_element["class"]})	
 	return selector_list
-       
-def need_element(actions): 
-	for action in actions:
-		if action["type"] not in ["pressBack", "enter", "wait", "check_element_presence", "check_element_invisible"]:
-			return True
-	return False
 
 def extract_get_element_by(new_parsed_elemetn, parsed_element, log_fname):  
 	selector_list = extract_selector_list([], parsed_element, log_fname) 
-	if len(selector_list) == 0 and need_element(new_parsed_elemetn["action"]):
+	if len(selector_list) == 0 and actions_need_element(new_parsed_elemetn["action"]):
 		error_message = 40*"#"+" ERROR! "+40*"#"+"\nFor the element : "+str(parsed_element)+", there are no selectors by which we can find the element.\n\n\n"
 		write_to_error_log(error_message, log_fname)
 	new_parsed_elemetn["get_element_by"] = selector_list
@@ -31,7 +25,7 @@ def extract_get_element_by(new_parsed_elemetn, parsed_element, log_fname):
 
 def extract_wait_actions(new_parsed_elemetn, parsed_element, log_fname):
     action = parsed_element["action"][0]
-    new_parsed_elemetn["action"].append({"type": "wait", "value": parsed_element["action"][1]})
+    new_parsed_elemetn["action"].append({"type": "wait", "value": parsed_element["action"][1]-5})
     if action == "wait_until_text_presence":
         new_parsed_elemetn["action"].append({"type": "check","value": [{"type": parsed_element["action"][2], "value": parsed_element["action"][3]}]})
     elif action == "wait_until_text_invisible":

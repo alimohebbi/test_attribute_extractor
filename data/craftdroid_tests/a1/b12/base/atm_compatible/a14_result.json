@@ -4,20 +4,44 @@
     "checked": "false",
     "class": "android.widget.ImageButton",
     "clickable": "true",
-    "content-desc": "New note",
+    "content-desc": null,
     "enabled": "true",
     "focusable": "true",
     "focused": "false",
     "long-clickable": "false",
-    "package": "com.moonpi.swiftnotes",
+    "package": "de.baumann.browser",
     "password": "false",
-    "resource-id": "com.moonpi.swiftnotes:id/newNote",
+    "resource-id": "de.baumann.browser:id/floatButton_ok",
     "scrollable": "false",
     "selection-start": null,
     "selection-end": null,
     "selected": "false",
     "text": "",
-    "bounds": "[830,1544][1001,1715]",
+    "bounds": "[617,1664][727,1774]",
+    "displayed": "true",
+    "action": [
+      "click"
+    ]
+  },
+  {
+    "checkable": "false",
+    "checked": "false",
+    "class": "android.widget.EditText",
+    "clickable": "true",
+    "content-desc": null,
+    "enabled": "true",
+    "focusable": "true",
+    "focused": "false",
+    "long-clickable": "true",
+    "package": "de.baumann.browser",
+    "password": "false",
+    "resource-id": "de.baumann.browser:id/main_omnibox_input",
+    "scrollable": "false",
+    "selection-start": null,
+    "selection-end": null,
+    "selected": "false",
+    "text": "Search or type URL",
+    "bounds": "[42,1647][870,1794]",
     "displayed": "true",
     "action": [
       "click"
@@ -33,18 +57,19 @@
     "focusable": "true",
     "focused": "true",
     "long-clickable": "true",
-    "package": "com.moonpi.swiftnotes",
+    "package": "de.baumann.browser",
     "password": "false",
-    "resource-id": "com.moonpi.swiftnotes:id/titleEdit",
+    "resource-id": "de.baumann.browser:id/main_omnibox_input",
     "scrollable": "false",
     "selection-start": null,
     "selection-end": null,
     "selected": "false",
-    "text": "Title",
-    "bounds": "[0,210][1080,341]",
+    "text": "Search or type URL",
+    "bounds": "[42,1647][870,1794]",
     "displayed": "true",
     "action": [
-      "replaceText: to-do"
+      "replaceText: https://www.ics.uci.edu",
+      "enter"
     ]
   },
   {
@@ -57,18 +82,19 @@
     "focusable": "true",
     "focused": "false",
     "long-clickable": "true",
-    "package": "com.moonpi.swiftnotes",
+    "package": "de.baumann.browser",
     "password": "false",
-    "resource-id": "com.moonpi.swiftnotes:id/bodyEdit",
+    "resource-id": "de.baumann.browser:id/main_omnibox_input",
     "scrollable": "false",
     "selection-start": null,
     "selection-end": null,
     "selected": "false",
-    "text": "Note",
-    "bounds": "[0,362][1080,425]",
+    "text": "https://www.ics.uci.edu/",
+    "bounds": "[42,1647][870,1794]",
     "displayed": "true",
     "action": [
-      "replaceText: Go shopping"
+      "replaceText: https://uci.edu",
+      "enter"
     ]
   }
 ]

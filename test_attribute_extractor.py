@@ -66,12 +66,15 @@ def get_matching_element(parsed_event, elements, log_fname):
         match = is_a_match(element, selectors)
         if match == True:
             return element
-    error_message = 40*"#"+" ERROR! "+40*"#"+"\nNone of the elements fully matches the given widget selectors in line: "+str(parsed_event)+"\n\n\n"
-    write_to_error_log(error_message, log_fname)
+    if actions_need_element(parsed_event["action"]):
+        error_message = 40*"#"+" ERROR! "+40*"#"+"\nNone of the elements fully matches the given widget selectors in line: "+str(parsed_event)+"\n\n\n"
+        write_to_error_log(error_message, log_fname)
     return None
     
 def get_elements_by_xpath(driver, xpath, log_fname):
     elements = driver.find_elements_by_xpath("/hierarchy"+str(xpath))
+    if len(elements)==0:
+        elements = driver.find_elements_by_xpath(str(xpath))
     return elements
 
 def get_elements_by_id(driver, resource_id, app_package, log_fname):
@@ -85,7 +88,7 @@ def get_elements_by_id(driver, resource_id, app_package, log_fname):
 def get_elements(driver, selector, app_package, log_fname): 
     identifier = selector[0]
     value = selector[1]
-    if identifier == "resource-id":
+    if identifier == "resource-id" or identifier == "id":
         elements = get_elements_by_id(driver, value, app_package, log_fname)    
     elif identifier == 'contentdescription':
         elements = driver.find_elements_by_android_uiautomator('new UiSelector().descriptionContains(\"'+str(value)+'\")')
@@ -208,10 +211,11 @@ def execute_action(driver, el, parsed_event, app_package, log_fname):
     return executed
 
 def get_element_attributes_list(parsed_test, app_package, driver, log_fname):
+    time.sleep(10)
     element_attributes_list = []
     completed = True
     for parsed_event in parsed_test:
-        if len(parsed_event["get_element_by"])==0:
+        if len(parsed_event["get_element_by"])==0 or not actions_need_element(parsed_event["action"]):
             executed = execute_action(driver, None, parsed_event, app_package, log_fname)
         else:
             el = get_element(driver, parsed_event, app_package, log_fname)
@@ -225,33 +229,38 @@ def get_element_attributes_list(parsed_test, app_package, driver, log_fname):
                 break
     return element_attributes_list, completed
 
-def run_craftdroid(file, caps, app_package, driver):
-    start_time = time.time()
-    print(file.split("/")[-1])
-    log_fname = file.replace(file.split("/")[-1], "atm_compatible/"+file.split("/")[-1].split(".")[0]+"_run_log.txt")
-    parsed_test = craftdroid_parse(file)
-    element_attributes_list, completed = get_element_attributes_list(parsed_test, app_package, driver, log_fname)
-    if completed == True:
-        write_json(element_attributes_list, file.replace(file.split("/")[-1], "atm_compatible/"+file.split("/")[-1].split(".")[0]+"_result.txt"))
-        print(str(time.time() - start_time)+" seconds\n")
-    else:
-        write_to_error_log("STOPPING THE EXECUTION OF THE TEST!", log_fname)
-        print("UNABLE TO RUN THE WHOLE TEST FOR THE FILE :"+str(file)+".PLEASE CHECK THE ERROR LOG!")
-        print(str(time.time() - start_time)+" seconds\n")
+def run_craftdroid(file):
+    no_reset  = file.split("/")[-4] == "a3" or file.split("/")[-4] == "a4"
+    caps, app_package = get_caps(file, no_reset)
+    run_possible, driver = check_run_possible(app_package, caps)
+    if run_possible:
+        start_time = time.time()
+        log_fname = file.replace(file.split("/")[-1], "atm_compatible/"+file.split("/")[-1].split(".")[0]+"_run_log.txt")
+        parsed_test = craftdroid_parse(file)
+        element_attributes_list, completed = get_element_attributes_list(parsed_test, app_package, driver, log_fname)
+        if completed == True:
+            write_json(element_attributes_list, file.replace(file.split("/")[-1], "atm_compatible/"+file.split("/")[-1].split(".")[0]+"_result.json"))
+            print(str(time.time() - start_time)+" seconds\n")
+        else:
+            write_to_error_log("STOPPING THE EXECUTION OF THE TEST!", log_fname)
+            print("UNABLE TO RUN THE WHOLE TEST FOR THE FILE :"+str(file)+".PLEASE CHECK THE ERROR LOG!")
+            print(str(time.time() - start_time)+" seconds\n")
 
-def run_atm(file, caps, app_package, driver):
-    start_time = time.time()
-    print('/'.join(file.split("/")[-2:]))
-    log_fname = file.replace(file[-5:], "_run_log.txt")
-    parsed_test = atm_parse(file)
-    element_attributes_list, completed = get_element_attributes_list(parsed_test, app_package, driver, log_fname)
-    if completed == True:
-        write_json(element_attributes_list, file.replace(file[-5:], '_result.json'))
-        print(str(time.time() - start_time)+" seconds\n")
-    else:
-        write_to_error_log("STOPPING THE EXECUTION OF THE TEST!", log_fname)
-        print("UNABLE TO RUN THE WHOLE TEST FOR THE FILE :"+str(file)+".PLEASE CHECK THE ERROR LOG!")
-        print(str(time.time() - start_time)+" seconds\n")
+def run_atm(file): 
+    caps, app_package = get_caps(file, False)
+    run_possible, driver = check_run_possible(app_package, caps)
+    if run_possible:
+        start_time = time.time()
+        log_fname = file.replace(file[-5:], "_run_log.txt")
+        parsed_test = atm_parse(file)
+        element_attributes_list, completed = get_element_attributes_list(parsed_test, app_package, driver, log_fname)
+        if completed == True:
+            write_json(element_attributes_list, file.replace(file[-5:], '_result.json'))
+            print(str(time.time() - start_time)+" seconds\n")
+        else:
+            write_to_error_log("STOPPING THE EXECUTION OF THE TEST!", log_fname)
+            print("UNABLE TO RUN THE WHOLE TEST FOR THE FILE :"+str(file)+".PLEASE CHECK THE ERROR LOG!")
+            print(str(time.time() - start_time)+" seconds\n")
 
 def check_run_possible(app_package, caps):
     if app_package is None:
@@ -267,16 +276,16 @@ def check_run_possible(app_package, caps):
 def main():
     files = glob.glob('data/*/*/*.java')
     files.extend(glob.glob("data/craftdroid_tests/*/b*2/base/*.json"))
+    files.extend(glob.glob("data/craftdroid_tests/a3/b31/base/*.json"))
+    files.extend(glob.glob("data/craftdroid_tests/a4/b41/base/*.json"))
     for file in files:
         print(file)
-        caps, app_package = get_caps(file)
-        run_possible, driver = check_run_possible(app_package, caps)
-        if run_possible:
-            if file.split("/")[-3] == "migrated_tests" or file.split("/")[-3] == "donor":
-                run_atm(file, caps, app_package, driver)
-            else:
-                if file.split("/")[-5] == "craftdroid_tests":
-                    run_craftdroid(file, caps, app_package, driver)           
+        if file.split("/")[-3] == "migrated_tests" or file.split("/")[-3] == "donor":
+            run_atm(file)
+        elif file.split("/")[-5] == "craftdroid_tests":
+                run_craftdroid(file)  
+        else:
+            print("Application not recognized!"+"\n"+"The test file should be under directory \"/data/migrated_tests\",  \"/data/ground_truth\" or \"/data/craftdroid_tests\"")         
 
 if __name__ == '__main__':
     main()

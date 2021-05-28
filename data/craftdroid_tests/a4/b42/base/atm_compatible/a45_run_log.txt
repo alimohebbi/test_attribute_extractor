@@ -1,5 +1,0 @@
-######################################## ERROR! ########################################
-None of the elements fully matches the given widget selectors in line: {'action': [{'type': 'wait', 'value': 15}, {'type': 'check', 'value': [{'type': 'text', 'value': 'Inbox'}]}], 'get_element_by': [{'type': 'resource-id', 'value': 'park.outlook.sign.in.client:id/folder_name'}, {'type': 'text', 'value': 'Inbox'}, {'type': 'classname', 'value': 'android.widget.TextView'}]}
-
-
-STOPPING THE EXECUTION OF THE TEST!

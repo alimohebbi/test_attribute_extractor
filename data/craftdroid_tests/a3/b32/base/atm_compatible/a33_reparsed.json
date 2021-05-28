@@ -3,7 +3,7 @@
     "action": [
       {
         "type": "wait",
-        "value": 15
+        "value": 10
       },
       {
         "type": "check_element_presence",
@@ -56,7 +56,7 @@
     "action": [
       {
         "type": "wait",
-        "value": 15
+        "value": 10
       },
       {
         "type": "check_element_presence",
@@ -141,7 +141,7 @@
     "action": [
       {
         "type": "wait",
-        "value": 10
+        "value": 5
       },
       {
         "type": "check",

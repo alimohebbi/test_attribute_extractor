@@ -17,7 +17,7 @@
     "selection-end": null,
     "selected": "false",
     "text": "",
-    "bounds": "[496,1042][944,1602]",
+    "bounds": "[372,781][708,1202]",
     "displayed": "true",
     "action": [
       "click"
@@ -41,7 +41,7 @@
     "selection-end": null,
     "selected": "false",
     "text": "",
-    "bounds": "[18,278][1265,399]",
+    "bounds": "[13,209][949,298]",
     "displayed": "true",
     "action": [
       "replaceText: to-do"
@@ -65,7 +65,7 @@
     "selection-end": null,
     "selected": "false",
     "text": "",
-    "bounds": "[0,426][1440,2392]",
+    "bounds": "[0,319][1080,1794]",
     "displayed": "true",
     "action": [
       "replaceText: Go shopping"
@@ -89,7 +89,7 @@
     "selection-end": null,
     "selected": "false",
     "text": "to-do",
-    "bounds": "[106,288][225,354]",
+    "bounds": "[79,215][169,266]",
     "displayed": "true",
     "action": [
       "check"

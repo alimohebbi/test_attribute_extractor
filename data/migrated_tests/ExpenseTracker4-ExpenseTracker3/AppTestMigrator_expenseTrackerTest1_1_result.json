@@ -17,7 +17,7 @@
     "selection-end": null,
     "selected": "false",
     "text": "",
-    "bounds": "[0,84][196,280]",
+    "bounds": "[0,63][147,210]",
     "displayed": "true",
     "action": [
       "click"
@@ -41,7 +41,7 @@
     "selection-end": null,
     "selected": "false",
     "text": "",
-    "bounds": "[0,84][196,280]",
+    "bounds": "[0,63][147,210]",
     "displayed": "true",
     "action": [
       "click"
@@ -65,7 +65,7 @@
     "selection-end": null,
     "selected": "false",
     "text": "",
-    "bounds": "[0,84][196,280]",
+    "bounds": "[0,63][147,210]",
     "displayed": "true",
     "action": [
       "click"
@@ -89,7 +89,7 @@
     "selection-end": null,
     "selected": "false",
     "text": "INCOME",
-    "bounds": "[0,614][840,782]",
+    "bounds": "[0,460][630,586]",
     "displayed": "true",
     "action": [
       "click"
@@ -113,7 +113,7 @@
     "selection-end": null,
     "selected": "false",
     "text": "ADD INCOME",
-    "bounds": "[56,667][1384,835]",
+    "bounds": "[42,498][1038,624]",
     "displayed": "true",
     "action": [
       "click"
@@ -137,7 +137,7 @@
     "selection-end": null,
     "selected": "false",
     "text": "ADD INCOME",
-    "bounds": "[56,667][1384,835]",
+    "bounds": "[42,498][1038,624]",
     "displayed": "true",
     "action": [
       "click"

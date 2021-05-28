@@ -45,7 +45,6 @@ def get_app_name(fname):
         if category == "craftdroid_tests":
             return fname.split("/")[-1].split(".")[0]
         else:
-            print("Application not recognized!"+"\n"+"The test file should be under directory \"/data/migrated_tests\",  \"/data/ground_truth\" or \"/data/craftdroid_tests\"")
             return None
 
 def get_package_activity(fname):
@@ -62,10 +61,16 @@ def get_package_activity(fname):
 
     return app_package, app_activity
 
-def get_caps(fname): 
+def get_caps(fname, no_reset): 
     app_package, app_activity = get_package_activity(fname)
-    caps = get_capabilities(app_package, app_activity, False)
+    caps = get_capabilities(app_package, app_activity, no_reset)
     return caps, app_package
 
 def preprocess_text(s):
     return re.sub(r'[^\w\s]', '', s.lower()).split()
+
+def actions_need_element(actions): 
+    for action in actions:
+        if action["type"] not in ["pressBack", "enter", "wait", "check_element_presence", "check_element_invisible"]:
+            return True
+    return False
