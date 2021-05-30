@@ -1,5 +1,8 @@
 [
   {
+    "action": [
+      "click"
+    ],
     "get_element_by": [
       {
         "type": "resource-id",
@@ -13,15 +16,12 @@
         "type": "isdisplayed",
         "value": ""
       }
-    ],
-    "action": [
-      {
-        "type": "click",
-        "value": ""
-      }
     ]
   },
   {
+    "action": [
+      "click"
+    ],
     "get_element_by": [
       {
         "type": "resource-id",
@@ -31,15 +31,13 @@
         "type": "isdisplayed",
         "value": ""
       }
-    ],
-    "action": [
-      {
-        "type": "click",
-        "value": ""
-      }
     ]
   },
   {
+    "action": [
+      "send_keys",
+      "grocery"
+    ],
     "get_element_by": [
       {
         "type": "resource-id",
@@ -49,15 +47,12 @@
         "type": "isdisplayed",
         "value": ""
       }
-    ],
-    "action": [
-      {
-        "type": "replaceText",
-        "value": "grocery"
-      }
     ]
   },
   {
+    "action": [
+      "click"
+    ],
     "get_element_by": [
       {
         "type": "resource-id",
@@ -67,15 +62,15 @@
         "type": "text",
         "value": "Okay"
       }
-    ],
-    "action": [
-      {
-        "type": "click",
-        "value": ""
-      }
     ]
   },
   {
+    "action": [
+      "wait_until_element_presence",
+      10,
+      "text",
+      "grocery"
+    ],
     "get_element_by": [
       {
         "type": "text",
@@ -84,17 +79,6 @@
       {
         "type": "isdisplayed",
         "value": ""
-      }
-    ],
-    "action": [
-      {
-        "type": "check",
-        "value": [
-          {
-            "type": "text",
-            "value": "grocery"
-          }
-        ]
       }
     ]
   }

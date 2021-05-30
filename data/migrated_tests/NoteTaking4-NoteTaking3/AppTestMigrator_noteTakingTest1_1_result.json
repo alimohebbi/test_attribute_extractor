@@ -1,218 +1,34 @@
 [
-  {
-    "checkable": "false",
-    "checked": "false",
-    "class": "android.widget.ImageView",
-    "clickable": "true",
-    "content-desc": "Search",
-    "enabled": "true",
-    "focusable": "true",
-    "focused": "false",
-    "long-clickable": "false",
-    "package": "me.writeily",
-    "password": "false",
-    "resource-id": "me.writeily:id/search_button",
-    "scrollable": "false",
-    "selection-start": null,
-    "selection-end": null,
-    "selected": "false",
-    "text": "",
-    "bounds": "[848,73][975,199]",
-    "displayed": "true",
-    "action": [
-      "click"
-    ]
-  },
-  {
-    "checkable": "false",
-    "checked": "false",
-    "class": "android.widget.ImageView",
-    "clickable": "true",
-    "content-desc": "Clear query",
-    "enabled": "true",
-    "focusable": "true",
-    "focused": "false",
-    "long-clickable": "false",
-    "package": "me.writeily",
-    "password": "false",
-    "resource-id": "me.writeily:id/search_close_btn",
-    "scrollable": "false",
-    "selection-start": null,
-    "selection-end": null,
-    "selected": "false",
-    "text": "",
-    "bounds": "[954,73][1059,199]",
-    "displayed": "true",
-    "action": [
-      "click"
-    ]
-  },
-  {
-    "checkable": "false",
-    "checked": "false",
-    "class": "android.widget.ImageView",
-    "clickable": "true",
-    "content-desc": "More options",
-    "enabled": "true",
-    "focusable": "true",
-    "focused": "false",
-    "long-clickable": "true",
-    "package": "me.writeily",
-    "password": "false",
-    "resource-id": null,
-    "scrollable": "false",
-    "selection-start": null,
-    "selection-end": null,
-    "selected": "false",
-    "text": "",
-    "bounds": "[975,73][1080,199]",
-    "displayed": "true",
-    "action": [
-      "longClick"
-    ]
-  },
-  {
-    "checkable": "false",
-    "checked": "false",
-    "class": "android.widget.TextView",
-    "clickable": "false",
-    "content-desc": null,
-    "enabled": "true",
-    "focusable": "false",
-    "focused": "false",
-    "long-clickable": "false",
-    "package": "me.writeily",
-    "password": "false",
-    "resource-id": "me.writeily:id/title",
-    "scrollable": "false",
-    "selection-start": null,
-    "selection-end": null,
-    "selected": "false",
-    "text": "Import from device",
-    "bounds": "[597,107][1028,164]",
-    "displayed": "true",
-    "action": [
-      "click"
-    ]
-  },
-  {
-    "checkable": "false",
-    "checked": "false",
-    "class": "android.widget.Button",
-    "clickable": "true",
-    "content-desc": null,
-    "enabled": "true",
-    "focusable": "true",
-    "focused": "false",
-    "long-clickable": "false",
-    "package": "me.writeily",
-    "password": "false",
-    "resource-id": "android:id/button2",
-    "scrollable": "false",
-    "selection-start": null,
-    "selection-end": null,
-    "selected": "false",
-    "text": "CANCEL",
-    "bounds": "[493,1614][695,1740]",
-    "displayed": "true",
-    "action": [
-      "click"
-    ]
-  },
-  {
-    "checkable": "false",
-    "checked": "false",
-    "class": "android.widget.ImageView",
-    "clickable": "true",
-    "content-desc": "Search",
-    "enabled": "true",
-    "focusable": "true",
-    "focused": "false",
-    "long-clickable": "false",
-    "package": "me.writeily",
-    "password": "false",
-    "resource-id": "me.writeily:id/search_button",
-    "scrollable": "false",
-    "selection-start": null,
-    "selection-end": null,
-    "selected": "false",
-    "text": "",
-    "bounds": "[848,73][975,199]",
-    "displayed": "true",
-    "action": [
-      "click"
-    ]
-  },
-  {
-    "checkable": "false",
-    "checked": "false",
-    "class": "android.widget.EditText",
-    "clickable": "true",
-    "content-desc": null,
-    "enabled": "true",
-    "focusable": "true",
-    "focused": "true",
-    "long-clickable": "true",
-    "package": "me.writeily",
-    "password": "false",
-    "resource-id": "me.writeily:id/search_src_text",
-    "scrollable": "false",
-    "selection-start": null,
-    "selection-end": null,
-    "selected": "false",
-    "text": "Search notes",
-    "bounds": "[261,88][954,183]",
-    "displayed": "true",
-    "action": [
-      "replaceText: to-do"
-    ]
-  },
-  {
-    "checkable": "false",
-    "checked": "false",
-    "class": "android.widget.EditText",
-    "clickable": "true",
-    "content-desc": null,
-    "enabled": "true",
-    "focusable": "true",
-    "focused": "false",
-    "long-clickable": "true",
-    "package": "me.writeily",
-    "password": "false",
-    "resource-id": "me.writeily:id/search_src_text",
-    "scrollable": "false",
-    "selection-start": null,
-    "selection-end": null,
-    "selected": "false",
-    "text": "Search notes",
-    "bounds": "[156,88][849,183]",
-    "displayed": "true",
-    "action": [
-      "replaceText: Go shopping"
-    ]
-  },
-  {
-    "checkable": "false",
-    "checked": "false",
-    "class": "android.widget.TextView",
-    "clickable": "false",
-    "content-desc": null,
-    "enabled": "true",
-    "focusable": "false",
-    "focused": "false",
-    "long-clickable": "false",
-    "package": "me.writeily",
-    "password": "false",
-    "resource-id": "me.writeily:id/empty_hint",
-    "scrollable": "false",
-    "selection-start": null,
-    "selection-end": null,
-    "selected": "false",
-    "text": "This directory is empty",
-    "bounds": "[0,210][1080,1794]",
-    "displayed": "true",
-    "action": [
-      "check"
-    ]
-  }
+  [
+    "click"
+  ],
+  [
+    "click"
+  ],
+  [
+    "long_press"
+  ],
+  [
+    "click"
+  ],
+  [
+    "click"
+  ],
+  [
+    "click"
+  ],
+  [
+    "send_keys",
+    "to-do"
+  ],
+  [
+    "send_keys",
+    "Go shopping"
+  ],
+  [
+    "wait_until_element_presence",
+    10,
+    "text",
+    "This directory is empty"
+  ]
 ]

@@ -1,0 +1,27 @@
+[
+  [
+    "click"
+  ],
+  [
+    "click"
+  ],
+  [
+    "send_keys_and_hide_keyboard",
+    "Sample Todo"
+  ],
+  [
+    "click"
+  ],
+  [
+    "wait_until_text_presence",
+    10,
+    "text",
+    "Sample Todo"
+  ],
+  [
+    "long_press"
+  ],
+  [
+    "click"
+  ]
+]

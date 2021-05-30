@@ -2,51 +2,6 @@ import re
 import glob
 from utils.utils import *
 
-def contains_id(line):
-    return not re.search(r'R.id\.(.*?)\)', line) is None
-
-def extract_check(value, check):
-    if check.replace(" ", "").startswith("with"):
-        value.append({"type":re.search(r'with(.*?)\(', check).group(1).lower(), "value":re.search(r'\"(.*?)\"', check).group(1)})
-    else:
-        value.append({"type": re.sub('[()]', '', check), "value": ""})
-    return value
-
-def extract_checks(line, parsed_event):
-    value = []
-    match_section = re.search(r'matches\((.*?)\)\);', line.split("check")[1]).group(1)
-    if match_section.startswith("allOf"):
-        checks = re.search(r'allOf\((.*?)\)\)', match_section).group(1).split(",")
-        for check in checks:
-            value = extract_check(value, check)         
-    else:
-        value = extract_check(value, match_section)  
-    parsed_event["action"] = [{"type": "check", "value": value}]
-    return parsed_event
-
-def extract_perform(line, parsed_event):
-    actions = re.search(r'perform\((.*?)\)\;', line).group(1).split(",")
-    actions = [action for action in actions if action.replace(" ", "") != "closeSoftKeyboard()"]
-    for i in range(len(actions)):
-        actions[i] = actions[i].strip(" ")
-        if "replaceText" in actions[i]:
-            actions[i] = {"type": "replaceText", "value": re.search(r'\"(.*?)\"', actions[i]).group(1)}
-        else:
-            actions[i] = { "type":actions[i][:-2], "value": ""}
-    parsed_event["action"] = actions
-    return parsed_event
-
-def extract_action(parsed_event, line):
-    if "onView" not in line:
-        if "pressBack();" in line:
-            parsed_event["action"] = [{"type": "pressBack", "value":""}]
-    else:
-        if "perform" in line:
-            parsed_event = extract_perform(line, parsed_event)            
-        elif "check" in line:  
-            parsed_event = extract_checks(line, parsed_event)          
-    return parsed_event
-
 def remove_child_addressing(line):  
     start = line.find("childAtPosition")
     if start == -1:
@@ -73,6 +28,9 @@ def get_selector_section(line):
         selector_section = ""
     return selector_section
 
+def contains_id(line):
+    return not re.search(r'R.id\.(.*?)\)', line) is None
+    
 def add_selector(selector, selector_list):
     if "isDisplayed()" in selector:
         widget_identifier = "isdisplayed"
@@ -96,8 +54,62 @@ def extract_get_element_by(parsed_event, line):
     selector_section = get_selector_section(line)
     for selector in selector_section.split(","):      
         selector_list = add_selector(selector, selector_list)
-            
+    if len(selector_list) == 0:
+        error_message = 40*"#"+" ERROR! "+40*"#"+"\nFor the element : "+str(parsed_element)+", there are no selectors by which we can find the element.\n\n\n"
+        write_to_error_log(error_message, log_fname)         
     parsed_event["get_element_by"] = selector_list
+    return parsed_event
+
+def extract_check(actions, check):
+    if re.sub('[ ()]', '', check)== "isDisplayed" or re.sub('[ ()]', '', check) == "isEnabled":
+        actions.append(re.sub('[ ()]', '', check))
+        actions.append("true") 
+    else:
+        actions.append(re.search(r'with(.*?)\(', check).group(1).lower())
+        actions.append(re.search(r'\"(.*?)\"', check).group(1))      
+    return actions
+
+def extract_checks(line, parsed_event):
+    value = []
+    match_section = re.search(r'matches\((.*?)\)\);', line.split("check")[1]).group(1)
+    actions = ["wait_until_element_presence", 10]
+    if match_section.startswith("allOf"):
+        checks = re.search(r'allOf\((.*?)\)\)', match_section).group(1).split(",")
+        for check in checks:
+            actions = extract_check(actions, check)
+    else:
+        actions = extract_check(actions, match_section)  
+    parsed_event["action"] = actions
+    return parsed_event
+
+def extract_perform(line, parsed_event):
+    atm_actions = re.search(r'perform\((.*?)\)\;', line).group(1).split(",")
+    atm_actions = [action for action in atm_actions if action.replace(" ", "") != "closeSoftKeyboard()"]
+    actions = []
+    for i in range(len(atm_actions)):
+        atm_actions[i] = atm_actions[i].strip(" ")
+        if "replaceText" in atm_actions[i]:
+            actions.append("send_keys")
+            actions.append(re.search(r'\"(.*?)\"', atm_actions[i]).group(1))
+        elif atm_actions[i][:-2] == "longClick":
+            actions.append("long_press")
+        elif "swipe" in atm_actions[i]:
+            direction = atm_actions[i][:-2].split("swipe")[1]
+            actions.append("swipe_"+str(direction.lower()))
+        else:
+            actions.append(atm_actions[i][:-2])
+    parsed_event["action"] = actions
+    return parsed_event
+
+def extract_action(parsed_event, line):
+    if "onView" not in line:
+        if "pressBack();" in line:
+            parsed_event["action"] = ["KEY_BACK"]
+    else:
+        if "perform" in line:
+            parsed_event = extract_perform(line, parsed_event)            
+        elif "check" in line:  
+            parsed_event = extract_checks(line, parsed_event)          
     return parsed_event
 
 def rearrange_lines(lines):
@@ -116,8 +128,9 @@ def parse_test_section(lines):
     for line in lines:
         if "onView" in line or "pressBack();" in line:
             parsed_event = {}
-            parsed_event = extract_get_element_by(parsed_event, line)
             parsed_event = extract_action(parsed_event, line)
+            if actions_need_element(parsed_event["action"]):
+                parsed_event = extract_get_element_by(parsed_event, line)
             parsed_event_list.append(parsed_event)
     return parsed_event_list
 
@@ -150,7 +163,7 @@ def main():
     files = glob.glob('../data/*/*/*.java')
     for file in files:
         print(file)
-        atmparse(file)
+        atm_parse(file)
 
 if __name__ == '__main__':
     main()

@@ -1,194 +1,29 @@
 [
-  {
-    "checkable": "false",
-    "checked": "false",
-    "class": "android.widget.ImageButton",
-    "clickable": "true",
-    "content-desc": "Open navigation drawer",
-    "enabled": "true",
-    "focusable": "true",
-    "focused": "false",
-    "long-clickable": "false",
-    "package": "com.blogspot.e_kanivets.moneytracker",
-    "password": "false",
-    "resource-id": null,
-    "scrollable": "false",
-    "selection-start": null,
-    "selection-end": null,
-    "selected": "false",
-    "text": "",
-    "bounds": "[0,63][147,210]",
-    "displayed": "true",
-    "action": [
-      "click"
-    ]
-  },
-  {
-    "checkable": "false",
-    "checked": "false",
-    "class": "android.widget.Button",
-    "clickable": "true",
-    "content-desc": null,
-    "enabled": "true",
-    "focusable": "true",
-    "focused": "false",
-    "long-clickable": "false",
-    "package": "com.blogspot.e_kanivets.moneytracker",
-    "password": "false",
-    "resource-id": "com.blogspot.e_kanivets.moneytracker:id/btn_add_income",
-    "scrollable": "false",
-    "selection-start": null,
-    "selection-end": null,
-    "selected": "false",
-    "text": "ADD INCOME",
-    "bounds": "[0,1659][540,1794]",
-    "displayed": "true",
-    "action": [
-      "click"
-    ]
-  },
-  {
-    "checkable": "false",
-    "checked": "false",
-    "class": "android.widget.TextView",
-    "clickable": "true",
-    "content-desc": "Add",
-    "enabled": "true",
-    "focusable": "true",
-    "focused": "false",
-    "long-clickable": "true",
-    "package": "com.blogspot.e_kanivets.moneytracker",
-    "password": "false",
-    "resource-id": "com.blogspot.e_kanivets.moneytracker:id/action_done",
-    "scrollable": "false",
-    "selection-start": null,
-    "selection-end": null,
-    "selected": "false",
-    "text": "",
-    "bounds": "[953,73][1080,199]",
-    "displayed": "true",
-    "action": [
-      "click"
-    ]
-  },
-  {
-    "checkable": "false",
-    "checked": "false",
-    "class": "android.widget.TextView",
-    "clickable": "true",
-    "content-desc": null,
-    "enabled": "true",
-    "focusable": "false",
-    "focused": "false",
-    "long-clickable": "false",
-    "package": "com.blogspot.e_kanivets.moneytracker",
-    "password": "false",
-    "resource-id": "com.blogspot.e_kanivets.moneytracker:id/tv_date",
-    "scrollable": "false",
-    "selection-start": null,
-    "selection-end": null,
-    "selected": "false",
-    "text": "2021-05-28",
-    "bounds": "[42,295][311,400]",
-    "displayed": "true",
-    "action": [
-      "click"
-    ]
-  },
-  {
-    "checkable": "false",
-    "checked": "false",
-    "class": "android.widget.ImageButton",
-    "clickable": "true",
-    "content-desc": "Next month",
-    "enabled": "true",
-    "focusable": "true",
-    "focused": "false",
-    "long-clickable": "false",
-    "package": "com.blogspot.e_kanivets.moneytracker",
-    "password": "false",
-    "resource-id": "android:id/next",
-    "scrollable": "false",
-    "selection-start": null,
-    "selection-end": null,
-    "selected": "false",
-    "text": "",
-    "bounds": "[756,559][882,685]",
-    "displayed": "true",
-    "action": [
-      "click"
-    ]
-  },
-  {
-    "checkable": "false",
-    "checked": "false",
-    "class": "android.widget.Button",
-    "clickable": "true",
-    "content-desc": "",
-    "enabled": "true",
-    "focusable": "true",
-    "focused": "false",
-    "long-clickable": "false",
-    "package": "com.blogspot.e_kanivets.moneytracker",
-    "password": "false",
-    "resource-id": "android:id/button1",
-    "scrollable": "false",
-    "selection-start": null,
-    "selection-end": null,
-    "selected": "false",
-    "text": "OK",
-    "bounds": "[718,1432][886,1558]",
-    "displayed": "true",
-    "action": [
-      "click"
-    ]
-  },
-  {
-    "checkable": "false",
-    "checked": "false",
-    "class": "android.widget.ImageButton",
-    "clickable": "true",
-    "content-desc": "Navigate up",
-    "enabled": "true",
-    "focusable": "true",
-    "focused": "false",
-    "long-clickable": "false",
-    "package": "com.blogspot.e_kanivets.moneytracker",
-    "password": "false",
-    "resource-id": null,
-    "scrollable": "false",
-    "selection-start": null,
-    "selection-end": null,
-    "selected": "false",
-    "text": "",
-    "bounds": "[0,63][147,210]",
-    "displayed": "true",
-    "action": [
-      "click"
-    ]
-  },
-  {
-    "checkable": "false",
-    "checked": "false",
-    "class": "android.widget.TextView",
-    "clickable": "false",
-    "content-desc": null,
-    "enabled": "true",
-    "focusable": "false",
-    "focused": "false",
-    "long-clickable": "false",
-    "package": "com.blogspot.e_kanivets.moneytracker",
-    "password": "false",
-    "resource-id": "com.blogspot.e_kanivets.moneytracker:id/tv_period",
-    "scrollable": "false",
-    "selection-start": null,
-    "selection-end": null,
-    "selected": "false",
-    "text": "23 May, 2021 - 29 May, 2021",
-    "bounds": "[42,323][441,366]",
-    "displayed": "true",
-    "action": [
-      "check"
-    ]
-  }
+  [
+    "click"
+  ],
+  [
+    "click"
+  ],
+  [
+    "click"
+  ],
+  [
+    "click"
+  ],
+  [
+    "click"
+  ],
+  [
+    "click"
+  ],
+  [
+    "click"
+  ],
+  [
+    "wait_until_element_presence",
+    10,
+    "isDisplayed",
+    "true"
+  ]
 ]

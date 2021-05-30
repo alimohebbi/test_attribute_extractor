@@ -1,0 +1,128 @@
+[
+  {
+    "action": [
+      "send_keys_and_hide_keyboard",
+      "Sample Todo"
+    ],
+    "get_element_by": [
+      {
+        "type": "resource-id",
+        "value": "kdk.android.simplydo:id/AddListEditText"
+      },
+      {
+        "type": "text",
+        "value": "New List Name"
+      },
+      {
+        "type": "classname",
+        "value": "android.widget.EditText"
+      }
+    ]
+  },
+  {
+    "action": [
+      "click"
+    ],
+    "get_element_by": [
+      {
+        "type": "resource-id",
+        "value": "kdk.android.simplydo:id/AddListButton"
+      },
+      {
+        "type": "text",
+        "value": "Add"
+      },
+      {
+        "type": "classname",
+        "value": "android.widget.Button"
+      }
+    ]
+  },
+  {
+    "action": [
+      "wait_until_text_presence",
+      10,
+      "text",
+      "Sample Todo"
+    ],
+    "get_element_by": [
+      {
+        "type": "resource-id",
+        "value": "kdk.android.simplydo:id/text1"
+      },
+      {
+        "type": "text",
+        "value": "Sample Todo"
+      },
+      {
+        "type": "classname",
+        "value": "android.widget.TextView"
+      }
+    ]
+  },
+  {
+    "action": [
+      "long_press"
+    ],
+    "get_element_by": [
+      {
+        "type": "resource-id",
+        "value": "kdk.android.simplydo:id/text1"
+      },
+      {
+        "type": "text",
+        "value": "Sample Todo"
+      },
+      {
+        "type": "classname",
+        "value": "android.widget.TextView"
+      }
+    ]
+  },
+  {
+    "action": [
+      "click"
+    ],
+    "get_element_by": [
+      {
+        "type": "resource-id",
+        "value": "android:id/title"
+      },
+      {
+        "type": "text",
+        "value": "Delete"
+      },
+      {
+        "type": "classname",
+        "value": "android.widget.TextView"
+      }
+    ]
+  },
+  {
+    "action": [
+      "click"
+    ],
+    "get_element_by": [
+      {
+        "type": "resource-id",
+        "value": "android:id/button1"
+      },
+      {
+        "type": "text",
+        "value": "Yes"
+      },
+      {
+        "type": "classname",
+        "value": "android.widget.Button"
+      }
+    ]
+  },
+  {
+    "action": [
+      "wait_until_text_invisible",
+      10,
+      "text",
+      "Sample Todo"
+    ]
+  }
+]

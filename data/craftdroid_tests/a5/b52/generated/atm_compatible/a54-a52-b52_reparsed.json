@@ -1,0 +1,101 @@
+[
+  {
+    "get_element_by": [
+      {
+        "type": "resource-id",
+        "value": "com.appsbyvir.tipcalculator:id/billEditText"
+      },
+      {
+        "type": "ClassName",
+        "value": "android.widget.EditText"
+      }
+    ],
+    "action": [
+      {
+        "type": "replaceText",
+        "value": "56.6"
+      }
+    ]
+  },
+  {
+    "get_element_by": [
+      {
+        "type": "resource-id",
+        "value": "com.appsbyvir.tipcalculator:id/tipEditText"
+      },
+      {
+        "type": "Text",
+        "value": "15.0"
+      },
+      {
+        "type": "ClassName",
+        "value": "android.widget.EditText"
+      }
+    ],
+    "action": [
+      {
+        "type": "replaceText",
+        "value": "15"
+      }
+    ]
+  },
+  {
+    "get_element_by": [
+      {
+        "type": "resource-id",
+        "value": "com.appsbyvir.tipcalculator:id/splitBillEditText"
+      },
+      {
+        "type": "Text",
+        "value": "# of ways"
+      },
+      {
+        "type": "ClassName",
+        "value": "android.widget.EditText"
+      }
+    ],
+    "action": [
+      {
+        "type": "replaceText",
+        "value": "4"
+      }
+    ]
+  },
+  {
+    "get_element_by": [
+      {
+        "type": "ClassName",
+        "value": "EMPTY_EVENT"
+      }
+    ]
+  },
+  {
+    "get_element_by": [
+      {
+        "type": "resource-id",
+        "value": "com.appsbyvir.tipcalculator:id/perPersonEditText"
+      },
+      {
+        "type": "Text",
+        "value": "16.27"
+      },
+      {
+        "type": "ClassName",
+        "value": "android.widget.EditText"
+      }
+    ],
+    "action": [
+      {
+        "type": "wait",
+        "value": 10
+      },
+      {
+        "type": "check",
+        "value": {
+          "type": "text",
+          "value": "16.27"
+        }
+      }
+    ]
+  }
+]

@@ -1,0 +1,145 @@
+[
+  {
+    "action": [
+      "click"
+    ],
+    "get_element_by": [
+      {
+        "type": "resource-id",
+        "value": "org.mozilla.focus:id/skip"
+      },
+      {
+        "type": "text",
+        "value": "Skip"
+      },
+      {
+        "type": "classname",
+        "value": "android.widget.Button"
+      }
+    ]
+  },
+  {
+    "action": [
+      "click"
+    ],
+    "get_element_by": [
+      {
+        "type": "resource-id",
+        "value": "org.mozilla.focus:id/urlView"
+      },
+      {
+        "type": "text",
+        "value": "Search or enter address"
+      },
+      {
+        "type": "classname",
+        "value": "android.widget.EditText"
+      }
+    ]
+  },
+  {
+    "action": [
+      "send_keys_and_enter",
+      "https://www.ics.uci.edu"
+    ],
+    "get_element_by": [
+      {
+        "type": "resource-id",
+        "value": "org.mozilla.focus:id/urlView"
+      },
+      {
+        "type": "text",
+        "value": "Search or enter address"
+      },
+      {
+        "type": "classname",
+        "value": "android.widget.EditText"
+      }
+    ]
+  },
+  {
+    "action": [
+      "wait_until_element_presence",
+      10,
+      "class",
+      "android.view.View",
+      "text",
+      "Donald Bren School of Information and Computer Sciences"
+    ],
+    "get_element_by": [
+      {
+        "type": "text",
+        "value": "Donald Bren School of Information and Computer Sciences"
+      },
+      {
+        "type": "classname",
+        "value": "android.view.View"
+      }
+    ]
+  },
+  {
+    "action": [
+      "clear_and_send_keys_and_enter",
+      "https://uci.edu"
+    ],
+    "get_element_by": [
+      {
+        "type": "resource-id",
+        "value": "org.mozilla.focus:id/display_url"
+      },
+      {
+        "type": "text",
+        "value": "https://www.ics.uci.edu/"
+      },
+      {
+        "type": "classname",
+        "value": "android.widget.TextView"
+      }
+    ]
+  },
+  {
+    "action": [
+      "wait_until_element_presence",
+      10,
+      "class",
+      "android.view.View",
+      "text",
+      "UCI homepage"
+    ],
+    "get_element_by": [
+      {
+        "type": "text",
+        "value": "UCI homepage"
+      },
+      {
+        "type": "classname",
+        "value": "android.view.View"
+      }
+    ]
+  },
+  {
+    "action": [
+      "KEY_BACK"
+    ]
+  },
+  {
+    "action": [
+      "wait_until_element_presence",
+      10,
+      "class",
+      "android.view.View",
+      "text",
+      "Donald Bren School of Information and Computer Sciences"
+    ],
+    "get_element_by": [
+      {
+        "type": "text",
+        "value": "Donald Bren School of Information and Computer Sciences"
+      },
+      {
+        "type": "classname",
+        "value": "android.view.View"
+      }
+    ]
+  }
+]

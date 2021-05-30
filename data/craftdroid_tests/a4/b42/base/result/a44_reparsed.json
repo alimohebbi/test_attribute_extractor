@@ -1,0 +1,162 @@
+[
+  {
+    "action": [
+      "wait_until_text_presence",
+      15,
+      "text",
+      "Inbox"
+    ],
+    "get_element_by": [
+      {
+        "type": "resource-id",
+        "value": "com.my.mail:id/folder_name"
+      },
+      {
+        "type": "text",
+        "value": "Inbox"
+      },
+      {
+        "type": "classname",
+        "value": "android.widget.TextView"
+      }
+    ]
+  },
+  {
+    "action": [
+      "click"
+    ],
+    "get_element_by": [
+      {
+        "type": "resource-id",
+        "value": "com.my.mail:id/toolbar_action_new"
+      },
+      {
+        "type": "contentdescription",
+        "value": "New Message"
+      },
+      {
+        "type": "classname",
+        "value": "android.widget.TextView"
+      }
+    ]
+  },
+  {
+    "action": [
+      "wait_until_element_presence",
+      15,
+      "id",
+      "edit_text_to"
+    ],
+    "get_element_by": [
+      {
+        "type": "resource-id",
+        "value": "com.my.mail:id/edit_text_to"
+      },
+      {
+        "type": "text",
+        "value": "\u200b"
+      },
+      {
+        "type": "classname",
+        "value": "android.widget.EditText"
+      }
+    ]
+  },
+  {
+    "action": [
+      "send_keys_and_hide_keyboard",
+      "testreuse2021@gmail.com"
+    ],
+    "get_element_by": [
+      {
+        "type": "resource-id",
+        "value": "com.my.mail:id/edit_text_to"
+      },
+      {
+        "type": "text",
+        "value": "\u200b"
+      },
+      {
+        "type": "classname",
+        "value": "android.widget.EditText"
+      }
+    ]
+  },
+  {
+    "action": [
+      "send_keys",
+      "ICSTSuperCool"
+    ],
+    "get_element_by": [
+      {
+        "type": "resource-id",
+        "value": "com.my.mail:id/subject"
+      },
+      {
+        "type": "classname",
+        "value": "android.widget.EditText"
+      }
+    ]
+  },
+  {
+    "action": [
+      "send_keys",
+      "ICSTSuperCoolBody"
+    ],
+    "get_element_by": [
+      {
+        "type": "resource-id",
+        "value": "com.my.mail:id/mailbox_create_new_body"
+      },
+      {
+        "type": "text",
+        "value": "\n\n--\nSent from myMail for Android"
+      },
+      {
+        "type": "classname",
+        "value": "android.widget.EditText"
+      }
+    ]
+  },
+  {
+    "action": [
+      "click"
+    ],
+    "get_element_by": [
+      {
+        "type": "resource-id",
+        "value": "com.my.mail:id/toolbar_action_send"
+      },
+      {
+        "type": "contentdescription",
+        "value": "Send"
+      },
+      {
+        "type": "classname",
+        "value": "android.widget.TextView"
+      }
+    ]
+  },
+  {
+    "action": [
+      "wait_until_text_presence",
+      20,
+      "text",
+      "ICSTSuperCool"
+    ],
+    "get_element_by": [
+      {
+        "type": "resource-id",
+        "value": "com.my.mail:id/subject"
+      },
+      {
+        "type": "text",
+        "value": "ICSTSuperCool"
+      },
+      {
+        "type": "classname",
+        "value": "android.widget.TextView"
+      }
+    ]
+  }
+]

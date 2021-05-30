@@ -79,7 +79,7 @@
     "score": 0.3333333333333333,
     "action": [
       "send_keys_and_hide_keyboard",
-      "uci.seal@gmail.com"
+      "testreuse2021@gmail.com"
     ]
   },
   {
@@ -137,43 +137,6 @@
     "activity": "ru.mail.ui.writemail.WriteActivity",
     "event_type": "gui",
     "score": 0.5,
-    "action": [
-      "click"
-    ]
-  },
-  {
-   "class": "android.widget.ImageButton",
-    "resource-id": "",
-    "text": "",
-    "content-desc": "Navigate up",
-    "clickable": "",
-    "password": "",
-    "naf": "",
-    "parent_text": "",
-    "sibling_text": "",
-    "stepping_events": [],
-    "package": "park.outlook.sign.in.client",
-    "activity": "ru.mail.ui.SlideStackActivity",
-    "event_type": "gui",
-    "action": [
-      "click"
-    ]
-  },
-  {
-    "class": "android.widget.LinearLayout",
-    "resource-id": "park.outlook.sign.in.client:id/highlighted_root_view",
-    "text": "",
-    "content-desc": "",
-    "clickable": "",
-    "password": "",
-    "xpath":"/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.RelativeLayout/ru.mail.fragments.view.drawer.DrawerLayout/android.widget.RelativeLayout[2]/android.widget.LinearLayout/android.widget.ListView/android.widget.LinearLayout[3]",
-    "naf": "",
-    "parent_text": "",
-    "sibling_text": "",
-    "stepping_events": [],
-    "package": "park.outlook.sign.in.client",
-    "activity": "ru.mail.ui.SlideStackActivity",
-    "event_type": "gui",
     "action": [
       "click"
     ]

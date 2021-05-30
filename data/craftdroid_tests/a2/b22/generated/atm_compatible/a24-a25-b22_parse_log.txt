@@ -1,0 +1,4 @@
+######################################## ERROR! ########################################
+For the element : {'class': '', 'resource-id': '', 'text': '', 'content-desc': '', 'clickable': '', 'password': '', 'parent_text': '', 'sibling_text': '', 'stepping_events': [], 'package': 'com.woefe.shoppinglist', 'activity': '.activity.MainActivity', 'event_type': 'oracle', 'score': 0.2955802197140407, 'action': ['wait_until_text_invisible', 10, 'text', 'Sample Todo']}, there are no selectors by which we can find the element.
+
+

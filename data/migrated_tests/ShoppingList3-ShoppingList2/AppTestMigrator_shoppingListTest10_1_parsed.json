@@ -1,141 +1,112 @@
 [
   {
+    "action": [
+      "long_press"
+    ],
     "get_element_by": [
       {
         "type": "resource-id",
         "value": "action_add"
       }
-    ],
-    "action": [
-      {
-        "type": "longClick",
-        "value": ""
-      }
     ]
   },
   {
+    "action": [
+      "click"
+    ],
     "get_element_by": [
       {
         "type": "xpath",
         "value": "/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/android.view.ViewGroup/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.TextView"
       }
-    ],
-    "action": [
-      {
-        "type": "click",
-        "value": ""
-      }
     ]
   },
   {
+    "action": [
+      "click"
+    ],
     "get_element_by": [
       {
         "type": "xpath",
         "value": "/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[2]/android.widget.RelativeLayout/android.widget.LinearLayout/android.widget.TableLayout"
       }
-    ],
-    "action": [
-      {
-        "type": "click",
-        "value": ""
-      }
     ]
   },
   {
+    "action": [
+      "click"
+    ],
     "get_element_by": [
       {
         "type": "text",
         "value": "OK"
       }
-    ],
-    "action": [
-      {
-        "type": "click",
-        "value": ""
-      }
     ]
   },
   {
+    "action": [
+      "long_press"
+    ],
     "get_element_by": [
       {
         "type": "resource-id",
         "value": "action_done"
       }
-    ],
-    "action": [
-      {
-        "type": "longClick",
-        "value": ""
-      }
     ]
   },
   {
+    "action": [
+      "long_press"
+    ],
     "get_element_by": [
       {
         "type": "resource-id",
         "value": "search"
       }
-    ],
-    "action": [
-      {
-        "type": "longClick",
-        "value": ""
-      }
     ]
   },
   {
+    "action": [
+      "click"
+    ],
     "get_element_by": [
       {
         "type": "xpath",
         "value": "/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/android.view.ViewGroup/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.ImageView[2]"
       }
-    ],
-    "action": [
-      {
-        "type": "click",
-        "value": ""
-      }
     ]
   },
   {
+    "action": [
+      "click"
+    ],
     "get_element_by": [
       {
         "type": "resource-id",
         "value": "action_add"
       }
-    ],
-    "action": [
-      {
-        "type": "click",
-        "value": ""
-      }
     ]
   },
   {
+    "action": [
+      "send_keys",
+      "grocery"
+    ],
     "get_element_by": [
       {
         "type": "xpath",
         "value": "/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.EditText"
       }
-    ],
-    "action": [
-      {
-        "type": "replaceText",
-        "value": "grocery"
-      }
     ]
   },
   {
+    "action": [
+      "click"
+    ],
     "get_element_by": [
       {
         "type": "text",
         "value": "OK"
-      }
-    ],
-    "action": [
-      {
-        "type": "click",
-        "value": ""
       }
     ]
   }

@@ -1,0 +1,28 @@
+[
+  [
+    "wait_until_element_presence",
+    15,
+    "id",
+    "com.rainbowshops:id/button_log_in"
+  ],
+  [
+    "click"
+  ],
+  [
+    "wait_until_element_presence",
+    15,
+    "id",
+    "com.rainbowshops:id/text_password"
+  ],
+  [
+    "send_keys",
+    "1qaz2wsX"
+  ],
+  [
+    "send_keys_and_hide_keyboard",
+    "uci.seal@gmail.com"
+  ],
+  [
+    "click"
+  ]
+]

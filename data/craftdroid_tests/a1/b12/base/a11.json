@@ -39,8 +39,8 @@
   {
     "class": "android.view.View",
     "resource-id": "",
-    "text": "",
-    "content-desc": "Donald Bren School of Information and Computer Sciences",
+    "content-desc": "",
+    "text": "Donald Bren School of Information and Computer Sciences",
     "clickable": "true",
     "password": "false",
     "parent_text": "",
@@ -54,7 +54,25 @@
       "wait_until_element_presence",
       10,
       "xpath",
-      "//android.view.View[@content-desc=\"Donald Bren School of Information and Computer Sciences\"]"
+      "//android.view.View[@text=\"Donald Bren School of Information and Computer Sciences\"]"
+    ]
+  },
+    {
+    "class": "android.widget.EditText",
+    "resource-id": "acr.browser.lightning:id/search",
+    "text": "https://www.ics.uci.edu",
+    "content-desc": "",
+    "clickable": "true",
+    "password": "false",
+    "parent_text": "",
+    "sibling_text": "",
+    "tid": "a11",
+    "package": "acr.browser.lightning",
+    "activity": ".MainActivity",
+    "ignorable": "false",
+    "event_type": "gui",
+    "action": [
+      "click"
     ]
   },
   {
@@ -79,8 +97,8 @@
   {
     "class": "android.view.View",
     "resource-id": "",
-    "text": "",
-    "content-desc": "UCI homepage",
+    "content-desc": "",
+    "text": "UCI homepage",
     "clickable": "true",
     "password": "false",
     "parent_text": "",
@@ -94,7 +112,7 @@
       "wait_until_element_presence",
       10,
       "xpath",
-      "//android.view.View[@content-desc=\"UCI homepage\"]"
+      "//android.view.View[@text=\"UCI homepage\"]"
     ]
   },
   {
@@ -107,8 +125,8 @@
   {
     "class": "android.view.View",
     "resource-id": "",
-    "text": "",
-    "content-desc": "Donald Bren School of Information and Computer Sciences",
+    "content-desc": "",
+    "text": "Donald Bren School of Information and Computer Sciences",
     "clickable": "true",
     "password": "false",
     "parent_text": "",
@@ -122,7 +140,7 @@
       "wait_until_element_presence",
       10,
       "xpath",
-      "//android.view.View[@content-desc=\"Donald Bren School of Information and Computer Sciences\"]"
+      "//android.view.View[@text=\"Donald Bren School of Information and Computer Sciences\"]"
     ]
   }
 ]

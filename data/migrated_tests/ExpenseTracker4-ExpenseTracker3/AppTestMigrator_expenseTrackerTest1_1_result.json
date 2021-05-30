@@ -1,146 +1,20 @@
 [
-  {
-    "checkable": "false",
-    "checked": "false",
-    "class": "android.widget.ImageButton",
-    "clickable": "true",
-    "content-desc": "Open navigation drawer",
-    "enabled": "true",
-    "focusable": "true",
-    "focused": "false",
-    "long-clickable": "false",
-    "package": "com.kvannli.simonkvannli.dailybudget",
-    "password": "false",
-    "resource-id": null,
-    "scrollable": "false",
-    "selection-start": null,
-    "selection-end": null,
-    "selected": "false",
-    "text": "",
-    "bounds": "[0,63][147,210]",
-    "displayed": "true",
-    "action": [
-      "click"
-    ]
-  },
-  {
-    "checkable": "false",
-    "checked": "false",
-    "class": "android.widget.ImageButton",
-    "clickable": "true",
-    "content-desc": "Close navigation drawer",
-    "enabled": "true",
-    "focusable": "true",
-    "focused": "false",
-    "long-clickable": "false",
-    "package": "com.kvannli.simonkvannli.dailybudget",
-    "password": "false",
-    "resource-id": null,
-    "scrollable": "false",
-    "selection-start": null,
-    "selection-end": null,
-    "selected": "false",
-    "text": "",
-    "bounds": "[0,63][147,210]",
-    "displayed": "true",
-    "action": [
-      "click"
-    ]
-  },
-  {
-    "checkable": "false",
-    "checked": "false",
-    "class": "android.widget.ImageButton",
-    "clickable": "true",
-    "content-desc": "Open navigation drawer",
-    "enabled": "true",
-    "focusable": "true",
-    "focused": "false",
-    "long-clickable": "false",
-    "package": "com.kvannli.simonkvannli.dailybudget",
-    "password": "false",
-    "resource-id": null,
-    "scrollable": "false",
-    "selection-start": null,
-    "selection-end": null,
-    "selected": "false",
-    "text": "",
-    "bounds": "[0,63][147,210]",
-    "displayed": "true",
-    "action": [
-      "click"
-    ]
-  },
-  {
-    "checkable": "false",
-    "checked": "false",
-    "class": "android.widget.TextView",
-    "clickable": "true",
-    "content-desc": null,
-    "enabled": "true",
-    "focusable": "false",
-    "focused": "false",
-    "long-clickable": "false",
-    "package": "com.kvannli.simonkvannli.dailybudget",
-    "password": "false",
-    "resource-id": "android:id/text1",
-    "scrollable": "false",
-    "selection-start": null,
-    "selection-end": null,
-    "selected": "false",
-    "text": "INCOME",
-    "bounds": "[0,460][630,586]",
-    "displayed": "true",
-    "action": [
-      "click"
-    ]
-  },
-  {
-    "checkable": "false",
-    "checked": "false",
-    "class": "android.widget.Button",
-    "clickable": "true",
-    "content-desc": null,
-    "enabled": "true",
-    "focusable": "true",
-    "focused": "false",
-    "long-clickable": "false",
-    "package": "com.kvannli.simonkvannli.dailybudget",
-    "password": "false",
-    "resource-id": "com.kvannli.simonkvannli.dailybudget:id/button2",
-    "scrollable": "false",
-    "selection-start": null,
-    "selection-end": null,
-    "selected": "false",
-    "text": "ADD INCOME",
-    "bounds": "[42,498][1038,624]",
-    "displayed": "true",
-    "action": [
-      "click"
-    ]
-  },
-  {
-    "checkable": "false",
-    "checked": "false",
-    "class": "android.widget.Button",
-    "clickable": "true",
-    "content-desc": null,
-    "enabled": "true",
-    "focusable": "true",
-    "focused": "false",
-    "long-clickable": "false",
-    "package": "com.kvannli.simonkvannli.dailybudget",
-    "password": "false",
-    "resource-id": "com.kvannli.simonkvannli.dailybudget:id/button2",
-    "scrollable": "false",
-    "selection-start": null,
-    "selection-end": null,
-    "selected": "false",
-    "text": "ADD INCOME",
-    "bounds": "[42,498][1038,624]",
-    "displayed": "true",
-    "action": [
-      "click"
-    ]
-  }
+  [
+    "click"
+  ],
+  [
+    "click"
+  ],
+  [
+    "click"
+  ],
+  [
+    "click"
+  ],
+  [
+    "click"
+  ],
+  [
+    "click"
+  ]
 ]

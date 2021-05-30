@@ -1,170 +1,31 @@
 [
-  {
-    "checkable": "false",
-    "checked": "false",
-    "class": "android.widget.ImageButton",
-    "clickable": "true",
-    "content-desc": "New note",
-    "enabled": "true",
-    "focusable": "true",
-    "focused": "false",
-    "long-clickable": "false",
-    "package": "com.moonpi.swiftnotes",
-    "password": "false",
-    "resource-id": "com.moonpi.swiftnotes:id/newNote",
-    "scrollable": "false",
-    "selection-start": null,
-    "selection-end": null,
-    "selected": "false",
-    "text": "",
-    "bounds": "[830,1544][1001,1715]",
-    "displayed": "true",
-    "action": [
-      "click"
-    ]
-  },
-  {
-    "checkable": "false",
-    "checked": "false",
-    "class": "android.widget.EditText",
-    "clickable": "true",
-    "content-desc": null,
-    "enabled": "true",
-    "focusable": "true",
-    "focused": "true",
-    "long-clickable": "true",
-    "package": "com.moonpi.swiftnotes",
-    "password": "false",
-    "resource-id": "com.moonpi.swiftnotes:id/titleEdit",
-    "scrollable": "false",
-    "selection-start": null,
-    "selection-end": null,
-    "selected": "false",
-    "text": "Title",
-    "bounds": "[0,210][1080,341]",
-    "displayed": "true",
-    "action": [
-      "replaceText: Title1"
-    ]
-  },
-  {
-    "checkable": "false",
-    "checked": "false",
-    "class": "android.widget.EditText",
-    "clickable": "true",
-    "content-desc": null,
-    "enabled": "true",
-    "focusable": "true",
-    "focused": "false",
-    "long-clickable": "true",
-    "package": "com.moonpi.swiftnotes",
-    "password": "false",
-    "resource-id": "com.moonpi.swiftnotes:id/bodyEdit",
-    "scrollable": "false",
-    "selection-start": null,
-    "selection-end": null,
-    "selected": "false",
-    "text": "Note",
-    "bounds": "[0,362][1080,425]",
-    "displayed": "true",
-    "action": [
-      "replaceText: Note1"
-    ]
-  },
-  {
-    "checkable": "false",
-    "checked": "false",
-    "class": "android.widget.ImageButton",
-    "clickable": "true",
-    "content-desc": null,
-    "enabled": "true",
-    "focusable": "true",
-    "focused": "false",
-    "long-clickable": "false",
-    "package": "com.moonpi.swiftnotes",
-    "password": "false",
-    "resource-id": null,
-    "scrollable": "false",
-    "selection-start": null,
-    "selection-end": null,
-    "selected": "false",
-    "text": "",
-    "bounds": "[0,63][147,210]",
-    "displayed": "true",
-    "action": [
-      "click"
-    ]
-  },
-  {
-    "checkable": "false",
-    "checked": "false",
-    "class": "android.widget.Button",
-    "clickable": "true",
-    "content-desc": null,
-    "enabled": "true",
-    "focusable": "true",
-    "focused": "false",
-    "long-clickable": "false",
-    "package": "com.moonpi.swiftnotes",
-    "password": "false",
-    "resource-id": "android:id/button1",
-    "scrollable": "false",
-    "selection-start": null,
-    "selection-end": null,
-    "selected": "false",
-    "text": "YES",
-    "bounds": "[810,928][978,1054]",
-    "displayed": "true",
-    "action": [
-      "click"
-    ]
-  },
-  {
-    "checkable": "false",
-    "checked": "false",
-    "class": "android.widget.TextView",
-    "clickable": "false",
-    "content-desc": null,
-    "enabled": "true",
-    "focusable": "false",
-    "focused": "false",
-    "long-clickable": "false",
-    "package": "com.moonpi.swiftnotes",
-    "password": "false",
-    "resource-id": "com.moonpi.swiftnotes:id/titleView",
-    "scrollable": "false",
-    "selection-start": null,
-    "selection-end": null,
-    "selected": "false",
-    "text": "Title1",
-    "bounds": "[68,244][899,353]",
-    "displayed": "true",
-    "action": [
-      "check"
-    ]
-  },
-  {
-    "checkable": "false",
-    "checked": "false",
-    "class": "android.widget.TextView",
-    "clickable": "false",
-    "content-desc": null,
-    "enabled": "true",
-    "focusable": "false",
-    "focused": "false",
-    "long-clickable": "false",
-    "package": "com.moonpi.swiftnotes",
-    "password": "false",
-    "resource-id": "com.moonpi.swiftnotes:id/bodyView",
-    "scrollable": "false",
-    "selection-start": null,
-    "selection-end": null,
-    "selected": "false",
-    "text": "Note1",
-    "bounds": "[68,353][899,437]",
-    "displayed": "true",
-    "action": [
-      "check"
-    ]
-  }
+  [
+    "click"
+  ],
+  [
+    "send_keys",
+    "Title1"
+  ],
+  [
+    "send_keys",
+    "Note1"
+  ],
+  [
+    "click"
+  ],
+  [
+    "click"
+  ],
+  [
+    "wait_until_element_presence",
+    10,
+    "text",
+    "Title1"
+  ],
+  [
+    "wait_until_element_presence",
+    10,
+    "text",
+    "Note1"
+  ]
 ]

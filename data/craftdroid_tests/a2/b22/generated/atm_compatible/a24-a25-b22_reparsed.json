@@ -1,0 +1,219 @@
+[
+  {
+    "get_element_by": [
+      {
+        "type": "resource-id",
+        "value": "com.woefe.shoppinglist:id/fab_add"
+      },
+      {
+        "type": "ClassName",
+        "value": "android.widget.ImageButton"
+      }
+    ],
+    "action": [
+      {
+        "type": "click",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "get_element_by": [
+      {
+        "type": "resource-id",
+        "value": "com.woefe.shoppinglist:id/new_item_description"
+      },
+      {
+        "type": "Text",
+        "value": "New Item"
+      },
+      {
+        "type": "ClassName",
+        "value": "android.widget.EditText"
+      }
+    ],
+    "action": [
+      {
+        "type": "replaceText",
+        "value": "Sample Todo"
+      }
+    ]
+  },
+  {
+    "get_element_by": [
+      {
+        "type": "resource-id",
+        "value": "com.woefe.shoppinglist:id/button_add_new_item"
+      },
+      {
+        "type": "ContentDescription",
+        "value": "Done"
+      },
+      {
+        "type": "ClassName",
+        "value": "android.widget.ImageButton"
+      }
+    ],
+    "action": [
+      {
+        "type": "click",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "get_element_by": [
+      {
+        "type": "resource-id",
+        "value": "com.woefe.shoppinglist:id/text_description"
+      },
+      {
+        "type": "Text",
+        "value": "Sample Todo"
+      },
+      {
+        "type": "ClassName",
+        "value": "android.widget.TextView"
+      }
+    ],
+    "action": [
+      {
+        "type": "wait",
+        "value": 10
+      },
+      {
+        "type": "check",
+        "value": {
+          "type": "text",
+          "value": "Sample Todo"
+        }
+      }
+    ]
+  },
+  {
+    "get_element_by": [
+      {
+        "type": "resource-id",
+        "value": "com.woefe.shoppinglist:id/text_description"
+      },
+      {
+        "type": "Text",
+        "value": "Sample Todo"
+      },
+      {
+        "type": "ClassName",
+        "value": "android.widget.TextView"
+      }
+    ],
+    "action": [
+      {
+        "type": "swiperight",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "get_element_by": [
+      {
+        "type": "resource-id",
+        "value": "/"
+      },
+      {
+        "type": "ContentDescription",
+        "value": "Sort"
+      },
+      {
+        "type": "ClassName",
+        "value": "android.widget.TextView"
+      }
+    ],
+    "action": [
+      {
+        "type": "click",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "get_element_by": [
+      {
+        "type": "resource-id",
+        "value": "com.woefe.shoppinglist:id/title"
+      },
+      {
+        "type": "Text",
+        "value": "Checked first"
+      },
+      {
+        "type": "ClassName",
+        "value": "android.widget.TextView"
+      }
+    ],
+    "action": [
+      {
+        "type": "click",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "get_element_by": [
+      {
+        "type": "resource-id",
+        "value": "com.woefe.shoppinglist:id/action_delete_checked"
+      },
+      {
+        "type": "ContentDescription",
+        "value": "Delete checked items"
+      },
+      {
+        "type": "ClassName",
+        "value": "android.widget.TextView"
+      }
+    ],
+    "action": [
+      {
+        "type": "click",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "get_element_by": [
+      {
+        "type": "resource-id",
+        "value": "android:id/button1"
+      },
+      {
+        "type": "Text",
+        "value": "OK"
+      },
+      {
+        "type": "ClassName",
+        "value": "android.widget.Button"
+      }
+    ],
+    "action": [
+      {
+        "type": "click",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "get_element_by": [],
+    "action": [
+      {
+        "type": "wait",
+        "value": 10
+      },
+      {
+        "type": "check_element_invisible",
+        "value": {
+          "type": "text",
+          "value": "Sample Todo"
+        }
+      }
+    ]
+  }
+]

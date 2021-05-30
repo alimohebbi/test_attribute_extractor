@@ -1,242 +1,33 @@
 [
-  {
-    "checkable": "false",
-    "checked": "false",
-    "class": "android.widget.TextView",
-    "clickable": "true",
-    "content-desc": "New list",
-    "enabled": "true",
-    "focusable": "true",
-    "focused": "false",
-    "long-clickable": "true",
-    "package": "br.com.activity",
-    "password": "false",
-    "resource-id": "br.com.activity:id/action_add",
-    "scrollable": "false",
-    "selection-start": null,
-    "selection-end": null,
-    "selected": "false",
-    "text": "",
-    "bounds": "[785,63][932,189]",
-    "displayed": "true",
-    "action": [
-      "longClick"
-    ]
-  },
-  {
-    "checkable": "false",
-    "checked": "false",
-    "class": "android.widget.TextView",
-    "clickable": "false",
-    "content-desc": null,
-    "enabled": "true",
-    "focusable": "false",
-    "focused": "false",
-    "long-clickable": "false",
-    "package": "br.com.activity",
-    "password": "false",
-    "resource-id": "android:id/action_bar_title",
-    "scrollable": "false",
-    "selection-start": null,
-    "selection-end": null,
-    "selected": "false",
-    "text": "Shopping List",
-    "bounds": "[127,94][410,157]",
-    "displayed": "true",
-    "action": [
-      "click"
-    ]
-  },
-  {
-    "checkable": "false",
-    "checked": "false",
-    "class": "android.widget.TableLayout",
-    "clickable": "true",
-    "content-desc": null,
-    "enabled": "true",
-    "focusable": "false",
-    "focused": "false",
-    "long-clickable": "false",
-    "package": "br.com.activity",
-    "password": "false",
-    "resource-id": null,
-    "scrollable": "false",
-    "selection-start": null,
-    "selection-end": null,
-    "selected": "false",
-    "text": "",
-    "bounds": "[13,202][1067,334]",
-    "displayed": "true",
-    "action": [
-      "click"
-    ]
-  },
-  {
-    "checkable": "false",
-    "checked": "false",
-    "class": "android.widget.Button",
-    "clickable": "true",
-    "content-desc": "",
-    "enabled": "true",
-    "focusable": "true",
-    "focused": "false",
-    "long-clickable": "false",
-    "package": "br.com.activity",
-    "password": "false",
-    "resource-id": "android:id/button1",
-    "scrollable": "false",
-    "selection-start": null,
-    "selection-end": null,
-    "selected": "false",
-    "text": "OK",
-    "bounds": "[541,1121][1010,1247]",
-    "displayed": "true",
-    "action": [
-      "click"
-    ]
-  },
-  {
-    "checkable": "false",
-    "checked": "false",
-    "class": "android.widget.TextView",
-    "clickable": "true",
-    "content-desc": "Add item",
-    "enabled": "true",
-    "focusable": "true",
-    "focused": "false",
-    "long-clickable": "true",
-    "package": "br.com.activity",
-    "password": "false",
-    "resource-id": "br.com.activity:id/action_done",
-    "scrollable": "false",
-    "selection-start": null,
-    "selection-end": null,
-    "selected": "false",
-    "text": "",
-    "bounds": "[638,63][785,189]",
-    "displayed": "true",
-    "action": [
-      "longClick"
-    ]
-  },
-  {
-    "checkable": "false",
-    "checked": "false",
-    "class": "android.widget.TextView",
-    "clickable": "true",
-    "content-desc": "Search",
-    "enabled": "true",
-    "focusable": "true",
-    "focused": "false",
-    "long-clickable": "true",
-    "package": "br.com.activity",
-    "password": "false",
-    "resource-id": "br.com.activity:id/search",
-    "scrollable": "false",
-    "selection-start": null,
-    "selection-end": null,
-    "selected": "false",
-    "text": "",
-    "bounds": "[785,63][932,189]",
-    "displayed": "true",
-    "action": [
-      "longClick"
-    ]
-  },
-  {
-    "checkable": "false",
-    "checked": "false",
-    "class": "android.widget.ImageView",
-    "clickable": "false",
-    "content-desc": null,
-    "enabled": "true",
-    "focusable": "false",
-    "focused": "false",
-    "long-clickable": "false",
-    "package": "br.com.activity",
-    "password": "false",
-    "resource-id": "android:id/home",
-    "scrollable": "false",
-    "selection-start": null,
-    "selection-end": null,
-    "selected": "false",
-    "text": "",
-    "bounds": "[32,84][116,168]",
-    "displayed": "true",
-    "action": [
-      "click"
-    ]
-  },
-  {
-    "checkable": "false",
-    "checked": "false",
-    "class": "android.widget.TextView",
-    "clickable": "true",
-    "content-desc": "New list",
-    "enabled": "true",
-    "focusable": "true",
-    "focused": "false",
-    "long-clickable": "true",
-    "package": "br.com.activity",
-    "password": "false",
-    "resource-id": "br.com.activity:id/action_add",
-    "scrollable": "false",
-    "selection-start": null,
-    "selection-end": null,
-    "selected": "false",
-    "text": "",
-    "bounds": "[785,63][932,189]",
-    "displayed": "true",
-    "action": [
-      "click"
-    ]
-  },
-  {
-    "checkable": "false",
-    "checked": "false",
-    "class": "android.widget.EditText",
-    "clickable": "true",
-    "content-desc": null,
-    "enabled": "true",
-    "focusable": "true",
-    "focused": "true",
-    "long-clickable": "true",
-    "package": "br.com.activity",
-    "password": "false",
-    "resource-id": null,
-    "scrollable": "false",
-    "selection-start": null,
-    "selection-end": null,
-    "selected": "false",
-    "text": "",
-    "bounds": "[70,951][1010,1053]",
-    "displayed": "true",
-    "action": [
-      "replaceText: grocery"
-    ]
-  },
-  {
-    "checkable": "false",
-    "checked": "false",
-    "class": "android.widget.Button",
-    "clickable": "true",
-    "content-desc": "",
-    "enabled": "true",
-    "focusable": "true",
-    "focused": "false",
-    "long-clickable": "false",
-    "package": "br.com.activity",
-    "password": "false",
-    "resource-id": "android:id/button1",
-    "scrollable": "false",
-    "selection-start": null,
-    "selection-end": null,
-    "selected": "false",
-    "text": "OK",
-    "bounds": "[541,1121][1010,1247]",
-    "displayed": "true",
-    "action": [
-      "click"
-    ]
-  }
+  [
+    "long_press"
+  ],
+  [
+    "click"
+  ],
+  [
+    "click"
+  ],
+  [
+    "click"
+  ],
+  [
+    "long_press"
+  ],
+  [
+    "long_press"
+  ],
+  [
+    "click"
+  ],
+  [
+    "click"
+  ],
+  [
+    "send_keys",
+    "grocery"
+  ],
+  [
+    "click"
+  ]
 ]

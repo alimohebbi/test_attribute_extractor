@@ -1,146 +1,23 @@
 [
-  {
-    "checkable": "false",
-    "checked": "false",
-    "class": "android.widget.ImageButton",
-    "clickable": "true",
-    "content-desc": null,
-    "enabled": "true",
-    "focusable": "true",
-    "focused": "false",
-    "long-clickable": "false",
-    "package": "luankevinferreira.expenses",
-    "password": "false",
-    "resource-id": "luankevinferreira.expenses:id/fab",
-    "scrollable": "false",
-    "selection-start": null,
-    "selection-end": null,
-    "selected": "false",
-    "text": "",
-    "bounds": "[891,1605][1038,1752]",
-    "displayed": "true",
-    "action": [
-      "click"
-    ]
-  },
-  {
-    "checkable": "false",
-    "checked": "false",
-    "class": "android.widget.Button",
-    "clickable": "true",
-    "content-desc": null,
-    "enabled": "true",
-    "focusable": "true",
-    "focused": "false",
-    "long-clickable": "false",
-    "package": "luankevinferreira.expenses",
-    "password": "false",
-    "resource-id": "luankevinferreira.expenses:id/date_picker",
-    "scrollable": "false",
-    "selection-start": null,
-    "selection-end": null,
-    "selected": "false",
-    "text": "05-28-2021",
-    "bounds": "[162,599][1038,737]",
-    "displayed": "true",
-    "action": [
-      "click"
-    ]
-  },
-  {
-    "checkable": "false",
-    "checked": "false",
-    "class": "android.widget.ImageButton",
-    "clickable": "true",
-    "content-desc": "Next month",
-    "enabled": "true",
-    "focusable": "true",
-    "focused": "false",
-    "long-clickable": "false",
-    "package": "luankevinferreira.expenses",
-    "password": "false",
-    "resource-id": "android:id/next",
-    "scrollable": "false",
-    "selection-start": null,
-    "selection-end": null,
-    "selected": "false",
-    "text": "",
-    "bounds": "[756,559][882,685]",
-    "displayed": "true",
-    "action": [
-      "click"
-    ]
-  },
-  {
-    "checkable": "false",
-    "checked": "false",
-    "class": "android.widget.Button",
-    "clickable": "true",
-    "content-desc": null,
-    "enabled": "true",
-    "focusable": "true",
-    "focused": "false",
-    "long-clickable": "false",
-    "package": "luankevinferreira.expenses",
-    "password": "false",
-    "resource-id": "android:id/button1",
-    "scrollable": "false",
-    "selection-start": null,
-    "selection-end": null,
-    "selected": "false",
-    "text": "OK",
-    "bounds": "[718,1432][886,1558]",
-    "displayed": "true",
-    "action": [
-      "click"
-    ]
-  },
-  {
-    "checkable": "false",
-    "checked": "false",
-    "class": "android.widget.Button",
-    "clickable": "true",
-    "content-desc": null,
-    "enabled": "true",
-    "focusable": "true",
-    "focused": "false",
-    "long-clickable": "false",
-    "package": "luankevinferreira.expenses",
-    "password": "false",
-    "resource-id": "luankevinferreira.expenses:id/save_expense",
-    "scrollable": "false",
-    "selection-start": null,
-    "selection-end": null,
-    "selected": "false",
-    "text": "SAVE",
-    "bounds": "[42,872][1038,998]",
-    "displayed": "true",
-    "action": [
-      "click"
-    ]
-  },
-  {
-    "checkable": "false",
-    "checked": "false",
-    "class": "android.widget.TextView",
-    "clickable": "false",
-    "content-desc": "",
-    "enabled": "true",
-    "focusable": "false",
-    "focused": "false",
-    "long-clickable": "false",
-    "package": "luankevinferreira.expenses",
-    "password": "false",
-    "resource-id": null,
-    "scrollable": "false",
-    "selection-start": null,
-    "selection-end": null,
-    "selected": "false",
-    "text": "Expenses",
-    "bounds": "[189,101][415,172]",
-    "displayed": "true",
-    "action": [
-      "check"
-    ]
-  }
+  [
+    "click"
+  ],
+  [
+    "click"
+  ],
+  [
+    "click"
+  ],
+  [
+    "click"
+  ],
+  [
+    "click"
+  ],
+  [
+    "wait_until_element_presence",
+    10,
+    "isDisplayed",
+    "true"
+  ]
 ]

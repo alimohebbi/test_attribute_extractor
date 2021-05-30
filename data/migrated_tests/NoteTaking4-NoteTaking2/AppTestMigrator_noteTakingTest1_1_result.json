@@ -1,74 +1,13 @@
 [
-  {
-    "checkable": "false",
-    "checked": "false",
-    "class": "android.widget.ImageButton",
-    "clickable": "true",
-    "content-desc": "New note",
-    "enabled": "true",
-    "focusable": "true",
-    "focused": "false",
-    "long-clickable": "false",
-    "package": "com.moonpi.swiftnotes",
-    "password": "false",
-    "resource-id": "com.moonpi.swiftnotes:id/newNote",
-    "scrollable": "false",
-    "selection-start": null,
-    "selection-end": null,
-    "selected": "false",
-    "text": "",
-    "bounds": "[830,1544][1001,1715]",
-    "displayed": "true",
-    "action": [
-      "click"
-    ]
-  },
-  {
-    "checkable": "false",
-    "checked": "false",
-    "class": "android.widget.EditText",
-    "clickable": "true",
-    "content-desc": null,
-    "enabled": "true",
-    "focusable": "true",
-    "focused": "true",
-    "long-clickable": "true",
-    "package": "com.moonpi.swiftnotes",
-    "password": "false",
-    "resource-id": "com.moonpi.swiftnotes:id/titleEdit",
-    "scrollable": "false",
-    "selection-start": null,
-    "selection-end": null,
-    "selected": "false",
-    "text": "Title",
-    "bounds": "[0,210][1080,341]",
-    "displayed": "true",
-    "action": [
-      "replaceText: to-do"
-    ]
-  },
-  {
-    "checkable": "false",
-    "checked": "false",
-    "class": "android.widget.EditText",
-    "clickable": "true",
-    "content-desc": null,
-    "enabled": "true",
-    "focusable": "true",
-    "focused": "false",
-    "long-clickable": "true",
-    "package": "com.moonpi.swiftnotes",
-    "password": "false",
-    "resource-id": "com.moonpi.swiftnotes:id/bodyEdit",
-    "scrollable": "false",
-    "selection-start": null,
-    "selection-end": null,
-    "selected": "false",
-    "text": "Note",
-    "bounds": "[0,362][1080,425]",
-    "displayed": "true",
-    "action": [
-      "replaceText: Go shopping"
-    ]
-  }
+  [
+    "click"
+  ],
+  [
+    "send_keys",
+    "to-do"
+  ],
+  [
+    "send_keys",
+    "Go shopping"
+  ]
 ]

@@ -1,20 +1,15 @@
 [
   {
+    "action": [
+      "wait_until_element_presence",
+      10,
+      "text",
+      "SKIP"
+    ],
     "get_element_by": [
       {
         "type": "resource-id",
         "value": "btn_skip"
-      }
-    ],
-    "action": [
-      {
-        "type": "check",
-        "value": [
-          {
-            "type": "text",
-            "value": "SKIP"
-          }
-        ]
       }
     ]
   }

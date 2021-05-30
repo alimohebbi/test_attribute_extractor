@@ -1,26 +1,8 @@
 [
-  {
-    "checkable": "false",
-    "checked": "false",
-    "class": "android.widget.Button",
-    "clickable": "true",
-    "content-desc": null,
-    "enabled": "true",
-    "focusable": "true",
-    "focused": "false",
-    "long-clickable": "false",
-    "package": "privacyfriendlyshoppinglist.secuso.org.privacyfriendlyshoppinglist",
-    "password": "false",
-    "resource-id": "privacyfriendlyshoppinglist.secuso.org.privacyfriendlyshoppinglist:id/btn_skip",
-    "scrollable": "false",
-    "selection-start": null,
-    "selection-end": null,
-    "selected": "false",
-    "text": "SKIP",
-    "bounds": "[0,1668][231,1794]",
-    "displayed": "true",
-    "action": [
-      "check"
-    ]
-  }
+  [
+    "wait_until_element_presence",
+    10,
+    "text",
+    "SKIP"
+  ]
 ]

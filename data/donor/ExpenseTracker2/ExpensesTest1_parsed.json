@@ -1,5 +1,8 @@
 [
   {
+    "action": [
+      "click"
+    ],
     "get_element_by": [
       {
         "type": "resource-id",
@@ -9,29 +12,23 @@
         "type": "isdisplayed",
         "value": ""
       }
-    ],
-    "action": [
-      {
-        "type": "click",
-        "value": ""
-      }
     ]
   },
   {
+    "action": [
+      "click"
+    ],
     "get_element_by": [
       {
         "type": "resource-id",
         "value": "date_picker"
       }
-    ],
-    "action": [
-      {
-        "type": "click",
-        "value": ""
-      }
     ]
   },
   {
+    "action": [
+      "click"
+    ],
     "get_element_by": [
       {
         "type": "contentdescription",
@@ -41,15 +38,12 @@
         "type": "isdisplayed",
         "value": ""
       }
-    ],
-    "action": [
-      {
-        "type": "click",
-        "value": ""
-      }
     ]
   },
   {
+    "action": [
+      "click"
+    ],
     "get_element_by": [
       {
         "type": "resource-id",
@@ -59,15 +53,12 @@
         "type": "text",
         "value": "OK"
       }
-    ],
-    "action": [
-      {
-        "type": "click",
-        "value": ""
-      }
     ]
   },
   {
+    "action": [
+      "click"
+    ],
     "get_element_by": [
       {
         "type": "resource-id",
@@ -77,30 +68,19 @@
         "type": "text",
         "value": "Save"
       }
-    ],
-    "action": [
-      {
-        "type": "click",
-        "value": ""
-      }
     ]
   },
   {
+    "action": [
+      "wait_until_element_presence",
+      10,
+      "isDisplayed",
+      "true"
+    ],
     "get_element_by": [
       {
         "type": "text",
         "value": "Expenses"
-      }
-    ],
-    "action": [
-      {
-        "type": "check",
-        "value": [
-          {
-            "type": "isDisplayed",
-            "value": ""
-          }
-        ]
       }
     ]
   }

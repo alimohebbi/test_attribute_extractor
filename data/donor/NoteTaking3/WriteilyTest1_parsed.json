@@ -1,5 +1,8 @@
 [
   {
+    "action": [
+      "click"
+    ],
     "get_element_by": [
       {
         "type": "resource-id",
@@ -9,15 +12,12 @@
         "type": "isdisplayed",
         "value": ""
       }
-    ],
-    "action": [
-      {
-        "type": "click",
-        "value": ""
-      }
     ]
   },
   {
+    "action": [
+      "click"
+    ],
     "get_element_by": [
       {
         "type": "resource-id",
@@ -27,15 +27,13 @@
         "type": "isdisplayed",
         "value": ""
       }
-    ],
-    "action": [
-      {
-        "type": "click",
-        "value": ""
-      }
     ]
   },
   {
+    "action": [
+      "send_keys",
+      "note"
+    ],
     "get_element_by": [
       {
         "type": "resource-id",
@@ -45,29 +43,24 @@
         "type": "isdisplayed",
         "value": ""
       }
-    ],
-    "action": [
-      {
-        "type": "replaceText",
-        "value": "note"
-      }
     ]
   },
   {
+    "action": [
+      "send_keys",
+      "something"
+    ],
     "get_element_by": [
       {
         "type": "resource-id",
         "value": "note_content"
       }
-    ],
-    "action": [
-      {
-        "type": "replaceText",
-        "value": "something"
-      }
     ]
   },
   {
+    "action": [
+      "click"
+    ],
     "get_element_by": [
       {
         "type": "resource-id",
@@ -81,15 +74,12 @@
         "type": "isdisplayed",
         "value": ""
       }
-    ],
-    "action": [
-      {
-        "type": "click",
-        "value": ""
-      }
     ]
   },
   {
+    "action": [
+      "click"
+    ],
     "get_element_by": [
       {
         "type": "contentdescription",
@@ -99,15 +89,19 @@
         "type": "isdisplayed",
         "value": ""
       }
-    ],
-    "action": [
-      {
-        "type": "click",
-        "value": ""
-      }
     ]
   },
   {
+    "action": [
+      "wait_until_element_presence",
+      10,
+      "text",
+      "note",
+      "isDisplayed",
+      "true",
+      "isEnabled",
+      "true"
+    ],
     "get_element_by": [
       {
         "type": "resource-id",
@@ -120,25 +114,6 @@
       {
         "type": "isdisplayed",
         "value": ""
-      }
-    ],
-    "action": [
-      {
-        "type": "check",
-        "value": [
-          {
-            "type": "text",
-            "value": "note"
-          },
-          {
-            "type": " isDisplayed",
-            "value": ""
-          },
-          {
-            "type": " isEnabled",
-            "value": ""
-          }
-        ]
       }
     ]
   }

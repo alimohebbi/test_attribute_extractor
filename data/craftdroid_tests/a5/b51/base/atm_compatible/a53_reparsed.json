@@ -1,0 +1,119 @@
+[
+  {
+    "get_element_by": [
+      {
+        "type": "resource-id",
+        "value": "android:id/button1"
+      },
+      {
+        "type": "Text",
+        "value": "Accept"
+      },
+      {
+        "type": "ClassName",
+        "value": "android.widget.Button"
+      }
+    ],
+    "action": [
+      {
+        "type": "click",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "get_element_by": [
+      {
+        "type": "resource-id",
+        "value": "com.tleapps.simpletipcalculator:id/editTextBill"
+      },
+      {
+        "type": "Text",
+        "value": "100.00"
+      },
+      {
+        "type": "ClassName",
+        "value": "android.widget.EditText"
+      }
+    ],
+    "action": [
+      {
+        "type": "replaceText",
+        "value": "56.6"
+      }
+    ]
+  },
+  {
+    "get_element_by": [
+      {
+        "type": "resource-id",
+        "value": "com.tleapps.simpletipcalculator:id/editTextTip"
+      },
+      {
+        "type": "Text",
+        "value": "15"
+      },
+      {
+        "type": "ClassName",
+        "value": "android.widget.EditText"
+      }
+    ],
+    "action": [
+      {
+        "type": "replaceText",
+        "value": "15"
+      }
+    ]
+  },
+  {
+    "get_element_by": [
+      {
+        "type": "resource-id",
+        "value": "com.tleapps.simpletipcalculator:id/buttonCalculate"
+      },
+      {
+        "type": "Text",
+        "value": "Calculate"
+      },
+      {
+        "type": "ClassName",
+        "value": "android.widget.Button"
+      }
+    ],
+    "action": [
+      {
+        "type": "click",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "get_element_by": [
+      {
+        "type": "resource-id",
+        "value": "com.tleapps.simpletipcalculator:id/textViewTotalToPay"
+      },
+      {
+        "type": "Text",
+        "value": "$65.09"
+      },
+      {
+        "type": "ClassName",
+        "value": "android.widget.TextView"
+      }
+    ],
+    "action": [
+      {
+        "type": "wait",
+        "value": 10
+      },
+      {
+        "type": "check",
+        "value": {
+          "type": "text",
+          "value": "65.09"
+        }
+      }
+    ]
+  }
+]

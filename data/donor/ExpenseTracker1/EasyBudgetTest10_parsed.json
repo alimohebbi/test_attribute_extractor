@@ -1,5 +1,8 @@
 [
   {
+    "action": [
+      "swipe_left"
+    ],
     "get_element_by": [
       {
         "type": "resource-id",
@@ -9,15 +12,12 @@
         "type": "isdisplayed",
         "value": ""
       }
-    ],
-    "action": [
-      {
-        "type": "swipeLeft",
-        "value": ""
-      }
     ]
   },
   {
+    "action": [
+      "click"
+    ],
     "get_element_by": [
       {
         "type": "resource-id",
@@ -31,29 +31,23 @@
         "type": "isdisplayed",
         "value": ""
       }
-    ],
-    "action": [
-      {
-        "type": "click",
-        "value": ""
-      }
     ]
   },
   {
+    "action": [
+      "click"
+    ],
     "get_element_by": [
       {
         "type": "resource-id",
         "value": "onboarding_screen3_next_button"
       }
-    ],
-    "action": [
-      {
-        "type": "click",
-        "value": ""
-      }
     ]
   },
   {
+    "action": [
+      "click"
+    ],
     "get_element_by": [
       {
         "type": "resource-id",
@@ -67,15 +61,12 @@
         "type": "isdisplayed",
         "value": ""
       }
-    ],
-    "action": [
-      {
-        "type": "click",
-        "value": ""
-      }
     ]
   },
   {
+    "action": [
+      "click"
+    ],
     "get_element_by": [
       {
         "type": "resource-id",
@@ -85,15 +76,12 @@
         "type": "isdisplayed",
         "value": ""
       }
-    ],
-    "action": [
-      {
-        "type": "click",
-        "value": ""
-      }
     ]
   },
   {
+    "action": [
+      "click"
+    ],
     "get_element_by": [
       {
         "type": "resource-id",
@@ -103,15 +91,13 @@
         "type": "isdisplayed",
         "value": ""
       }
-    ],
-    "action": [
-      {
-        "type": "click",
-        "value": ""
-      }
     ]
   },
   {
+    "action": [
+      "send_keys",
+      "Entertainment"
+    ],
     "get_element_by": [
       {
         "type": "resource-id",
@@ -121,15 +107,13 @@
         "type": "isdisplayed",
         "value": ""
       }
-    ],
-    "action": [
-      {
-        "type": "replaceText",
-        "value": "Entertainment"
-      }
     ]
   },
   {
+    "action": [
+      "send_keys",
+      "45"
+    ],
     "get_element_by": [
       {
         "type": "resource-id",
@@ -139,24 +123,20 @@
         "type": "isdisplayed",
         "value": ""
       }
+    ]
+  },
+  {
+    "action": [
+      "KEY_BACK"
+    ]
+  },
+  {
+    "action": [
+      "wait_until_element_presence",
+      10,
+      "text",
+      "No income or expense yet."
     ],
-    "action": [
-      {
-        "type": "replaceText",
-        "value": "45"
-      }
-    ]
-  },
-  {
-    "get_element_by": [],
-    "action": [
-      {
-        "type": "pressBack",
-        "value": ""
-      }
-    ]
-  },
-  {
     "get_element_by": [
       {
         "type": "text",
@@ -165,17 +145,6 @@
       {
         "type": "isdisplayed",
         "value": ""
-      }
-    ],
-    "action": [
-      {
-        "type": "check",
-        "value": [
-          {
-            "type": "text",
-            "value": "No income or expense yet."
-          }
-        ]
       }
     ]
   }

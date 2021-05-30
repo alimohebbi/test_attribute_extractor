@@ -17,7 +17,7 @@
     "selection-end": null,
     "selected": "false",
     "text": "SKIP",
-    "bounds": "[0,1668][231,1794]",
+    "bounds": "[0,2224][308,2392]",
     "displayed": "true",
     "action": [
       "click"
@@ -41,7 +41,7 @@
     "selection-end": null,
     "selected": "false",
     "text": "",
-    "bounds": "[891,1605][1038,1752]",
+    "bounds": "[1188,2140][1384,2336]",
     "displayed": "true",
     "action": [
       "click"
@@ -65,7 +65,7 @@
     "selection-end": null,
     "selected": "false",
     "text": "",
-    "bounds": "[91,727][804,845]",
+    "bounds": "[121,971][1069,1129]",
     "displayed": "true",
     "action": [
       "replaceText: grocery"
@@ -89,7 +89,7 @@
     "selection-end": null,
     "selected": "false",
     "text": "OKAY",
-    "bounds": "[810,1179][978,1305]",
+    "bounds": "[1081,1570][1305,1738]",
     "displayed": "true",
     "action": [
       "click"
@@ -113,7 +113,7 @@
     "selection-end": null,
     "selected": "false",
     "text": "grocery",
-    "bounds": "[189,101][369,172]",
+    "bounds": "[252,135][491,228]",
     "displayed": "true",
     "action": [
       "check"

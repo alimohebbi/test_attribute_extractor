@@ -1,0 +1,43 @@
+[
+  [
+    "click"
+  ],
+  [
+    "click"
+  ],
+  [
+    "send_keys_and_enter",
+    "https://www.ics.uci.edu"
+  ],
+  [
+    "wait_until_element_presence",
+    10,
+    "class",
+    "android.view.View",
+    "text",
+    "Donald Bren School of Information and Computer Sciences"
+  ],
+  [
+    "click"
+  ],
+  [
+    "send_keys_and_enter",
+    "https://uci.edu"
+  ],
+  [
+    "wait_until_element_presence",
+    10,
+    "class",
+    "android.view.View",
+    "text",
+    "UCI homepage"
+  ],
+  [
+    "wait_until_element_presence",
+    10,
+    "class",
+    "android.view.View",
+    "text",
+    "Donald Bren School of Information and Computer Sciences"
+  ]
+]

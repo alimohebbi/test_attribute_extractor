@@ -1,4 +1,0 @@
-######################################## ERROR! ########################################
-For check_element_presence, The element with selector: {'type': 'xpath', 'value': '//android.view.View[@content-desc="Donald Bren School of Information and Computer Sciences"]'}, was not found!
-
-

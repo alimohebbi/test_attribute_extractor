@@ -1,127 +1,97 @@
 [
   {
+    "action": [
+      "click"
+    ],
     "get_element_by": [
       {
         "type": "contentdescription",
         "value": "Open navigation drawer"
       }
+    ]
+  },
+  {
+    "action": [
+      "KEY_BACK"
+    ]
+  },
+  {
+    "action": [
+      "click"
     ],
-    "action": [
-      {
-        "type": "click",
-        "value": ""
-      }
-    ]
-  },
-  {
-    "get_element_by": [],
-    "action": [
-      {
-        "type": "pressBack",
-        "value": ""
-      }
-    ]
-  },
-  {
     "get_element_by": [
       {
         "type": "resource-id",
         "value": "btn_add_income"
       }
-    ],
-    "action": [
-      {
-        "type": "click",
-        "value": ""
-      }
     ]
   },
   {
+    "action": [
+      "click"
+    ],
     "get_element_by": [
       {
         "type": "resource-id",
         "value": "action_done"
       }
-    ],
-    "action": [
-      {
-        "type": "click",
-        "value": ""
-      }
     ]
   },
   {
+    "action": [
+      "click"
+    ],
     "get_element_by": [
       {
         "type": "resource-id",
         "value": "tv_date"
       }
-    ],
-    "action": [
-      {
-        "type": "click",
-        "value": ""
-      }
     ]
   },
   {
+    "action": [
+      "click"
+    ],
     "get_element_by": [
       {
         "type": "contentdescription",
         "value": "Next month"
       }
-    ],
-    "action": [
-      {
-        "type": "click",
-        "value": ""
-      }
     ]
   },
   {
+    "action": [
+      "click"
+    ],
     "get_element_by": [
       {
         "type": "text",
         "value": "OK"
       }
-    ],
-    "action": [
-      {
-        "type": "click",
-        "value": ""
-      }
     ]
   },
   {
+    "action": [
+      "click"
+    ],
     "get_element_by": [
       {
         "type": "contentdescription",
         "value": "Navigate up"
       }
-    ],
-    "action": [
-      {
-        "type": "click",
-        "value": ""
-      }
     ]
   },
   {
+    "action": [
+      "wait_until_element_presence",
+      10,
+      "isDisplayed",
+      "true"
+    ],
     "get_element_by": [
       {
         "type": "resource-id",
         "value": "tv_period"
-      }
-    ],
-    "action": [
-      {
-        "type": "check",
-        "value": [
-          {
-            "type": "isDisplayed",
-            "value": ""
-          }
-        ]
       }
     ]
   }

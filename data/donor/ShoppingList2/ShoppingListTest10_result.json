@@ -1,98 +1,18 @@
 [
-  {
-    "checkable": "false",
-    "checked": "false",
-    "class": "android.widget.TextView",
-    "clickable": "true",
-    "content-desc": "New list",
-    "enabled": "true",
-    "focusable": "true",
-    "focused": "false",
-    "long-clickable": "true",
-    "package": "br.com.activity",
-    "password": "false",
-    "resource-id": "br.com.activity:id/action_add",
-    "scrollable": "false",
-    "selection-start": null,
-    "selection-end": null,
-    "selected": "false",
-    "text": "",
-    "bounds": "[785,63][932,189]",
-    "displayed": "true",
-    "action": [
-      "click"
-    ]
-  },
-  {
-    "checkable": "false",
-    "checked": "false",
-    "class": "android.widget.EditText",
-    "clickable": "true",
-    "content-desc": null,
-    "enabled": "true",
-    "focusable": "true",
-    "focused": "true",
-    "long-clickable": "true",
-    "package": "br.com.activity",
-    "password": "false",
-    "resource-id": null,
-    "scrollable": "false",
-    "selection-start": null,
-    "selection-end": null,
-    "selected": "false",
-    "text": "",
-    "bounds": "[70,951][1010,1053]",
-    "displayed": "true",
-    "action": [
-      "replaceText: list"
-    ]
-  },
-  {
-    "checkable": "false",
-    "checked": "false",
-    "class": "android.widget.Button",
-    "clickable": "true",
-    "content-desc": null,
-    "enabled": "true",
-    "focusable": "true",
-    "focused": "false",
-    "long-clickable": "false",
-    "package": "br.com.activity",
-    "password": "false",
-    "resource-id": "android:id/button1",
-    "scrollable": "false",
-    "selection-start": null,
-    "selection-end": null,
-    "selected": "false",
-    "text": "OK",
-    "bounds": "[541,1121][1010,1247]",
-    "displayed": "true",
-    "action": [
-      "click"
-    ]
-  },
-  {
-    "checkable": "false",
-    "checked": "false",
-    "class": "android.widget.TextView",
-    "clickable": "false",
-    "content-desc": null,
-    "enabled": "true",
-    "focusable": "false",
-    "focused": "false",
-    "long-clickable": "false",
-    "package": "br.com.activity",
-    "password": "false",
-    "resource-id": "android:id/action_bar_title",
-    "scrollable": "false",
-    "selection-start": null,
-    "selection-end": null,
-    "selected": "false",
-    "text": "list",
-    "bounds": "[127,94][188,157]",
-    "displayed": "true",
-    "action": [
-      "check"
-    ]
-  }
+  [
+    "click"
+  ],
+  [
+    "send_keys",
+    "list"
+  ],
+  [
+    "click"
+  ],
+  [
+    "wait_until_element_presence",
+    10,
+    "text",
+    "list"
+  ]
 ]

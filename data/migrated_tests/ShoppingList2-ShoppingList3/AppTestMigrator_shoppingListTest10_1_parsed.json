@@ -1,57 +1,46 @@
 [
   {
+    "action": [
+      "click"
+    ],
     "get_element_by": [
       {
         "type": "resource-id",
         "value": "btn_skip"
       }
-    ],
-    "action": [
-      {
-        "type": "click",
-        "value": ""
-      }
     ]
   },
   {
+    "action": [
+      "click"
+    ],
     "get_element_by": [
       {
         "type": "resource-id",
         "value": "fab_new_list"
       }
-    ],
-    "action": [
-      {
-        "type": "click",
-        "value": ""
-      }
     ]
   },
   {
+    "action": [
+      "send_keys",
+      "list"
+    ],
     "get_element_by": [
       {
         "type": "resource-id",
         "value": "list_name"
       }
-    ],
-    "action": [
-      {
-        "type": "replaceText",
-        "value": "list"
-      }
     ]
   },
   {
+    "action": [
+      "click"
+    ],
     "get_element_by": [
       {
         "type": "xpath",
         "value": "/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.ScrollView/android.widget.LinearLayout/android.widget.Button[2]"
-      }
-    ],
-    "action": [
-      {
-        "type": "click",
-        "value": ""
       }
     ]
   }

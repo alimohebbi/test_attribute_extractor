@@ -1,216 +1,165 @@
 [
   {
+    "action": [
+      "click"
+    ],
     "get_element_by": [
       {
         "type": "contentdescription",
         "value": "Open navigation drawer"
       }
+    ]
+  },
+  {
+    "action": [
+      "KEY_BACK"
+    ]
+  },
+  {
+    "action": [
+      "click"
     ],
-    "action": [
-      {
-        "type": "click",
-        "value": ""
-      }
-    ]
-  },
-  {
-    "get_element_by": [],
-    "action": [
-      {
-        "type": "pressBack",
-        "value": ""
-      }
-    ]
-  },
-  {
     "get_element_by": [
       {
         "type": "text",
         "value": "Week"
       }
-    ],
-    "action": [
-      {
-        "type": "click",
-        "value": ""
-      }
     ]
   },
   {
+    "action": [
+      "click"
+    ],
     "get_element_by": [
       {
         "type": "text",
         "value": "Day"
       }
-    ],
-    "action": [
-      {
-        "type": "click",
-        "value": ""
-      }
     ]
   },
   {
+    "action": [
+      "click"
+    ],
     "get_element_by": [
       {
         "type": "resource-id",
         "value": "btn_add_income"
       }
-    ],
-    "action": [
-      {
-        "type": "click",
-        "value": ""
-      }
     ]
   },
   {
+    "action": [
+      "send_keys",
+      "uber"
+    ],
     "get_element_by": [
       {
         "type": "resource-id",
         "value": "et_title"
       }
-    ],
-    "action": [
-      {
-        "type": "replaceText",
-        "value": "uber"
-      }
     ]
   },
   {
+    "action": [
+      "click"
+    ],
     "get_element_by": [
       {
         "type": "contentdescription",
         "value": "Navigate up"
       }
-    ],
-    "action": [
-      {
-        "type": "click",
-        "value": ""
-      }
     ]
   },
   {
+    "action": [
+      "wait_until_element_presence",
+      10,
+      "isDisplayed",
+      "true"
+    ],
     "get_element_by": [
       {
         "type": "resource-id",
         "value": "tv_period"
       }
-    ],
-    "action": [
-      {
-        "type": "check",
-        "value": [
-          {
-            "type": "isDisplayed",
-            "value": ""
-          }
-        ]
-      }
     ]
   },
   {
+    "action": [
+      "click"
+    ],
     "get_element_by": [
       {
         "type": "contentdescription",
         "value": "Open navigation drawer"
       }
+    ]
+  },
+  {
+    "action": [
+      "KEY_BACK"
+    ]
+  },
+  {
+    "action": [
+      "click"
     ],
-    "action": [
-      {
-        "type": "click",
-        "value": ""
-      }
-    ]
-  },
-  {
-    "get_element_by": [],
-    "action": [
-      {
-        "type": "pressBack",
-        "value": ""
-      }
-    ]
-  },
-  {
     "get_element_by": [
       {
         "type": "resource-id",
         "value": "btn_add_income"
       }
-    ],
-    "action": [
-      {
-        "type": "click",
-        "value": ""
-      }
     ]
   },
   {
+    "action": [
+      "send_keys",
+      "500"
+    ],
     "get_element_by": [
       {
         "type": "resource-id",
         "value": "et_title"
       }
-    ],
-    "action": [
-      {
-        "type": "replaceText",
-        "value": "500"
-      }
     ]
   },
   {
+    "action": [
+      "click"
+    ],
     "get_element_by": [
       {
         "type": "contentdescription",
         "value": "Navigate up"
       }
-    ],
-    "action": [
-      {
-        "type": "click",
-        "value": ""
-      }
     ]
   },
   {
+    "action": [
+      "wait_until_element_presence",
+      10,
+      "isDisplayed",
+      "true"
+    ],
     "get_element_by": [
       {
         "type": "resource-id",
         "value": "tv_period"
       }
-    ],
-    "action": [
-      {
-        "type": "check",
-        "value": [
-          {
-            "type": "isDisplayed",
-            "value": ""
-          }
-        ]
-      }
     ]
   },
   {
+    "action": [
+      "wait_until_element_presence",
+      10,
+      "text",
+      "18 Apr, 2021"
+    ],
     "get_element_by": [
       {
         "type": "resource-id",
         "value": "tv_period"
-      }
-    ],
-    "action": [
-      {
-        "type": "check",
-        "value": [
-          {
-            "type": "text",
-            "value": "18 Apr, 2021"
-          }
-        ]
       }
     ]
   }

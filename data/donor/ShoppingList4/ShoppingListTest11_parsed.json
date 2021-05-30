@@ -1,19 +1,19 @@
 [
   {
+    "action": [
+      "click"
+    ],
     "get_element_by": [
       {
         "type": "contentdescription",
         "value": "More options"
       }
-    ],
-    "action": [
-      {
-        "type": "click",
-        "value": ""
-      }
     ]
   },
   {
+    "action": [
+      "click"
+    ],
     "get_element_by": [
       {
         "type": "resource-id",
@@ -27,15 +27,13 @@
         "type": "isdisplayed",
         "value": ""
       }
-    ],
-    "action": [
-      {
-        "type": "click",
-        "value": ""
-      }
     ]
   },
   {
+    "action": [
+      "send_keys",
+      "list1"
+    ],
     "get_element_by": [
       {
         "type": "resource-id",
@@ -45,15 +43,12 @@
         "type": "isdisplayed",
         "value": ""
       }
-    ],
-    "action": [
-      {
-        "type": "replaceText",
-        "value": "list1"
-      }
     ]
   },
   {
+    "action": [
+      "click"
+    ],
     "get_element_by": [
       {
         "type": "resource-id",
@@ -63,42 +58,30 @@
         "type": "text",
         "value": "OK"
       }
-    ],
-    "action": [
-      {
-        "type": "click",
-        "value": ""
-      }
     ]
   },
   {
+    "action": [
+      "wait_until_element_presence",
+      10,
+      "text",
+      "list1",
+      "isDisplayed",
+      "true",
+      "isEnabled",
+      "true"
+    ],
     "get_element_by": [
       {
         "type": "resource-id",
         "value": "text1"
       }
-    ],
-    "action": [
-      {
-        "type": "check",
-        "value": [
-          {
-            "type": "text",
-            "value": "list1"
-          },
-          {
-            "type": " isDisplayed",
-            "value": ""
-          },
-          {
-            "type": " isEnabled",
-            "value": ""
-          }
-        ]
-      }
     ]
   },
   {
+    "action": [
+      "click"
+    ],
     "get_element_by": [
       {
         "type": "resource-id",
@@ -112,15 +95,12 @@
         "type": "isdisplayed",
         "value": ""
       }
-    ],
-    "action": [
-      {
-        "type": "click",
-        "value": ""
-      }
     ]
   },
   {
+    "action": [
+      "click"
+    ],
     "get_element_by": [
       {
         "type": "resource-id",
@@ -134,15 +114,13 @@
         "type": "isdisplayed",
         "value": ""
       }
-    ],
-    "action": [
-      {
-        "type": "click",
-        "value": ""
-      }
     ]
   },
   {
+    "action": [
+      "send_keys",
+      "item1"
+    ],
     "get_element_by": [
       {
         "type": "resource-id",
@@ -152,15 +130,12 @@
         "type": "isdisplayed",
         "value": ""
       }
-    ],
-    "action": [
-      {
-        "type": "replaceText",
-        "value": "item1"
-      }
     ]
   },
   {
+    "action": [
+      "click"
+    ],
     "get_element_by": [
       {
         "type": "resource-id",
@@ -174,38 +149,23 @@
         "type": "isdisplayed",
         "value": ""
       }
-    ],
-    "action": [
-      {
-        "type": "click",
-        "value": ""
-      }
     ]
   },
   {
+    "action": [
+      "wait_until_element_presence",
+      10,
+      "isDisplayed",
+      "true",
+      "text",
+      "item1",
+      "isEnabled",
+      "true"
+    ],
     "get_element_by": [
       {
         "type": "resource-id",
         "value": "name"
-      }
-    ],
-    "action": [
-      {
-        "type": "check",
-        "value": [
-          {
-            "type": "isDisplayed",
-            "value": ""
-          },
-          {
-            "type": "text",
-            "value": "item1"
-          },
-          {
-            "type": " isEnabled",
-            "value": ""
-          }
-        ]
       }
     ]
   }

@@ -5,9 +5,12 @@ from utils.craftdroid_parser import craftdroid_parse
 from utils.utils import *
 from appium import webdriver
 from appium.webdriver.common.touch_action import TouchAction
-                
 import unittest
 from selenium.webdriver.common.by import By
+
+attribute_list =  ["checkable", "checked", "class", "clickable", "content-desc", "enabled", "focusable",
+    "focused","long-clickable", "package", "password", "resource-id", "scrollable","selection-start",
+    "selection-end", "selected", "text", "bounds", "displayed"]
 
 def set_element_actions(parsed_event, element_attributes):
     actions = []
@@ -19,21 +22,11 @@ def set_element_actions(parsed_event, element_attributes):
     element_attributes["action"] = actions
     return element_attributes
 
-def set_element_appium_attributes(element, element_attributes):   
-    attribute_list =  ["checkable", "checked", "class", "clickable", "content-desc", "enabled", "focusable",
-    "focused","long-clickable", "package", "password", "resource-id", "scrollable","selection-start",
-    "selection-end", "selected", "text", "bounds", "displayed"]
-    
-    for attr in attribute_list:
-        element_attributes[attr] = element.get_attribute(attr)
-
-    return element_attributes
-
 def get_element_attributes(element, parsed_event):
     element_attributes = {}
-
-    element_attributes = set_element_appium_attributes(element, element_attributes)
-    element_attributes = set_element_actions(parsed_event, element_attributes)
+    for attr in attribute_list:
+        element_attributes[attr] = element.get_attribute(attr)
+    element_attributes = parsed_event["action"]
     
     return element_attributes
 
@@ -41,13 +34,19 @@ def is_a_match(element, selectors):
     for i in range(1, len(selectors)):
         selector = selectors[i]
         identifier = selector["type"].lower()
+        value = selector["value"]
+        #print(value)
+        #print(element.get_attribute(identifier))
+        #print()
         if identifier=="isdisplayed":
             if element.get_attribute("displayed") != 'true':
                 return False
-        else:
-            value = selector["value"]
-            if element.get_attribute(identifier).lower() != value.lower():
+        elif identifier == "text":
+            if value.lower() not in element.get_attribute(identifier).lower():
                 return False
+        
+        elif element.get_attribute(identifier).lower() != value.lower():
+            return False
     return True
 
 def get_matching_element(parsed_event, elements, log_fname):
@@ -93,7 +92,10 @@ def get_elements(driver, selector, app_package, log_fname):
     elif identifier == 'contentdescription':
         elements = driver.find_elements_by_android_uiautomator('new UiSelector().descriptionContains(\"'+str(value)+'\")')
     elif identifier == "text":
+        #print("text")
+        #print(value)
         elements = driver.find_elements_by_android_uiautomator('new UiSelector().textContains(\"'+str(value)+'\")')
+        #print(elements)
     elif identifier == "xpath":
         elements = get_elements_by_xpath(driver, value, log_fname)
     elif identifier == "classname":
@@ -108,48 +110,58 @@ def get_element(driver, parsed_event, app_package, log_fname):
     identifier = parsed_event["get_element_by"][0]["type"]
     value = parsed_event["get_element_by"][0]["value"]
     elements = get_elements(driver, (identifier, value), app_package, log_fname)
+    #print(len(elements))
     if elements is None:
         return None
     element = get_matching_element(parsed_event, elements, log_fname)
     return element
 
-def execute_check_element_invisible(driver, conditions, app_package, log_fname):
-    for condition in conditions:
-        elements = get_elements(driver, (condition["type"], condition["value"]), app_package, log_fname)
-        if len(elements) != 0:
-            error_message = 40*"#"+" ERROR! "+40*"#"+"\nFor check_element_invisible, an element with selector: "+str(condition)+", was found!\n\n\n"
-            write_to_error_log(error_message, log_fname)
+def execute_check_element_invisible(driver, parsed_event, app_package, log_fname):
+    condition = [parsed_event["action"][2], parsed_event["action"][3]]
+    elements = get_elements(driver, (condition[0], condition[1]), app_package, log_fname)
+    if len(elements) != 0:
+        error_message = 40*"#"+" ERROR! "+40*"#"+"\nFor check_element_invisible, an element with selector: "+str(condition)+", was found!\n\n\n"
+        write_to_error_log(error_message, log_fname)
 
-def execute_check_element_presence(driver, conditions, app_package, log_fname):
-    for condition in conditions:
-        elements = get_elements(driver, (condition["type"], condition["value"]), app_package, log_fname)
-        if len(elements) == 0:
-            error_message = 40*"#"+" ERROR! "+40*"#"+"\nFor check_element_presence, The element with selector: "+str(condition)+", was not found!\n\n\n"
-            write_to_error_log(error_message, log_fname)
+def get_condition(parsed_event, index):
+    conditional = parsed_event["action"][index]
+    if conditional == "id":
+        conditional = "resource-id"
+    value = parsed_event["action"][index+1]
+    return conditional, value
 
-def execute_check(conditions, element, log_fname):
+def execute_check_element_presence(element, parsed_event, app_package, log_fname):
     matched = True
-    for condition in conditions:    
-        condition["type"] = condition["type"].replace(" ", "")
-        if condition["type"] =="isDisplayed":
-            if element.get_attribute("displayed") != 'true':
+    i = 2
+    while i < len(parsed_event["action"]):
+        conditional, value = get_condition(parsed_event, i)
+        if conditional == "isDisplayed":
+            if element.get_attribute("displayed") != value:
                 matched = False
-        elif condition["type"] =="isEnabled":
-            if element.get_attribute("enabled") != 'true':
+        elif conditional =="isEnabled":
+            if element.get_attribute("enabled") != value:
                 matched = False
-        elif condition["type"] == "text":
-            if preprocess_text(condition["value"]) != preprocess_text(element.get_attribute("text")):
+        elif conditional == "text":
+            if preprocess_text(value) not in preprocess_text(element.get_attribute("text")):
+                matched = False
+        elif conditional== "id" or conditional == "resource-id":
+            if value != element.get_attribute(conditional):
+                if value != element.get_attribute(conditional).split("/")[1]:
+                    matched = False
+        elif conditional in attribute_list:
+            if value != element.get_attribute(conditional):
                 matched = False
         else:
-            error_message = 40*"#"+" ERROR! "+40*"#"+"\nUnknown attribute for check: "+str(condition)+"\n\n\n"
+            error_message = 40*"#"+" ERROR! "+40*"#"+"\nUnknown attribute for check: "+str((conditional, value))+"\n\n\n"
             write_to_error_log(error_message, log_fname)
+            matched = False
+        i+=2
     if matched == False:
-        error_message = 40*"#"+" ERROR! "+40*"#"+"\nConditions not fully satisfied in: "+str(conditions)+"\n\n\n"
+        error_message = 40*"#"+" ERROR! "+40*"#"+"\nConditions not fully satisfied in: "+str(parsed_event)+"\n\n\n"
         write_to_error_log(error_message, log_fname)
-    return matched
 
 def execute_swipe(action, element, driver):
-    direction = action.split("swipe")[1].lower()
+    direction = action.split("_")[1]
     location = element.location
     size = element.size
     if direction == "left":
@@ -174,40 +186,42 @@ def execute_swipe(action, element, driver):
         end_y = int(size["height"]*0.7)
     TouchAction(driver).press(element, start_x, start_y).wait(ms=300).move_to(element, end_x, end_y).release().perform()
 
-def execute_replace_text(action, element, driver):
-    element.set_value(action["value"])
+def execute_send_keys(action, value, element, driver):
+    element.set_value(value)
     if driver.is_keyboard_shown():
         driver.back()
+    if "enter" in action:
+        time.sleep(5)
+        driver.press_keycode(66)
+        time.sleep(5)
+    return driver
 
 def execute_action(driver, el, parsed_event, app_package, log_fname):
     executed = True
-    for action in parsed_event["action"]:
-        if action["type"] == "click":
-            el.click()
-        elif action["type"] == "longClick":
-            TouchAction(driver).long_press(el).release().perform()
-        elif action["type"] == "pressBack":
-            driver.back()
-        elif action["type"] == "clear":
-            el.clear()
-        elif action["type"] == "replaceText":
-            execute_replace_text(action, el, driver)
-        elif action["type"] == "enter":
-            driver.press_keycode(66)
-        elif action["type"] == "wait":
-            time.sleep(action["value"])
-        elif action["type"].startswith("swipe"):
-            execute_swipe(action["type"], el, driver)
-        elif action["type"] == "check":
-            execute_check(action["value"], el, log_fname)
-        elif action["type"] == "check_element_presence":
-            execute_check_element_presence(driver, action["value"], app_package, log_fname)
-        elif action["type"] == "check_element_invisible":
-            execute_check_element_invisible(driver, action["value"], app_package, log_fname)
-        else:
-            executed = False
-            write_to_error_log("Unhendled event: "+str(action["type"])+", in line: "+str(parsed_event), log_fname)
-        time.sleep(5)
+    action = parsed_event["action"][0]
+    if action == "click":
+        el.click()
+    elif action == "long_press":
+        TouchAction(driver).long_press(el).release().perform()
+    elif action == "KEY_BACK":
+        driver.back()
+    elif "clear" in action:
+        el.clear()
+        if "send_keys" in action:
+            driver = execute_send_keys(action, parsed_event["action"][1], el, driver)
+    elif "send_keys" in action:
+        driver = execute_send_keys(action, parsed_event["action"][1], el, driver)
+    elif action.startswith("swipe"):
+        driver = execute_swipe(action, el, driver)
+    elif "wait" in action:
+        if action == "wait_until_element_presence" or action == "wait_until_text_presence":
+            driver = execute_check_element_presence(el, parsed_event, app_package, log_fname)
+        elif action == "wait_until_text_invisible":
+            driver = execute_check_element_invisible(driver, parsed_event, app_package, log_fname)   
+    else:
+        executed = False
+        write_to_error_log("Unhendled event: "+str(action)+", in line: "+str(parsed_event), log_fname)
+    time.sleep(5)
     return executed
 
 def get_element_attributes_list(parsed_test, app_package, driver, log_fname):
@@ -215,7 +229,11 @@ def get_element_attributes_list(parsed_test, app_package, driver, log_fname):
     element_attributes_list = []
     completed = True
     for parsed_event in parsed_test:
-        if len(parsed_event["get_element_by"])==0 or not actions_need_element(parsed_event["action"]):
+        print(parsed_event)
+        print()
+        if "wait" in parsed_event["action"][0]:
+            time.sleep(parsed_event["action"][1])
+        if not actions_need_element(parsed_event["action"]):
             executed = execute_action(driver, None, parsed_event, app_package, log_fname)
         else:
             el = get_element(driver, parsed_event, app_package, log_fname)
@@ -230,16 +248,15 @@ def get_element_attributes_list(parsed_test, app_package, driver, log_fname):
     return element_attributes_list, completed
 
 def run_craftdroid(file):
-    no_reset  = file.split("/")[-4] == "a3" or file.split("/")[-4] == "a4"
-    caps, app_package = get_caps(file, no_reset)
+    caps, app_package = get_caps(file)
     run_possible, driver = check_run_possible(app_package, caps)
     if run_possible:
         start_time = time.time()
-        log_fname = file.replace(file.split("/")[-1], "atm_compatible/"+file.split("/")[-1].split(".")[0]+"_run_log.txt")
+        log_fname = file.replace(file.split("/")[-1], "result/"+file.split("/")[-1].split(".")[0]+"_run_log.txt")
         parsed_test = craftdroid_parse(file)
         element_attributes_list, completed = get_element_attributes_list(parsed_test, app_package, driver, log_fname)
         if completed == True:
-            write_json(element_attributes_list, file.replace(file.split("/")[-1], "atm_compatible/"+file.split("/")[-1].split(".")[0]+"_result.json"))
+            write_json(element_attributes_list, file.replace(file.split("/")[-1], "result/"+file.split("/")[-1].split(".")[0]+"_result.json"))
             print(str(time.time() - start_time)+" seconds\n")
         else:
             write_to_error_log("STOPPING THE EXECUTION OF THE TEST!", log_fname)
@@ -247,7 +264,7 @@ def run_craftdroid(file):
             print(str(time.time() - start_time)+" seconds\n")
 
 def run_atm(file): 
-    caps, app_package = get_caps(file, False)
+    caps, app_package = get_caps(file)
     run_possible, driver = check_run_possible(app_package, caps)
     if run_possible:
         start_time = time.time()
@@ -283,7 +300,7 @@ def main():
         if file.split("/")[-3] == "migrated_tests" or file.split("/")[-3] == "donor":
             run_atm(file)
         elif file.split("/")[-5] == "craftdroid_tests":
-                run_craftdroid(file)  
+            run_craftdroid(file)  
         else:
             print("Application not recognized!"+"\n"+"The test file should be under directory \"/data/migrated_tests\",  \"/data/ground_truth\" or \"/data/craftdroid_tests\"")         
 

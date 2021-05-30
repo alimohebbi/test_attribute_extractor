@@ -1,0 +1,20 @@
+[
+  [
+    "clear_and_send_keys",
+    "56.6"
+  ],
+  [
+    "clear_and_send_keys",
+    "15"
+  ],
+  [
+    "clear_and_send_keys_and_hide_keyboard",
+    "4"
+  ],
+  [
+    "wait_until_text_presence",
+    10,
+    "text",
+    "16.27"
+  ]
+]

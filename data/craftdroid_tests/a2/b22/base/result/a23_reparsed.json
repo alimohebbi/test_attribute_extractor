@@ -1,0 +1,143 @@
+[
+  {
+    "action": [
+      "click"
+    ],
+    "get_element_by": [
+      {
+        "type": "resource-id",
+        "value": "org.secuso.privacyfriendlytodolist:id/btn_skip"
+      },
+      {
+        "type": "text",
+        "value": "Skip"
+      },
+      {
+        "type": "classname",
+        "value": "android.widget.Button"
+      }
+    ]
+  },
+  {
+    "action": [
+      "click"
+    ],
+    "get_element_by": [
+      {
+        "type": "resource-id",
+        "value": "org.secuso.privacyfriendlytodolist:id/fab_new_task"
+      },
+      {
+        "type": "classname",
+        "value": "android.widget.ImageButton"
+      }
+    ]
+  },
+  {
+    "action": [
+      "send_keys_and_hide_keyboard",
+      "Sample Todo"
+    ],
+    "get_element_by": [
+      {
+        "type": "resource-id",
+        "value": "org.secuso.privacyfriendlytodolist:id/et_new_task_name"
+      },
+      {
+        "type": "text",
+        "value": "Name"
+      },
+      {
+        "type": "classname",
+        "value": "android.widget.EditText"
+      }
+    ]
+  },
+  {
+    "action": [
+      "click"
+    ],
+    "get_element_by": [
+      {
+        "type": "resource-id",
+        "value": "org.secuso.privacyfriendlytodolist:id/bt_new_task_ok"
+      },
+      {
+        "type": "text",
+        "value": "Okay"
+      },
+      {
+        "type": "classname",
+        "value": "android.widget.Button"
+      }
+    ]
+  },
+  {
+    "action": [
+      "wait_until_text_presence",
+      10,
+      "text",
+      "Sample Todo"
+    ],
+    "get_element_by": [
+      {
+        "type": "resource-id",
+        "value": "org.secuso.privacyfriendlytodolist:id/tv_exlv_task_name"
+      },
+      {
+        "type": "text",
+        "value": "Sample Todo"
+      },
+      {
+        "type": "classname",
+        "value": "android.widget.TextView"
+      }
+    ]
+  },
+  {
+    "action": [
+      "long_press"
+    ],
+    "get_element_by": [
+      {
+        "type": "resource-id",
+        "value": "org.secuso.privacyfriendlytodolist:id/tv_exlv_task_name"
+      },
+      {
+        "type": "text",
+        "value": "Sample Todo"
+      },
+      {
+        "type": "classname",
+        "value": "android.widget.TextView"
+      }
+    ]
+  },
+  {
+    "action": [
+      "click"
+    ],
+    "get_element_by": [
+      {
+        "type": "resource-id",
+        "value": "android:id/title"
+      },
+      {
+        "type": "text",
+        "value": "Delete To-Do Task"
+      },
+      {
+        "type": "classname",
+        "value": "android.widget.TextView"
+      }
+    ]
+  },
+  {
+    "action": [
+      "wait_until_text_invisible",
+      10,
+      "text",
+      "Sample Todo"
+    ]
+  }
+]

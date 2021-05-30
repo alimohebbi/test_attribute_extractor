@@ -1,122 +1,22 @@
 [
-  {
-    "checkable": "false",
-    "checked": "false",
-    "class": "android.widget.ImageButton",
-    "clickable": "true",
-    "content-desc": null,
-    "enabled": "true",
-    "focusable": "true",
-    "focused": "false",
-    "long-clickable": "false",
-    "package": "pl.com.andrzejgrzyb.shoppinglist",
-    "password": "false",
-    "resource-id": "pl.com.andrzejgrzyb.shoppinglist:id/fab",
-    "scrollable": "false",
-    "selection-start": null,
-    "selection-end": null,
-    "selected": "false",
-    "text": "",
-    "bounds": "[865,1579][1012,1726]",
-    "displayed": "true",
-    "action": [
-      "click"
-    ]
-  },
-  {
-    "checkable": "false",
-    "checked": "false",
-    "class": "android.widget.EditText",
-    "clickable": "true",
-    "content-desc": null,
-    "enabled": "true",
-    "focusable": "true",
-    "focused": "true",
-    "long-clickable": "true",
-    "package": "pl.com.andrzejgrzyb.shoppinglist",
-    "password": "false",
-    "resource-id": "pl.com.andrzejgrzyb.shoppinglist:id/shoppingListNameEditText",
-    "scrollable": "false",
-    "selection-start": null,
-    "selection-end": null,
-    "selected": "false",
-    "text": "Shopping list name",
-    "bounds": "[42,252][1038,370]",
-    "displayed": "true",
-    "action": [
-      "replaceText: Grocery"
-    ]
-  },
-  {
-    "checkable": "false",
-    "checked": "false",
-    "class": "android.widget.EditText",
-    "clickable": "true",
-    "content-desc": null,
-    "enabled": "true",
-    "focusable": "true",
-    "focused": "false",
-    "long-clickable": "true",
-    "package": "pl.com.andrzejgrzyb.shoppinglist",
-    "password": "false",
-    "resource-id": "pl.com.andrzejgrzyb.shoppinglist:id/shoppingListDescriptionEditText",
-    "scrollable": "false",
-    "selection-start": null,
-    "selection-end": null,
-    "selected": "false",
-    "text": "Description",
-    "bounds": "[42,370][1038,488]",
-    "displayed": "true",
-    "action": [
-      "replaceText: Weekly grocery shopping"
-    ]
-  },
-  {
-    "checkable": "false",
-    "checked": "false",
-    "class": "android.widget.Button",
-    "clickable": "true",
-    "content-desc": null,
-    "enabled": "true",
-    "focusable": "true",
-    "focused": "false",
-    "long-clickable": "false",
-    "package": "pl.com.andrzejgrzyb.shoppinglist",
-    "password": "false",
-    "resource-id": "pl.com.andrzejgrzyb.shoppinglist:id/addShoppingListButton",
-    "scrollable": "false",
-    "selection-start": null,
-    "selection-end": null,
-    "selected": "false",
-    "text": "SAVE",
-    "bounds": "[424,488][655,614]",
-    "displayed": "true",
-    "action": [
-      "click"
-    ]
-  },
-  {
-    "checkable": "false",
-    "checked": "false",
-    "class": "android.widget.TextView",
-    "clickable": "false",
-    "content-desc": null,
-    "enabled": "true",
-    "focusable": "false",
-    "focused": "false",
-    "long-clickable": "false",
-    "package": "pl.com.andrzejgrzyb.shoppinglist",
-    "password": "false",
-    "resource-id": "pl.com.andrzejgrzyb.shoppinglist:id/shoppingListNameTextView",
-    "scrollable": "false",
-    "selection-start": null,
-    "selection-end": null,
-    "selected": "false",
-    "text": "Grocery",
-    "bounds": "[152,278][806,341]",
-    "displayed": "true",
-    "action": [
-      "check"
-    ]
-  }
+  [
+    "click"
+  ],
+  [
+    "send_keys",
+    "Grocery"
+  ],
+  [
+    "send_keys",
+    "Weekly grocery shopping"
+  ],
+  [
+    "click"
+  ],
+  [
+    "wait_until_element_presence",
+    10,
+    "text",
+    "Grocery"
+  ]
 ]

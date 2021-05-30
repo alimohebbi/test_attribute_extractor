@@ -1,98 +1,19 @@
 [
-  {
-    "checkable": "false",
-    "checked": "false",
-    "class": "android.widget.LinearLayout",
-    "clickable": "true",
-    "content-desc": null,
-    "enabled": "true",
-    "focusable": "false",
-    "focused": "false",
-    "long-clickable": "false",
-    "package": "chan.android.app.pocketnote",
-    "password": "false",
-    "resource-id": "chan.android.app.pocketnote:id/notes_$_linearlayout_empty",
-    "scrollable": "false",
-    "selection-start": null,
-    "selection-end": null,
-    "selected": "false",
-    "text": "",
-    "bounds": "[372,781][708,1202]",
-    "displayed": "true",
-    "action": [
-      "click"
-    ]
-  },
-  {
-    "checkable": "false",
-    "checked": "false",
-    "class": "android.widget.EditText",
-    "clickable": "true",
-    "content-desc": null,
-    "enabled": "true",
-    "focusable": "true",
-    "focused": "true",
-    "long-clickable": "true",
-    "package": "chan.android.app.pocketnote",
-    "password": "false",
-    "resource-id": "chan.android.app.pocketnote:id/editor_$_edittext_title",
-    "scrollable": "false",
-    "selection-start": null,
-    "selection-end": null,
-    "selected": "false",
-    "text": "",
-    "bounds": "[13,209][949,298]",
-    "displayed": "true",
-    "action": [
-      "replaceText: to-do"
-    ]
-  },
-  {
-    "checkable": "false",
-    "checked": "false",
-    "class": "android.widget.EditText",
-    "clickable": "true",
-    "content-desc": null,
-    "enabled": "true",
-    "focusable": "true",
-    "focused": "false",
-    "long-clickable": "true",
-    "package": "chan.android.app.pocketnote",
-    "password": "false",
-    "resource-id": "chan.android.app.pocketnote:id/editor_$_note_editor",
-    "scrollable": "false",
-    "selection-start": null,
-    "selection-end": null,
-    "selected": "false",
-    "text": "",
-    "bounds": "[0,319][1080,1794]",
-    "displayed": "true",
-    "action": [
-      "replaceText: Go shopping"
-    ]
-  },
-  {
-    "checkable": "false",
-    "checked": "false",
-    "class": "android.widget.TextView",
-    "clickable": "false",
-    "content-desc": null,
-    "enabled": "true",
-    "focusable": "false",
-    "focused": "false",
-    "long-clickable": "false",
-    "package": "chan.android.app.pocketnote",
-    "password": "false",
-    "resource-id": "chan.android.app.pocketnote:id/note_item_$_textview_title",
-    "scrollable": "false",
-    "selection-start": null,
-    "selection-end": null,
-    "selected": "false",
-    "text": "to-do",
-    "bounds": "[79,215][169,266]",
-    "displayed": "true",
-    "action": [
-      "check"
-    ]
-  }
+  [
+    "click"
+  ],
+  [
+    "send_keys",
+    "to-do"
+  ],
+  [
+    "send_keys",
+    "Go shopping"
+  ],
+  [
+    "wait_until_element_presence",
+    10,
+    "text",
+    "to-do"
+  ]
 ]

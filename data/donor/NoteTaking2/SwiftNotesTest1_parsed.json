@@ -1,5 +1,8 @@
 [
   {
+    "action": [
+      "click"
+    ],
     "get_element_by": [
       {
         "type": "resource-id",
@@ -13,15 +16,13 @@
         "type": "isdisplayed",
         "value": ""
       }
-    ],
-    "action": [
-      {
-        "type": "click",
-        "value": ""
-      }
     ]
   },
   {
+    "action": [
+      "send_keys",
+      "Title1"
+    ],
     "get_element_by": [
       {
         "type": "resource-id",
@@ -31,43 +32,35 @@
         "type": "isdisplayed",
         "value": ""
       }
-    ],
-    "action": [
-      {
-        "type": "replaceText",
-        "value": "Title1"
-      }
     ]
   },
   {
+    "action": [
+      "send_keys",
+      "Note1"
+    ],
     "get_element_by": [
       {
         "type": "resource-id",
         "value": "bodyEdit"
       }
-    ],
-    "action": [
-      {
-        "type": "replaceText",
-        "value": "Note1"
-      }
     ]
   },
   {
+    "action": [
+      "click"
+    ],
     "get_element_by": [
       {
         "type": "xpath",
         "value": "/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.view.ViewGroup/android.widget.ImageButton"
       }
-    ],
-    "action": [
-      {
-        "type": "click",
-        "value": ""
-      }
     ]
   },
   {
+    "action": [
+      "click"
+    ],
     "get_element_by": [
       {
         "type": "resource-id",
@@ -77,15 +70,15 @@
         "type": "text",
         "value": "Yes"
       }
-    ],
-    "action": [
-      {
-        "type": "click",
-        "value": ""
-      }
     ]
   },
   {
+    "action": [
+      "wait_until_element_presence",
+      10,
+      "text",
+      "Title1"
+    ],
     "get_element_by": [
       {
         "type": "resource-id",
@@ -99,20 +92,15 @@
         "type": "isdisplayed",
         "value": ""
       }
-    ],
-    "action": [
-      {
-        "type": "check",
-        "value": [
-          {
-            "type": "text",
-            "value": "Title1"
-          }
-        ]
-      }
     ]
   },
   {
+    "action": [
+      "wait_until_element_presence",
+      10,
+      "text",
+      "Note1"
+    ],
     "get_element_by": [
       {
         "type": "resource-id",
@@ -125,17 +113,6 @@
       {
         "type": "isdisplayed",
         "value": ""
-      }
-    ],
-    "action": [
-      {
-        "type": "check",
-        "value": [
-          {
-            "type": "text",
-            "value": "Note1"
-          }
-        ]
       }
     ]
   }

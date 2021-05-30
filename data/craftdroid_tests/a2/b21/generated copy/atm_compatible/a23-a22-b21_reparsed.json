@@ -1,0 +1,125 @@
+[
+  {
+    "get_element_by": [
+      {
+        "type": "resource-id",
+        "value": "douzifly.list:id/fab_add"
+      },
+      {
+        "type": "ClassName",
+        "value": "android.widget.ImageButton"
+      }
+    ],
+    "action": [
+      {
+        "type": "click",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "get_element_by": [
+      {
+        "type": "resource-id",
+        "value": "douzifly.list:id/fab_add"
+      },
+      {
+        "type": "ClassName",
+        "value": "android.widget.ImageButton"
+      }
+    ],
+    "action": [
+      {
+        "type": "click",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "get_element_by": [
+      {
+        "type": "resource-id",
+        "value": "douzifly.list:id/fab_add"
+      },
+      {
+        "type": "ClassName",
+        "value": "android.widget.ImageButton"
+      }
+    ],
+    "action": [
+      {
+        "type": "click",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "get_element_by": [
+      {
+        "type": "resource-id",
+        "value": "douzifly.list:id/edit_text"
+      },
+      {
+        "type": "Text",
+        "value": "Title"
+      },
+      {
+        "type": "ClassName",
+        "value": "android.widget.EditText"
+      }
+    ],
+    "action": [
+      {
+        "type": "replaceText",
+        "value": "Sample Todo"
+      }
+    ]
+  },
+  {
+    "get_element_by": [
+      {
+        "type": "resource-id",
+        "value": "douzifly.list:id/fab_add"
+      },
+      {
+        "type": "ClassName",
+        "value": "android.widget.ImageButton"
+      }
+    ],
+    "action": [
+      {
+        "type": "click",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "get_element_by": [
+      {
+        "type": "resource-id",
+        "value": "douzifly.list:id/txt_thing"
+      },
+      {
+        "type": "Text",
+        "value": "Sample Todo"
+      },
+      {
+        "type": "ClassName",
+        "value": "android.widget.TextView"
+      }
+    ],
+    "action": [
+      {
+        "type": "wait",
+        "value": 10
+      },
+      {
+        "type": "check_element_presence",
+        "value": {
+          "type": "xpath",
+          "value": "//android.widget.TextView[@text=\"Sample Todo\"]"
+        }
+      }
+    ]
+  }
+]

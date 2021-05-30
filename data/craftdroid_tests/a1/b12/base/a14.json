@@ -73,8 +73,8 @@
   {
     "class": "android.view.View",
     "resource-id": "",
-    "text": "",
-    "content-desc": "Donald Bren School of Information and Computer Sciences",
+    "content-desc": "",
+    "text": "Donald Bren School of Information and Computer Sciences",
     "clickable": "true",
     "password": "false",
     "parent_text": "",
@@ -88,7 +88,43 @@
       "wait_until_element_presence",
       10,
       "xpath",
-      "//android.view.View[@content-desc=\"Donald Bren School of Information and Computer Sciences\"]"
+      "//android.view.View[@text=\"Donald Bren School of Information and Computer Sciences\"]"
+    ]
+  },
+    {
+    "class": "android.widget.EditText",
+    "resource-id": "de.baumann.browser:id/main_omnibox_input",
+    "text": "https://www.ics.uci.edu",
+    "content-desc": "",
+    "clickable": "true",
+    "password": "false",
+    "parent_text": "",
+    "sibling_text": "",
+    "stepping_events": [
+      {
+        "class": "android.widget.ImageButton",
+        "resource-id": "floatButton_ok",
+        "id-prefix": "de.baumann.browser:id/",
+        "text": "",
+        "content-desc": "",
+        "clickable": "true",
+        "password": "false",
+        "parent_text": "",
+        "sibling_text": "",
+        "action": [
+          "click"
+        ],
+        "activity": ".Activity.BrowserActivity",
+        "package": "de.baumann.browser",
+        "event_type": "stepping"
+      }
+    ],
+    "package": "de.baumann.browser",
+    "activity": ".Activity.BrowserActivity",
+    "event_type": "gui",
+    "score": 0.3870360670229947,
+    "action": [
+      "click"
     ]
   },
   {
@@ -113,8 +149,8 @@
   {
     "class": "android.view.View",
     "resource-id": "",
-    "text": "",
-    "content-desc": "UCI homepage",
+    "content-desc": "",
+    "text": "UCI homepage",
     "clickable": "true",
     "password": "false",
     "parent_text": "",
@@ -128,7 +164,7 @@
       "wait_until_element_presence",
       10,
       "xpath",
-      "//android.view.View[@content-desc=\"UCI homepage\"]"
+      "//android.view.View[@text=\"UCI homepage\"]"
     ]
   },
   {
@@ -141,8 +177,8 @@
   {
     "class": "android.view.View",
     "resource-id": "",
-    "text": "",
-    "content-desc": "Donald Bren School of Information and Computer Sciences",
+    "content-desc": "",
+    "text": "Donald Bren School of Information and Computer Sciences",
     "clickable": "true",
     "password": "false",
     "parent_text": "",
@@ -156,7 +192,7 @@
       "wait_until_element_presence",
       10,
       "xpath",
-      "//android.view.View[@content-desc=\"Donald Bren School of Information and Computer Sciences\"]"
+      "//android.view.View[@text=\"Donald Bren School of Information and Computer Sciences\"]"
     ]
   }
 ]
