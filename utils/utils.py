@@ -1,4 +1,6 @@
 import json
+import pathlib
+
 import pandas as pd
 import re
 
@@ -48,7 +50,7 @@ def get_app_name(fname):
         return fname.split("/")[-2]
     else:
         category = fname.split("/")[-5]
-        if category == "craftdroid_tests":
+        if category == "craftdroid_tests" or category == "test_repo":
             return fname.split("/")[-1].split(".")[0]
         else:
             return None
@@ -58,7 +60,8 @@ def get_package_activity(fname):
     app_name = get_app_name(fname)
     if app_name is None:
         return None, None
-    df = pd.read_csv("app_name_to_package_activity.csv")
+    activity_file_path = str(pathlib.Path(__file__).parent.absolute()) + "/../app_name_to_package_activity.csv"
+    df = pd.read_csv(activity_file_path)
     sliced_df = df[df["appName"] == app_name]
     if len(sliced_df) == 0:
         print("No application with the name : " + str(app_name) + " can be found in app_name_to_package_activity.csv.")

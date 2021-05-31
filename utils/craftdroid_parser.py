@@ -1,5 +1,8 @@
 import glob
 from utils.utils import *
+from test_attribute_extractor.config import Config
+
+config = Config()
 
 
 def extract_selector_list(selector_list, parsed_element, log_fname):
@@ -11,9 +14,9 @@ def extract_selector_list(selector_list, parsed_element, log_fname):
     if "text" in keys and parsed_element["text"] != "":
         selector_list.append({"type": "text", "value": parsed_element["text"]})
     if "content-desc" in keys and parsed_element["content-desc"] != "":
-        selector_list.append({"type": "contentdescription", "value": parsed_element["content-desc"]})
+        selector_list.append({"type": "contentDescription", "value": parsed_element["content-desc"]})
     if "class" in keys and parsed_element["class"] != "":
-        selector_list.append({"type": "classname", "value": parsed_element["class"]})
+        selector_list.append({"type": "className", "value": parsed_element["class"]})
     return selector_list
 
 
@@ -67,8 +70,9 @@ def craftdroid_parse(fname):
         if actions_need_element(new_parsed_elemetn["action"]):
             new_parsed_elemetn = extract_get_element_by(new_parsed_elemetn, parsed_element, log_fname)
         new_data.append(new_parsed_elemetn)
-    write_json(new_data,
-               fname.replace(fname.split("/")[-1], "result/" + fname.split("/")[-1].split(".")[0] + "_reparsed.json"))
+    subject_name = fname.split("/")[-1].split(".")[0]
+    parse_file_path = config.parsed_test_dir + '/' + subject_name + '.json'
+    write_json(new_data, parse_file_path)
     return new_data
 
 

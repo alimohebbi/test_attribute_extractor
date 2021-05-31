@@ -1,24 +1,26 @@
 import re
 import glob
-from utils.utils import *
+from utils import *
 
-def remove_child_addressing(line):  
+
+def remove_child_addressing(line):
     start = line.find("childAtPosition")
     if start == -1:
         return line
     cnt = 1
-    for i in range(start+16, len(line)):
+    for i in range(start + 16, len(line)):
         char = line[i]
         if char == "(":
-            cnt+=1
+            cnt += 1
         elif char == ")":
             cnt -= 1
         if cnt == 0:
             end = i
             break
-    return line.replace(line[start:end+2], "")
+    return line.replace(line[start:end + 2], "")
 
-def get_selector_section(line):  
+
+def get_selector_section(line):
     line = remove_child_addressing(line)
     if "perform" in line:
         selector_section = line.split("perform")[0][:-2]
@@ -28,9 +30,11 @@ def get_selector_section(line):
         selector_section = ""
     return selector_section
 
+
 def contains_id(line):
     return not re.search(r'R.id\.(.*?)\)', line) is None
-    
+
+
 def add_selector(selector, selector_list):
     if "isDisplayed()" in selector:
         widget_identifier = "isdisplayed"
@@ -46,28 +50,32 @@ def add_selector(selector, selector_list):
         value = re.search(r'instanceOf\((.*?)\.class', selector).group(1)
     else:
         return selector_list
-    selector_list.append({"type": widget_identifier, "value":value})
+    selector_list.append({"type": widget_identifier, "value": value})
     return selector_list
+
 
 def extract_get_element_by(parsed_event, line):
     selector_list = []
     selector_section = get_selector_section(line)
-    for selector in selector_section.split(","):      
+    for selector in selector_section.split(","):
         selector_list = add_selector(selector, selector_list)
     if len(selector_list) == 0:
-        error_message = 40*"#"+" ERROR! "+40*"#"+"\nFor the element : "+str(parsed_element)+", there are no selectors by which we can find the element.\n\n\n"
-        write_to_error_log(error_message, log_fname)         
+        error_message = 40 * "#" + " ERROR! " + 40 * "#" + "\nFor the element : " + str(
+            parsed_element) + ", there are no selectors by which we can find the element.\n\n\n"
+        write_to_error_log(error_message, log_fname)
     parsed_event["get_element_by"] = selector_list
     return parsed_event
 
+
 def extract_check(actions, check):
-    if re.sub('[ ()]', '', check)== "isDisplayed" or re.sub('[ ()]', '', check) == "isEnabled":
+    if re.sub('[ ()]', '', check) == "isDisplayed" or re.sub('[ ()]', '', check) == "isEnabled":
         actions.append(re.sub('[ ()]', '', check))
-        actions.append("true") 
+        actions.append("true")
     else:
         actions.append(re.search(r'with(.*?)\(', check).group(1).lower())
-        actions.append(re.search(r'\"(.*?)\"', check).group(1))      
+        actions.append(re.search(r'\"(.*?)\"', check).group(1))
     return actions
+
 
 def extract_checks(line, parsed_event):
     value = []
@@ -78,9 +86,10 @@ def extract_checks(line, parsed_event):
         for check in checks:
             actions = extract_check(actions, check)
     else:
-        actions = extract_check(actions, match_section)  
+        actions = extract_check(actions, match_section)
     parsed_event["action"] = actions
     return parsed_event
+
 
 def extract_perform(line, parsed_event):
     atm_actions = re.search(r'perform\((.*?)\)\;', line).group(1).split(",")
@@ -95,11 +104,12 @@ def extract_perform(line, parsed_event):
             actions.append("long_press")
         elif "swipe" in atm_actions[i]:
             direction = atm_actions[i][:-2].split("swipe")[1]
-            actions.append("swipe_"+str(direction.lower()))
+            actions.append("swipe_" + str(direction.lower()))
         else:
             actions.append(atm_actions[i][:-2])
     parsed_event["action"] = actions
     return parsed_event
+
 
 def extract_action(parsed_event, line):
     if "onView" not in line:
@@ -107,10 +117,11 @@ def extract_action(parsed_event, line):
             parsed_event["action"] = ["KEY_BACK"]
     else:
         if "perform" in line:
-            parsed_event = extract_perform(line, parsed_event)            
-        elif "check" in line:  
-            parsed_event = extract_checks(line, parsed_event)          
+            parsed_event = extract_perform(line, parsed_event)
+        elif "check" in line:
+            parsed_event = extract_checks(line, parsed_event)
     return parsed_event
+
 
 def rearrange_lines(lines):
     for i, line in enumerate(lines):
@@ -121,6 +132,7 @@ def rearrange_lines(lines):
                 dot_index = lines[i + 1].find('.')
                 lines[i] += lines[i + 1][dot_index:]
     return lines
+
 
 def parse_test_section(lines):
     lines = rearrange_lines(lines)
@@ -133,6 +145,7 @@ def parse_test_section(lines):
                 parsed_event = extract_get_element_by(parsed_event, line)
             parsed_event_list.append(parsed_event)
     return parsed_event_list
+
 
 def get_test_section(lines):
     seen_test = False
@@ -152,6 +165,7 @@ def get_test_section(lines):
                 expression = ''
     return test
 
+
 def atm_parse(fname):
     lines = read_file(fname)
     section = get_test_section(lines)
@@ -159,11 +173,13 @@ def atm_parse(fname):
     write_json(parsed_test, fname.replace(fname[-5:], '_parsed.json'))
     return parsed_test
 
+
 def main():
     files = glob.glob('../data/*/*/*.java')
     for file in files:
         print(file)
         atm_parse(file)
+
 
 if __name__ == '__main__':
     main()

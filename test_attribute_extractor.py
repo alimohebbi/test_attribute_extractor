@@ -1,17 +1,19 @@
+import pathlib
+import sys
+
+sys.path.insert(0, str(pathlib.Path(__file__).parent.absolute()))
+
 import glob
 import time
-
 from appium import webdriver
 from appium.webdriver.common.touch_action import TouchAction
-
+from utils.utils import *
 from utils.atm_parser import atm_parse
 from utils.craftdroid_parser import craftdroid_parse
-from utils.utils import *
 
 attribute_list = ["checkable", "checked", "class", "clickable", "content-desc", "enabled", "focusable",
                   "focused", "long-clickable", "package", "password", "resource-id", "scrollable", "selection-start",
                   "selection-end", "selected", "text", "bounds", "displayed"]
-
 
 def set_element_actions(parsed_event, element_attributes):
     actions = []
@@ -29,14 +31,13 @@ def get_element_attributes(element, parsed_event):
     for attr in attribute_list:
         element_attributes[attr] = element.get_attribute(attr)
     element_attributes = parsed_event["action"]
-
     return element_attributes
 
 
 def is_a_match(element, selectors):
     for i in range(1, len(selectors)):
         selector = selectors[i]
-        identifier = selector["type"].lower()
+        identifier = selector["type"]
         value = selector["value"]
         # print(value)
         # print(element.get_attribute(identifier))
@@ -58,10 +59,10 @@ def get_matching_element(parsed_event, elements, log_fname):
     if len(selectors) == 1:
         if len(elements) >= 1:
             return elements[0]
-            if len(elements) > 1:
-                error_message = 40 * "#" + " ERROR! " + 40 * "#" + "\nMore than one element was found given the widget selector in line: " + str(
-                    parsed_event) + "\n\n\n"
-                write_to_error_log(error_message, log_fname)
+        if len(elements) > 1:
+            error_message = 40 * "#" + " ERROR! " + 40 * "#" + "\nMore than one element was found given the widget selector in line: " + str(
+                parsed_event) + "\n\n\n"
+            write_to_error_log(error_message, log_fname)
         else:
             error_message = 40 * "#" + " ERROR! " + 40 * "#" + "\nNo element with selector: " + str(
                 selectors[0]) + ", was found on this page source." + "\n\n\n"
@@ -174,7 +175,7 @@ def execute_check_element_presence(element, parsed_event, app_package, log_fname
             write_to_error_log(error_message, log_fname)
             matched = False
         i += 2
-    if matched:
+    if not matched:
         error_message = 40 * "#" + " ERROR! " + 40 * "#" + "\nConditions not fully satisfied in: " + str(
             parsed_event) + "\n\n\n"
         write_to_error_log(error_message, log_fname)
@@ -279,7 +280,7 @@ def run_craftdroid(file):
         log_fname = file.replace(file.split("/")[-1], "result/" + file.split("/")[-1].split(".")[0] + "_run_log.txt")
         parsed_test = craftdroid_parse(file)
         element_attributes_list, completed = get_element_attributes_list(parsed_test, app_package, driver, log_fname)
-        if completed == True:
+        if completed:
             write_json(element_attributes_list, file.replace(file.split("/")[-1],
                                                              "result/" + file.split("/")[-1].split(".")[
                                                                  0] + "_result.json"))
