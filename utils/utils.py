@@ -2,24 +2,29 @@ import json
 import pandas as pd
 import re
 
+
 def read_file(fname):
     with open(fname, 'r') as f:
         lines = f.readlines()
     return lines
 
+
 def write_to_error_log(message, filename):
     f = open(filename, 'a')
     f.write(message)
     print(message)
-    
+
+
 def write_json(data, new_name):
     with open(new_name, 'w') as f:
         f.write(json.dumps(data, indent=2))
-        
+
+
 def load_json_data(fname):
-    f = open(fname,)
+    f = open(fname, )
     data = json.load(f)
     return data
+
 
 def get_capabilities(app_package, app_activity, no_reset):
     caps = {
@@ -34,6 +39,7 @@ def get_capabilities(app_package, app_activity, no_reset):
     }
     return caps
 
+
 def get_app_name(fname):
     category = fname.split("/")[-3]
     if category == "migrated_tests":
@@ -47,6 +53,7 @@ def get_app_name(fname):
         else:
             return None
 
+
 def get_package_activity(fname):
     app_name = get_app_name(fname)
     if app_name is None:
@@ -54,7 +61,7 @@ def get_package_activity(fname):
     df = pd.read_csv("app_name_to_package_activity.csv")
     sliced_df = df[df["appName"] == app_name]
     if len(sliced_df) == 0:
-        print("No application with the name : "+str(app_name)+" can be found in app_name_to_package_activity.csv.")
+        print("No application with the name : " + str(app_name) + " can be found in app_name_to_package_activity.csv.")
         return None, None
     app_package = sliced_df.iloc[0]["appPackage"]
     app_activity = sliced_df.iloc[0]["appActivity"]
@@ -62,7 +69,8 @@ def get_package_activity(fname):
 
     return app_package, app_activity, no_reset
 
-def get_caps(fname): 
+
+def get_caps(fname):
     app_package, app_activity, no_reset = get_package_activity(fname)
     if no_reset == 0:
         caps = get_capabilities(app_package, app_activity, False)
@@ -70,10 +78,12 @@ def get_caps(fname):
         caps = get_capabilities(app_package, app_activity, True)
     return caps, app_package
 
+
 def preprocess_text(s):
     return " ".join(re.sub(r'[^\w\s]', '', s.lower()).split())
 
-def actions_need_element(action): 
+
+def actions_need_element(action):
     if action[0] not in ["KEY_BACK", "wait_until_text_invisible"]:
         return True
     return False
