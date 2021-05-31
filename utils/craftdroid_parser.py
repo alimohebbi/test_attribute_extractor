@@ -1,8 +1,8 @@
 import glob
 from utils.utils import *
-from test_attribute_extractor.config import Config
+from test_attribute_extractor.configuration import Configuration
 
-config = Config()
+config = Configuration()
 
 
 def extract_selector_list(selector_list, parsed_element, log_fname):

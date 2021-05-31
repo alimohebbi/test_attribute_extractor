@@ -30,7 +30,7 @@ def get_element_attributes(element, parsed_event):
     element_attributes = {}
     for attr in attribute_list:
         element_attributes[attr] = element.get_attribute(attr)
-    element_attributes = parsed_event["action"]
+    element_attributes["action"] = parsed_event["action"]
     return element_attributes
 
 
