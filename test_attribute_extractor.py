@@ -15,22 +15,20 @@ attribute_list = ["checkable", "checked", "class", "clickable", "content-desc", 
                   "focused", "long-clickable", "package", "password", "resource-id", "scrollable", "selection-start",
                   "selection-end", "selected", "text", "bounds", "displayed"]
 
-def set_element_actions(parsed_event, element_attributes):
-    actions = []
-    for action in parsed_event["action"]:
-        if action["type"] == "replaceText":
-            actions.append(str(action["type"]) + ": " + str(action["value"]))
-        else:
-            actions.append(action["type"])
-    element_attributes["action"] = actions
-    return element_attributes
-
+def set_event_type(action):
+    if action == "KEY_BACK":
+        return("SYS_EVENT")
+    elif "wait" in action:
+        return "oracle"
+    else:
+        return "gui"
 
 def get_element_attributes(element, parsed_event):
     element_attributes = {}
     for attr in attribute_list:
         element_attributes[attr] = element.get_attribute(attr)
     element_attributes["action"] = parsed_event["action"]
+    element_attributes["event_type"]= set_event_type(parsed_event["action"][0])
     return element_attributes
 
 
