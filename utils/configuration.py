@@ -15,6 +15,14 @@ class Configuration(object):
     def parsed_test_dir(self):
         return self._get_property('parsed_test_dir')
 
+    @property
+    def logs_dir(self):
+        return self._get_property('logs_dir')
+
+    @property
+    def results_dir(self):
+        return self._get_property('results_dir')
+
     def custom_tests_glob(self, name):
         tests = self._get_property('tests')
         if tests is None or name not in tests:
