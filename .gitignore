@@ -1,0 +1,4 @@
+*.pyc
+*_run_log.txt
+data/
+data.bak/

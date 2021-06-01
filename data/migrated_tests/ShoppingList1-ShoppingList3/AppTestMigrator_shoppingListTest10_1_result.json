@@ -1,8 +1,0 @@
-[
-  [
-    "wait_until_element_presence",
-    10,
-    "text",
-    "SKIP"
-  ]
-]

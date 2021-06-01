@@ -1,5 +1,0 @@
-######################################## ERROR! ########################################
-No element with selector: {'type': 'resource-id', 'value': 'settings_$_button_pick_color'}, was found on this page source.
-
-
-STOPPING THE EXECUTION OF THE TEST!

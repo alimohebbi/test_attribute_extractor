@@ -1,7 +1,9 @@
 import re
 import glob
 from utils import *
+from utils.configuration import Configuration
 
+config = Configuration()
 
 def remove_child_addressing(line):
     start = line.find("childAtPosition")
@@ -170,14 +172,15 @@ def atm_parse(fname):
     lines = read_file(fname)
     section = get_test_section(lines)
     parsed_test = parse_test_section(section)
-    write_json(parsed_test, fname.replace(fname[-5:], '_parsed.json'))
+    subject_name = fname.split("/")[-2]+"/"+fname.split("/")[-1].split(".")[0]
+    parse_file_path = config.parsed_test_dir + '_' + subject_name + '.json'
+    write_json(parsed_test, parse_file_path)
     return parsed_test
 
 
 def main():
-    files = glob.glob('../data/*/*/*.java')
-    for file in files:
-        print(file)
+    atm_globs = config.custom_tests_glob('atm')
+    for file in atm_globs:
         atm_parse(file)
 
 

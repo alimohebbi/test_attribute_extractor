@@ -1,6 +1,6 @@
 import glob
 from utils.utils import *
-from test_attribute_extractor.configuration import Configuration
+from utils.configuration import Configuration
 
 config = Configuration()
 
@@ -70,20 +70,16 @@ def craftdroid_parse(fname):
         if actions_need_element(new_parsed_elemetn["action"]):
             new_parsed_elemetn = extract_get_element_by(new_parsed_elemetn, parsed_element, log_fname)
         new_data.append(new_parsed_elemetn)
-    subject_name = fname.split("/")[-1].split(".")[0]
-    parse_file_path = config.parsed_test_dir + '/' + subject_name + '.json'
+    subject_name = fname.split("/")[-3]+"/"+fname.split("/")[-1].split(".")[0]
+    parse_file_path = config.parsed_test_dir + '_' + subject_name + '.json'
     write_json(new_data, parse_file_path)
     return new_data
 
 
 def main():
-    files = glob.glob('../data/craftdroid_tests/*/b*2/base/*.json')
-    files.extend(glob.glob('../data/craftdroid_tests/a3/b31/base/*.json'))
-    files.extend(glob.glob('../data/craftdroid_tests/a4/b41/base/*.json'))
-    for file in files:
-        print(file)
+    craftdroid_globs = config.custom_tests_glob('craftdroid')
+    for file in craftdroid_globs:
         craftdroid_parse(file)
-
 
 if __name__ == '__main__':
     main()

@@ -9,7 +9,7 @@ from appium import webdriver
 from appium.webdriver.common.touch_action import TouchAction
 from utils.utils import *
 from utils.atm_parser import atm_parse
-from utils.craftdroid_parser import craftdroid_parse
+from utils.craftdroid_parser import craftdroid_parse, config
 
 attribute_list = ["checkable", "checked", "class", "clickable", "content-desc", "enabled", "focusable",
                   "focused", "long-clickable", "package", "password", "resource-id", "scrollable", "selection-start",
@@ -37,9 +37,6 @@ def is_a_match(element, selectors):
         selector = selectors[i]
         identifier = selector["type"]
         value = selector["value"]
-        # print(value)
-        # print(element.get_attribute(identifier))
-        # print()
         if identifier == "isdisplayed":
             if element.get_attribute("displayed") != 'true':
                 return False
@@ -102,10 +99,7 @@ def get_elements(driver, selector, app_package, log_fname):
         elements = driver.find_elements_by_android_uiautomator(
             'new UiSelector().descriptionContains(\"' + str(value) + '\")')
     elif identifier == "text":
-        # print("text")
-        # print(value)
         elements = driver.find_elements_by_android_uiautomator('new UiSelector().textContains(\"' + str(value) + '\")')
-        # print(elements)
     elif identifier == "xpath":
         elements = get_elements_by_xpath(driver, value, log_fname)
     elif identifier == "classname":
@@ -122,7 +116,6 @@ def get_element(driver, parsed_event, app_package, log_fname):
     identifier = parsed_event["get_element_by"][0]["type"]
     value = parsed_event["get_element_by"][0]["value"]
     elements = get_elements(driver, (identifier, value), app_package, log_fname)
-    # print(len(elements))
     if elements is None:
         return None
     element = get_matching_element(parsed_event, elements, log_fname)
@@ -248,8 +241,6 @@ def get_element_attributes_list(parsed_test, app_package, driver, log_fname):
     element_attributes_list = []
     completed = True
     for parsed_event in parsed_test:
-        #print(parsed_event)
-        #print()
         if "wait" in parsed_event["action"][0]:
             time.sleep(parsed_event["action"][1])
         if not actions_need_element(parsed_event["action"]):
@@ -316,20 +307,14 @@ def check_run_possible(app_package, caps):
 
 
 def main():
-    files = glob.glob('data/*/*/*.java')
-    files.extend(glob.glob("data/craftdroid_tests/*/b*2/base/*.json"))
-    files.extend(glob.glob("data/craftdroid_tests/a3/b31/base/*.json"))
-    files.extend(glob.glob("data/craftdroid_tests/a4/b41/base/*.json"))
-    for file in files:
-        print(file)
-        if file.split("/")[-3] == "migrated_tests" or file.split("/")[-3] == "donor":
-            run_atm(file)
-        elif file.split("/")[-5] == "craftdroid_tests":
-            run_craftdroid(file)
-        else:
-            print(
-                "Application not recognized!" + "\n" + "The test file should be under directory \"/data/migrated_tests\",  \"/data/ground_truth\" or \"/data/craftdroid_tests\"")
+    atm_globs = config.custom_tests_glob('atm')
+    craftdroid_globs = config.custom_tests_glob('craftdroid')
 
+    for file in atm_globs:
+        run_atm(file)
+
+    for file in craftdroid_globs:
+        run_craftdroid(file)
 
 if __name__ == '__main__':
     main()

@@ -1,4 +1,0 @@
-######################################## ERROR! ########################################
-Conditions not fully satisfied in: {'action': ['wait_until_element_presence', 10, 'text', '18 Apr, 2021'], 'get_element_by': [{'type': 'resource-id', 'value': 'tv_period'}]}
-
-

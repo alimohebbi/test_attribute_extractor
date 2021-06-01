@@ -31,8 +31,8 @@ def load_json_data(fname):
 def get_capabilities(app_package, app_activity, no_reset):
     caps = {
         'platformName': 'Android',
-        'platformVersion': '6.0',
-        'deviceName': '2.7_QVGA_API_23',
+        'platformVersion': '7.0',
+        'deviceName': 'emulator-5555',
         'appPackage': app_package,
         'appActivity': app_activity,
         'autoGrantPermissions': True,
