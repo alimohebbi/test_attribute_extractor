@@ -38,7 +38,7 @@ def contains_id(line):
 def add_selector(selector, selector_list):
     if "isDisplayed()" in selector:
         widget_identifier = "isdisplayed"
-        value = ""
+        value = "true"
     elif contains_id(selector):
         widget_identifier = "resource-id"
         value = re.search(r'R.id\.(.*?)\)', selector).group(1)

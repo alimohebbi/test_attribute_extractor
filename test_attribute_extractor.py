@@ -211,10 +211,7 @@ def execute_send_keys(action, value, element, driver):
     if driver.is_keyboard_shown():
         driver.back()
     if "enter" in action:
-        time.sleep(5)
         driver.press_keycode(66)
-        time.sleep(5)
-    return driver
 
 
 def execute_action(driver, el, parsed_event, app_package, log_fname):
@@ -229,16 +226,16 @@ def execute_action(driver, el, parsed_event, app_package, log_fname):
     elif "clear" in action:
         el.clear()
         if "send_keys" in action:
-            driver = execute_send_keys(action, parsed_event["action"][1], el, driver)
+            execute_send_keys(action, parsed_event["action"][1], el, driver)
     elif "send_keys" in action:
-        driver = execute_send_keys(action, parsed_event["action"][1], el, driver)
+        execute_send_keys(action, parsed_event["action"][1], el, driver)
     elif action.startswith("swipe"):
-        driver = execute_swipe(action, el, driver)
+        execute_swipe(action, el, driver)
     elif "wait" in action:
         if action == "wait_until_element_presence" or action == "wait_until_text_presence":
-            driver = execute_check_element_presence(el, parsed_event, app_package, log_fname)
+            execute_check_element_presence(el, parsed_event, app_package, log_fname)
         elif action == "wait_until_text_invisible":
-            driver = execute_check_element_invisible(driver, parsed_event, app_package, log_fname)
+            execute_check_element_invisible(driver, parsed_event, app_package, log_fname)
     else:
         executed = False
         write_to_error_log("Unhendled event: " + str(action) + ", in line: " + str(parsed_event), log_fname)
@@ -251,8 +248,8 @@ def get_element_attributes_list(parsed_test, app_package, driver, log_fname):
     element_attributes_list = []
     completed = True
     for parsed_event in parsed_test:
-        print(parsed_event)
-        print()
+        #print(parsed_event)
+        #print()
         if "wait" in parsed_event["action"][0]:
             time.sleep(parsed_event["action"][1])
         if not actions_need_element(parsed_event["action"]):
