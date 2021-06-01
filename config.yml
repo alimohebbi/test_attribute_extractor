@@ -1,6 +1,6 @@
 # model_dir: "/home/amohebbi/models/"
-#parsed_test_dir: "/Users/usiusi/Documents/Repositories/Craftdroid/craft_custom/test_attribute_extractor/data/parsed_test"
-parsed_test_dir: "/home/faride/AppTestMigrator/appium_test/faride/test_attribute_extractor/data/parsed_test"
+parsed_test_dir: "/Users/usiusi/Documents/Repositories/Craftdroid/craft_custom/test_attribute_extractor/data/parsed_test"
+#parsed_test_dir: "/home/faride/AppTestMigrator/appium_test/faride/test_attribute_extractor/data/parsed_test"
 tests:
   atm:
     dir: "./data/atm_tests"

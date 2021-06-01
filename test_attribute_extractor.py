@@ -250,7 +250,10 @@ def get_element_attributes_list(parsed_test, app_package, driver, log_fname):
             if el is None:
                 completed = False
                 break
-            element_attributes_list.append(get_element_attributes(el, parsed_event))
+            element_attr = get_element_attributes(el, parsed_event)
+            element_attr['page'] = get_page_source(driver)
+            element_attr['activity'] = driver.current_activity
+            element_attributes_list.append(element_attr)
             executed = execute_action(driver, el, parsed_event, app_package, log_fname)
             if not executed:
                 completed = False

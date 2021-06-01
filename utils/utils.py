@@ -31,13 +31,13 @@ def load_json_data(fname):
 def get_capabilities(app_package, app_activity, no_reset):
     caps = {
         'platformName': 'Android',
-        'platformVersion': '7.0',
-        'deviceName': 'emulator-5555',
+        'platformVersion': '6.0',
+        'deviceName': 'emulator2',
         'appPackage': app_package,
         'appActivity': app_activity,
         'autoGrantPermissions': True,
         'noReset': no_reset,
-        "newCommandTimeout": 3000
+        "newCommandTimeout": 50000
     }
     return caps
 
@@ -90,3 +90,12 @@ def actions_need_element(action):
     if action[0] not in ["KEY_BACK", "wait_until_text_invisible"]:
         return True
     return False
+
+
+def get_page_source(driver):
+    driver.hide_keyboard()
+    page = driver.page_source
+    page = page.replace('\r', '')
+    page = page.replace('\n', '')
+    page = re.sub(r'>[\ ]+<', '><', page)
+    return page
