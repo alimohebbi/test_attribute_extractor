@@ -1,14 +1,9 @@
-# model_dir: "/home/amohebbi/models/"
-<<<<<<< HEAD
-parsed_test_dir: "/Users/usiusi/Documents/Repositories/Craftdroid/craft_custom/test_attribute_extractor/data/parsed_test"
-#parsed_test_dir: "/home/faride/AppTestMigrator/appium_test/faride/test_attribute_extractor/data/parsed_test"
-=======
 #parsed_test_dir: "/Users/usiusi/Documents/Repositories/Craftdroid/craft_custom/test_attribute_extractor/data/parsed_test"
-
+#parsed_test_dir: "/home/faride/AppTestMigrator/appium_test/faride/test_attribute_extractor/data/parsed_test"
 parsed_test_dir: "./data/results/parsed_tests"
 results_dir: "./data/results/final"
 logs_dir: "./data/results/logs"
->>>>>>> d1bbfe9e01e65a6445bb32599b4961612e2adb0d
+
 tests:
   atm:
     dir: "./data/atm_tests"
@@ -19,8 +14,5 @@ tests:
     file_globs:
       # - "*/b*2/base/*.json"
       - "a3/b31/base/*.json"
-<<<<<<< HEAD
-      - "a4/b41/base/*.json"
-=======
       # - "a4/b41/base/*.json"
->>>>>>> d1bbfe9e01e65a6445bb32599b4961612e2adb0d
+
