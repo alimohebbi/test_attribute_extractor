@@ -172,8 +172,8 @@ def atm_parse(fname):
     lines = read_file(fname)
     section = get_test_section(lines)
     parsed_test = parse_test_section(section)
-    subject_name = fname.split("/")[-2]+"/"+fname.split("/")[-1].split(".")[0]
-    parse_file_path = config.parsed_test_dir + '_' + subject_name + '.json'
+    subject_name = fname.split("/")[-2]+"_"+fname.split("/")[-1].split(".")[0]
+    parse_file_path = config.parsed_test_dir + '/' + subject_name + '.json'
     write_json(parsed_test, parse_file_path)
     return parsed_test
 

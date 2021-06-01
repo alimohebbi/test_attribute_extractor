@@ -70,8 +70,8 @@ def craftdroid_parse(fname):
         if actions_need_element(new_parsed_elemetn["action"]):
             new_parsed_elemetn = extract_get_element_by(new_parsed_elemetn, parsed_element, log_fname)
         new_data.append(new_parsed_elemetn)
-    subject_name = fname.split("/")[-3]+"/"+fname.split("/")[-1].split(".")[0]
-    parse_file_path = config.parsed_test_dir + '_' + subject_name + '.json'
+    subject_name = fname.split("/")[-3]+"_"+fname.split("/")[-1].split(".")[0]
+    parse_file_path = config.parsed_test_dir + '/' + subject_name + '.json'
     write_json(new_data, parse_file_path)
     return new_data
 
