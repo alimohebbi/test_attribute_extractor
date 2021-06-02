@@ -2,6 +2,7 @@ import logging
 import pathlib
 import sys
 import os
+from abc import ABC, abstractmethod
 
 sys.path.insert(0, str(pathlib.Path(__file__).parent.absolute()))
 
@@ -20,10 +21,9 @@ class TestCategory(enum.Enum):
     ATM = 2
 
 
-class TestAttributeExtractor:
-    def __init__(self, file_name: str, test_category: TestCategory = TestCategory.ATM):
+class TestAttributeExtractor(ABC):
+    def __init__(self, file_name: str):
         self.name = file_name
-        self.test_category = test_category
         self.logger = self.get_logger()
         caps, self.app_package = get_caps(self.name)
         self.driver = self.check_run_possible(self.app_package, caps)
@@ -43,19 +43,13 @@ class TestAttributeExtractor:
         logger.addHandler(ch)
         return logger
 
+    @abstractmethod
     def _get_log_file_name(self):
-        if self.test_category == TestCategory.Craftdroid:
-            subject_name = self.name.split("/")[-3] + "_" + self.name.split("/")[-1].split(".")[0]
-        elif self.test_category == TestCategory.ATM:
-            subject_name = self.name.split("/")[-2] + "_" + self.name.split("/")[-1].split(".")[0]
-        return subject_name + '_log.txt'
+        pass
 
+    @abstractmethod
     def _get_result_file_name(self):
-        if self.test_category == TestCategory.Craftdroid:
-            subject_name = self.name.split("/")[-3] + "_" + self.name.split("/")[-1].split(".")[0]
-        elif self.test_category == TestCategory.ATM:
-            subject_name = self.name.split("/")[-2] + "_" + self.name.split("/")[-1].split(".")[0]
-        return subject_name + '_attributes.json'
+        pass
 
     def get_condition(self, parsed_event, index):
         conditional = parsed_event["action"][index]
@@ -256,6 +250,8 @@ class TestAttributeExtractor:
             element_attributes[attr] = element.get_attribute(attr)
         element_attributes["action"] = parsed_event["action"]
         element_attributes["event_type"] = self.set_event_type(parsed_event["action"][0])
+        element_attributes['page'] = get_page_source(self.driver)
+        element_attributes['activity'] = self.driver.current_activity
         return element_attributes
 
     def get_element_attributes_list(self, parsed_test):
@@ -268,6 +264,7 @@ class TestAttributeExtractor:
             if not actions_need_element(parsed_event["action"]):
                 executed = self.execute_action(None, parsed_event)
             else:
+                self.driver.hide_keyboard()
                 el = self.get_element(parsed_event)
                 if el is None:
                     completed = False
@@ -289,20 +286,24 @@ class TestAttributeExtractor:
 
     def run(self):
         start_time = time.time()
-        if self.test_category == TestCategory.ATM:
-            parsed_test = atm_parse(self.name)
-        elif self.test_category == TestCategory.Craftdroid:
-            parsed_test = craftdroid_parse(self.name)
-
+        parsed_test = self.get_parsed_test()
         element_attributes_list, completed = self.get_element_attributes_list(parsed_test)
+        print(str(time.time() - start_time) + " seconds\n")
         if completed:
-            write_json(element_attributes_list, os.path.join(config.results_dir, self._get_result_file_name()))
-            print(str(time.time() - start_time) + " seconds\n")
+            return element_attributes_list
         else:
             self.logger.error("STOPPING THE EXECUTION OF THE TEST!")
             self.logger.error(
                 "UNABLE TO RUN THE WHOLE TEST FOR THE FILE :" + str(self.name) + ".PLEASE CHECK THE ERROR LOG!")
-            print(str(time.time() - start_time) + " seconds\n")
+            return None
+
+    def write_results(self):
+        element_attributes_list = self.run()
+        write_json(element_attributes_list, os.path.join(config.results_dir, self._get_result_file_name()))
+
+    @abstractmethod
+    def get_parsed_test(self):
+        pass
 
     def check_run_possible(self, app_package, caps):
         if app_package is None:
@@ -316,25 +317,35 @@ class TestAttributeExtractor:
             self.logger.exception(e)
             raise
 
-        # def run_craftdroid(file):
+
+class CraftdroidExtractor(TestAttributeExtractor):
+
+    def _get_log_file_name(self):
+        subject_name = self.name.split("/")[-3] + "_" + self.name.split("/")[-1].split(".")[0]
+        return subject_name + '_log.txt'
+
+    def _get_result_file_name(self):
+        subject_name = self.name.split("/")[-3] + "_" + self.name.split("/")[-1].split(".")[0]
+        return subject_name + '_attributes.json'
+
+    def get_parsed_test(self):
+        parsed_test = craftdroid_parse(self.name)
+        return parsed_test
 
 
-#     caps, app_package = get_caps(file)
-#     run_possible, driver = check_run_possible(app_package, caps)
-#     if run_possible:
-#         start_time = time.time()
-#         log_fname = file.replace(file.split("/")[-1], "result/" + file.split("/")[-1].split(".")[0] + "_run_log.txt")
-#         parsed_test = craftdroid_parse(file)
-#         element_attributes_list, completed = get_element_attributes_list(parsed_test, app_package, driver, log_fname)
-#         if completed:
-#             write_json(element_attributes_list, file.replace(file.split("/")[-1],
-#                                                              "result/" + file.split("/")[-1].split(".")[
-#                                                                  0] + "_result.json"))
-#             print(str(time.time() - start_time) + " seconds\n")
-#         else:
-#             write_to_error_log("STOPPING THE EXECUTION OF THE TEST!", log_fname)
-#             print("UNABLE TO RUN THE WHOLE TEST FOR THE FILE :" + str(file) + ".PLEASE CHECK THE ERROR LOG!")
-#             print(str(time.time() - start_time) + " seconds\n")
+class ATMExtractor(TestAttributeExtractor):
+
+    def _get_log_file_name(self):
+        subject_name = self.name.split("/")[-2] + "_" + self.name.split("/")[-1].split(".")[0]
+        return subject_name + '_log.txt'
+
+    def _get_result_file_name(self):
+        subject_name = self.name.split("/")[-2] + "_" + self.name.split("/")[-1].split(".")[0]
+        return subject_name + '_attributes.json'
+
+    def get_parsed_test(self):
+        parsed_test = atm_parse(self.name)
+        return parsed_test
 
 
 def main():
@@ -343,12 +354,12 @@ def main():
 
     for file in atm_globs:
         try:
-            TestAttributeExtractor(file, TestCategory.ATM).run()
+            ATMExtractor(file).write_results()
         except Exception as e:
             print(f"Running {file} failed with error {e}")
     for file in craftdroid_globs:
         try:
-            TestAttributeExtractor(file, TestCategory.Craftdroid).run()
+            CraftdroidExtractor(file).write_results()
         except Exception as e:
             print(f"Running {file} failed with error {e}")
 
