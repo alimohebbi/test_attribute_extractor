@@ -31,8 +31,8 @@ def load_json_data(fname):
 def get_capabilities(app_package, app_activity, no_reset):
     caps = {
         'platformName': 'Android',
-        'platformVersion': '6.0',
-        'deviceName': 'emulator2',
+        'platformVersion': '7.0',
+        'deviceName': 'emulator-5555',
         'appPackage': app_package,
         'appActivity': app_activity,
         'autoGrantPermissions': True,
@@ -48,6 +48,11 @@ def get_app_name(fname):
         return fname.split("/")[-2].split("-")[1]
     elif category == "donor":
         return fname.split("/")[-2]
+    elif category == "ground_truth":
+        if "-" in fname:
+            return fname.split("/")[-1].split("-")[1].split(".")[0]
+        else:
+            return fname.split("/")[-1].split(".")[0]
     else:
         category = fname.split("/")[-5]
         if category == "craftdroid_tests" or category == "test_repo":

@@ -1,6 +1,7 @@
 import re
 import glob
-from utils import *
+import os
+from utils.utils import *
 from utils.configuration import Configuration
 
 config = Configuration()
@@ -61,10 +62,6 @@ def extract_get_element_by(parsed_event, line):
     selector_section = get_selector_section(line)
     for selector in selector_section.split(","):
         selector_list = add_selector(selector, selector_list)
-    if len(selector_list) == 0:
-        error_message = 40 * "#" + " ERROR! " + 40 * "#" + "\nFor the element : " + str(
-            parsed_element) + ", there are no selectors by which we can find the element.\n\n\n"
-        write_to_error_log(error_message, log_fname)
     parsed_event["get_element_by"] = selector_list
     return parsed_event
 
@@ -167,16 +164,20 @@ def get_test_section(lines):
                 expression = ''
     return test
 
+def get_parsed_file_name(fname):
+    subject_name = fname.split("/")[-1].split(".")[0] + '_parsed.json'
+    return os.path.join(config.parsed_test_dir,"/".join(fname.split("/")[-4:-1]),subject_name)
 
 def atm_parse(fname):
-    lines = read_file(fname)
-    section = get_test_section(lines)
-    parsed_test = parse_test_section(section)
-    subject_name = fname.split("/")[-2]+"_"+fname.split("/")[-1].split(".")[0]
-    parse_file_path = config.parsed_test_dir + '/' + subject_name + '.json'
-    write_json(parsed_test, parse_file_path)
+    parsed_file_name = get_parsed_file_name(fname)
+    if os.path.exists(parsed_file_name):
+        parsed_test = load_json_data(parsed_file_name)
+    else:
+        lines = read_file(fname)
+        section = get_test_section(lines)
+        parsed_test = parse_test_section(section)
+        write_json(parsed_test, parsed_file_name)
     return parsed_test
-
 
 def main():
     atm_globs = config.custom_tests_glob('atm')

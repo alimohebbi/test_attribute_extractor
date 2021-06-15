@@ -43,6 +43,18 @@ class TestAttributeExtractor(ABC):
         logger.addHandler(ch)
         return logger
 
+    def check_run_possible(self, app_package, caps):
+        if app_package is None:
+            self.logger.error(f"UNABLE TO RUN THE TEST FOR THE FILE: {self.name}.")
+            raise ValueError("app package is None")
+        try:
+            driver = webdriver.Remote('http://localhost:4723/wd/hub', caps)
+            return driver
+        except Exception as e:
+            self.logger.error(f"UNABLE TO GRAB THE DRIVER WITH CAPABILITIES: {str(caps)}.")
+            self.logger.exception(e)
+            raise
+
     @abstractmethod
     def _get_log_file_name(self):
         pass
@@ -57,6 +69,14 @@ class TestAttributeExtractor(ABC):
             conditional = "resource-id"
         value = parsed_event["action"][index + 1]
         return conditional, value
+    
+    def execute_check_element_invisible(self, parsed_event):
+        condition = [parsed_event["action"][2], parsed_event["action"][3]]
+        elements = self.get_elements((condition[0], condition[1]))
+        if len(elements) != 0:
+            error_message = 40 * "#" + " ERROR! " + 40 * "#" + "\nFor check_element_invisible, an element with selector: " + str(
+                condition) + ", was found!\n\n\n"
+            self.logger.error(error_message)
 
     def execute_check_element_presence(self, element, parsed_event):
         matched = True
@@ -117,11 +137,14 @@ class TestAttributeExtractor(ABC):
                                                                                        end_y).release().perform()
 
     def execute_send_keys(self, action, value, element):
-        element.set_value(value)
+        if "enter" in action:
+            element.click()
+            element.set_value(value)
+            self.driver.press_keycode(66)
+        else:
+            element.set_value(value)
         if self.driver.is_keyboard_shown():
             self.driver.back()
-        if "enter" in action:
-            self.driver.press_keycode(66)
 
     def execute_action(self, el, parsed_event):
         executed = True
@@ -151,20 +174,6 @@ class TestAttributeExtractor(ABC):
         time.sleep(5)
         return executed
 
-    def get_elements_by_xpath(self, xpath):
-        elements = self.driver.find_elements_by_xpath("/hierarchy" + str(xpath))
-        if len(elements) == 0:
-            elements = self.driver.find_elements_by_xpath(str(xpath))
-        return elements
-
-    def get_elements_by_id(self, resource_id):
-        elements = self.driver.find_elements_by_id(self.app_package + ":id/" + str(resource_id))
-        if len(elements) == 0:
-            elements = self.driver.find_elements_by_id("android:id/" + str(resource_id))
-            if len(elements) == 0:
-                elements = self.driver.find_elements_by_id(str(resource_id))
-        return elements
-
     def is_a_match(self, element, selectors):
         for i in range(1, len(selectors)):
             selector = selectors[i]
@@ -176,7 +185,6 @@ class TestAttributeExtractor(ABC):
             elif identifier == "text":
                 if value.lower() not in element.get_attribute(identifier).lower():
                     return False
-
             elif element.get_attribute(identifier).lower() != value.lower():
                 return False
         return True
@@ -205,14 +213,19 @@ class TestAttributeExtractor(ABC):
             self.logger.error(error_message)
         return None
 
-    def get_element(self, parsed_event):
-        identifier = parsed_event["get_element_by"][0]["type"]
-        value = parsed_event["get_element_by"][0]["value"]
-        elements = self.get_elements((identifier, value))
-        if elements is None:
-            return None
-        element = self.get_matching_element(parsed_event, elements)
-        return element
+    def get_elements_by_xpath(self, xpath):
+        elements = self.driver.find_elements_by_xpath("/hierarchy" + str(xpath))
+        if len(elements) == 0:
+            elements = self.driver.find_elements_by_xpath(str(xpath))
+        return elements
+
+    def get_elements_by_id(self, resource_id):
+        elements = self.driver.find_elements_by_id(self.app_package + ":id/" + str(resource_id))
+        if len(elements) == 0:
+            elements = self.driver.find_elements_by_id("android:id/" + str(resource_id))
+            if len(elements) == 0:
+                elements = self.driver.find_elements_by_id(str(resource_id))
+        return elements
 
     def get_elements(self, selector):
         identifier = selector[0]
@@ -235,6 +248,15 @@ class TestAttributeExtractor(ABC):
             self.logger.error(error_message)
             return None
         return elements
+
+    def get_element(self, parsed_event):
+        identifier = parsed_event["get_element_by"][0]["type"]
+        value = parsed_event["get_element_by"][0]["value"]
+        elements = self.get_elements((identifier, value))
+        if elements is None:
+            return None
+        element = self.get_matching_element(parsed_event, elements)
+        return element
 
     def set_event_type(self, action):
         if action == "KEY_BACK":
@@ -259,12 +281,14 @@ class TestAttributeExtractor(ABC):
         element_attributes_list = []
         completed = True
         for parsed_event in parsed_test:
+            while self.driver.is_keyboard_shown():
+               self.driver.back()
+               time.sleep(5)
             if "wait" in parsed_event["action"][0]:
                 time.sleep(parsed_event["action"][1])
             if not actions_need_element(parsed_event["action"]):
                 executed = self.execute_action(None, parsed_event)
             else:
-                self.driver.hide_keyboard()
                 el = self.get_element(parsed_event)
                 if el is None:
                     completed = False
@@ -276,13 +300,9 @@ class TestAttributeExtractor(ABC):
                 break
         return element_attributes_list, completed
 
-    def execute_check_element_invisible(self, parsed_event):
-        condition = [parsed_event["action"][2], parsed_event["action"][3]]
-        elements = self.get_elements((condition[0], condition[1]))
-        if len(elements) != 0:
-            error_message = 40 * "#" + " ERROR! " + 40 * "#" + "\nFor check_element_invisible, an element with selector: " + str(
-                condition) + ", was found!\n\n\n"
-            self.logger.error(error_message)
+    @abstractmethod
+    def get_parsed_test(self):
+        pass
 
     def run(self):
         start_time = time.time()
@@ -301,32 +321,19 @@ class TestAttributeExtractor(ABC):
         element_attributes_list = self.run()
         write_json(element_attributes_list, os.path.join(config.results_dir, self._get_result_file_name()))
 
-    @abstractmethod
-    def get_parsed_test(self):
-        pass
-
-    def check_run_possible(self, app_package, caps):
-        if app_package is None:
-            self.logger.error(f"UNABLE TO RUN THE TEST FOR THE FILE: {self.name}.")
-            raise ValueError("app package is None")
-        try:
-            driver = webdriver.Remote('http://localhost:4723/wd/hub', caps)
-            return driver
-        except Exception as e:
-            self.logger.error(f"UNABLE TO GRAB THE DRIVER WITH CAPABILITIES: {str(caps)}.")
-            self.logger.exception(e)
-            raise
 
 
 class CraftdroidExtractor(TestAttributeExtractor):
 
     def _get_log_file_name(self):
+        relative_address = self.name.split("/")[-5]+"/"
         subject_name = self.name.split("/")[-3] + "_" + self.name.split("/")[-1].split(".")[0]
-        return subject_name + '_log.txt'
+        return relative_address + subject_name + '_log.txt'
 
     def _get_result_file_name(self):
+        relative_address = self.name.split("/")[-5]+"/"
         subject_name = self.name.split("/")[-3] + "_" + self.name.split("/")[-1].split(".")[0]
-        return subject_name + '_attributes.json'
+        return relative_address + subject_name + '_attributes.json'
 
     def get_parsed_test(self):
         parsed_test = craftdroid_parse(self.name)
@@ -336,12 +343,14 @@ class CraftdroidExtractor(TestAttributeExtractor):
 class ATMExtractor(TestAttributeExtractor):
 
     def _get_log_file_name(self):
-        subject_name = self.name.split("/")[-2] + "_" + self.name.split("/")[-1].split(".")[0]
-        return subject_name + '_log.txt'
+        relative_address = self.name.split("/")[-4]+"/"+self.name.split("/")[-3]+"/"
+        subject_name = self.name.split("/")[-2]+"/"+self.name.split("/")[-1].split(".")[0]
+        return relative_address + subject_name + '_log.txt'
 
     def _get_result_file_name(self):
-        subject_name = self.name.split("/")[-2] + "_" + self.name.split("/")[-1].split(".")[0]
-        return subject_name + '_attributes.json'
+        relative_address = self.name.split("/")[-4]+"/"+self.name.split("/")[-3]+"/"
+        subject_name = self.name.split("/")[-2]+"/"+self.name.split("/")[-1].split(".")[0]
+        return relative_address + subject_name + '_attributes.json'
 
     def get_parsed_test(self):
         parsed_test = atm_parse(self.name)
@@ -353,11 +362,13 @@ def main():
     craftdroid_globs = config.custom_tests_glob('craftdroid')
 
     for file in atm_globs:
+        print(file)
         try:
             ATMExtractor(file).write_results()
         except Exception as e:
             print(f"Running {file} failed with error {e}")
     for file in craftdroid_globs:
+        print(file)
         try:
             CraftdroidExtractor(file).write_results()
         except Exception as e:
