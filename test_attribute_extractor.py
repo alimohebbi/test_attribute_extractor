@@ -133,8 +133,7 @@ class TestAttributeExtractor(ABC):
             start_y = int(size["height"] * 0.3)
             end_x = start_x
             end_y = int(size["height"] * 0.7)
-        TouchAction(self.driver).press(element, start_x, start_y).wait(ms=300).move_to(element, end_x,
-                                                                                       end_y).release().perform()
+        TouchAction(self.driver).press(element, start_x, start_y).wait(ms=300).move_to(element, end_x, end_y).release().perform()
 
     def execute_send_keys(self, action, value, element):
         if "enter" in action:

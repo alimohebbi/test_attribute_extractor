@@ -20,7 +20,6 @@ def extract_selector_list(selector_list, parsed_element):
         selector_list.append({"type": "className", "value": parsed_element["class"]})
     return selector_list
 
-
 def extract_get_element_by(new_parsed_elemetn, parsed_element):
     selector_list = extract_selector_list([], parsed_element)
     new_parsed_elemetn["get_element_by"] = selector_list
