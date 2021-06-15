@@ -1,4 +1,5 @@
 import glob
+import os
 from utils.utils import *
 from utils.configuration import Configuration
 
@@ -22,10 +23,10 @@ def extract_selector_list(selector_list, parsed_element, log_fname):
 
 def extract_get_element_by(new_parsed_elemetn, parsed_element, log_fname):
     selector_list = extract_selector_list([], parsed_element, log_fname)
-    if len(selector_list) == 0:
-        error_message = 40 * "#" + " ERROR! " + 40 * "#" + "\nFor the element : " + str(
-            parsed_element) + ", there are no selectors by which we can find the element.\n\n\n"
-        write_to_error_log(error_message, log_fname)
+    #if len(selector_list) == 0:
+    #    error_message = 40 * "#" + " ERROR! " + 40 * "#" + "\nFor the element : " + str(
+    #        parsed_element) + ", there are no selectors by which we can find the element.\n\n\n"
+    #    write_to_error_log(error_message, log_fname)
     new_parsed_elemetn["get_element_by"] = selector_list
     return new_parsed_elemetn
 
@@ -60,19 +61,25 @@ def extract_action(parsed_element, log_fname):
             new_parsed_element["action"].append(val)
     return new_parsed_element
 
+def get_parsed_file_name(fname):
+    relative_address = "/"+fname.split("/")[-5]+"/"
+    subject_name = fname.split("/")[-3] + "_" + fname.split("/")[-1].split(".")[0]
+    return config.parsed_test_dir+relative_address + subject_name + '_parsed.json'
 
 def craftdroid_parse(fname):
     log_fname = fname.replace(fname.split("/")[-1], "result/" + fname.split("/")[-1].split(".")[0] + "_parse_log.txt")
-    data = load_json_data(fname)
-    new_data = []
-    for parsed_element in data:
-        new_parsed_elemetn = extract_action(parsed_element, log_fname)
-        if actions_need_element(new_parsed_elemetn["action"]):
-            new_parsed_elemetn = extract_get_element_by(new_parsed_elemetn, parsed_element, log_fname)
-        new_data.append(new_parsed_elemetn)
-    subject_name = fname.split("/")[-3]+"_"+fname.split("/")[-1].split(".")[0]
-    parse_file_path = config.parsed_test_dir + '/' + subject_name + '.json'
-    write_json(new_data, parse_file_path)
+    parsed_file_name = get_parsed_file_name(fname)
+    if os.path.exists(parsed_file_name):
+        new_data = load_json_data(fname)
+    else:
+        data = load_json_data(fname)
+        new_data = []
+        for parsed_element in data:
+            new_parsed_elemetn = extract_action(parsed_element, log_fname)
+            if actions_need_element(new_parsed_elemetn["action"]):
+                new_parsed_elemetn = extract_get_element_by(new_parsed_elemetn, parsed_element, log_fname)
+            new_data.append(new_parsed_elemetn)
+        write_json(new_data, parsed_file_name)
     return new_data
 
 

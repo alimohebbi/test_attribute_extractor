@@ -176,7 +176,6 @@ class TestAttributeExtractor(ABC):
             elif identifier == "text":
                 if value.lower() not in element.get_attribute(identifier).lower():
                     return False
-
             elif element.get_attribute(identifier).lower() != value.lower():
                 return False
         return True
@@ -259,12 +258,14 @@ class TestAttributeExtractor(ABC):
         element_attributes_list = []
         completed = True
         for parsed_event in parsed_test:
+            if self.driver.is_keyboard_shown():
+                self.driver.back()
+                time.sleep(5)
             if "wait" in parsed_event["action"][0]:
                 time.sleep(parsed_event["action"][1])
             if not actions_need_element(parsed_event["action"]):
                 executed = self.execute_action(None, parsed_event)
             else:
-                self.driver.hide_keyboard()
                 el = self.get_element(parsed_event)
                 if el is None:
                     completed = False
@@ -321,12 +322,14 @@ class TestAttributeExtractor(ABC):
 class CraftdroidExtractor(TestAttributeExtractor):
 
     def _get_log_file_name(self):
+        relative_address = self.name.split("/")[-5]+"/"
         subject_name = self.name.split("/")[-3] + "_" + self.name.split("/")[-1].split(".")[0]
-        return subject_name + '_log.txt'
+        return relative_address + subject_name + '_log.txt'
 
     def _get_result_file_name(self):
+        relative_address = self.name.split("/")[-5]+"/"
         subject_name = self.name.split("/")[-3] + "_" + self.name.split("/")[-1].split(".")[0]
-        return subject_name + '_attributes.json'
+        return relative_address + subject_name + '_attributes.json'
 
     def get_parsed_test(self):
         parsed_test = craftdroid_parse(self.name)
@@ -336,12 +339,14 @@ class CraftdroidExtractor(TestAttributeExtractor):
 class ATMExtractor(TestAttributeExtractor):
 
     def _get_log_file_name(self):
-        subject_name = self.name.split("/")[-2] + "_" + self.name.split("/")[-1].split(".")[0]
-        return subject_name + '_log.txt'
+        relative_address = self.name.split("/")[-4]+"/"+self.name.split("/")[-3]+"/"
+        subject_name = self.name.split("/")[-2]+"/"+self.name.split("/")[-1].split(".")[0]
+        return relative_address + subject_name + '_log.txt'
 
     def _get_result_file_name(self):
-        subject_name = self.name.split("/")[-2] + "_" + self.name.split("/")[-1].split(".")[0]
-        return subject_name + '_attributes.json'
+        relative_address = self.name.split("/")[-4]+"/"+self.name.split("/")[-3]+"/"
+        subject_name = self.name.split("/")[-2]+"/"+self.name.split("/")[-1].split(".")[0]
+        return relative_address + subject_name + '_attributes.json'
 
     def get_parsed_test(self):
         parsed_test = atm_parse(self.name)
@@ -353,11 +358,13 @@ def main():
     craftdroid_globs = config.custom_tests_glob('craftdroid')
 
     for file in atm_globs:
+        print(file)
         try:
             ATMExtractor(file).write_results()
         except Exception as e:
             print(f"Running {file} failed with error {e}")
     for file in craftdroid_globs:
+        print(file)
         try:
             CraftdroidExtractor(file).write_results()
         except Exception as e:
