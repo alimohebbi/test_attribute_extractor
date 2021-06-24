@@ -1,0 +1,19 @@
+[data]
+    [data.src_gt]
+    address = "./input/src_groundTruth.csv"
+
+    [data.gt_gen]
+    address = "./input/groundTruth_generated.csv"
+
+    [data.result]
+    address = "./output/result.csv"
+
+[sizes]
+    [sizes.src]
+    size = 4
+
+    [sizes.gt]
+    size = 5
+
+    [sizes.gen]
+    size = 6
