@@ -57,9 +57,7 @@ def extract_action(parsed_element):
     return new_parsed_element
 
 def get_parsed_file_name(fname):
-    relative_address = "/"+fname.split("/")[-5]+"/"
-    subject_name = fname.split("/")[-3] + "_" + fname.split("/")[-1].split(".")[0]
-    return config.parsed_test_dir+relative_address + subject_name + '_parsed.json'
+    return fname.split("/")[-1].split(".")[0] + '_parsed.json'
 
 def craftdroid_parse(fname):
     parsed_file_name = get_parsed_file_name(fname)

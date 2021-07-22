@@ -34,6 +34,7 @@ class TestAttributeExtractor(ABC):
 
     def get_logger(self):
         name = self._get_log_file_name()
+        print(name)
         logger = logging.getLogger(name)
         logger.setLevel(logging.DEBUG)
         fh = logging.FileHandler(os.path.join(config.logs_dir, name), mode='w')
@@ -325,14 +326,10 @@ class TestAttributeExtractor(ABC):
 class CraftdroidExtractor(TestAttributeExtractor):
 
     def _get_log_file_name(self):
-        relative_address = self.name.split("/")[-5]+"/"
-        subject_name = self.name.split("/")[-3] + "_" + self.name.split("/")[-1].split(".")[0]
-        return relative_address + subject_name + '_log.txt'
+        return self.name.split("/")[-1].split(".")[0] + '_log.txt'
 
     def _get_result_file_name(self):
-        relative_address = self.name.split("/")[-5]+"/"
-        subject_name = self.name.split("/")[-3] + "_" + self.name.split("/")[-1].split(".")[0]
-        return relative_address + subject_name + '_attributes.json'
+        return self.name.split("/")[-1].split(".")[0] + '_attributes.json'
 
     def get_parsed_test(self):
         parsed_test = craftdroid_parse(self.name)
@@ -358,7 +355,8 @@ class ATMExtractor(TestAttributeExtractor):
 
 def main():
     atm_globs = config.custom_tests_glob('atm')
-    craftdroid_globs = config.custom_tests_glob('craftdroid')
+    craftdroid_globs = []
+    config.custom_tests_glob('craftdroid')
 
     for file in atm_globs:
         print(file)
