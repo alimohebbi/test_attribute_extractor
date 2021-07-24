@@ -43,24 +43,24 @@ class Mapping:
 
     # src_size - (src_gt pairs)
     def true_negative(self) -> int:
-        count = self.src_size
+        mapped_src = 0
         for val in self.src_gt.values():
-            count -= len(val)
-        return count
+            mapped_src += len(val)
+        return self.src_size - mapped_src
 
     # gen_size - (gen_gt pairs)
     def false_positive(self) -> int:
-        gen_size = self.gen_size
-        gen_gt_pairs = self._num_gt_gen_distinct_pairs()
-        return gen_size - gen_gt_pairs
+        mapped_generated = 0
+        for val in self.gt_gen.values():
+            mapped_generated += len(val)
+        return self.gen_size - mapped_generated
 
     # (src_gt pairs) - transitives
     def false_negative(self) -> int:
-        count = 0
+        mapped_src = 0
         for val in self.src_gt.values():
-            count += len(val)
-
-        return count - self._num_transitives()
+            mapped_src += len(val)
+        return mapped_src - self._num_transitives()
 
     def levenshtein_distance(self) -> int:
         char_mapping = {0: 'a', 1: 'b', 2: 'c', 3: 'd', 4: 'e', 5: 'f', 6: 'g', 7: 'h', 8: 'i', 9: 'j', 10: 'k', 11: 'l', 12: 'm', 13: 'n', 14: 'o', 15: 'p', 16: 'q', 17: 'r', 18: 's', 19: 't', 20: 'u', 21: 'v', 22: 'w', 23: 'x', 24: 'y', 25: 'z', 26: 'A', 27: 'B', 28: 'C', 29: 'D', 30: 'E', 31: 'F', 32: 'G', 33: 'H', 34: 'I', 35: 'J', 36: 'K', 37: 'L', 38: 'M', 39: 'N', 40: 'O', 41: 'P', 42: 'Q', 43: 'R', 44: 'S', 45: 'T', 46: 'U', 47: 'V', 48: 'W', 49: 'X', 50: 'Y', 51: 'Z'}
@@ -82,18 +82,6 @@ class Mapping:
             for gt in val:
                 if gt in self.gt_gen:
                     count += len(self.gt_gen[gt])
-        return count
-
-    def _num_gt_gen_distinct_pairs(self) -> int:
-        count = 0
-        removed = set()
-        for val in self.gt_gen.values():
-            for gen in val:
-                if gen in removed:
-                    continue
-                count += 1
-                removed.add(gen)
-                break
         return count
 
     def extract_one_to_one_gt_gen(self):
