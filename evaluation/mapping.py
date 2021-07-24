@@ -36,7 +36,6 @@ class Mapping:
         if gt not in self.gt_gen:
             self.gt_gen[gt] = []
         self.gt_gen[gt].append(gen)
-        # self._extract_one_to_one_gt_gen()
 
     # transitives
     def true_positive(self) -> int:
