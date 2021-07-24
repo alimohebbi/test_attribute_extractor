@@ -36,6 +36,7 @@ class Mapping:
         if gt not in self.gt_gen:
             self.gt_gen[gt] = []
         self.gt_gen[gt].append(gen)
+        # self._extract_one_to_one_gt_gen()
 
     # transitives
     def true_positive(self) -> int:
@@ -50,10 +51,9 @@ class Mapping:
 
     # gen_size - (gen_gt pairs)
     def false_positive(self) -> int:
-        count = self.gen_size
-        for val in self.gt_gen.values():
-            count -= len(val)
-        return count
+        gen_size = self.gen_size
+        gen_gt_pairs = self._num_gt_gen_distinct_pairs()
+        return gen_size - gen_gt_pairs
 
     # (src_gt pairs) - transitives
     def false_negative(self) -> int:
@@ -76,6 +76,7 @@ class Mapping:
 
         return distance(gt_str, ''.join(gen_str))
 
+
     def _num_transitives(self) -> int:
         count = 0
         for val in self.src_gt.values():
@@ -83,6 +84,28 @@ class Mapping:
                 if gt in self.gt_gen:
                     count += len(self.gt_gen[gt])
         return count
+
+    def _num_gt_gen_distinct_pairs(self) -> int:
+        count = 0
+        removed = set()
+        for val in self.gt_gen.values():
+            for gen in val:
+                if gen in removed:
+                    continue
+                count += 1
+                removed.add(gen)
+                break
+        return count
+
+    def extract_one_to_one_gt_gen(self):
+        removed = set()
+        for key, val in self.gt_gen.items():
+            val = [x for x in val if x not in removed]
+            if len(val) != 0:
+                removed.add(val[0])
+                self.gt_gen[key] = [val[0]]
+            else:
+                self.gt_gen[key] = []
 
     @staticmethod
     def id(src_app: str, tgt_app: str) -> str:

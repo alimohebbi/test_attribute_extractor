@@ -1,9 +1,9 @@
 [data]
     [data.src_gt]
-    address = "./input/src_groundTruth.csv"
+    address = "./input/src_gt_test.csv"
 
     [data.gt_gen]
-    address = "./input/groundTruth_generated.csv"
+    address = "./input/gt_gen_test.csv"
 
     [data.result]
     address = "./output/result.csv"

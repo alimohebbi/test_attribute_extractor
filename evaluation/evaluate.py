@@ -40,6 +40,9 @@ def main():
             )
         mappings[mapping_id].add_gt_gen(gt_gen['src_index'][i], gt_gen['target_index'][i])
 
+    for m in mappings.values():
+        m.extract_one_to_one_gt_gen()
+
     result = pd.DataFrame(columns=(
         "src_app",
         "target_app",
