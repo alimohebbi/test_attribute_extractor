@@ -34,7 +34,6 @@ class TestAttributeExtractor(ABC):
 
     def get_logger(self):
         name = self._get_log_file_name()
-        print(name)
         logger = logging.getLogger(name)
         logger.setLevel(logging.DEBUG)
         fh = logging.FileHandler(os.path.join(config.logs_dir, name), mode='w')
@@ -179,6 +178,12 @@ class TestAttributeExtractor(ABC):
             selector = selectors[i]
             identifier = selector["type"]
             value = selector["value"]
+            print()
+            print("identifier")
+            print(identifier)
+            print("value")
+            print(value)
+            print()
             if identifier == "isdisplayed":
                 if element.get_attribute("displayed") != 'true':
                     return False
@@ -194,10 +199,6 @@ class TestAttributeExtractor(ABC):
         if len(selectors) == 1:
             if len(elements) >= 1:
                 return elements[0]
-            if len(elements) > 1:
-                error_message = 40 * "#" + " ERROR! " + 40 * "#" + "\nMore than one element was found given the widget selector in line: " + str(
-                    parsed_event) + "\n\n\n"
-                self.logger.error(error_message)
             else:
                 error_message = 40 * "#" + " ERROR! " + 40 * "#" + "\nNo element with selector: " + str(
                     selectors[0]) + ", was found on this page source." + "\n\n\n"
@@ -326,10 +327,10 @@ class TestAttributeExtractor(ABC):
 class CraftdroidExtractor(TestAttributeExtractor):
 
     def _get_log_file_name(self):
-        return self.name.split("/")[-1].split(".")[0] + '_log.txt'
+        return "craftdroid_tests/"+self.name.split("/")[-3]+"_"+self.name.split("/")[-1].split(".")[0] + '_log.txt'
 
     def _get_result_file_name(self):
-        return self.name.split("/")[-1].split(".")[0] + '_attributes.json'
+        return "craftdroid_tests/"+self.name.split("/")[-3]+"_"+self.name.split("/")[-1].split(".")[0] + '_attributes.json'
 
     def get_parsed_test(self):
         parsed_test = craftdroid_parse(self.name)
@@ -355,8 +356,7 @@ class ATMExtractor(TestAttributeExtractor):
 
 def main():
     atm_globs = config.custom_tests_glob('atm')
-    craftdroid_globs = []
-    config.custom_tests_glob('craftdroid')
+    craftdroid_globs = config.custom_tests_glob('craftdroid')
 
     for file in atm_globs:
         print(file)
@@ -364,6 +364,7 @@ def main():
             ATMExtractor(file).write_results()
         except Exception as e:
             print(f"Running {file} failed with error {e}")
+
     for file in craftdroid_globs:
         print(file)
         try:
