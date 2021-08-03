@@ -178,12 +178,6 @@ class TestAttributeExtractor(ABC):
             selector = selectors[i]
             identifier = selector["type"]
             value = selector["value"]
-            print()
-            print("identifier")
-            print(identifier)
-            print("value")
-            print(value)
-            print()
             if identifier == "isdisplayed":
                 if element.get_attribute("displayed") != 'true':
                     return False

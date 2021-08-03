@@ -7,13 +7,13 @@ logs_dir: "./data/output/logs"
 tests:
   atm:
     dir: "./data/atm_tests"
-    file_globs: []
-      # - "*/*/*.java"
-      # - "ground_truth/*/*.json"
+    file_globs: 
+      - "*/*/*.java"
+      - "ground_truth/*/*.json"
   craftdroid:
     dir: "./data/craftdroid_tests"
     file_globs: 
       - "*/b*2/base/*.json"
-      # - "a3/b31/base/*.json"
-      # - "a4/b41/base/*.json"
+      - "a3/b31/base/*.json"
+      - "a4/b41/base/*.json"
 

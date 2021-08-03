@@ -15,9 +15,9 @@ def extract_selector_list(selector_list, parsed_element):
     if "text" in keys and parsed_element["text"] != "":
         selector_list.append({"type": "text", "value": parsed_element["text"]})
     if "content-desc" in keys and parsed_element["content-desc"] != "":
-        selector_list.append({"type": "contentDescription", "value": parsed_element["content-desc"]})
+        selector_list.append({"type": "contentdescription", "value": parsed_element["content-desc"]})
     if "class" in keys and parsed_element["class"] != "":
-        selector_list.append({"type": "className", "value": parsed_element["class"]})
+        selector_list.append({"type": "classname", "value": parsed_element["class"]})
     return selector_list
 
 def extract_get_element_by(new_parsed_elemetn, parsed_element):
