@@ -7,17 +7,35 @@ import pandas as pd
 with open('config.toml', 'r') as file:
         config = toml.load(file)
 
-GROUND_TRUTH_GLOBE = '../data/output/final/atm_tests/ground_truth/*/*.json'
-GENERATED_GLOBE = '../data/output/final/atm_tests/migrated_tests/*/*.json'
-
-
 def find_ground_truth(filename):
-    files = glob.glob(GROUND_TRUTH_GLOBE)
+    filename = filename.split('/')[-2] + "_attributes.json"
+    files = glob.glob(config['data']['GROUND_TRUTH_GLOBE']['address'])
     for file in files:
         if filename in file:
             return file
     return None
 
+def load_json_files(file, gt_file_address):
+    generated: List[Dict[str, object]] = None
+    with open(file, 'r') as f:
+            generated = json.load(f)
+
+    ground_truth: List[Dict[str, object]] = None
+    with open(gt_file_address, 'r') as f:
+            ground_truth = json.load(f)
+
+    return generated, ground_truth
+
+def drop_page_bounds(obj):
+    try:
+        obj.pop('page')
+    except KeyError:
+        pass
+    try:
+        obj.pop('bounds')
+    except KeyError:
+        pass
+    return obj
 
 def ordered(obj):
     if isinstance(obj, dict):
@@ -27,55 +45,39 @@ def ordered(obj):
     else:
         return obj
 
+def get_src_and_tgt(file):
+    src_app =  file.split('/')[-2].split('-')[0]
+    tgt_app =  file.split('/')[-2].split('-')[1]
+    return src_app, tgt_app
+
+def add_corresponding_objects_to_map(result, file, generated, ground_truth):
+    src_app, tgt_app = get_src_and_tgt(file)
+    for i, gen in enumerate(generated):
+        gen = drop_page_bounds(gen)
+        equal_gts = []
+        for j, gt in enumerate(ground_truth):
+            gt = drop_page_bounds(gt)
+            if ordered(gen) == ordered(gt):
+                equal_gts.append(str(j))
+        if len(equal_gts):
+            result.loc[len(result)] = [src_app, tgt_app, i, ' '.join(equal_gts)]
+    return result
 
 def main():
-    files = glob.glob(GENERATED_GLOBE)
-    #print("GENERATED_GLOBE")
-    #print(GENERATED_GLOBE)
+    files = glob.glob(config['data']['GENERATED_GLOBE']['address'])
     result = pd.DataFrame(columns=['src_app', 'target_app', 'src_index', 'target_index'])
     for file in files:
-        filename = file.split('/')[-2] + "_attributes.json"
-        gt_file_address = find_ground_truth(filename)
+
+        gt_file_address = find_ground_truth(file)
         if gt_file_address is None:
             continue
-        filename = filename.strip("_attributes.json")
-        src_app = filename.split('-')[0]
-        tgt_app = filename.split('-')[1]
-        generated: List[Dict[str, object]] = None
-        with open(file, 'r') as f:
-            generated = json.load(f)
 
-        ground_truth: List[Dict[str, object]] = None
-        with open(gt_file_address, 'r') as f:
-            ground_truth = json.load(f)
-
+        generated, ground_truth = load_json_files(file, gt_file_address)
         if generated is None or ground_truth is None:
             continue
 
-        k = 0
-        for i, gen in enumerate(generated):
-            gen.pop('page')
-            gen.pop('bounds')
-            equal_gts = []
-            for j, gt in enumerate(ground_truth):
-                try:
-                    gt.pop('page')
-                except KeyError:
-                    pass
-                try:
-                    gt.pop('bounds')
-                except KeyError:
-                    pass
-                if ordered(gen) == ordered(gt):
-                    equal_gts.append(str(j))
-            if len(equal_gts):
-                result.loc[k] = [
-                    src_app,
-                    tgt_app,
-                    i,
-                    ' '.join(equal_gts)
-                ]
-                k += 1
+        result = add_corresponding_objects_to_map(result, file, generated, ground_truth)
+        
     result.to_csv(config['data']['gt_gen']['address'], index=False)
 
 

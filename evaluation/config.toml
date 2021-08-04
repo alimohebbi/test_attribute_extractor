@@ -8,6 +8,12 @@
     [data.result]
     address = "./output/result.csv"
 
+    [data.GROUND_TRUTH_GLOBE]
+    address = '../data/output/final/atm_tests/ground_truth/*/*.json'
+
+    [data.GENERATED_GLOBE]
+    address = '../data/output/final/atm_tests/migrated_tests/*/*.json'
+
 [sizes]
     [sizes.src]
     size = 4
