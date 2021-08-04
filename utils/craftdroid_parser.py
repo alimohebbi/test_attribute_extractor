@@ -61,17 +61,14 @@ def get_parsed_file_name(fname):
 
 def craftdroid_parse(fname):
     parsed_file_name = get_parsed_file_name(fname)
-    if os.path.exists(parsed_file_name):
-        new_data = load_json_data(parsed_file_name)
-    else:
-        data = load_json_data(fname)
-        new_data = []
-        for parsed_element in data:
-            new_parsed_elemetn = extract_action(parsed_element)
-            if actions_need_element(new_parsed_elemetn["action"]):
-                new_parsed_elemetn = extract_get_element_by(new_parsed_elemetn, parsed_element)
-            new_data.append(new_parsed_elemetn)
-        write_json(new_data, parsed_file_name)
+    data = load_json_data(fname)
+    new_data = []
+    for parsed_element in data:
+        new_parsed_elemetn = extract_action(parsed_element)
+        if actions_need_element(new_parsed_elemetn["action"]):
+            new_parsed_elemetn = extract_get_element_by(new_parsed_elemetn, parsed_element)
+        new_data.append(new_parsed_elemetn)
+    write_json(new_data, parsed_file_name)
     return new_data
 
 
