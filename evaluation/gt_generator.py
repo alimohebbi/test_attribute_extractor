@@ -1,13 +1,14 @@
 from typing import List, Dict
+import toml
 import json
 import glob
 import pandas as pd
-from utils.configuration import Configuration
 
-config = Configuration()
+with open('config.toml', 'r') as file:
+        config = toml.load(file)
 
-GROUND_TRUTH_GLOBE = './data/results/final/atm_tests/ground_truth/*/*.json'
-GENERATED_GLOBE = './data/results/final/atm_tests/migrated_tests/*/*.json'
+GROUND_TRUTH_GLOBE = '../data/output/final/atm_tests/ground_truth/*/*.json'
+GENERATED_GLOBE = '../data/output/final/atm_tests/migrated_tests/*/*.json'
 
 
 def find_ground_truth(filename):
@@ -29,6 +30,8 @@ def ordered(obj):
 
 def main():
     files = glob.glob(GENERATED_GLOBE)
+    #print("GENERATED_GLOBE")
+    #print(GENERATED_GLOBE)
     result = pd.DataFrame(columns=['src_app', 'target_app', 'src_index', 'target_index'])
     for file in files:
         filename = file.split('/')[-2] + "_attributes.json"
@@ -73,7 +76,7 @@ def main():
                     ' '.join(equal_gts)
                 ]
                 k += 1
-    result.to_csv('./input/groundTruth_generated.csv', index=False)
+    result.to_csv(config['data']['gt_gen']['address'], index=False)
 
 
 if __name__ == '__main__':
