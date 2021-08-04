@@ -92,6 +92,9 @@ class TestAttributeExtractor(ABC):
             elif conditional == "text":
                 if preprocess_text(value) not in preprocess_text(element.get_attribute("text")):
                     matched = False
+            elif conditional == 'contentdescription':
+                if preprocess_text(value) not in preprocess_text(element.get_attribute("content-desc")):
+                    matched = False
             elif conditional == "id" or conditional == "resource-id":
                 if value != element.get_attribute(conditional):
                     if value != element.get_attribute(conditional).split("/")[1]:
