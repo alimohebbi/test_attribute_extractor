@@ -39,11 +39,26 @@ def calculate_metrics(migration):
     fp = migration.false_positive()
     fn = migration.false_negative()
     effort = migration.levenshtein_distance()
-    accuracy = (tp + tn) / (tp + fp + fn + tn)
-    precision = tp / (tp + fp)
-    recall = tp / (tp + fn)
-    f1_score = 2 * (recall * precision) / (recall + precision)
-    reduction = (migration.gt_size - effort) / migration.gt_size
+    try:
+        accuracy = (tp + tn) / (tp + fp + fn + tn)
+    except ZeroDivisionError:
+        accuracy = None
+    try:
+        precision = tp / (tp + fp)
+    except ZeroDivisionError:
+        precision = None
+    try:
+        recall = tp / (tp + fn)
+    except ZeroDivisionError:
+        recall = None
+    try:
+        f1_score = 2 * (recall * precision) / (recall + precision)
+    except ZeroDivisionError:
+        f1_score = None
+    try:
+        reduction = (migration.gt_size - effort) / migration.gt_size
+    except ZeroDivisionError:
+        reduction = None
     return [ migration.src_app, migration.tgt_app, tp, tn, fp, fn, effort, accuracy, precision, recall, f1_score, reduction ]
 
 def calculate_results(mappings):
