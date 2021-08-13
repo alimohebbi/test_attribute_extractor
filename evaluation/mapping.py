@@ -32,10 +32,12 @@ class Mapping:
             self.src_gt[src] = []
         self.src_gt[src].append(gt)
 
-    def add_gt_gen(self, gt: int, gen: int):
+    def add_gt_gen(self, gt: int, gen: str):
         if gt not in self.gt_gen:
             self.gt_gen[gt] = []
-        self.gt_gen[gt].append(gen)
+        for val in gen.split(" "):
+            if int(val) not in self.gt_gen[gt]:
+                self.gt_gen[gt].append(int(val))
 
     # transitives
     def true_positive(self) -> int:

@@ -65,7 +65,12 @@ def calculate_results(mappings):
     columns=["src_app", "target_app", "tp", "tn", "fp", "fn", "effort", "accuracy", "precision", "recall", "f1_score", "reduction"]
     results = []
     for migration in mappings.values():
-        results.append(calculate_metrics(migration))
+        if len(migration.gt_gen):
+            results.append(calculate_metrics(migration))
+            print(migration.src_gt)
+            print(migration.gt_gen)
+            print(calculate_metrics(migration))
+            print()
     pd.DataFrame(results, columns=columns).to_csv(config['data']['result']['address'], index=False)
     print(pd.DataFrame(results, columns=columns))
 
