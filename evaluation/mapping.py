@@ -70,11 +70,9 @@ class Mapping:
         gen_str = ["$"] * self.gen_size
         for i in range(self.gt_size):
             gt_str += char_mapping[i]
-
         for key, val in self.gt_gen.items():
             for gen_idx in val:
                 gen_str[gen_idx] = gt_str[key]
-
         return distance(gt_str, ''.join(gen_str))
 
 

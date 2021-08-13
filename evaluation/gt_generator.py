@@ -52,15 +52,15 @@ def get_src_and_tgt(file):
 
 def add_corresponding_objects_to_map(result, file, generated, ground_truth):
     src_app, tgt_app = get_src_and_tgt(file)
-    for i, gen in enumerate(generated):
-        gen = drop_page_bounds(gen)
-        equal_gts = []
-        for j, gt in enumerate(ground_truth):
-            gt = drop_page_bounds(gt)
+    for i, gt in enumerate(ground_truth):
+        gt = drop_page_bounds(gt)
+        equal_gens = []
+        for j, gen in enumerate(generated):
+            gen = drop_page_bounds(gen)
             if ordered(gen) == ordered(gt):
-                equal_gts.append(str(j))
-        if len(equal_gts):
-            result.loc[len(result)] = [src_app, tgt_app, i, ' '.join(equal_gts)]
+                equal_gens.append(str(j))
+        if len(equal_gens):
+            result.loc[len(result)] = [src_app, tgt_app, i, ' '.join(equal_gens)]
     return result
 
 def main():
