@@ -38,12 +38,14 @@ def drop_page_bounds(obj: dict) -> dict:
     return obj
 
 def ordered(obj) -> str:
+    if obj is None:
+        return obj
     if isinstance(obj, dict):
         return sorted((k, ordered(v)) for k, v in obj.items())
     if isinstance(obj, list):
         return [ordered(x) for x in obj]
     else:
-        return obj
+        return str(obj).lower()
 
 def get_src_and_tgt(file: str) -> Tuple[str, str]:
     src_app =  file.split('/')[-2].split('-')[0]
