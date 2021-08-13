@@ -1,3 +1,4 @@
+from typing import Tuple
 import toml
 import pandas as pd
 import glob
@@ -7,7 +8,7 @@ import mapping
 with open('config.toml', 'r') as file:
         config = toml.load(file)
 
-def get_file_size(base_address):
+def get_file_size(base_address: str) -> int:
     address_list = glob.glob(base_address)
     if len(address_list):
         with open(address_list[0], 'r') as f:
@@ -17,25 +18,25 @@ def get_file_size(base_address):
     else:
         return len(obj)
 
-def get_file_sizes(src_app, target_app):
+def get_file_sizes(src_app: str, target_app: str) -> Tuple[int, int, int]:
     BASE_JSON_ADDRESS = config['data']['BASE_JSON_ADDRESS']['address']
 
-    source_address = BASE_JSON_ADDRESS+"atm_tests/donor/"+src_app+"/*.json"
+    source_address = BASE_JSON_ADDRESS+"donor/"+src_app+"/*.json"
     src_size = get_file_size(source_address)
 
-    ground_truth_address = BASE_JSON_ADDRESS+"atm_tests/ground_truth/"+src_app+"/"+src_app+"-"+target_app+"_attributes.json"
+    ground_truth_address = BASE_JSON_ADDRESS+"ground_truth/"+src_app+"/"+src_app+"-"+target_app+"_attributes.json"
     gt_size = get_file_size(ground_truth_address)
 
-    generated_address = BASE_JSON_ADDRESS+"atm_tests/migrated_tests/"+src_app+"-"+target_app+"/*.json"
+    generated_address = BASE_JSON_ADDRESS+"migrated_tests/"+src_app+"-"+target_app+"/*.json"
     gen_size = get_file_size(generated_address)
 
     return src_size, gt_size, gen_size
 
-def get_new_mapping(src_app, target_app):
+def get_new_mapping(src_app: str, target_app: str) -> mapping.Mapping:
     src_size, gt_size, gen_size = get_file_sizes(src_app, target_app)
     return mapping.Mapping(src_app, target_app, src_size, gt_size, gen_size)
 
-def extract_sub_mappings(mappings, map_name):
+def extract_sub_mappings(mappings: dict, map_name: str) -> dict:
     df = pd.read_csv(config['data'][map_name]['address'])
     for i in range(len(df)):
         mapping_id = mapping.Mapping.id(df['src_app'][i], df['target_app'][i])
@@ -47,14 +48,14 @@ def extract_sub_mappings(mappings, map_name):
             mappings[mapping_id].add_gt_gen(df['src_index'][i], df['target_index'][i])
     return mappings
 
-def extract_mappings():
+def extract_mappings() -> dict:
     mappings = extract_sub_mappings(dict(), "src_gt")
     mappings = extract_sub_mappings(mappings, "gt_gen")
     for m in mappings.values():
         m.extract_one_to_one_gt_gen()
     return mappings
 
-def calculate_metrics(migration):
+def calculate_metrics(migration: mapping.Mapping) -> list:
     tp = migration.true_positive()
     tn = migration.true_negative()
     fp = migration.false_positive()
@@ -82,7 +83,7 @@ def calculate_metrics(migration):
         reduction = None
     return [ migration.src_app, migration.tgt_app, tp, tn, fp, fn, effort, accuracy, precision, recall, f1_score, reduction ]
 
-def calculate_results(mappings):
+def calculate_results(mappings: dict) -> pd.core.frame.DataFrame:
     columns=["src_app", "target_app", "tp", "tn", "fp", "fn", "effort", "accuracy", "precision", "recall", "f1_score", "reduction"]
     results = []
     for k, v in mappings.items():

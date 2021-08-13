@@ -9,7 +9,7 @@
     address = "./output/result.csv"
 
     [data.BASE_JSON_ADDRESS]
-    address = '../data/output/final/'
+    address = '../data/output/final/atm_tests/'
 
     [data.GROUND_TRUTH_GLOBE]
     address = '../data/output/final/atm_tests/ground_truth/*/*.json'
