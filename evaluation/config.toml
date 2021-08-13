@@ -8,18 +8,11 @@
     [data.result]
     address = "./output/result.csv"
 
+    [data.BASE_JSON_ADDRESS]
+    address = '../data/output/final/'
+
     [data.GROUND_TRUTH_GLOBE]
     address = '../data/output/final/atm_tests/ground_truth/*/*.json'
 
     [data.GENERATED_GLOBE]
     address = '../data/output/final/atm_tests/migrated_tests/*/*.json'
-
-[sizes]
-    [sizes.src]
-    size = 10
-
-    [sizes.gt]
-    size = 7
-
-    [sizes.gen]
-    size = 10
