@@ -3,10 +3,10 @@
     address = "./input/src_groundTruth.csv"
 
     [data.gt_gen]
-    address = "./input/groundTruth_generated.csv"
+    address = "./input/groundTruth_generated_"
 
     [data.result]
-    address = "./output/result.csv"
+    address = "./output/result_"
 
     [data.BASE_JSON_ADDRESS]
     address = '../data/output/final/atm_tests/'
@@ -14,5 +14,5 @@
     [data.GROUND_TRUTH_GLOBE]
     address = '../data/output/final/atm_tests/ground_truth/*/*.json'
 
-    [data.GENERATED_GLOBE]
-    address = '../data/output/final/atm_tests/migrated_tests/*/*.json'
+    [data.MIGRATION_CONFIGS]
+    address = '../../generated/*'

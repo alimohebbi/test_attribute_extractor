@@ -68,8 +68,7 @@ def add_corresponding_objects_to_map(result: pd.core.frame.DataFrame,
             result.loc[len(result)] = [src_app, tgt_app, i, ' '.join(equal_gens)]
     return result
 
-def main():
-    files = glob.glob(config['data']['GENERATED_GLOBE']['address'])
+def exract_ground_truth_generated_map(files: list, migration_config: str):
     result = pd.DataFrame(columns=['src_app', 'target_app', 'src_index', 'target_index'])
     for file in files:
         gt_file_address = find_ground_truth(file)
@@ -82,7 +81,14 @@ def main():
 
         result = add_corresponding_objects_to_map(result, file, generated, ground_truth)
         
-    result.to_csv(config['data']['gt_gen']['address'], index=False)
+    result.to_csv(config['data']['gt_gen']['address']+migration_config.split("/")[-1]+".csv", index=False)
+
+def main():
+    migration_configs = glob.glob(config['data']['MIGRATION_CONFIGS']['address'])
+    for migration_config in migration_configs:
+        files = glob.glob(migration_config+"/*/*.json", migration_config)
+        exract_ground_truth_generated_map(files, migration_config)
+    
 
 
 if __name__ == '__main__':
