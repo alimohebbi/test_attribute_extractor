@@ -27,9 +27,8 @@ def get_file_sizes(src_app: str, target_app: str, migration_config: str) -> Tupl
     ground_truth_address = BASE_JSON_ADDRESS+"ground_truth/"+src_app+"/"+src_app+"-"+target_app+"_attributes.json"
     gt_size = get_file_size(ground_truth_address)
 
-    generated_address = migration_config+src_app+"-"+target_app+"/*.json"
+    generated_address = migration_config+"/"+src_app+"-"+target_app+"/*.json"
     gen_size = get_file_size(generated_address)
-
     return src_size, gt_size, gen_size
 
 def get_new_mapping(src_app: str, target_app: str, migration_config: str) -> mapping.Mapping:
@@ -40,11 +39,11 @@ def extract_sub_mappings(mappings: dict, map_name: str, migration_config: str) -
     if map_name == "src_gt":
         df = pd.read_csv(config['data'][map_name]['address'])
     else:
-        df = pd.read_csv(config['data'][map_name]['address'])+migration_config.split("/")[-1]+".csv"
+        df = pd.read_csv(config['data'][map_name]['address']+migration_config.split("/")[-1]+".csv")
     for i in range(len(df)):
         mapping_id = mapping.Mapping.id(df['src_app'][i], df['target_app'][i])
         if mapping_id not in mappings:
-            mappings[mapping_id] = get_new_mapping(df['src_app'][i], df['target_app'][i], get_new_mapping)        
+            mappings[mapping_id] = get_new_mapping(df['src_app'][i], df['target_app'][i], migration_config)        
         if map_name == "src_gt":
             mappings[mapping_id].add_src_gt(df['src_index'][i], df['target_index'][i])
         elif map_name == "gt_gen":
@@ -58,7 +57,7 @@ def extract_mappings(migration_config: str) -> dict:
         m.extract_one_to_one_gt_gen()
     return mappings
 
-def calculate_metrics(migration: mapping.Mapping, migration_config: str) -> list:
+def calculate_metrics(migration: mapping.Mapping) -> list:
     tp = migration.true_positive()
     tn = migration.true_negative()
     fp = migration.false_positive()
@@ -72,6 +71,7 @@ def calculate_metrics(migration: mapping.Mapping, migration_config: str) -> list
         precision = tp / (tp + fp)
     except ZeroDivisionError:
         precision = None
+
     try:
         recall = tp / (tp + fn)
     except ZeroDivisionError:
@@ -86,7 +86,7 @@ def calculate_metrics(migration: mapping.Mapping, migration_config: str) -> list
         reduction = None
     return [ migration.src_app, migration.tgt_app, tp, tn, fp, fn, effort, accuracy, precision, recall, f1_score, reduction ]
 
-def calculate_results(mappings: dict) -> pd.core.frame.DataFrame:
+def calculate_results(mappings: dict, migration_config: str) -> pd.core.frame.DataFrame:
     columns=["src_app", "target_app", "tp", "tn", "fp", "fn", "effort", "accuracy", "precision", "recall", "f1_score", "reduction"]
     results = []
     for k, v in mappings.items():
