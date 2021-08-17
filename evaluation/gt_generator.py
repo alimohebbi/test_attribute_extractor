@@ -86,7 +86,7 @@ def exract_ground_truth_generated_map(files: list, migration_config: str):
 def main():
     migration_configs = glob.glob(config['data']['MIGRATION_CONFIGS']['address'])
     for migration_config in migration_configs:
-        files = glob.glob(migration_config+"/*/*.json")
+        files = glob.glob(migration_config+"/*/*_final.json")
         exract_ground_truth_generated_map(files, migration_config)
     
 

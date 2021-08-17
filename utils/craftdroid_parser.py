@@ -68,7 +68,7 @@ def craftdroid_parse(fname):
         if actions_need_element(new_parsed_elemetn["action"]):
             new_parsed_elemetn = extract_get_element_by(new_parsed_elemetn, parsed_element)
         new_data.append(new_parsed_elemetn)
-    write_json(new_data, parsed_file_name)
+    # write_json(new_data, parsed_file_name)
     return new_data
 
 

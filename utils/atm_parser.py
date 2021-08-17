@@ -170,13 +170,10 @@ def get_parsed_file_name(fname):
 
 def atm_parse(fname):
     parsed_file_name = get_parsed_file_name(fname)
-    if os.path.exists(parsed_file_name):
-        parsed_test = load_json_data(parsed_file_name)
-    else:
-        lines = read_file(fname)
-        section = get_test_section(lines)
-        parsed_test = parse_test_section(section)
-        write_json(parsed_test, parsed_file_name)
+    lines = read_file(fname)
+    section = get_test_section(lines)
+    parsed_test = parse_test_section(section)
+    # write_json(parsed_test, parsed_file_name)
     return parsed_test
 
 def main():

@@ -13,18 +13,12 @@ from appium.webdriver.common.touch_action import TouchAction
 from utils.utils import *
 from utils.atm_parser import atm_parse
 from utils.craftdroid_parser import craftdroid_parse, config
-import enum
-
-
-class TestCategory(enum.Enum):
-    Craftdroid = 1
-    ATM = 2
 
 
 class TestAttributeExtractor(ABC):
-    def __init__(self, file_name: str):
+    def __init__(self, file_name: str, log_address = ""):
         self.name = file_name
-        self.logger = self.get_logger()
+        self.logger = self.get_logger(log_address)
         caps, self.app_package = get_caps(self.name)
         self.driver = self.check_run_possible(self.app_package, caps)
         self.attribute_list = ["checkable", "checked", "class", "clickable", "content-desc", "enabled", "focusable",
@@ -32,11 +26,15 @@ class TestAttributeExtractor(ABC):
                                "selection-start",
                                "selection-end", "selected", "text", "bounds", "displayed"]
 
-    def get_logger(self):
-        name = self._get_log_file_name()
-        logger = logging.getLogger(name)
+    def get_logger(self, log_address):
+        if log_address == "":
+            name = self._get_log_file_name()
+            logger = logging.getLogger(name)
+            fh = logging.FileHandler(os.path.join(config.logs_dir, name), mode='w')
+        else:
+            logger = logging.getLogger(log_address)
+            fh = logging.FileHandler(log_address, mode='w')
         logger.setLevel(logging.DEBUG)
-        fh = logging.FileHandler(os.path.join(config.logs_dir, name), mode='w')
         ch = logging.StreamHandler(sys.stdout)
         fh.setLevel(logging.DEBUG)
         logger.addHandler(fh)
@@ -315,9 +313,12 @@ class TestAttributeExtractor(ABC):
                 "UNABLE TO RUN THE WHOLE TEST FOR THE FILE :" + str(self.name) + ".PLEASE CHECK THE ERROR LOG!")
             return None
 
-    def write_results(self):
+    def write_results(self, address):
         element_attributes_list = self.run()
-        write_json(element_attributes_list, os.path.join(config.results_dir, self._get_result_file_name()))
+        if address == "":
+            write_json(element_attributes_list, os.path.join(config.results_dir, self._get_result_file_name()))
+        else:
+            write_json(element_attributes_list, address)
 
 
 
@@ -358,14 +359,14 @@ def main():
     for file in atm_globs:
         print(file)
         try:
-            ATMExtractor(file).write_results()
+            ATMExtractor(file).write_results("")
         except Exception as e:
             print(f"Running {file} failed with error {e}")
 
     for file in craftdroid_globs:
         print(file)
         try:
-            CraftdroidExtractor(file).write_results()
+            CraftdroidExtractor(file).write_results("")
         except Exception as e:
             print(f"Running {file} failed with error {e}")
 

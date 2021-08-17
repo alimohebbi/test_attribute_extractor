@@ -53,6 +53,8 @@ def get_app_name(fname):
             return fname.split("/")[-1].split("-")[1].split(".")[0]
         else:
             return fname.split("/")[-1].split(".")[0]
+    elif fname.split("/")[-4] == "generated":
+        return fname.split("/")[-2].split("-")[1]
     else:
         category = fname.split("/")[-5]
         if category == "craftdroid_tests" or category == "test_repo":
