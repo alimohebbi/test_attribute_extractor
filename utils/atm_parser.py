@@ -143,6 +143,12 @@ def parse_test_section(lines):
             if actions_need_element(parsed_event["action"]):
                 parsed_event = extract_get_element_by(parsed_event, line)
             parsed_event_list.append(parsed_event)
+        if "openActionBarOverflowOrOptionsMenu(getInstrumentation().getTargetContext());" in line:
+            parsed_event = {}
+            parsed_event["action"] = ["click"]
+            parsed_event["get_element_by"] = [{"type": "contentdescription", "value": "More options"}]
+            parsed_event_list.append(parsed_event)
+
     return parsed_event_list
 
 

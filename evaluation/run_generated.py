@@ -32,8 +32,10 @@ def main():
         print()
         files = glob.glob(migration_config+"/*/*.java")
         for file in files:
-            print(file)
             final_fname, log_fname = get_file_addressed(file)
+            print()
+            print(final_fname)
+            print()
             if args.algorithm == "atm":
                 try:
                     test_attribute_extractor.ATMExtractor(file, log_fname).write_results(final_fname)
