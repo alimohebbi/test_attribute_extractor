@@ -60,7 +60,7 @@ def add_selector(selector, selector_list):
 def extract_get_element_by(parsed_event, line):
     selector_list = []
     selector_section = get_selector_section(line)
-    for selector in selector_section.split(","):
+    for selector in ['{}{}'.format(s, '),') for s in selector_section.split('),') if s]:
         selector_list = add_selector(selector, selector_list)
     parsed_event["get_element_by"] = selector_list
     return parsed_event
