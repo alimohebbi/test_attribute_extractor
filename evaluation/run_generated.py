@@ -57,6 +57,8 @@ def main():
         for file in files:
             final_fname, log_fname = get_file_addressed(file)
             print(final_fname+'\n')
+            if os.path.isfile(final_fname):
+                continue
             run(args.algorithm, file, log_fname, final_fname)
             with open(log_fname) as f:
                 lines = f.readlines()
