@@ -1,8 +1,10 @@
 import argparse
+import json
 import os, sys
 import toml
 import glob
 from Levenshtein import distance
+import emulator
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 import test_attribute_extractor
 
@@ -16,6 +18,17 @@ def get_args():
     if args.algorithm is None:
         args.algorithm = "atm"
     return args
+
+def load_json_data(fname):
+    f = open(fname, )
+    data = json.load(f)
+    return data
+
+def already_exists(final_fname):
+    if os.path.isfile(final_fname):
+        if load_json_data(final_fname) is not None:
+            return True
+    return False
 
 def prune_files(files):
     dummy_file_indices = set()
@@ -33,6 +46,7 @@ def get_file_addressed(file):
     return final_fname, log_fname
 
 def run(algorithm, file, log_fname, final_fname):
+    start_emulator()
     if algorithm == "atm":
         try:
             test_attribute_extractor.ATMExtractor(file, log_fname).write_results(final_fname)
@@ -57,7 +71,7 @@ def main():
         for file in files:
             final_fname, log_fname = get_file_addressed(file)
             print(final_fname+'\n')
-            if os.path.isfile(final_fname):
+            if already_exists(final_fname):
                 continue
             run(args.algorithm, file, log_fname, final_fname)
             with open(log_fname) as f:
