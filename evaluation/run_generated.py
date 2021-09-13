@@ -7,6 +7,7 @@ from Levenshtein import distance
 import emulator
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 import test_attribute_extractor
+from evaluation.emulator import start_emulator, stop_emulator
 
 with open('config.toml', 'r') as file:
         config = toml.load(file)
@@ -59,6 +60,7 @@ def run(algorithm, file, log_fname, final_fname):
             print(f"Running {file} failed with error {e}")
     else:
             print("Unknown algorithm: "+str(algorithm))
+    stop_emulator()
 
 def main():
     args = get_args()
@@ -78,10 +80,7 @@ def main():
                 lines = f.readlines()
             if len(lines) and lines[0].startswith("UNABLE TO GRAB THE DRIVER WITH CAPABILITIES"):
                 print('\n'+"RUNNING AGAIN: "+'\n')
-                run(args.algorithm, file, log_fname, final_fname)
-
-
-                
+                run(args.algorithm, file, log_fname, final_fname)               
     
 if __name__ == '__main__':
     main()
