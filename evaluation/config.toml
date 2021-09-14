@@ -15,4 +15,4 @@
     address = '../data/output/final/atm_tests/ground_truth/*/*.json'
 
     [data.MIGRATION_CONFIGS]
-    address = '../../generated/*'
+    address = '../../ATM-Modified/generated/*'

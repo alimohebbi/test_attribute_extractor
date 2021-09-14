@@ -3,7 +3,6 @@ import subprocess
 from time import sleep
 
 emulator_process = None
-config = Config()
 start_command = ['emulator', '-ports', ' 5554,5555', '-avd', emulator1, '-no-audio',
                  '-no-window',
                  '-no-snapshot-load'
