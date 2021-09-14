@@ -65,24 +65,24 @@ def calculate_metrics(migration: mapping.Mapping) -> list:
     effort = migration.levenshtein_distance()
     try:
         accuracy = (tp + tn) / (tp + fp + fn + tn)
-    except ZeroDivisionError:
+    except:
         accuracy = None
     try:
         precision = tp / (tp + fp)
-    except ZeroDivisionError:
+    except:
         precision = None
 
     try:
         recall = tp / (tp + fn)
-    except ZeroDivisionError:
+    except:
         recall = None
     try:
         f1_score = 2 * (recall * precision) / (recall + precision)
-    except ZeroDivisionError:
+    except:
         f1_score = None
     try:
         reduction = (migration.gt_size - effort) / migration.gt_size
-    except ZeroDivisionError:
+    except:
         reduction = None
     return [ migration.src_app, migration.tgt_app, tp, tn, fp, fn, effort, accuracy, precision, recall, f1_score, reduction ]
 
