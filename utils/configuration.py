@@ -23,6 +23,10 @@ class Configuration(object):
     def results_dir(self):
         return self._get_property('results_dir')
 
+    @property
+    def analyse_dir(self):
+        return self._get_property('analyse_dir')
+
     def custom_tests_glob(self, name):
         tests = self._get_property('tests')
         if tests is None or name not in tests:
