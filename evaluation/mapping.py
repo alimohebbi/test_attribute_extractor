@@ -33,6 +33,7 @@ class Mapping:
         self.src_gt[src].append(gt)
 
     def add_gt_gen(self, gt: int, gen: str):
+        gen = str(gen)
         if gt not in self.gt_gen:
             self.gt_gen[gt] = []
         for val in gen.split(" "):
