@@ -7,6 +7,7 @@
 
     [data.result]
     address = "./output/result_"
+    aggregated_result_address = "./output/aggregated_result.csv"
 
     [data.BASE_JSON_ADDRESS]
     address = '../data/output/final/atm_tests/'
@@ -16,3 +17,4 @@
 
     [data.MIGRATION_CONFIGS]
     address = '../../ATM-Modified/generated/*'
+    erroneous_address = './output/erroneous_generated'
