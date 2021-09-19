@@ -8,6 +8,15 @@ with open('config.toml', 'r') as file:
         config = toml.load(file)
 ALGORITHM = str(config["algorithm"])
 
+def change_nulls_to_empty_strings(json_list: List[Dict[str, object]]) -> List[Dict[str, object]]:
+    new_json_list = []
+    for obj in json_list:
+        for k, v in obj.items():
+            if v is None:
+                obj[k] = ""
+        new_json_list.append(obj)
+    return new_json_list
+
 def remove_oracles(generated: List[Dict[str, object]]) -> List[Dict[str, object]]:  
     if generated is None:
         return generated
@@ -27,10 +36,12 @@ def load_json_files(file: str, gt_file_address: str) -> Tuple[list, list]:
     with open(file, 'r') as f:
             generated = json.load(f)
     generated = remove_oracles(generated)
+    generated = change_nulls_to_empty_strings(generated)
 
     ground_truth: List[Dict[str, object]] = None
     with open(gt_file_address, 'r') as f:
             ground_truth = json.load(f)
+    ground_truth = change_nulls_to_empty_strings(ground_truth)
 
     return generated, ground_truth
 
