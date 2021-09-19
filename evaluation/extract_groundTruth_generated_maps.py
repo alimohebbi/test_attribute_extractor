@@ -90,13 +90,14 @@ def exract_ground_truth_generated_map(files: list, migration_config: str):
         
     result.to_csv(config['data']['gt_gen']['address']+migration_config.split("/")[-1]+".csv", index=False)
 
-def main():
+def extract_all_ground_truth_generated_maps():
     migration_configs = glob.glob(config['data']['MIGRATION_CONFIGS']['address'])
     for migration_config in migration_configs:
         files = glob.glob(migration_config+"/*/*_final.json")
         exract_ground_truth_generated_map(files, migration_config)
+
+def main():
+    extract_all_ground_truth_generated_maps()
     
-
-
 if __name__ == '__main__':
     main()

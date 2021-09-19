@@ -100,11 +100,14 @@ def calculate_results(mappings: dict, migration_config: str) -> pd.core.frame.Da
     pd.DataFrame(results, columns=columns).to_csv(config['data']['result']['address']+migration_config.split("/")[-1]+".csv", index=False)
     print(pd.DataFrame(results, columns=columns))
 
-def main():
+def evaluate_all_configs():
     migration_configs = glob.glob(config['data']['MIGRATION_CONFIGS']['address'])
     for migration_config in migration_configs:
         mappings = extract_mappings(migration_config)
         calculate_results(mappings, migration_config)
+
+def main():
+    evaluate_all_configs()    
     
 if __name__ == '__main__':
     main()
