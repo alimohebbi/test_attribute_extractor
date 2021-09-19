@@ -1,4 +1,4 @@
-from typing import Tuple
+from typing import List, Dict, Tuple
 import toml
 import pandas as pd
 import glob
@@ -8,6 +8,10 @@ import mapping
 with open('config.toml', 'r') as file:
         config = toml.load(file)
 
+def remove_oracles(obj: List[Dict[str, object]]) -> List[Dict[str, object]]:  
+    obj = [ x for x in obj if not x["action"][0].startswith("wait")]
+    return obj
+
 def get_file_size(base_address: str) -> int:
     address_list = glob.glob(base_address)
     if len(address_list):
@@ -16,6 +20,7 @@ def get_file_size(base_address: str) -> int:
     if len(address_list) == 0 or obj is None:
         return 0
     else:
+        obj = remove_oracles(obj)
         return len(obj)
 
 def get_file_sizes(src_app: str, target_app: str, migration_config: str) -> Tuple[int, int, int]:

@@ -7,6 +7,12 @@ import pandas as pd
 with open('config.toml', 'r') as file:
         config = toml.load(file)
 
+def remove_oracles(generated: List[Dict[str, object]]) -> List[Dict[str, object]]:  
+    if generated is None:
+        return generated
+    generated = [ x for x in generated if not x["action"][0].startswith("wait")]
+    return generated
+
 def find_ground_truth(filename: str) -> str:
     filename = filename.split('/')[-2] + "_attributes.json"
     files = glob.glob(config['data']['GROUND_TRUTH_GLOBE']['address'])
@@ -19,6 +25,7 @@ def load_json_files(file: str, gt_file_address: str) -> Tuple[list, list]:
     generated: List[Dict[str, object]] = None
     with open(file, 'r') as f:
             generated = json.load(f)
+    generated = remove_oracles(generated)
 
     ground_truth: List[Dict[str, object]] = None
     with open(gt_file_address, 'r') as f:
