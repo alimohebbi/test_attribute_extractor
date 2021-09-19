@@ -1,20 +1,47 @@
-[data]
-    [data.src_gt]
-    address = "./input/src_groundTruth.csv"
+algorithm = "atm"
+[atm]
+    [atm.src_gt]
+    address = "../data/evaluation/input/atm/src_groundTruth.csv"
 
-    [data.gt_gen]
-    address = "./input/groundTruth_generated_"
+    [atm.gt_gen]
+    address = "../data/evaluation/input/atm/groundTruth_generated_"
 
-    [data.result]
-    address = "./output/result_"
-    aggregated_result_address = "./output/aggregated_result.csv"
+    [atm.result]
+    address = "../data/evaluation/output/atm/result_"
+    aggregated_result_address = "../data/evaluation/output/atm/aggregated_result.csv"
 
-    [data.BASE_JSON_ADDRESS]
+    [atm.BASE_JSON_ADDRESS]
     address = '../data/output/final/atm_tests/'
 
-    [data.GROUND_TRUTH_GLOBE]
+    [atm.BASE_LOG_ADDRESS]
+    address = '../data/output/logs/atm_tests/'
+
+    [atm.GROUND_TRUTH_GLOBE]
     address = '../data/output/final/atm_tests/ground_truth/*/*.json'
 
-    [data.MIGRATION_CONFIGS]
-    address = '../../ATM-Modified/generated/*'
-    erroneous_address = './output/erroneous_generated'
+    [atm.MIGRATION_CONFIGS]
+    address = '../data/atm_tests/generated/*'
+    erroneous_address = '../data/evaluation/output/atm/erroneous_generated'
+[craftdroid]
+    [craftdroid.src_gt]
+    address = "../data/evaluation/input/craftdroid/src_groundTruth.csv"
+
+    [craftdroid.gt_gen]
+    address = "../data/evaluation/input/craftdroid/groundTruth_generated_"
+
+    [craftdroid.result]
+    address = "../data/evaluation/output/craftdroid/result_"
+    aggregated_result_address = "../data/evaluation/output/craftdroid/aggregated_result.csv"
+
+    [craftdroid.BASE_JSON_ADDRESS]
+    address = '../data/output/final/craftdroid_tests/'
+
+    [craftdroid.BASE_LOG_ADDRESS]
+    address = '../data/output/log/craftdroid_tests/'
+
+    [craftdroid.GROUND_TRUTH_GLOBE]
+    address = '../data/output/final/craftdroid_tests/*.json'
+
+    [craftdroid.MIGRATION_CONFIGS]
+    address = '../data/craftdroid_tests/generated/*'
+    erroneous_address = '../data/evaluation/output/craftdroid/erroneous_generated'

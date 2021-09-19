@@ -7,6 +7,7 @@ import shutil
 
 with open('config.toml', 'r') as file:
         config = toml.load(file)
+ALGORITHM = str(config["algorithm"])
 
 def load_json_data(fname):
     f = open(fname, )
@@ -14,12 +15,12 @@ def load_json_data(fname):
     return data
 
 def sift_erroneous_migrations():
-	erroneous_generated = config['data']['MIGRATION_CONFIGS']['erroneous_address']
-	migration_configs = glob.glob(config['data']['MIGRATION_CONFIGS']['address'])
+	erroneous_generated = config[ALGORITHM]['MIGRATION_CONFIGS']['erroneous_address']
+	migration_configs = glob.glob(config[ALGORITHM]['MIGRATION_CONFIGS']['address'])
 	for migration_config in migration_configs:
 		migrations = glob.glob(migration_config+"/*")
 		for migration in migrations:
-			log_fname = glob.glob(migration + "/*_log.txt")[0]
+			log_fname = glob.glob(config[ALGORITHM]['BASE_LOG_ADDRESS']['address']+"/".join(migration.split("/")[-3:])+ "/*_log.txt")[0]
 			with open(log_fname) as f:
 				lines = f.readlines()
 			if len(lines):
@@ -32,11 +33,10 @@ def aggregate_results():
 	number_of_migrations_list = []
 	number_of_errors_list = []
 	number_of_blocking_errors_list = []
-	erroneous_generated = config['data']['MIGRATION_CONFIGS']['erroneous_address']
-	migration_configs = glob.glob(config['data']['MIGRATION_CONFIGS']['address'])
+	erroneous_generated = config[ALGORITHM]['MIGRATION_CONFIGS']['erroneous_address']
+	migration_configs = glob.glob(config[ALGORITHM]['MIGRATION_CONFIGS']['address'])
 
 	for migration_config in migration_configs:
-
 		config_list.append(migration_config.split("/")[-1])
 
 		number_of_migrations_list.append(len(glob.glob(migration_config+"/*")))
@@ -52,10 +52,10 @@ def aggregate_results():
 
 	aggregated_result = pd.DataFrame({'config': config_list, 'migrations': number_of_migrations_list,
 		'errors': number_of_errors_list, 'blocking_errors':number_of_blocking_errors_list})
-	aggregated_result.to_csv(config['data']['result']['aggregated_result_address'], index = False)
+	aggregated_result.to_csv(config[ALGORITHM]['result']['aggregated_result_address'], index = False)
 
 def main():
-	sift_erroneous_migrations()
+	# sift_erroneous_migrations()
 	aggregate_results()
 
 if __name__ == '__main__':

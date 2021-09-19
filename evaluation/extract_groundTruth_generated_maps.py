@@ -6,6 +6,7 @@ import pandas as pd
 
 with open('config.toml', 'r') as file:
         config = toml.load(file)
+ALGORITHM = str(config["algorithm"])
 
 def remove_oracles(generated: List[Dict[str, object]]) -> List[Dict[str, object]]:  
     if generated is None:
@@ -15,7 +16,7 @@ def remove_oracles(generated: List[Dict[str, object]]) -> List[Dict[str, object]
 
 def find_ground_truth(filename: str) -> str:
     filename = filename.split('/')[-2] + "_attributes.json"
-    files = glob.glob(config['data']['GROUND_TRUTH_GLOBE']['address'])
+    files = glob.glob(config[ALGORITHM]['GROUND_TRUTH_GLOBE']['address'])
     for file in files:
         if filename in file:
             return file
@@ -88,12 +89,12 @@ def exract_ground_truth_generated_map(files: list, migration_config: str):
 
         result = add_corresponding_objects_to_map(result, file, generated, ground_truth)
         
-    result.to_csv(config['data']['gt_gen']['address']+migration_config.split("/")[-1]+".csv", index=False)
+    result.to_csv(config[ALGORITHM]['gt_gen']['address']+migration_config.split("/")[-1]+".csv", index=False)
 
 def extract_all_ground_truth_generated_maps():
-    migration_configs = glob.glob(config['data']['MIGRATION_CONFIGS']['address'])
+    migration_configs = glob.glob(config[ALGORITHM]['MIGRATION_CONFIGS']['address'])
     for migration_config in migration_configs:
-        files = glob.glob(migration_config+"/*/*_final.json")
+        files = glob.glob(config[ALGORITHM]['BASE_JSON_ADDRESS']['address']+"generated/"+migration_config.split("/")[-1]+"/*/*_final.json")
         exract_ground_truth_generated_map(files, migration_config)
 
 def main():

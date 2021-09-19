@@ -7,6 +7,7 @@ import mapping
 
 with open('config.toml', 'r') as file:
         config = toml.load(file)
+ALGORITHM = str(config["algorithm"])
 
 def remove_oracles(obj: List[Dict[str, object]]) -> List[Dict[str, object]]:  
     obj = [ x for x in obj if not x["action"][0].startswith("wait")]
@@ -24,7 +25,7 @@ def get_file_size(base_address: str) -> int:
         return len(obj)
 
 def get_file_sizes(src_app: str, target_app: str, migration_config: str) -> Tuple[int, int, int]:
-    BASE_JSON_ADDRESS = config['data']['BASE_JSON_ADDRESS']['address']
+    BASE_JSON_ADDRESS = config[ALGORITHM]['BASE_JSON_ADDRESS']['address']
 
     source_address = BASE_JSON_ADDRESS+"donor/"+src_app+"/*.json"
     src_size = get_file_size(source_address)
@@ -32,7 +33,7 @@ def get_file_sizes(src_app: str, target_app: str, migration_config: str) -> Tupl
     ground_truth_address = BASE_JSON_ADDRESS+"ground_truth/"+src_app+"/"+src_app+"-"+target_app+"_attributes.json"
     gt_size = get_file_size(ground_truth_address)
 
-    generated_address = migration_config+"/"+src_app+"-"+target_app+"/*.json"
+    generated_address = BASE_JSON_ADDRESS+"generated/"+migration_config.split("/")[-1]+"/"+src_app+"-"+target_app+"/*.json"
     gen_size = get_file_size(generated_address)
     return src_size, gt_size, gen_size
 
@@ -42,9 +43,9 @@ def get_new_mapping(src_app: str, target_app: str, migration_config: str) -> map
 
 def extract_sub_mappings(mappings: dict, map_name: str, migration_config: str) -> dict:
     if map_name == "src_gt":
-        df = pd.read_csv(config['data'][map_name]['address'])
+        df = pd.read_csv(config[ALGORITHM][map_name]['address'])
     else:
-        df = pd.read_csv(config['data'][map_name]['address']+migration_config.split("/")[-1]+".csv")
+        df = pd.read_csv(config[ALGORITHM][map_name]['address']+migration_config.split("/")[-1]+".csv")
     for i in range(len(df)):
         mapping_id = mapping.Mapping.id(df['src_app'][i], df['target_app'][i])
         if mapping_id not in mappings:
@@ -70,24 +71,24 @@ def calculate_metrics(migration: mapping.Mapping) -> list:
     effort = migration.levenshtein_distance()
     try:
         accuracy = (tp + tn) / (tp + fp + fn + tn)
-    except:
+    except Exception as e:
         accuracy = None
     try:
         precision = tp / (tp + fp)
-    except:
+    except Exception as e:
         precision = None
 
     try:
         recall = tp / (tp + fn)
-    except:
+    except Exception as e:
         recall = None
     try:
         f1_score = 2 * (recall * precision) / (recall + precision)
-    except:
+    except Exception as e:
         f1_score = None
     try:
         reduction = (migration.gt_size - effort) / migration.gt_size
-    except:
+    except Exception as e:
         reduction = None
     return [ migration.src_app, migration.tgt_app, tp, tn, fp, fn, effort, accuracy, precision, recall, f1_score, reduction ]
 
@@ -97,12 +98,13 @@ def calculate_results(mappings: dict, migration_config: str) -> pd.core.frame.Da
     for k, v in mappings.items():
         if len(v.gt_gen):
             results.append(calculate_metrics(v))
-    pd.DataFrame(results, columns=columns).to_csv(config['data']['result']['address']+migration_config.split("/")[-1]+".csv", index=False)
+    pd.DataFrame(results, columns=columns).to_csv(config[ALGORITHM]['result']['address']+migration_config.split("/")[-1]+".csv", index=False)
     print(pd.DataFrame(results, columns=columns))
 
 def evaluate_all_configs():
-    migration_configs = glob.glob(config['data']['MIGRATION_CONFIGS']['address'])
+    migration_configs = glob.glob(config[ALGORITHM]['MIGRATION_CONFIGS']['address'])
     for migration_config in migration_configs:
+        print(migration_config)
         mappings = extract_mappings(migration_config)
         calculate_results(mappings, migration_config)
 
