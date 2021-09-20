@@ -39,11 +39,15 @@ def get_file_addressed(file):
     base_final_address = config[ALGORITHM]['BASE_JSON_ADDRESS']['address']+"/".join(file.split("/")[3:5])
     if not os.path.exists(base_final_address):
         os.mkdir(base_final_address)
+    if not os.path.exists(base_final_address + "/"+migration):
+        os.mkdir(base_final_address + "/"+migration)
     final_fname = base_final_address + "/"+migration+"/"+file.split("/")[-1].split(".")[0]+"_final.json"
 
     base_log_address = config[ALGORITHM]['BASE_LOG_ADDRESS']['address']+"/".join(file.split("/")[3:5])
     if not os.path.exists(base_log_address):
         os.mkdir(base_log_address)
+    if not os.path.exists(base_log_address + "/"+migration):
+        os.mkdir(base_log_address + "/"+migration)
     log_fname = base_log_address + "/"+migration+"/"+file.split("/")[-1].split(".")[0]+"_log.txt"
 
     return final_fname, log_fname
