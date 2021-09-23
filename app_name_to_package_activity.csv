@@ -1,6 +1,6 @@
 ,appName,appPackage,appActivity,noReset
 33,a16,com.powerpoint45.lucidbrowser,com.powerpoint45.lucidbrowser.MainActivity,0
-32,ExpenseTracker1,com.benoitletondor.easybudgetapp,com.benoitletondor.easybudgetapp.view.WelcomeActivity,0
+32,ExpenseTracker1,com.benoitletondor.easybudgetapp,com.benoitletondor.easybudgetapp.view.MainActivity,0
 31,ExpenseTracker2,luankevinferreira.expenses,luankevinferreira.expenses.MainActivity,0
 30,ExpenseTracker3,com.kvannli.simonkvannli.dailybudget,com.kvannli.simonkvannli.dailybudget.MainActivity,0
 29,ExpenseTracker4,com.blogspot.e_kanivets.moneytracker,com.blogspot.e_kanivets.moneytracker.activity.record.MainActivity,0

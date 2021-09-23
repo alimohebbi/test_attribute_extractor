@@ -5,10 +5,13 @@ import glob
 import pandas as pd
 
 with open('config.toml', 'r') as file:
-        config = toml.load(file)
+    config = toml.load(file)
 ALGORITHM = str(config["algorithm"])
 
+
 def change_nulls_to_empty_strings(json_list: List[Dict[str, object]]) -> List[Dict[str, object]]:
+    if json_list is None:
+        return json_list
     new_json_list = []
     for obj in json_list:
         for k, v in obj.items():
@@ -17,11 +20,13 @@ def change_nulls_to_empty_strings(json_list: List[Dict[str, object]]) -> List[Di
         new_json_list.append(obj)
     return new_json_list
 
-def remove_oracles(generated: List[Dict[str, object]]) -> List[Dict[str, object]]:  
+
+def remove_oracles(generated: List[Dict[str, object]]) -> List[Dict[str, object]]:
     if generated is None:
         return generated
-    generated = [ x for x in generated if not x["action"][0].startswith("wait")]
+    generated = [x for x in generated if not x["action"][0].startswith("wait")]
     return generated
+
 
 def find_ground_truth(filename: str) -> str:
     filename = filename.split('/')[-2] + "_attributes.json"
@@ -31,19 +36,21 @@ def find_ground_truth(filename: str) -> str:
             return file
     return None
 
+
 def load_json_files(file: str, gt_file_address: str) -> Tuple[list, list]:
     generated: List[Dict[str, object]] = None
     with open(file, 'r') as f:
-            generated = json.load(f)
+        generated = json.load(f)
     generated = remove_oracles(generated)
     generated = change_nulls_to_empty_strings(generated)
 
     ground_truth: List[Dict[str, object]] = None
     with open(gt_file_address, 'r') as f:
-            ground_truth = json.load(f)
+        ground_truth = json.load(f)
     ground_truth = change_nulls_to_empty_strings(ground_truth)
 
     return generated, ground_truth
+
 
 def drop_page_bounds(obj: dict) -> dict:
     try:
@@ -56,6 +63,7 @@ def drop_page_bounds(obj: dict) -> dict:
         pass
     return obj
 
+
 def ordered(obj) -> str:
     if obj is None:
         return obj
@@ -66,10 +74,12 @@ def ordered(obj) -> str:
     else:
         return str(obj).lower()
 
+
 def get_src_and_tgt(file: str) -> Tuple[str, str]:
-    src_app =  file.split('/')[-2].split('-')[0]
-    tgt_app =  file.split('/')[-2].split('-')[1]
+    src_app = file.split('/')[-2].split('-')[0]
+    tgt_app = file.split('/')[-2].split('-')[1]
     return src_app, tgt_app
+
 
 def add_corresponding_objects_to_map(result: pd.core.frame.DataFrame,
                                      file: str,
@@ -87,7 +97,8 @@ def add_corresponding_objects_to_map(result: pd.core.frame.DataFrame,
             result.loc[len(result)] = [src_app, tgt_app, i, ' '.join(equal_gens)]
     return result
 
-def exract_ground_truth_generated_map(files: list, migration_config: str):
+
+def extract_ground_truth_generated_map(files: list, migration_config: str):
     result = pd.DataFrame(columns=['src_app', 'target_app', 'src_index', 'target_index'])
     for file in files:
         gt_file_address = find_ground_truth(file)
@@ -99,17 +110,22 @@ def exract_ground_truth_generated_map(files: list, migration_config: str):
             continue
 
         result = add_corresponding_objects_to_map(result, file, generated, ground_truth)
-        
-    result.to_csv(config[ALGORITHM]['gt_gen']['address']+migration_config.split("/")[-1]+".csv", index=False)
+
+    result.to_csv(config[ALGORITHM]['gt_gen']['address'] + migration_config.split("/")[-1] + ".csv", index=False)
+
 
 def extract_all_ground_truth_generated_maps():
     migration_configs = glob.glob(config[ALGORITHM]['MIGRATION_CONFIGS']['address'])
     for migration_config in migration_configs:
-        files = glob.glob(config[ALGORITHM]['BASE_JSON_ADDRESS']['address']+"generated/"+migration_config.split("/")[-1]+"/*/*_final.json")
-        exract_ground_truth_generated_map(files, migration_config)
+        files = glob.glob(
+            config[ALGORITHM]['BASE_JSON_ADDRESS']['address'] + "generated/" + migration_config.split("/")[
+                -1] + "/*/*_final.json")
+        extract_ground_truth_generated_map(files, migration_config)
+
 
 def main():
     extract_all_ground_truth_generated_maps()
-    
+
+
 if __name__ == '__main__':
     main()

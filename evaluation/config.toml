@@ -1,27 +1,35 @@
 algorithm = "atm"
 [atm]
+    [atm.MIGRATION_CONFIGS]
+    address = '../data/input/atm_original_tests/*'
+    erroneous_address = '../data/broken_tests/atm/'
+
     [atm.src_gt]
-    address = "../data/evaluation/input/atm/src_groundTruth.csv"
+    address = "../data/mappings/atm/src_ground_truth/src_ground_truth.csv"
 
     [atm.gt_gen]
-    address = "../data/evaluation/input/atm/groundTruth_generated_"
+    address = "../data/mappings/atm/ground_truth_generated/"
 
     [atm.result]
-    address = "../data/evaluation/output/atm/result_"
-    aggregated_result_address = "../data/evaluation/output/atm/aggregated_result.csv"
+    address = "../data/output/evaluation/atm/result_"
+    aggregated_result_address = "../data/output/analyse/atm/atm_aggregated_result.csv"
 
     [atm.BASE_JSON_ADDRESS]
-    address = '../data/output/final/atm_tests/'
+    address = '../data/output/json_tests/atm/'
+    generated = '../data/output/json_tests/atm/generated/'
 
     [atm.BASE_LOG_ADDRESS]
-    address = '../data/output/logs/atm_tests/'
+    address = '../data/output/logs/atm/'
+    generated = '../data/output/logs/atm/generated/'
 
     [atm.GROUND_TRUTH_GLOBE]
-    address = '../data/output/final/atm_tests/ground_truth/*/*.json'
+    address = '../data/output/json_tests/atm/ground_truth/*/*.json'
 
-    [atm.MIGRATION_CONFIGS]
-    address = '../data/atm_tests/generated/*'
-    erroneous_address = '../data/evaluation/output/atm/erroneous_generated'
+
+
+
+
+
 [craftdroid]
     [craftdroid.src_gt]
     address = "../data/evaluation/input/craftdroid/src_groundTruth.csv"
