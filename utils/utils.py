@@ -43,6 +43,9 @@ def get_capabilities(app_package, app_activity, no_reset):
 
 
 def get_app_name(fname):
+    category = fname.split("/")[-5]
+    if 'original' in category:
+        return fname.split("/")[-2].split("-")[1]
     category = fname.split("/")[-3]
     if category == "migrated_tests":
         return fname.split("/")[-2].split("-")[1]
