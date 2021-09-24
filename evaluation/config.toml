@@ -1,7 +1,7 @@
 algorithm = "atm"
 [atm]
     [atm.MIGRATION_CONFIGS]
-    address = '../data/input/atm_original_tests/*'
+    address = '../data/original_tests/atm/*'
     erroneous_address = '../data/broken_tests/atm/'
 
     [atm.src_gt]
@@ -15,15 +15,15 @@ algorithm = "atm"
     aggregated_result_address = "../data/output/analyse/atm/atm_aggregated_result.csv"
 
     [atm.BASE_JSON_ADDRESS]
-    address = '../data/output/json_tests/atm/'
-    generated = '../data/output/json_tests/atm/generated/'
+    address = '../data/json_tests/atm/'
+    generated = '../data/json_tests/atm/generated/'
 
     [atm.BASE_LOG_ADDRESS]
     address = '../data/output/logs/atm/'
     generated = '../data/output/logs/atm/generated/'
 
     [atm.GROUND_TRUTH_GLOBE]
-    address = '../data/output/json_tests/atm/ground_truth/*/*.json'
+    address = '../data/json_tests/atm/ground_truth/*/*.json'
 
 
 

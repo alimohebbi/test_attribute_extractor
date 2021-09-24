@@ -4,11 +4,12 @@ data/**
 !/data/**/
 !data/**/.gitkeep
 
-!data/mappings/**
+!data/mappings/atm/src_ground_truth/**
 
-!data/output/**/
-!data/output/json_tests/atm/donor/**
-!data/output/json_tests/atm/ground_truth/**
+!data/json_tests/**/
+!data/json_tests/atm/**/
+!data/json_tests/atm/donor/**
+!data/json_tests/atm/ground_truth/**
 
 
 data.bak/
