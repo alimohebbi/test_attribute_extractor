@@ -41,28 +41,28 @@ def rearrange_lines(lines):
     return lines
 
 
-def extract_check(actions, check):
-    if re.sub('[ ()]', '', check) == "isDisplayed" or re.sub('[ ()]', '', check) == "isEnabled":
-        actions.append(re.sub('[ ()]', '', check))
-        actions.append("true")
-    else:
-        actions.append(re.search(r'with(.*?)\(', check).group(1).lower())
-        actions.append(re.search(r'\"(.*?)\"', check).group(1))
-    return actions
+# def extract_check(actions, check):
+#     if re.sub('[ ()]', '', check) == "isDisplayed" or re.sub('[ ()]', '', check) == "isEnabled":
+#         actions.append(re.sub('[ ()]', '', check))
+#         actions.append("true")
+#     else:
+#         actions.append(re.search(r'with(.*?)\(', check).group(1).lower())
+#         actions.append(re.search(r'\"(.*?)\"', check).group(1))
+#     return actions
 
 
-def extract_checks(line, parsed_event):
-    value = []
-    match_section = re.search(r'matches\((.*?)\)\);', line.split("check")[1]).group(1)
-    actions = ["wait_until_element_presence", 10]
-    if match_section.startswith("allOf"):
-        checks = re.search(r'allOf\((.*?)\)\)', match_section).group(1).split(",")
-        for check in checks:
-            actions = extract_check(actions, check)
-    else:
-        actions = extract_check(actions, match_section)
-    parsed_event["action"] = actions
-    return parsed_event
+# def extract_checks(line, parsed_event):
+#     value = []
+#     match_section = re.search(r'matches\((.*?)\)\);', line.split("check")[1]).group(1)
+#     actions = ["wait_until_element_presence", 10]
+#     if match_section.startswith("allOf"):
+#         checks = re.search(r'allOf\((.*?)\)\)', match_section).group(1).split(",")
+#         for check in checks:
+#             actions = extract_check(actions, check)
+#     else:
+#         actions = extract_check(actions, match_section)
+#     parsed_event["action"] = actions
+#     return parsed_event
 
 
 def extract_perform(line, parsed_event):
@@ -93,7 +93,9 @@ def extract_action(parsed_event, line):
         if "perform" in line:
             parsed_event = extract_perform(line, parsed_event)
         elif "check" in line:
-            parsed_event = extract_checks(line, parsed_event)
+            # Ignore if the action is oracle
+            return None
+            # parsed_event = extract_checks(line, parsed_event)
     return parsed_event
 
 
@@ -180,6 +182,9 @@ def parse_test_section(lines):
         if "onView" in line or "pressBack();" in line:
             parsed_event = {}
             parsed_event = extract_action(parsed_event, line)
+            # Ignore if the action is oracle
+            if parsed_event is None:
+                continue
             if actions_need_element(parsed_event["action"]):
                 parsed_event = extract_get_element_by(parsed_event, line)
             parsed_event_list.append(parsed_event)
