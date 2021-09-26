@@ -62,7 +62,7 @@ def aggregate_results():
 
 
 def main():
-    # sift_erroneous_migrations()
+    sift_erroneous_migrations()
     aggregate_results()
 
 
