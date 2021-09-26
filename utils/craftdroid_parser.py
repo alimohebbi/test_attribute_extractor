@@ -67,6 +67,9 @@ def craftdroid_parse(fname):
     new_data = []
     for parsed_element in data:
         new_parsed_elemetn = extract_action(parsed_element)
+        # Ignore if action is oracle
+        if new_parsed_elemetn is None:
+            continue
         if actions_need_element(new_parsed_elemetn["action"]):
             new_parsed_elemetn = extract_get_element_by(new_parsed_elemetn, parsed_element)
         new_data.append(new_parsed_elemetn)
