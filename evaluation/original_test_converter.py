@@ -59,7 +59,11 @@ def get_file_addressed(file):
     return final_fname, log_fname
 
 
-def run(file, log_fname, final_fname):
+def run(file):
+    final_fname, log_fname = get_file_addressed(file)
+    if already_exists(final_fname):
+        return
+    print(final_fname + '\n')
     start_emulator()
     if ALGORITHM == "atm":
         try:
@@ -85,16 +89,12 @@ def main():
         if ALGORITHM == "atm":
             files = prune_files(files)
         for file in files:
-            final_fname, log_fname = get_file_addressed(file)
-            print(final_fname + '\n')
-            if already_exists(final_fname):
-                continue
-            run(file, log_fname, final_fname)
-            with open(log_fname) as f:
-                lines = f.readlines()
-            if len(lines) and lines[0].startswith("UNABLE TO GRAB THE DRIVER WITH CAPABILITIES"):
-                print('\n' + "RUNNING AGAIN: " + '\n')
-                run(file, log_fname, final_fname)
+            run(file)
+            # with open(log_fname) as f:
+            #     lines = f.readlines()
+            # if len(lines) and lines[0].startswith("UNABLE TO GRAB THE DRIVER WITH CAPABILITIES"):
+            #     print('\n' + "RUNNING AGAIN: " + '\n')
+            #     run(file)
 
 
 if __name__ == '__main__':
