@@ -1,8 +1,11 @@
+import datetime
 import json
 import pathlib
 
+import dateinfer
 import pandas as pd
 import re
+from dateutil.parser import parse
 
 
 def read_file(fname):
@@ -109,3 +112,25 @@ def get_page_source(driver):
     page = page.replace('\n', '')
     page = re.sub(r'>[\ ]+<', '><', page)
     return page
+
+
+def is_date(input_date):
+    try:
+        parse(input_date, fuzzy=False)
+        return True
+    except ValueError:
+        return False
+
+
+def update_date(input_date):
+    if not is_date(input_date):
+        return input_date
+    inferred_format = dateinfer.infer([input_date])
+    inferred_format = inferred_format.replace('%H', '%d')
+    today = datetime.date.today()
+    modified_date = today.strftime(inferred_format)
+    return str(modified_date)
+
+
+if __name__ == '__main__':
+    print(update_date('yesterday'))
