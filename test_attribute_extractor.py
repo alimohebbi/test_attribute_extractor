@@ -68,48 +68,48 @@ class TestAttributeExtractor(ABC):
         value = parsed_event["action"][index + 1]
         return conditional, value
     
-    def execute_check_element_invisible(self, parsed_event):
-        condition = [parsed_event["action"][2], parsed_event["action"][3]]
-        elements = self.get_elements((condition[0], condition[1]))
-        if len(elements) != 0:
-            error_message = 40 * "#" + " ERROR! " + 40 * "#" + "\nFor check_element_invisible, an element with selector: " + str(
-                condition) + ", was found!\n\n\n"
-            self.logger.error(error_message)
+    # def execute_check_element_invisible(self, parsed_event):
+    #     condition = [parsed_event["action"][2], parsed_event["action"][3]]
+    #     elements = self.get_elements((condition[0], condition[1]))
+    #     if len(elements) != 0:
+    #         error_message = 40 * "#" + " ERROR! " + 40 * "#" + "\nFor check_element_invisible, an element with selector: " + str(
+    #             condition) + ", was found!\n\n\n"
+    #         self.logger.error(error_message)
 
-    def execute_check_element_presence(self, element, parsed_event):
-        matched = True
-        i = 2
-        while i < len(parsed_event["action"]):
-            conditional, value = self.get_condition(parsed_event, i)
-            if conditional == "isDisplayed":
-                if element.get_attribute("displayed") != value:
-                    matched = False
-            elif conditional == "isEnabled":
-                if element.get_attribute("enabled") != value:
-                    matched = False
-            elif conditional == "text":
-                if preprocess_text(value) not in preprocess_text(element.get_attribute("text")):
-                    matched = False
-            elif conditional == 'contentdescription' or conditional == "content-desc":
-                if preprocess_text(value) not in preprocess_text(element.get_attribute("content-desc")):
-                    matched = False
-            elif conditional == "id" or conditional == "resource-id":
-                if value != element.get_attribute(conditional):
-                    if value != element.get_attribute(conditional).split("/")[1]:
-                        matched = False
-            elif conditional in self.attribute_list:
-                if value != element.get_attribute(conditional):
-                    matched = False
-            else:
-                error_message = 40 * "#" + " ERROR! " + 40 * "#" + "\nUnknown attribute for check: " + str(
-                    (conditional, value)) + "\n\n\n"
-                self.logger.error(error_message)
-                matched = False
-            i += 2
-        if not matched:
-            error_message = 40 * "#" + " ERROR! " + 40 * "#" + "\nConditions not fully satisfied in: " + str(
-                parsed_event) + "\n\n\n"
-            self.logger.error(error_message)
+    # def execute_check_element_presence(self, element, parsed_event):
+    #     matched = True
+    #     i = 2
+    #     while i < len(parsed_event["action"]):
+    #         conditional, value = self.get_condition(parsed_event, i)
+    #         if conditional == "isDisplayed":
+    #             if element.get_attribute("displayed") != value:
+    #                 matched = False
+    #         elif conditional == "isEnabled":
+    #             if element.get_attribute("enabled") != value:
+    #                 matched = False
+    #         elif conditional == "text":
+    #             if preprocess_text(value) not in preprocess_text(element.get_attribute("text")):
+    #                 matched = False
+    #         elif conditional == 'contentdescription' or conditional == "content-desc":
+    #             if preprocess_text(value) not in preprocess_text(element.get_attribute("content-desc")):
+    #                 matched = False
+    #         elif conditional == "id" or conditional == "resource-id":
+    #             if value != element.get_attribute(conditional):
+    #                 if value != element.get_attribute(conditional).split("/")[1]:
+    #                     matched = False
+    #         elif conditional in self.attribute_list:
+    #             if value != element.get_attribute(conditional):
+    #                 matched = False
+    #         else:
+    #             error_message = 40 * "#" + " ERROR! " + 40 * "#" + "\nUnknown attribute for check: " + str(
+    #                 (conditional, value)) + "\n\n\n"
+    #             self.logger.error(error_message)
+    #             matched = False
+    #         i += 2
+    #     if not matched:
+    #         error_message = 40 * "#" + " ERROR! " + 40 * "#" + "\nConditions not fully satisfied in: " + str(
+    #             parsed_event) + "\n\n\n"
+    #         self.logger.error(error_message)
 
     def execute_swipe(self, action, element):
         direction = action.split("_")[1]
@@ -163,11 +163,11 @@ class TestAttributeExtractor(ABC):
             self.execute_send_keys(action, parsed_event["action"][1], el)
         elif action.startswith("swipe"):
             self.execute_swipe(action, el)
-        elif "wait" in action:
-            if action == "wait_until_element_presence" or action == "wait_until_text_presence":
-                self.execute_check_element_presence(el, parsed_event)
-            elif action == "wait_until_text_invisible":
-                self.execute_check_element_invisible(parsed_event)
+        # elif "wait" in action:
+        #     if action == "wait_until_element_presence" or action == "wait_until_text_presence":
+        #         self.execute_check_element_presence(el, parsed_event)
+        #     elif action == "wait_until_text_invisible":
+        #         self.execute_check_element_invisible(parsed_event)
         else:
             executed = False
             self.logger.error("Unhendled event: " + str(action) + ", in line: " + str(parsed_event))
@@ -245,20 +245,31 @@ class TestAttributeExtractor(ABC):
             return None
         return elements
 
-    def get_element(self, parsed_event):
+    def skip_internal_activity(parsed_event):
+        if self.driver.current_activity == "android/com.android.internal.app.ResolverActivity":
+            self.driver.back()
+            element = self.get_element(parsed_event, True)
+            return element
+        else:
+            return None
+
+    def get_element(self, parsed_event, skipped_internal_activity = False):
         identifier = parsed_event["get_element_by"][0]["type"]
         value = parsed_event["get_element_by"][0]["value"]
         elements = self.get_elements((identifier, value))
         if elements is None:
-            return None
+            if not skipped_internal_activity:
+                return self.skip_internal_activity(parsed_event)
+            else:
+                return None
         element = self.get_matching_element(parsed_event, elements)
         return element
 
     def set_event_type(self, action):
         if action == "KEY_BACK":
             return ("SYS_EVENT")
-        elif "wait" in action:
-            return "oracle"
+        # elif "wait" in action:
+        #     return "oracle"
         else:
             return "gui"
 
@@ -280,8 +291,8 @@ class TestAttributeExtractor(ABC):
             while self.driver.is_keyboard_shown():
                self.driver.back()
                time.sleep(5)
-            if "wait" in parsed_event["action"][0]:
-                time.sleep(parsed_event["action"][1])
+            # if "wait" in parsed_event["action"][0]:
+            #     time.sleep(parsed_event["action"][1])
             if not actions_need_element(parsed_event["action"]):
                 executed = self.execute_action(None, parsed_event)
             else:

@@ -26,22 +26,22 @@ def extract_get_element_by(new_parsed_elemetn, parsed_element):
     return new_parsed_elemetn
 
 
-def extract_action_wait(parsed_element, new_parsed_elemetn):
-    new_parsed_elemetn["action"] = [parsed_element["action"][0]]
-    new_parsed_elemetn["action"].append(parsed_element["action"][1])
-    i = 2
-    while i < len(parsed_element["action"]):
-        if parsed_element["action"][i] == "xpath" and "[@" in parsed_element["action"][i + 1]:
-            new_parsed_elemetn["action"].append("class")
-            value = parsed_element["action"][i + 1]
-            new_parsed_elemetn["action"].append(re.search(r'\/\/(.*?)\[', value).group(1))
-            new_parsed_elemetn["action"].append(re.search(r'\@(.*?)\=', value).group(1))
-            new_parsed_elemetn["action"].append(re.search(r'\"(.*?)\"', value).group(1))
-        else:
-            new_parsed_elemetn["action"].append(parsed_element["action"][i])
-            new_parsed_elemetn["action"].append(parsed_element["action"][i + 1])
-        i += 2
-    return new_parsed_elemetn
+# def extract_action_wait(parsed_element, new_parsed_elemetn):
+#     new_parsed_elemetn["action"] = [parsed_element["action"][0]]
+#     new_parsed_elemetn["action"].append(parsed_element["action"][1])
+#     i = 2
+#     while i < len(parsed_element["action"]):
+#         if parsed_element["action"][i] == "xpath" and "[@" in parsed_element["action"][i + 1]:
+#             new_parsed_elemetn["action"].append("class")
+#             value = parsed_element["action"][i + 1]
+#             new_parsed_elemetn["action"].append(re.search(r'\/\/(.*?)\[', value).group(1))
+#             new_parsed_elemetn["action"].append(re.search(r'\@(.*?)\=', value).group(1))
+#             new_parsed_elemetn["action"].append(re.search(r'\"(.*?)\"', value).group(1))
+#         else:
+#             new_parsed_elemetn["action"].append(parsed_element["action"][i])
+#             new_parsed_elemetn["action"].append(parsed_element["action"][i + 1])
+#         i += 2
+#     return new_parsed_elemetn
 
 
 def extract_action(parsed_element):
@@ -49,7 +49,9 @@ def extract_action(parsed_element):
     if "action" not in parsed_element.keys():
         return new_parsed_element
     if "wait" in parsed_element["action"][0]:
-        new_parsed_element = extract_action_wait(parsed_element, new_parsed_element)
+        # Ignore if action is oracle
+        return None
+        # new_parsed_element = extract_action_wait(parsed_element, new_parsed_element)
     else:
         new_parsed_element["action"] = []
         for val in parsed_element["action"]:
@@ -65,6 +67,9 @@ def craftdroid_parse(fname):
     new_data = []
     for parsed_element in data:
         new_parsed_elemetn = extract_action(parsed_element)
+        # Ignore if action is oracle
+        if new_parsed_elemetn is None:
+            continue
         if actions_need_element(new_parsed_elemetn["action"]):
             new_parsed_elemetn = extract_get_element_by(new_parsed_elemetn, parsed_element)
         new_data.append(new_parsed_elemetn)
