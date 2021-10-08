@@ -20,8 +20,11 @@
 15,a23,org.secuso.privacyfriendlytodolist,org.secuso.privacyfriendlytodolist.tutorial.TutorialActivity,0
 14,a24,kdk.android.simplydo,kdk.android.simplydo.SimplyDoActivity,0
 13,a25,com.woefe.shoppinglist,com.woefe.shoppinglist.activity.MainActivity,0
-12,a33,com.rainbowshops,com.rainbowshops.activity.ProfileActivity,1
-11,a35,com.yelp.android,com.yelp.android.onboarding.ui.ActivityOnboarding,1
+35,a31,com.contextlogic.geek,com.contextlogic.wish.activity.login.LoginActivity,0
+35,a32,com.contextlogic.wish,com.contextlogic.wish.activity.login.signin.SignInActivity,0
+12,a33,com.rainbowshops,com.rainbowshops.activity.ProfileActivity,0
+36,a34,com.etsy.android,com.etsy.android.ui.homescreen.HomescreenTabsActivity
+11,a35,com.yelp.android,com.yelp.android.nearby.ui.ActivityNearby,0
 10,a43,ru.mail.mailapp,ru.mail.ui.SlideStackActivity,1
 8,a44,com.my.mail,ru.mail.mailapp.SplashScreenActivity,1
 5,a45,park.outlook.sign.in.client,ru.mail.ui.SlideStackActivity,1
