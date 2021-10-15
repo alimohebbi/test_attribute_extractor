@@ -233,7 +233,7 @@ class TestAttributeExtractor(ABC):
                 'new UiSelector().descriptionContains(\"' + str(value) + '\")')
         elif identifier == "text":
             elements = self.driver.find_elements_by_android_uiautomator(
-                'new UiSelector().textContains(\"' + str(value) + '\")')
+                'new UiSelector().text(\"' + str(value) + '\")')
         elif identifier == "xpath":
             elements = self.get_elements_by_xpath(value)
         elif identifier == "classname":
