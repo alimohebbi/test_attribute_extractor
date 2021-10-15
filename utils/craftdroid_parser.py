@@ -20,28 +20,32 @@ def extract_selector_list(selector_list, parsed_element):
         selector_list.append({"type": "classname", "value": parsed_element["class"]})
     return selector_list
 
-def extract_get_element_by(new_parsed_elemetn, parsed_element):
+def extract_get_element_by(new_parsed_element, parsed_element):
     selector_list = extract_selector_list([], parsed_element)
-    new_parsed_elemetn["get_element_by"] = selector_list
-    return new_parsed_elemetn
+    new_parsed_element["get_element_by"] = selector_list
+    return new_parsed_element
 
+def empty_event(parsed_element):
+    keys = parsed_element.keys()
+    if "class" in keys and parsed_element["class"] == "EMPTY_EVENT":
+        return True
+    return False
 
-# def extract_action_wait(parsed_element, new_parsed_elemetn):
-#     new_parsed_elemetn["action"] = [parsed_element["action"][0]]
-#     new_parsed_elemetn["action"].append(parsed_element["action"][1])
+#     new_parsed_element["action"] = [parsed_element["action"][0]]
+#     new_parsed_element["action"].append(parsed_element["action"][1])
 #     i = 2
 #     while i < len(parsed_element["action"]):
 #         if parsed_element["action"][i] == "xpath" and "[@" in parsed_element["action"][i + 1]:
-#             new_parsed_elemetn["action"].append("class")
+#             new_parsed_element["action"].append("class")
 #             value = parsed_element["action"][i + 1]
-#             new_parsed_elemetn["action"].append(re.search(r'\/\/(.*?)\[', value).group(1))
-#             new_parsed_elemetn["action"].append(re.search(r'\@(.*?)\=', value).group(1))
-#             new_parsed_elemetn["action"].append(re.search(r'\"(.*?)\"', value).group(1))
+#             new_parsed_element["action"].append(re.search(r'\/\/(.*?)\[', value).group(1))
+#             new_parsed_element["action"].append(re.search(r'\@(.*?)\=', value).group(1))
+#             new_parsed_element["action"].append(re.search(r'\"(.*?)\"', value).group(1))
 #         else:
-#             new_parsed_elemetn["action"].append(parsed_element["action"][i])
-#             new_parsed_elemetn["action"].append(parsed_element["action"][i + 1])
+#             new_parsed_element["action"].append(parsed_element["action"][i])
+#             new_parsed_element["action"].append(parsed_element["action"][i + 1])
 #         i += 2
-#     return new_parsed_elemetn
+#     return new_parsed_element
 
 
 def extract_action(parsed_element):
@@ -66,13 +70,13 @@ def craftdroid_parse(fname):
     data = load_json_data(fname)
     new_data = []
     for parsed_element in data:
-        new_parsed_elemetn = extract_action(parsed_element)
+        new_parsed_element = extract_action(parsed_element)
         # Ignore if action is oracle
-        if new_parsed_elemetn is None:
+        if new_parsed_element is None or empty_event(new_parsed_element):
             continue
-        if actions_need_element(new_parsed_elemetn["action"]):
-            new_parsed_elemetn = extract_get_element_by(new_parsed_elemetn, parsed_element)
-        new_data.append(new_parsed_elemetn)
+        if actions_need_element(new_parsed_element["action"]):
+            new_parsed_element = extract_get_element_by(new_parsed_element, parsed_element)
+        new_data.append(new_parsed_element)
     # write_json(new_data, parsed_file_name)
     return new_data
 
