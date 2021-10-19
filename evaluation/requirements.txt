@@ -4,3 +4,5 @@ pandas==1.2.4
 PyYAML==5.4.1
 python-Levenshtein==0.12.2
 pathlib==1.0.1
+dateinfer==0.2.0
+infer==0.1
