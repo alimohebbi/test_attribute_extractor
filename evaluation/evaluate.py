@@ -24,16 +24,22 @@ def get_file_size(base_address: str) -> int:
         obj = remove_oracles(obj)
         return len(obj)
 
-def get_file_sizes(src_app: str, target_app: str, migration_config: str) -> Tuple[int, int, int]:
+def get_file_addresses(src_app: str, target_app: str, migration_config: str) -> Tuple[str, str, str]:
     BASE_JSON_ADDRESS = config[ALGORITHM]['BASE_JSON_ADDRESS']['address']
+    if ALGORITHM == "atm":
+        source_address = BASE_JSON_ADDRESS+"donor/"+src_app+"/*.json"
+        ground_truth_address = BASE_JSON_ADDRESS+"ground_truth/"+src_app+"/"+src_app+"-"+target_app+"_attributes.json"
+        generated_address = BASE_JSON_ADDRESS+"generated/"+migration_config.split("/")[-1]+"/"+src_app+"-"+target_app+"/*.json"
+    else:
+        source_address = BASE_JSON_ADDRESS+"donor/"+src_app+"*.json"
+        ground_truth_address = BASE_JSON_ADDRESS+"ground_truth/"+target_app+"_attributes.json"
+        generated_address = BASE_JSON_ADDRESS+"generated/"+migration_config.split("/")[-1]+"/"+src_app.split("-")[0]+"-"+target_app+"/*.json"
+    return source_address, ground_truth_address, generated_address
 
-    source_address = BASE_JSON_ADDRESS+"donor/"+src_app+"/*.json"
+def get_file_sizes(src_app: str, target_app: str, migration_config: str) -> Tuple[int, int, int]:
+    source_address, ground_truth_address, generated_address = get_file_addresses(src_app: str, target_app: str, migration_config: str)
     src_size = get_file_size(source_address)
-
-    ground_truth_address = BASE_JSON_ADDRESS+"ground_truth/"+src_app+"/"+src_app+"-"+target_app+"_attributes.json"
     gt_size = get_file_size(ground_truth_address)
-
-    generated_address = BASE_JSON_ADDRESS+"generated/"+migration_config.split("/")[-1]+"/"+src_app+"-"+target_app+"/*.json"
     gen_size = get_file_size(generated_address)
     return src_size, gt_size, gen_size
 

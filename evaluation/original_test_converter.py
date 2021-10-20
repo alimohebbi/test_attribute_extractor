@@ -49,7 +49,7 @@ def get_file_addressed(file):
         os.mkdir(base_final_address + "/" + migration)
     final_fname = base_final_address + "/" + migration + "/" + test_file_name + "_final.json"
 
-    base_log_address = config[ALGORITHM]['BASE_LOG_ADDRESS']['generated'] + "/" + sm_config_id
+    base_log_address = config[ALGORITHM]['BASE_LOG_ADDRESS']['generated'] + sm_config_id
     if not os.path.exists(base_log_address):
         os.mkdir(base_log_address)
     if not os.path.exists(base_log_address + "/" + migration):

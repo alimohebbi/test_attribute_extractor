@@ -29,7 +29,6 @@ def sift_erroneous_migrations():
                 lines = f.readlines()
             if len(lines):
                 erroneous_address = erroneous_generated + '/'.join(migration.split("/")[-2:])
-                print(erroneous_address)
                 if not os.path.exists(erroneous_address):
                     shutil.copytree(migration, erroneous_address)
                 shutil.copyfile(log_fname, erroneous_address+"/"+log_fname.split("/")[-1])

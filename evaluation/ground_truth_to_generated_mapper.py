@@ -28,14 +28,22 @@ def remove_oracles(generated: List[Dict[str, object]]) -> List[Dict[str, object]
     return generated
 
 
+def get_gt_filename(filename: str) -> str:
+    if ALGORITHM == "craftdroid":
+        gt_filename = '-'.join(filename.split('/')[-1].split(".")[0].split("-")[-2:]) + "_attributes.json"
+    else:
+        gt_filename = filename.split('/')[-2] + "_attributes.json"
+    return gt_filename
+    
+
 def find_ground_truth(filename: str) -> str:
-    filename = filename.split('/')[-2] + "_attributes.json"
+    gt_filename = get_gt_filename(filename)
     files = glob.glob(config[ALGORITHM]['GROUND_TRUTH_GLOBE']['address'])
     for file in files:
-        if filename in file:
+        if gt_filename in file:
             return file
     return None
-
+    
 
 def load_json_files(file: str, gt_file_address: str) -> Tuple[list, list]:
     generated: List[Dict[str, object]] = None
@@ -76,8 +84,12 @@ def ordered(obj) -> str:
 
 
 def get_src_and_tgt(file: str) -> Tuple[str, str]:
-    src_app = file.split('/')[-2].split('-')[0]
-    tgt_app = file.split('/')[-2].split('-')[1]
+    migratio = file.split('/')[-2] 
+    src_app = migratio.split('-')[0]
+    tgt_app = migratio.split('-')[1]
+    if ALGORITHM == "craftdroid":
+        src_app = src_app + migration.split('-')[2]
+        tgt_app = tgt_app + migration.split('-')[2]
     return src_app, tgt_app
 
 
@@ -111,15 +123,15 @@ def extract_ground_truth_generated_map(files: list, migration_config: str):
 
         result = add_corresponding_objects_to_map(result, file, generated, ground_truth)
 
-    result.to_csv(config[ALGORITHM]['gt_gen']['address'] + migration_config.split("/")[-1] + ".csv", index=False)
+    result.to_csv(config[ALGORITHM]['gt_gen']['address'] + migration_config + ".csv", index=False)
 
 
 def extract_all_ground_truth_generated_maps():
     migration_configs = glob.glob(config[ALGORITHM]['MIGRATION_CONFIGS']['address'])
     for migration_config in migration_configs:
+        migration_config = migration_config.split("/")[-1]
         files = glob.glob(
-            config[ALGORITHM]['BASE_JSON_ADDRESS']['address'] + "generated/" + migration_config.split("/")[
-                -1] + "/*/*_final.json")
+            config[ALGORITHM]['BASE_JSON_ADDRESS']['address'] + "generated/" + migration_config + "/*/*_final.json")
         extract_ground_truth_generated_map(files, migration_config)
 
 
