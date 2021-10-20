@@ -85,9 +85,10 @@ def main():
     migration_configs = glob.glob(config[ALGORITHM]['MIGRATION_CONFIGS']['address'])
     for migration_config in migration_configs:
         print(migration_config + '\n')
-        files = glob.glob(migration_config + "/*/*.java")
         if ALGORITHM == "atm":
-            files = prune_files(files)
+            files = prune_files(glob.glob(migration_config + "/*/*.java"))
+        else:
+            files = glob.glob(migration_config + "/*/*.json")
         for file in files:
             run(file)
             # with open(log_fname) as f:

@@ -70,9 +70,11 @@ def craftdroid_parse(fname):
     data = load_json_data(fname)
     new_data = []
     for parsed_element in data:
+        if empty_event(parsed_element):
+            continue
         new_parsed_element = extract_action(parsed_element)
         # Ignore if action is oracle
-        if new_parsed_element is None or empty_event(new_parsed_element):
+        if new_parsed_element is None:
             continue
         if actions_need_element(new_parsed_element["action"]):
             new_parsed_element = extract_get_element_by(new_parsed_element, parsed_element)
