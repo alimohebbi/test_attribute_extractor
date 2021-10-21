@@ -36,9 +36,9 @@ def sift_erroneous_migrations():
                         final_fname = glob.glob(config[ALGORITHM]['BASE_JSON_ADDRESS']['generated'] + config_migration + "/*_final.json")[0]
                         shutil.copyfile(final_fname, erroneous_address+"/"+final_fname.split("/")[-1])
                     except Exception as e:
-                        print(f"No final json file found for: {migration} .failed with error {e}")
+                        pass
             except Exception as e:
-                print(f"No log file found for: {migration} .failed with error {e}")
+                pass
 
 
 def aggregate_results():

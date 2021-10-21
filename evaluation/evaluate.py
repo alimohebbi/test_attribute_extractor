@@ -32,7 +32,7 @@ def get_file_addresses(src_app: str, target_app: str, migration_config: str) -> 
         generated_address = BASE_JSON_ADDRESS+"generated/"+migration_config.split("/")[-1]+"/"+src_app+"-"+target_app+"/*.json"
     else:
         source_address = BASE_JSON_ADDRESS+"donor/"+src_app+"*.json"
-        ground_truth_address = BASE_JSON_ADDRESS+"ground_truth/"+target_app+"_attributes.json"
+        ground_truth_address = BASE_JSON_ADDRESS+"ground_truth/"+target_app+".json"
         generated_address = BASE_JSON_ADDRESS+"generated/"+migration_config.split("/")[-1]+"/"+src_app.split("-")[0]+"-"+target_app+"/*.json"
     return source_address, ground_truth_address, generated_address
 

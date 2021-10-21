@@ -30,7 +30,7 @@ def remove_oracles(generated: List[Dict[str, object]]) -> List[Dict[str, object]
 
 def get_gt_filename(filename: str) -> str:
     if ALGORITHM == "craftdroid":
-        gt_filename = '-'.join(filename.split('/')[-2].split("-")[-2:]) + "_attributes.json"
+        gt_filename = '-'.join(filename.split('/')[-2].split("-")[-2:]) + ".json"
     else:
         gt_filename = filename.split('/')[-2] + "_attributes.json"
     return gt_filename
@@ -59,8 +59,59 @@ def load_json_files(file: str, gt_file_address: str) -> Tuple[list, list]:
 
     return generated, ground_truth
 
+def drop_craftdroid_attributes(obj: dict) -> dict:
+    try:
+        obj.pop('checkable')
+    except KeyError:
+        pass
+    try:
+        obj.pop('checked')
+    except KeyError:
+        pass
+    try:
+        obj.pop('enabled')
+    except KeyError:
+        pass
+    try:
+        obj.pop('long-clickable')
+    except KeyError:
+        pass
+    try:
+        obj.pop('scrollable')
+    except KeyError:
+        pass
+    try:
+        obj.pop('selected')
+    except KeyError:
+        pass
+    try:
+        obj.pop('parent_text')
+    except KeyError:
+        pass
+    try:
+        obj.pop('sibling_text')
+    except KeyError:
+        pass
+    try:
+        obj.pop('stepping_events')
+    except KeyError:
+        pass
+    try:
+        obj.pop('activity')
+    except KeyError:
+        pass
+    try:
+        obj.pop('event_type')
+    except KeyError:
+        pass
+    try:
+        obj.pop('score')
+    except KeyError:
+        pass
+    return obj
 
-def drop_page_bounds(obj: dict) -> dict:
+
+def drop_extra_attributes(obj: dict) -> dict:
     try:
         obj.pop('page')
     except KeyError:
@@ -69,6 +120,8 @@ def drop_page_bounds(obj: dict) -> dict:
         obj.pop('bounds')
     except KeyError:
         pass
+    if ALGORITHM == "craftdroid":
+        obj = drop_craftdroid_attributes(obj)
     return obj
 
 
@@ -99,10 +152,10 @@ def add_corresponding_objects_to_map(result: pd.core.frame.DataFrame,
                                      ground_truth: list) -> pd.core.frame.DataFrame:
     src_app, tgt_app = get_src_and_tgt(file)
     for i, gt in enumerate(ground_truth):
-        gt = drop_page_bounds(gt)
+        gt = drop_extra_attributes(gt)
         equal_gens = []
         for j, gen in enumerate(generated):
-            gen = drop_page_bounds(gen)
+            gen = drop_extra_attributes(gen)
             if ordered(gen) == ordered(gt):
                 equal_gens.append(str(j))
         if len(equal_gens):
@@ -131,7 +184,7 @@ def extract_all_ground_truth_generated_maps():
     for migration_config in migration_configs:
         migration_config = migration_config.split("/")[-1]
         files = glob.glob(
-            config[ALGORITHM]['BASE_JSON_ADDRESS']['address'] + "generated/" + migration_config + "/*/*_final.json")
+            config[ALGORITHM]['BASE_JSON_ADDRESS']['address'] + "generated/" + migration_config + "/*/*.json")
         extract_ground_truth_generated_map(files, migration_config)
 
 

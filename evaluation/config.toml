@@ -46,14 +46,14 @@ algorithm = "atm"
     aggregated_result_address = "../data/output/analyse/craftdroid/craftdroid_aggregated_result.csv"
 
     [craftdroid.BASE_JSON_ADDRESS]
-    address = '../data/json_tests/craftdroid/'
-    generated = '../data/json_tests/craftdroid/generated/'
+    address = '../data/original_tests/craftdroid/'
+    generated = '../data/original_tests/craftdroid/generated/'
 
     [craftdroid.BASE_LOG_ADDRESS]
     address = '../data/output/logs/craftdroid/'
     generated = '../data/output/logs/craftdroid/generated/'
 
     [craftdroid.GROUND_TRUTH_GLOBE]
-    address = '../data/json_tests/craftdroid/ground_truth/*.json'
+    address = '../data/original_tests/craftdroid/ground_truth/*.json'
 
     

@@ -71,9 +71,17 @@ class Mapping:
         gen_str = ["$"] * self.gen_size
         for i in range(self.gt_size):
             gt_str += char_mapping[i]
-        for key, val in self.gt_gen.items():
-            for gen_idx in val:
-                gen_str[gen_idx] = gt_str[key]
+        try:
+            for key, val in self.gt_gen.items():
+                for gen_idx in val:
+                    gen_str[gen_idx] = gt_str[key]
+        except Exception as e:
+            print("src_app: "+self.src_app+", target_app: "+str(tgt_app))
+            print("gt_str: "+len(gt_str)+", gen_str: "+len(gen_str))
+            print("gt_gen: "+str(self.gt_gen))
+            print(e)
+            print()
+            return 1000
         return distance(gt_str, ''.join(gen_str))
 
 
