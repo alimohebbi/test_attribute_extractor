@@ -21,9 +21,16 @@ def change_nulls_to_empty_strings(json_list: List[Dict[str, object]]) -> List[Di
     return new_json_list
 
 
-def remove_oracles(generated: List[Dict[str, object]]) -> List[Dict[str, object]]:
+def empty_event(parsed_element):
+    keys = parsed_element.keys()
+    if "class" in keys and parsed_element["class"] == "EMPTY_EVENT":
+        return True
+    return False
+
+def remove_extra_events(generated: List[Dict[str, object]]) -> List[Dict[str, object]]:
     if generated is None:
         return generated
+    generated = [x for x in generated if not empty_event(x)]
     generated = [x for x in generated if not x["action"][0].startswith("wait")]
     return generated
 
@@ -49,7 +56,7 @@ def load_json_files(file: str, gt_file_address: str) -> Tuple[list, list]:
     generated: List[Dict[str, object]] = None
     with open(file, 'r') as f:
         generated = json.load(f)
-    generated = remove_oracles(generated)
+    generated = remove_extra_events(generated)
     generated = change_nulls_to_empty_strings(generated)
 
     ground_truth: List[Dict[str, object]] = None

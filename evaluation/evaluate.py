@@ -9,7 +9,14 @@ with open('config.toml', 'r') as file:
         config = toml.load(file)
 ALGORITHM = str(config["algorithm"])
 
-def remove_oracles(obj: List[Dict[str, object]]) -> List[Dict[str, object]]:  
+def empty_event(parsed_element):
+    keys = parsed_element.keys()
+    if "class" in keys and parsed_element["class"] == "EMPTY_EVENT":
+        return True
+    return False
+
+def remove_extra_events(obj: List[Dict[str, object]]) -> List[Dict[str, object]]:  
+    obj = [x for x in obj if not empty_event(x)]
     obj = [ x for x in obj if not x["action"][0].startswith("wait")]
     return obj
 
@@ -21,7 +28,7 @@ def get_file_size(base_address: str) -> int:
     if len(address_list) == 0 or obj is None:
         return 0
     else:
-        obj = remove_oracles(obj)
+        obj = remove_extra_events(obj)
         return len(obj)
 
 def get_file_addresses(src_app: str, target_app: str, migration_config: str) -> Tuple[str, str, str]:
