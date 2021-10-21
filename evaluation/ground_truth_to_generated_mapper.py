@@ -30,7 +30,7 @@ def remove_oracles(generated: List[Dict[str, object]]) -> List[Dict[str, object]
 
 def get_gt_filename(filename: str) -> str:
     if ALGORITHM == "craftdroid":
-        gt_filename = '-'.join(filename.split('/')[-1].split(".")[0].split("-")[-2:]) + "_attributes.json"
+        gt_filename = '-'.join(filename.split('/')[-2].split("-")[-2:]) + "_attributes.json"
     else:
         gt_filename = filename.split('/')[-2] + "_attributes.json"
     return gt_filename

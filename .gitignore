@@ -11,7 +11,9 @@ data/**
 !data/json_tests/atm/**/
 !data/json_tests/atm/donor/**
 !data/json_tests/atm/ground_truth/**
-
+!data/json_tests/craftdroid/**/
+!data/json_tests/craftdroid/donor/**
+!data/json_tests/craftdroid/ground_truth/**
 
 data.bak/
 .idea/
