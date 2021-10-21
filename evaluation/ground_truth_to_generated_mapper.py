@@ -31,7 +31,7 @@ def remove_extra_events(generated: List[Dict[str, object]]) -> List[Dict[str, ob
     if generated is None:
         return generated
     generated = [x for x in generated if not empty_event(x)]
-    generated = [x for x in generated if not x["action"][0].startswith("wait")]
+    generated = [x for x in generated if not x["action"][0].startswith("wait") and not x["action"][0] == "KEY_BACK"]
     return generated
 
 
@@ -62,6 +62,7 @@ def load_json_files(file: str, gt_file_address: str) -> Tuple[list, list]:
     ground_truth: List[Dict[str, object]] = None
     with open(gt_file_address, 'r') as f:
         ground_truth = json.load(f)
+    ground_truth = remove_extra_events(ground_truth)
     ground_truth = change_nulls_to_empty_strings(ground_truth)
 
     return generated, ground_truth
