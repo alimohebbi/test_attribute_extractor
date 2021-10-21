@@ -43,7 +43,7 @@ algorithm = "atm"
 
     [craftdroid.result]
     address = "../data/output/evaluation/craftdroid/result_"
-    aggregated_result_address = "../data/output/analyse/craftdroid/atm_aggregated_result.csv"
+    aggregated_result_address = "../data/output/analyse/craftdroid/craftdroid_aggregated_result.csv"
 
     [craftdroid.BASE_JSON_ADDRESS]
     address = '../data/json_tests/craftdroid/'
