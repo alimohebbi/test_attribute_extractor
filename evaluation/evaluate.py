@@ -17,7 +17,7 @@ def empty_event(parsed_element):
 
 def remove_extra_events(obj: List[Dict[str, object]]) -> List[Dict[str, object]]:  
     obj = [x for x in obj if not empty_event(x)]
-    generated = [x for x in generated if not x["action"][0].startswith("wait") and not x["action"][0] == "KEY_BACK"]
+    objobj = [x for x in obj if not x["action"][0].startswith("wait") and not x["action"][0] == "KEY_BACK"]
     return obj
 
 def get_file_size(base_address: str) -> int:
