@@ -75,36 +75,6 @@
     "bounds": "[35,381][1295,484]",
     "displayed": "true",
     "action": [
-      "wait_until_text_presence",
-      10,
-      "text",
-      "Sample Todo"
-    ],
-    "event_type": "oracle",
-    "page": "<?xml version='1.0' encoding='UTF-8' standalone='yes' ?><hierarchy index=\"0\" class=\"hierarchy\" rotation=\"0\" width=\"1440\" height=\"2392\"><android.widget.FrameLayout index=\"0\" package=\"kdk.android.simplydo\" class=\"android.widget.FrameLayout\" text=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" long-clickable=\"false\" password=\"false\" scrollable=\"false\" selected=\"false\" bounds=\"[0,0][1440,2392]\" displayed=\"true\"><android.widget.LinearLayout index=\"0\" package=\"kdk.android.simplydo\" class=\"android.widget.LinearLayout\" text=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" long-clickable=\"false\" password=\"false\" scrollable=\"false\" selected=\"false\" bounds=\"[0,0][1440,2392]\" displayed=\"true\"><android.widget.FrameLayout index=\"0\" package=\"kdk.android.simplydo\" class=\"android.widget.FrameLayout\" text=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" long-clickable=\"false\" password=\"false\" scrollable=\"false\" selected=\"false\" bounds=\"[0,84][1440,172]\" displayed=\"true\"><android.widget.TextView index=\"0\" package=\"kdk.android.simplydo\" class=\"android.widget.TextView\" text=\"Simply Do\" resource-id=\"android:id/title\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" long-clickable=\"false\" password=\"false\" scrollable=\"false\" selected=\"false\" bounds=\"[14,86][1426,167]\" displayed=\"true\" /></android.widget.FrameLayout><android.widget.FrameLayout index=\"1\" package=\"kdk.android.simplydo\" class=\"android.widget.FrameLayout\" text=\"\" resource-id=\"android:id/content\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" long-clickable=\"false\" password=\"false\" scrollable=\"false\" selected=\"false\" bounds=\"[0,172][1440,2392]\" displayed=\"true\"><android.widget.LinearLayout index=\"0\" package=\"kdk.android.simplydo\" class=\"android.widget.LinearLayout\" text=\"\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" long-clickable=\"false\" password=\"false\" scrollable=\"false\" selected=\"false\" bounds=\"[0,172][1440,2392]\" displayed=\"true\"><android.widget.ViewSwitcher index=\"0\" package=\"kdk.android.simplydo\" class=\"android.widget.ViewSwitcher\" text=\"\" resource-id=\"kdk.android.simplydo:id/ListsItemsSwitcher\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" long-clickable=\"false\" password=\"false\" scrollable=\"false\" selected=\"false\" bounds=\"[0,172][1440,519]\" displayed=\"true\"><android.widget.LinearLayout index=\"0\" package=\"kdk.android.simplydo\" class=\"android.widget.LinearLayout\" text=\"\" resource-id=\"kdk.android.simplydo:id/listsView\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" long-clickable=\"false\" password=\"false\" scrollable=\"false\" selected=\"false\" bounds=\"[0,172][1440,519]\" displayed=\"true\"><android.widget.LinearLayout index=\"0\" package=\"kdk.android.simplydo\" class=\"android.widget.LinearLayout\" text=\"\" resource-id=\"kdk.android.simplydo:id/LinearLayout01\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" long-clickable=\"false\" password=\"false\" scrollable=\"false\" selected=\"false\" bounds=\"[0,172][1440,346]\" displayed=\"true\"><android.widget.EditText index=\"0\" package=\"kdk.android.simplydo\" class=\"android.widget.EditText\" text=\"New List Name\" resource-id=\"kdk.android.simplydo:id/AddListEditText\" checkable=\"false\" checked=\"false\" clickable=\"true\" enabled=\"true\" focusable=\"true\" focused=\"true\" long-clickable=\"true\" password=\"false\" scrollable=\"false\" selected=\"false\" bounds=\"[0,172][1275,346]\" displayed=\"true\" /><android.widget.Button index=\"1\" package=\"kdk.android.simplydo\" class=\"android.widget.Button\" text=\"Add\" resource-id=\"kdk.android.simplydo:id/AddListButton\" checkable=\"false\" checked=\"false\" clickable=\"true\" enabled=\"true\" focusable=\"true\" focused=\"false\" long-clickable=\"false\" password=\"false\" scrollable=\"false\" selected=\"false\" bounds=\"[1275,172][1440,346]\" displayed=\"true\" /></android.widget.LinearLayout><android.widget.ListView index=\"1\" package=\"kdk.android.simplydo\" class=\"android.widget.ListView\" text=\"\" resource-id=\"kdk.android.simplydo:id/ListsListView\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"true\" focused=\"false\" long-clickable=\"true\" password=\"false\" scrollable=\"false\" selected=\"false\" bounds=\"[0,346][1440,519]\" displayed=\"true\"><android.widget.LinearLayout index=\"0\" package=\"kdk.android.simplydo\" class=\"android.widget.LinearLayout\" text=\"\" checkable=\"false\" checked=\"false\" clickable=\"true\" enabled=\"true\" focusable=\"false\" focused=\"false\" long-clickable=\"true\" password=\"false\" scrollable=\"false\" selected=\"false\" bounds=\"[0,346][1440,519]\" displayed=\"true\"><android.widget.TextView index=\"0\" package=\"kdk.android.simplydo\" class=\"android.widget.TextView\" text=\"Sample Todo\" resource-id=\"kdk.android.simplydo:id/text1\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" long-clickable=\"false\" password=\"false\" scrollable=\"false\" selected=\"false\" bounds=\"[35,381][1295,484]\" displayed=\"true\" /><android.widget.TextView index=\"1\" package=\"kdk.android.simplydo\" class=\"android.widget.TextView\" text=\"(0/0)\" resource-id=\"kdk.android.simplydo:id/text2\" checkable=\"false\" checked=\"false\" clickable=\"false\" enabled=\"true\" focusable=\"false\" focused=\"false\" long-clickable=\"false\" password=\"false\" scrollable=\"false\" selected=\"false\" bounds=\"[1295,393][1440,477]\" displayed=\"true\" /></android.widget.LinearLayout></android.widget.ListView></android.widget.LinearLayout></android.widget.ViewSwitcher></android.widget.LinearLayout></android.widget.FrameLayout></android.widget.LinearLayout></android.widget.FrameLayout></hierarchy>",
-    "activity": ".SimplyDoActivity"
-  },
-  {
-    "checkable": "false",
-    "checked": "false",
-    "class": "android.widget.TextView",
-    "clickable": "false",
-    "content-desc": null,
-    "enabled": "true",
-    "focusable": "false",
-    "focused": "false",
-    "long-clickable": "false",
-    "package": "kdk.android.simplydo",
-    "password": "false",
-    "resource-id": "kdk.android.simplydo:id/text1",
-    "scrollable": "false",
-    "selection-start": null,
-    "selection-end": null,
-    "selected": "false",
-    "text": "Sample Todo",
-    "bounds": "[35,381][1295,484]",
-    "displayed": "true",
-    "action": [
       "long_press"
     ],
     "event_type": "gui",

@@ -84,12 +84,12 @@ def ordered(obj) -> str:
 
 
 def get_src_and_tgt(file: str) -> Tuple[str, str]:
-    migratio = file.split('/')[-2] 
-    src_app = migratio.split('-')[0]
-    tgt_app = migratio.split('-')[1]
+    migration = file.split('/')[-2] 
+    src_app = migration.split('-')[0]
+    tgt_app = migration.split('-')[1]
     if ALGORITHM == "craftdroid":
-        src_app = src_app + migration.split('-')[2]
-        tgt_app = tgt_app + migration.split('-')[2]
+        src_app = src_app + "-" + migration.split('-')[2]
+        tgt_app = tgt_app + "-" + migration.split('-')[2]
     return src_app, tgt_app
 
 
