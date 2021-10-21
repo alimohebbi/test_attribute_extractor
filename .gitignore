@@ -5,6 +5,7 @@ data/**
 !data/**/.gitkeep
 
 !data/mappings/atm/src_ground_truth/**
+!data/mappings/craftdroid/src_ground_truth/**
 
 !data/json_tests/**/
 !data/json_tests/atm/**/

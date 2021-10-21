@@ -37,7 +37,7 @@ def get_file_addresses(src_app: str, target_app: str, migration_config: str) -> 
     return source_address, ground_truth_address, generated_address
 
 def get_file_sizes(src_app: str, target_app: str, migration_config: str) -> Tuple[int, int, int]:
-    source_address, ground_truth_address, generated_address = get_file_addresses(src_app: str, target_app: str, migration_config: str)
+    source_address, ground_truth_address, generated_address = get_file_addresses(src_app, target_app, migration_config)
     src_size = get_file_size(source_address)
     gt_size = get_file_size(ground_truth_address)
     gen_size = get_file_size(generated_address)
