@@ -21,3 +21,5 @@ data/**
 data.bak/
 .idea/
 **/.ipynb_checkpoints
+evaluation/config.toml
+config.yml
