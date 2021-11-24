@@ -52,70 +52,31 @@ def find_ground_truth(filename: str) -> str:
     return None
     
 
-def load_json_files(file: str, gt_file_address: str) -> Tuple[list, list]:
-    generated: List[Dict[str, object]] = None
-    with open(file, 'r') as f:
-        generated = json.load(f)
-    generated = remove_extra_events(generated)
-    generated = change_nulls_to_empty_strings(generated)
+def load_json_file(file_address: str) -> list:
+    json_file: List[Dict[str, object]] = None
+    with open(file_address, 'r') as f:
+        json_file = json.load(f)
+    json_file = remove_extra_events(json_file)
+    json_file = change_nulls_to_empty_strings(json_file)
+    return json_file
 
-    ground_truth: List[Dict[str, object]] = None
-    with open(gt_file_address, 'r') as f:
-        ground_truth = json.load(f)
-    ground_truth = remove_extra_events(ground_truth)
-    ground_truth = change_nulls_to_empty_strings(ground_truth)
+
+def load_json_files(file: str, gt_file_address: str) -> Tuple[list, list]:
+    generated = load_json_file(file)
+    ground_truth = load_json_file(gt_file_address)
 
     return generated, ground_truth
 
+
 def drop_craftdroid_attributes(obj: dict) -> dict:
-    try:
-        obj.pop('checkable')
-    except KeyError:
-        pass
-    try:
-        obj.pop('checked')
-    except KeyError:
-        pass
-    try:
-        obj.pop('enabled')
-    except KeyError:
-        pass
-    try:
-        obj.pop('long-clickable')
-    except KeyError:
-        pass
-    try:
-        obj.pop('scrollable')
-    except KeyError:
-        pass
-    try:
-        obj.pop('selected')
-    except KeyError:
-        pass
-    try:
-        obj.pop('parent_text')
-    except KeyError:
-        pass
-    try:
-        obj.pop('sibling_text')
-    except KeyError:
-        pass
-    try:
-        obj.pop('stepping_events')
-    except KeyError:
-        pass
-    try:
-        obj.pop('activity')
-    except KeyError:
-        pass
-    try:
-        obj.pop('event_type')
-    except KeyError:
-        pass
-    try:
-        obj.pop('score')
-    except KeyError:
-        pass
+    craftdroid_extra_attributes = ["tid", "parent_text", "sibling_text", "ignorable", "stepping_events", 
+    "state_score", "score", "selected", "checkable", "checked", "enabled", "long-clickable", "scrollable",
+    "package", "activity", "event_type"]
+    for attribute in craftdroid_extra_attributes:
+        try:
+            obj.pop(attribute)
+        except KeyError:
+            pass
     return obj
 
 
@@ -164,6 +125,7 @@ def add_corresponding_objects_to_map(result: pd.core.frame.DataFrame,
         equal_gens = []
         for j, gen in enumerate(generated):
             gen = drop_extra_attributes(gen)
+
             if ordered(gen) == ordered(gt):
                 equal_gens.append(str(j))
         if len(equal_gens):
@@ -177,11 +139,9 @@ def extract_ground_truth_generated_map(files: list, migration_config: str):
         gt_file_address = find_ground_truth(file)
         if gt_file_address is None:
             continue
-
         generated, ground_truth = load_json_files(file, gt_file_address)
         if generated is None or ground_truth is None:
             continue
-
         result = add_corresponding_objects_to_map(result, file, generated, ground_truth)
 
     result.to_csv(config[ALGORITHM]['gt_gen']['address'] + migration_config + ".csv", index=False)
@@ -192,7 +152,7 @@ def extract_all_ground_truth_generated_maps():
     for migration_config in migration_configs:
         migration_config = migration_config.split("/")[-1]
         files = glob.glob(
-            config[ALGORITHM]['BASE_JSON_ADDRESS']['address'] + "generated/" + migration_config + "/*/*.json")
+            config[ALGORITHM]['BASE_JSON_ADDRESS']['generated'] + migration_config + "/*/*.json")
         extract_ground_truth_generated_map(files, migration_config)
 
 
