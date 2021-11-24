@@ -77,7 +77,7 @@ class Mapping:
                     gen_str[gen_idx] = gt_str[key]
         except Exception as e:
             print("src_app: "+self.src_app+", target_app: "+str(self.tgt_app))
-            print("gt_str: "+str(len(gt_str))+", gen_str: "+str(len(gen_str))
+            print("gt_str: "+str(len(gt_str))+", gen_str: "+str(len(gen_str)))
             print("gt_gen: "+str(self.gt_gen))
             print(e)
             print()

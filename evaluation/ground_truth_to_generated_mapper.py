@@ -4,7 +4,7 @@ import json
 import glob
 import pandas as pd
 
-with open('config.toml', 'r') as file:
+with open('../config_template/config.toml', 'r') as file:
     config = toml.load(file)
 ALGORITHM = str(config["algorithm"])
 
