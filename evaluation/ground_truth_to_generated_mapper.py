@@ -128,8 +128,7 @@ def add_corresponding_objects_to_map(result: pd.core.frame.DataFrame,
 
             if ordered(gen) == ordered(gt):
                 equal_gens.append(str(j))
-        if len(equal_gens):
-            result.loc[len(result)] = [src_app, tgt_app, i, ' '.join(equal_gens)]
+        result.loc[len(result)] = [src_app, tgt_app, i, ' '.join(equal_gens)]
     return result
 
 
@@ -150,6 +149,7 @@ def extract_ground_truth_generated_map(files: list, migration_config: str):
 def extract_all_ground_truth_generated_maps():
     migration_configs = glob.glob(config[ALGORITHM]['MIGRATION_CONFIGS']['address'])
     for migration_config in migration_configs:
+        print(migration_config)
         migration_config = migration_config.split("/")[-1]
         files = glob.glob(
             config[ALGORITHM]['BASE_JSON_ADDRESS']['generated'] + migration_config + "/*/*.json")

@@ -37,8 +37,11 @@ class Mapping:
         if gt not in self.gt_gen:
             self.gt_gen[gt] = []
         for val in gen.split(" "):
-            if int(val) not in self.gt_gen[gt]:
-                self.gt_gen[gt].append(int(val))
+            try:
+                if int(val) not in self.gt_gen[gt]:
+                    self.gt_gen[gt].append(int(val))
+            except ValueError:
+                pass
 
     # transitives
     def true_positive(self) -> int:
