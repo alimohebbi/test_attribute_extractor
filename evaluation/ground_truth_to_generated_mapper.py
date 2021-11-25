@@ -80,7 +80,12 @@ def drop_craftdroid_attributes(obj: dict) -> dict:
     return obj
 
 
-def drop_extra_attributes(obj: dict) -> dict:
+def drop_extra_attributes(obj: dict, file: str) -> dict:
+    try:
+        if "_and_hide_keyboard" in obj["action"][0]:
+            obj["action"][0] = obj["action"][0].split("_and_hide_keyboard")[0]
+    except KeyError:
+        pass
     try:
         obj.pop('page')
     except KeyError:
@@ -120,11 +125,12 @@ def add_corresponding_objects_to_map(result: pd.core.frame.DataFrame,
                                      generated: list,
                                      ground_truth: list) -> pd.core.frame.DataFrame:
     src_app, tgt_app = get_src_and_tgt(file)
+    print(file)
     for i, gt in enumerate(ground_truth):
-        gt = drop_extra_attributes(gt)
+        gt = drop_extra_attributes(gt, file)
         equal_gens = []
         for j, gen in enumerate(generated):
-            gen = drop_extra_attributes(gen)
+            gen = drop_extra_attributes(gen, file)
 
             if ordered(gen) == ordered(gt):
                 equal_gens.append(str(j))
