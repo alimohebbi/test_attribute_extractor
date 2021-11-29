@@ -125,7 +125,6 @@ def add_corresponding_objects_to_map(result: pd.core.frame.DataFrame,
                                      generated: list,
                                      ground_truth: list) -> pd.core.frame.DataFrame:
     src_app, tgt_app = get_src_and_tgt(file)
-    print(file)
     for i, gt in enumerate(ground_truth):
         gt = drop_extra_attributes(gt, file)
         equal_gens = []
