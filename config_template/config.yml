@@ -1,10 +1,10 @@
 #parsed_test_dir: "/Users/usiusi/Documents/Repositories/Craftdroid/craft_custom/test_attribute_extractor/data/parsed_test"
 parsed_test_dir: "/data/output/parsed_tests"
-results_dir: "data/output/final"
+results_dir: "data/output/evaluation/craftdroid"
 #logs_dir: "/data/output/logs"
 #logs_dir: "/Users/usiusi/Documents/Repositories/Craftdroid/craft_custom/test_attribute_extractor/data/results/logs"
 logs_dir: "/root/test-reuse/Craftdroid-Modified//test_attribute_extractor/data/results/logs"
-analyse_dir: "data/output/analyse"
+analyse_dir: "data/output/analyse/"
 tests:
   atm:
     dir: "./data/atm_tests"
