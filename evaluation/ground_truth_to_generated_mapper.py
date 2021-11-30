@@ -71,7 +71,7 @@ def load_json_files(file: str, gt_file_address: str) -> Tuple[list, list]:
 def drop_craftdroid_attributes(obj: dict) -> dict:
     craftdroid_extra_attributes = ["tid", "parent_text", "sibling_text", "ignorable", "stepping_events", 
     "state_score", "score", "selected", "checkable", "checked", "enabled", "long-clickable", "scrollable",
-    "package", "activity", "event_type"]
+    "package", "activity", "event_type", "naf"]
     for attribute in craftdroid_extra_attributes:
         try:
             obj.pop(attribute)
