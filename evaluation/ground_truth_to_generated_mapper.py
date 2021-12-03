@@ -107,7 +107,7 @@ def ordered(obj) -> str:
     if isinstance(obj, list):
         return [ordered(x) for x in obj]
     else:
-        return str(obj).lower()
+        return str(obj).lower().strip()
 
 
 def get_src_and_tgt(file: str) -> Tuple[str, str]:
@@ -130,7 +130,6 @@ def add_corresponding_objects_to_map(result: pd.core.frame.DataFrame,
         equal_gens = []
         for j, gen in enumerate(generated):
             gen = drop_extra_attributes(gen, file)
-
             if ordered(gen) == ordered(gt):
                 equal_gens.append(str(j))
         result.loc[len(result)] = [src_app, tgt_app, i, ' '.join(equal_gens)]
