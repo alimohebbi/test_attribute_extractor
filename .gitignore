@@ -24,3 +24,4 @@ data.bak/
 config_template/config.toml
 evaluation/config.toml
 config.yml
+venv
