@@ -1,5 +1,7 @@
 import glob
 import os
+import re
+
 from utils.utils import *
 from utils.configuration import Configuration
 
@@ -31,21 +33,23 @@ def empty_event(parsed_element):
         return True
     return False
 
-#     new_parsed_element["action"] = [parsed_element["action"][0]]
-#     new_parsed_element["action"].append(parsed_element["action"][1])
-#     i = 2
-#     while i < len(parsed_element["action"]):
-#         if parsed_element["action"][i] == "xpath" and "[@" in parsed_element["action"][i + 1]:
-#             new_parsed_element["action"].append("class")
-#             value = parsed_element["action"][i + 1]
-#             new_parsed_element["action"].append(re.search(r'\/\/(.*?)\[', value).group(1))
-#             new_parsed_element["action"].append(re.search(r'\@(.*?)\=', value).group(1))
-#             new_parsed_element["action"].append(re.search(r'\"(.*?)\"', value).group(1))
-#         else:
-#             new_parsed_element["action"].append(parsed_element["action"][i])
-#             new_parsed_element["action"].append(parsed_element["action"][i + 1])
-#         i += 2
-#     return new_parsed_element
+
+def extract_action_wait(parsed_element, new_parsed_element):
+    new_parsed_element["action"] = [parsed_element["action"][0]]
+    new_parsed_element["action"].append(parsed_element["action"][1])
+    i = 2
+    while i < len(parsed_element["action"]):
+        if parsed_element["action"][i] == "xpath" and "[@" in parsed_element["action"][i + 1]:
+            new_parsed_element["action"].append("class")
+            value = parsed_element["action"][i + 1]
+            new_parsed_element["action"].append(re.search(r'\/\/(.*?)\[', value).group(1))
+            new_parsed_element["action"].append(re.search(r'\@(.*?)\=', value).group(1))
+            new_parsed_element["action"].append(re.search(r'\"(.*?)\"', value).group(1))
+        else:
+            new_parsed_element["action"].append(parsed_element["action"][i])
+            new_parsed_element["action"].append(parsed_element["action"][i + 1])
+        i += 2
+    return new_parsed_element
 
 
 def extract_action(parsed_element):
@@ -54,8 +58,8 @@ def extract_action(parsed_element):
         return new_parsed_element
     if "wait" in parsed_element["action"][0]:
         # Ignore if action is oracle
-        return None
-        # new_parsed_element = extract_action_wait(parsed_element, new_parsed_element)
+        # return None
+        new_parsed_element = extract_action_wait(parsed_element, new_parsed_element)
     else:
         new_parsed_element["action"] = []
         for val in parsed_element["action"]:
