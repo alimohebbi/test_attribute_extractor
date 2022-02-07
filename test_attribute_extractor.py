@@ -183,7 +183,10 @@ class TestAttributeExtractor(ABC):
                 if element.get_attribute("displayed") != 'true':
                     return False
             elif identifier == "text":
-                if value.lower() not in element.get_attribute(identifier).lower():
+                test_value = 'date' if is_date(value.lower()) else value.lower()
+                element_value = element.get_attribute(identifier).lower()
+                element_value = 'date' if is_date(element_value) else element_value
+                if test_value not in element_value:
                     return False
             elif element.get_attribute(identifier).lower() != value.lower():
                 return False
