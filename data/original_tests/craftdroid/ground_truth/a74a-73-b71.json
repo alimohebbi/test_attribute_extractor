@@ -3,102 +3,38 @@
     "action": [
       "click"
     ],
-    "event_type": "gui",
-    "get_element_by": [
-      {
-        "type": "xpath",
-        "value": "/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.RelativeLayout/android.view.ViewGroup[2]/android.widget.ImageButton"
-      },
-      {
-        "type": "resource-id",
-        "value": "me.writeily:id/fab_expand_menu_button"
-      },
-      {
-        "type": "classname",
-        "value": "android.widget.ImageButton"
-      }
-    ]
+    "resource-id": "me.writeily:id/fab_expand_menu_button",
+    "class": "android.widget.ImageButton"
   },
   {
     "action": [
       "click"
     ],
-    "event_type": "gui",
-    "get_element_by": [
-      {
-        "type": "xpath",
-        "value": "/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.RelativeLayout/android.view.ViewGroup[2]/android.widget.ImageButton[1]"
-      },
-      {
-        "type": "resource-id",
-        "value": "me.writeily:id/create_note"
-      },
-      {
-        "type": "classname",
-        "value": "android.widget.ImageButton"
-      }
-    ]
+    "resource-id": "me.writeily:id/create_note",
+    "class": "android.widget.ImageButton"
   },
   {
     "action": [
       "send_keys",
       "to-do"
     ],
-    "event_type": "gui",
-    "get_element_by": [
-      {
-        "type": "xpath",
-        "value": "/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.view.ViewGroup/android.widget.EditText"
-      },
-      {
-        "type": "resource-id",
-        "value": "me.writeily:id/edit_note_title"
-      },
-      {
-        "type": "classname",
-        "value": "android.widget.EditText"
-      },
-      {
-        "type": "text",
-        "value": "Title"
-      }
-    ]
+    "resource-id": "me.writeily:id/edit_note_title",
+    "class": "android.widget.EditText",
+    "text": "Title"
   },
   {
     "action": [
       "send_keys",
       "Go shopping"
     ],
-    "event_type": "gui",
-    "get_element_by": [
-      {
-        "type": "xpath",
-        "value": "/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.ScrollView/android.widget.EditText"
-      },
-      {
-        "type": "resource-id",
-        "value": "me.writeily:id/note_content"
-      },
-      {
-        "type": "classname",
-        "value": "android.widget.EditText"
-      }
-    ]
+    "resource-id": "me.writeily:id/note_content",
+    "class": "android.widget.EditText"
   },
   {
     "action": [
       "click"
     ],
-    "event_type": "gui",
-    "get_element_by": [
-      {
-        "type": "classname",
-        "value": "android.widget.ImageButton"
-      },
-      {
-        "type": "contentdescription",
-        "value": "Navigate up"
-      }
-    ]
+    "class": "android.widget.ImageButton",
+    "content-desc": "Navigate up"
   }
 ]

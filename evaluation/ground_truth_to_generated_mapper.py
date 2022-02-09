@@ -9,6 +9,11 @@ with open('../config_template/config.toml', 'r') as file:
 ALGORITHM = str(config["algorithm"])
 
 
+def atm_subject(filename):
+    filename = filename.split('/')[-2].split("-")[0]
+    return filename.startswith("a6") or filename.startswith("a7") or filename.startswith("a8")
+
+
 def change_nulls_to_empty_strings(json_list: List[Dict[str, object]]) -> List[Dict[str, object]]:
     if json_list is None:
         return json_list
@@ -37,7 +42,7 @@ def remove_extra_events(generated: List[Dict[str, object]]) -> List[Dict[str, ob
 
 def get_gt_filename(filename: str) -> str:
     if ALGORITHM == "craftdroid":
-        if filename.split('/')[-2].split("-")[0].startswith("a6"):
+        if atm_subject(filename):
             gt_filename = filename.split('/')[-2] + ".json"
         else:
             gt_filename = '-'.join(filename.split('/')[-2].split("-")[-2:]) + ".json"

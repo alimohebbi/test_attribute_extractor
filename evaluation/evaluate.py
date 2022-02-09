@@ -9,6 +9,9 @@ with open('../config_template/config.toml', 'r') as file:
         config = toml.load(file)
 ALGORITHM = str(config["algorithm"])
 
+def atm_subject(src_app):
+    return src_app.startswith("a6") or src_app.startswith("a7") or src_app.startswith("a8")
+
 def get_craftdroid_ground_truth_address(base_path, src_app, target_app):
     if src_app.startswith("a6"):
         return base_path+src_app.split("-")[0]+"-"+target_app+".json"
