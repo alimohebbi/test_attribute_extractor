@@ -1,0 +1,132 @@
+[
+  {
+    "action": [
+      "click"
+    ],
+    "event_type": "gui",
+    "get_element_by": [
+      {
+        "type": "xpath",
+        "value": "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.support.v4.widget.DrawerLayout/android.view.ViewGroup/android.widget.LinearLayout[2]/android.widget.LinearLayout/android.widget.Button[2]"
+      },
+      {
+        "type": "classname",
+        "value": "android.widget.Button"
+      },
+      {
+        "type": "resource-id",
+        "value": "com.blogspot.e_kanivets.moneytracker:id/btn_add_expense"
+      },
+      {
+        "type": "text",
+        "value": "ADD EXPENSE"
+      }
+    ]
+  },
+  {
+    "action": [
+      "send_keys",
+      "45"
+    ],
+    "event_type": "gui",
+    "get_element_by": [
+      {
+        "type": "xpath",
+        "value": "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.LinearLayout[2]/TextInputLayout[1]/android.widget.FrameLayout/android.widget.EditText"
+      },
+      {
+        "type": "classname",
+        "value": "android.widget.EditText"
+      },
+      {
+        "type": "resource-id",
+        "value": "com.blogspot.e_kanivets.moneytracker:id/et_price"
+      }
+    ]
+  },
+  {
+    "action": [
+      "send_keys",
+      "restaurant"
+    ],
+    "event_type": "gui",
+    "get_element_by": [
+      {
+        "type": "xpath",
+        "value": "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.LinearLayout[2]/TextInputLayout[3]/android.widget.FrameLayout/android.widget.EditText"
+      },
+      {
+        "type": "classname",
+        "value": "android.widget.EditText"
+      },
+      {
+        "type": "resource-id",
+        "value": "com.blogspot.e_kanivets.moneytracker:id/et_category"
+      }
+    ]
+  },
+  {
+    "action": [
+      "click"
+    ],
+    "event_type": "gui",
+    "get_element_by": [
+      {
+        "type": "xpath",
+        "value": "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.LinearLayout[2]/android.widget.LinearLayout/android.widget.LinearLayout[1]/android.widget.TextView[2]"
+      },
+      {
+        "type": "classname",
+        "value": "android.widget.TextView"
+      },
+      {
+        "type": "resource-id",
+        "value": "com.blogspot.e_kanivets.moneytracker:id/tv_date"
+      }
+    ]
+  },
+  {
+    "action": [
+      "click"
+    ],
+    "event_type": "gui",
+    "get_element_by": [
+      {
+        "type": "xpath",
+        "value": "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.ScrollView/android.widget.LinearLayout/android.widget.Button[2]"
+      },
+      {
+        "type": "classname",
+        "value": "android.widget.Button"
+      },
+      {
+        "type": "resource-id",
+        "value": "android:id/button1"
+      },
+      {
+        "type":"text",
+        "value":"OK"
+      }
+    ]
+  },
+  {
+    "action": [
+      "click"
+    ],
+    "event_type": "gui",
+    "get_element_by": [
+      {
+        "type": "resource-id",
+        "value": "com.blogspot.e_kanivets.moneytracker:id/action_done"
+      },
+      {
+        "type": "contentdescription",
+        "value": "Add"
+      },
+      {
+        "type": "classname",
+        "value": "android.widget.TextView"
+      }
+    ]
+  }
+]

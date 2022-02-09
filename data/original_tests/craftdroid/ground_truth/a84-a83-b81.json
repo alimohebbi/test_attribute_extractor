@@ -1,0 +1,156 @@
+[
+  {
+    "action": [
+      "click"
+    ],
+    "event_type": "gui",
+    "get_element_by": [
+      {
+        "type": "xpath",
+        "value": "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.widget.Button[1]"
+      },
+      {
+        "type": "resource-id",
+        "value": "privacyfriendlyshoppinglist.secuso.org.privacyfriendlyshoppinglist:id/btn_skip"
+      },
+      {
+        "type": "classname",
+        "value": "android.widget.Button"
+      },
+      {
+        "type": "text",
+        "value": "SKIP"
+      }
+    ]
+  },
+  {
+    "action": [
+      "click"
+    ],
+    "event_type": "gui",
+    "get_element_by": [
+      {
+        "type": "xpath",
+        "value": "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.support.v4.widget.DrawerLayout/android.view.ViewGroup/android.widget.ImageButton"
+      },
+      {
+        "type": "resource-id",
+        "value": "privacyfriendlyshoppinglist.secuso.org.privacyfriendlyshoppinglist:id/fab_new_list"
+      },
+      {
+        "type": "classname",
+        "value": "android.widget.ImageButton"
+      }
+    ]
+  },
+  {
+    "action": [
+      "send_keys",
+      "List1"
+    ],
+    "event_type": "gui",
+    "get_element_by": [
+      {
+        "type": "xpath",
+        "value": "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.ScrollView/android.widget.LinearLayout/android.widget.RelativeLayout/TextInputLayout/android.widget.FrameLayout/android.widget.EditText"
+      },
+      {
+        "type": "resource-id",
+        "value": "privacyfriendlyshoppinglist.secuso.org.privacyfriendlyshoppinglist:id/list_name"
+      },
+      {
+        "type": "classname",
+        "value": "android.widget.EditText"
+      }
+    ]
+  },
+  {
+    "action": [
+      "click"
+    ],
+    "event_type": "gui",
+    "get_element_by": [
+      {
+        "type": "xpath",
+        "value": "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.ScrollView/android.widget.LinearLayout/android.widget.Button[2]"
+      },
+      {
+        "type": "resource-id",
+        "value": "android:id/button1"
+      },
+      {
+        "type": "classname",
+        "value": "android.widget.Button"
+      },
+      {
+        "type": "text",
+        "value": "OKAY"
+      }
+    ]
+  },
+  {
+    "action": [
+      "click"
+    ],
+    "event_type": "gui",
+    "get_element_by": [
+      {
+        "type": "xpath",
+        "value": "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[2]/android.widget.RelativeLayout/android.view.ViewGroup/android.widget.ImageButton"
+      },
+      {
+        "type": "resource-id",
+        "value": "privacyfriendlyshoppinglist.secuso.org.privacyfriendlyshoppinglist:id/fab_new_product"
+      },
+      {
+        "type": "classname",
+        "value": "android.widget.ImageButton"
+      }
+    ]
+  },
+  {
+    "action": [
+      "send_keys",
+      "Item1"
+    ],
+    "event_type": "gui",
+    "get_element_by": [
+      {
+        "type": "xpath",
+        "value": "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.ScrollView/android.widget.LinearLayout/android.widget.RelativeLayout[1]/TextInputLayout/android.widget.FrameLayout/android.widget.EditText"
+      },
+      {
+        "type": "resource-id",
+        "value": "privacyfriendlyshoppinglist.secuso.org.privacyfriendlyshoppinglist:id/product_name"
+      },
+      {
+        "type": "classname",
+        "value": "android.widget.EditText"
+      }
+    ]
+  },
+  {
+    "action": [
+      "click"
+    ],
+    "event_type": "gui",
+    "get_element_by": [
+      {
+        "type": "xpath",
+        "value": "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.ScrollView/android.widget.LinearLayout/android.widget.Button[2]"
+      },
+      {
+        "type": "resource-id",
+        "value": "android:id/button1"
+      },
+      {
+        "type": "classname",
+        "value": "android.widget.Button"
+      },
+      {
+        "type": "text",
+        "value": "OKAY"
+      }
+    ]
+  }
+]

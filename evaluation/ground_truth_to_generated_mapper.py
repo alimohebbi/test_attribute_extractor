@@ -37,7 +37,10 @@ def remove_extra_events(generated: List[Dict[str, object]]) -> List[Dict[str, ob
 
 def get_gt_filename(filename: str) -> str:
     if ALGORITHM == "craftdroid":
-        gt_filename = '-'.join(filename.split('/')[-2].split("-")[-2:]) + ".json"
+        if filename.split('/')[-2].split("-")[0].startswith("a6"):
+            gt_filename = filename.split('/')[-2] + ".json"
+        else:
+            gt_filename = '-'.join(filename.split('/')[-2].split("-")[-2:]) + ".json"
     else:
         gt_filename = filename.split('/')[-2] + "_attributes.json"
     return gt_filename
@@ -69,9 +72,10 @@ def load_json_files(file: str, gt_file_address: str) -> Tuple[list, list]:
 
 
 def drop_craftdroid_attributes(obj: dict) -> dict:
-    craftdroid_extra_attributes = ["tid", "parent_text", "sibling_text", "ignorable", "stepping_events", 
-    "state_score", "score", "selected", "checkable", "checked", "enabled", "long-clickable", "scrollable",
-    "package", "activity", "event_type", "naf"]
+    craftdroid_extra_attributes = ["tid", "parent_text", "sibling_text", "ignorable",\
+    "stepping_events", "state_score", "score", "selected", "checkable", "checked", "selection-start",\
+    "enabled", "long-clickable", "scrollable", "package", "activity", "event_type",\
+    "naf", "clickable", "displayed", "focusable", "focused", "password", "selection-end"]
     for attribute in craftdroid_extra_attributes:
         try:
             obj.pop(attribute)
@@ -153,7 +157,6 @@ def extract_ground_truth_generated_map(files: list, migration_config: str):
 def extract_all_ground_truth_generated_maps():
     migration_configs = glob.glob(config[ALGORITHM]['MIGRATION_CONFIGS']['address'])
     for migration_config in migration_configs:
-        print(migration_config)
         migration_config = migration_config.split("/")[-1]
         files = glob.glob(
             config[ALGORITHM]['BASE_JSON_ADDRESS']['generated'] + migration_config + "/*/*.json")
