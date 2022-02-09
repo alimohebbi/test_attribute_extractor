@@ -125,7 +125,11 @@ def is_date(input_date):
 def update_date(input_date):
     if not is_date(input_date):
         return input_date
-    inferred_format = dateinfer.infer([input_date])
+    try:
+        inferred_format = dateinfer.infer([input_date])
+    except Exception as e:
+        inferred_format = dateinfer.infer([input_date.replace('-', '/')])
+        inferred_format = inferred_format.replace('/', '-')
     inferred_format = inferred_format.replace('%H', '%d')
     today = datetime.date.today()
     modified_date = today.strftime(inferred_format)
