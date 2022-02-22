@@ -13,7 +13,8 @@
       "Entertainment"
     ],
     "class": "android.widget.EditText",
-    "resource-id": "com.blogspot.e_kanivets.moneytracker:id/et_category"
+    "resource-id": "com.blogspot.e_kanivets.moneytracker:id/et_category",
+    "text": ""
   },
   {
     "action": [
@@ -21,7 +22,8 @@
       "45"
     ],
     "class": "android.widget.EditText",
-    "resource-id": "com.blogspot.e_kanivets.moneytracker:id/et_price"
+    "resource-id": "com.blogspot.e_kanivets.moneytracker:id/et_price",
+    "text": ""
   },
   {
     "action": [
@@ -29,6 +31,7 @@
     ],
     "resource-id": "com.blogspot.e_kanivets.moneytracker:id/action_done",
     "content-desc": "Add",
-    "class": "android.widget.TextView"
+    "class": "android.widget.TextView",
+    "text": ""
   }
 ]

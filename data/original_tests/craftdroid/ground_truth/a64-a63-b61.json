@@ -4,7 +4,8 @@
       "click"
     ],
     "class": "android.widget.ImageButton",
-    "content-desc": "Open navigation drawer"
+    "content-desc": "Open navigation drawer",
+    "text": ""
   },
   {
     "action": [

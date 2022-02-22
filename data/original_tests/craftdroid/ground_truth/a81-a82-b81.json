@@ -3,14 +3,16 @@
     "action": [
       "click"
     ],
-    "class": "android.widget.TableRow"
+    "class": "android.widget.TableRow",
+    "text": ""
   },
   {
     "action": [
       "send_keys",
       "Grocery"
     ],
-    "class": "android.widget.EditText"
+    "class": "android.widget.EditText",
+    "text": ""
   },
   {
     "action": [
@@ -35,6 +37,7 @@
     ],
     "resource-id": "br.com.activity:id/action_done",
     "class": "android.widget.TextView",
-    "content-desc": "Add item"
+    "content-desc": "Add item",
+    "text": ""
   }
 ]

@@ -4,7 +4,8 @@
       "click"
     ],
     "class": "android.widget.ImageButton",
-    "content-desc": "More options"
+    "content-desc": "More options",
+    "text": ""
   },
   {
     "action": [

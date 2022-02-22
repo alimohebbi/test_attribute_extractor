@@ -4,14 +4,16 @@
       "click"
     ],
     "resource-id": "me.writeily:id/fab_expand_menu_button",
-    "class": "android.widget.ImageButton"
+    "class": "android.widget.ImageButton",
+    "text": ""
   },
   {
     "action": [
       "click"
     ],
     "resource-id": "me.writeily:id/create_note",
-    "class": "android.widget.ImageButton"
+    "class": "android.widget.ImageButton",
+    "text": ""
   },
   {
     "action": [
@@ -28,13 +30,15 @@
       "Note1"
     ],
     "resource-id": "me.writeily:id/note_content",
-    "class": "android.widget.EditText"
+    "class": "android.widget.EditText",
+    "text": ""
   },
   {
     "action": [
       "click"
     ],
     "class": "android.widget.ImageButton",
-    "content-desc": "Navigate up"
+    "content-desc": "Navigate up",
+    "text": ""
   }
 ]

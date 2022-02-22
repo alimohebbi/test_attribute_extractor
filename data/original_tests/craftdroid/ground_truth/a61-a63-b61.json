@@ -4,7 +4,8 @@
       "click"
     ],
     "class": "android.widget.ImageButton",
-    "resource-id": "com.kvannli.simonkvannli.dailybudget:id/imageButton2"
+    "resource-id": "com.kvannli.simonkvannli.dailybudget:id/imageButton2",
+    "text": ""
   },
   {
     "action": [

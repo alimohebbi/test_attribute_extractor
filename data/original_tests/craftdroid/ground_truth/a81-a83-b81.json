@@ -12,7 +12,8 @@
       "click"
     ],
     "resource-id": "privacyfriendlyshoppinglist.secuso.org.privacyfriendlyshoppinglist:id/fab_new_list",
-    "class": "android.widget.ImageButton"
+    "class": "android.widget.ImageButton",
+    "text": ""
   },
   {
     "action": [
@@ -20,7 +21,8 @@
       "grocery"
     ],
     "resource-id": "privacyfriendlyshoppinglist.secuso.org.privacyfriendlyshoppinglist:id/list_name",
-    "class": "android.widget.EditText"
+    "class": "android.widget.EditText",
+    "text": ""
   },
   {
     "action": [
@@ -28,7 +30,8 @@
       "Weekly grocery shopping"
     ],
     "resource-id": "privacyfriendlyshoppinglist.secuso.org.privacyfriendlyshoppinglist:id/list_notes",
-    "class": "android.widget.EditText"
+    "class": "android.widget.EditText",
+    "text": ""
   },
   {
     "action": [
@@ -43,6 +46,7 @@
       "click"
     ],
     "class": "android.widget.ImageButton",
-    "content-desc": "Navigate up"
+    "content-desc": "Navigate up",
+    "text": ""
   }
 ]

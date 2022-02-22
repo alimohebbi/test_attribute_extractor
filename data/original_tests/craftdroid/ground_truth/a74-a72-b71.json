@@ -5,7 +5,8 @@
     ],
     "resource-id": "com.moonpi.swiftnotes:id/newNote",
     "class": "android.widget.ImageButton",
-    "content-desc": "New note"
+    "content-desc": "New note",
+    "text": ""
   },
   {
     "action": [
@@ -29,7 +30,8 @@
     "action": [
       "click"
     ],
-    "class": "android.widget.ImageButton"
+    "class": "android.widget.ImageButton",
+    "text": ""
   },
   {
     "action": [

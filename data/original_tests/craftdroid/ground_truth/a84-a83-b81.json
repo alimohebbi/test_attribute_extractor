@@ -12,7 +12,8 @@
       "click"
     ],
     "resource-id": "privacyfriendlyshoppinglist.secuso.org.privacyfriendlyshoppinglist:id/fab_new_list",
-    "class": "android.widget.ImageButton"
+    "class": "android.widget.ImageButton",
+    "text": ""
   },
   {
     "action": [
@@ -20,7 +21,8 @@
       "List1"
     ],
     "resource-id": "privacyfriendlyshoppinglist.secuso.org.privacyfriendlyshoppinglist:id/list_name",
-    "class": "android.widget.EditText"
+    "class": "android.widget.EditText",
+    "text": ""
   },
   {
     "action": [
@@ -35,7 +37,8 @@
       "click"
     ],
     "resource-id": "privacyfriendlyshoppinglist.secuso.org.privacyfriendlyshoppinglist:id/fab_new_product",
-    "class": "android.widget.ImageButton"
+    "class": "android.widget.ImageButton",
+    "text": ""
   },
   {
     "action": [
@@ -43,7 +46,8 @@
       "Item1"
     ],
     "resource-id": "privacyfriendlyshoppinglist.secuso.org.privacyfriendlyshoppinglist:id/product_name",
-    "class": "android.widget.EditText"
+    "class": "android.widget.EditText",
+    "text": ""
   },
   {
     "action": [

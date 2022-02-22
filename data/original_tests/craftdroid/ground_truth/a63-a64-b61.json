@@ -13,7 +13,8 @@
       "uber"
     ],
     "class": "android.widget.EditText",
-    "resource-id": "com.blogspot.e_kanivets.moneytracker:id/et_title"
+    "resource-id": "com.blogspot.e_kanivets.moneytracker:id/et_title",
+    "text": ""
   },
   {
     "action": [
@@ -21,7 +22,8 @@
       "uber"
     ],
     "class": "android.widget.EditText",
-    "resource-id": "com.blogspot.e_kanivets.moneytracker:id/et_category"
+    "resource-id": "com.blogspot.e_kanivets.moneytracker:id/et_category",
+    "text": ""
   },
   {
     "action": [
@@ -29,7 +31,8 @@
       "500"
     ],
     "class": "android.widget.EditText",
-    "resource-id": "com.blogspot.e_kanivets.moneytracker:id/et_price"
+    "resource-id": "com.blogspot.e_kanivets.moneytracker:id/et_price",
+    "text": ""
   },
   {
     "action": [
@@ -37,6 +40,7 @@
     ],
     "resource-id": "com.blogspot.e_kanivets.moneytracker:id/action_done",
     "content-desc": "Add",
-    "class": "android.widget.TextView"
+    "class": "android.widget.TextView",
+    "text": ""
   }
 ]

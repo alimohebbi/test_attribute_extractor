@@ -4,7 +4,8 @@
       "click"
     ],
     "resource-id": "pl.com.andrzejgrzyb.shoppinglist:id/fab",
-    "class": "android.widget.ImageButton"
+    "class": "android.widget.ImageButton",
+    "text": ""
   },
   {
     "action": [

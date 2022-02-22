@@ -36,14 +36,16 @@
       "click"
     ],
     "class": "android.widget.ImageButton",
-    "resource-id": "com.benoitletondor.easybudgetapp:id/fab_expand_menu_button"
+    "resource-id": "com.benoitletondor.easybudgetapp:id/fab_expand_menu_button",
+    "text": ""
   },
   {
     "action": [
       "click"
     ],
     "class": "android.widget.ImageButton",
-    "resource-id": "com.benoitletondor.easybudgetapp:id/fab_new_expense"
+    "resource-id": "com.benoitletondor.easybudgetapp:id/fab_new_expense",
+    "text": ""
   },
   {
     "action": [
@@ -51,7 +53,8 @@
       "45"
     ],
     "class": "android.widget.EditText",
-    "resource-id": "com.benoitletondor.easybudgetapp:id/amount_edittext"
+    "resource-id": "com.benoitletondor.easybudgetapp:id/amount_edittext",
+    "text": ""
   },
   {
     "action": [
@@ -59,14 +62,16 @@
       "restaurant"
     ],
     "class": "android.widget.EditText",
-    "resource-id": "com.benoitletondor.easybudgetapp:id/description_edittext"
+    "resource-id": "com.benoitletondor.easybudgetapp:id/description_edittext",
+    "text": ""
   },
   {
     "action": [
       "click"
     ],
     "class": "android.widget.Button",
-    "resource-id": "com.benoitletondor.easybudgetapp:id/date_button"
+    "resource-id": "com.benoitletondor.easybudgetapp:id/date_button",
+    "text": "FEB 22 2022"
   },
   {
     "action": [
@@ -81,6 +86,7 @@
       "click"
     ],
     "class": "android.widget.ImageButton",
-    "resource-id": "com.benoitletondor.easybudgetapp:id/save_expense_fab"
+    "resource-id": "com.benoitletondor.easybudgetapp:id/save_expense_fab",
+    "text": ""
   }
 ]

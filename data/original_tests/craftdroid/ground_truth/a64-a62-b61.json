@@ -4,7 +4,8 @@
       "click"
     ],
     "class": "android.widget.ImageButton",
-    "resource-id": "luankevinferreira.expenses:id/fab"
+    "resource-id": "luankevinferreira.expenses:id/fab",
+    "text": ""
   },
   {
     "action": [

@@ -3,7 +3,8 @@
     "action": [
       "click"
     ],
-    "class": "android.widget.ImageView"
+    "class": "android.widget.ImageView",
+    "text": ""
   },
   {
     "action": [
@@ -11,7 +12,8 @@
       "note"
     ],
     "resource-id": "chan.android.app.pocketnote:id/editor_$_edittext_title",
-    "class": "android.widget.EditText"
+    "class": "android.widget.EditText",
+    "text": ""
   },
   {
     "action": [
@@ -19,7 +21,8 @@
       "something"
     ],
     "resource-id": "chan.android.app.pocketnote:id/editor_$_note_editor",
-    "class": "android.widget.EditText"
+    "class": "android.widget.EditText",
+    "text": ""
   },
   {
     "action": [

@@ -36,14 +36,16 @@
       "click"
     ],
     "class": "android.widget.ImageButton",
-    "resource-id": "com.benoitletondor.easybudgetapp:id/fab_expand_menu_button"
+    "resource-id": "com.benoitletondor.easybudgetapp:id/fab_expand_menu_button",
+    "text": ""
   },
   {
     "action": [
       "click"
     ],
     "class": "android.widget.ImageButton",
-    "resource-id": "com.benoitletondor.easybudgetapp:id/fab_new_recurring_expense"
+    "resource-id": "com.benoitletondor.easybudgetapp:id/fab_new_recurring_expense",
+    "text": ""
   },
   {
     "action": [
@@ -51,7 +53,8 @@
       "Uber"
     ],
     "class": "android.widget.EditText",
-    "resource-id": "com.benoitletondor.easybudgetapp:id/description_edittext"
+    "resource-id": "com.benoitletondor.easybudgetapp:id/description_edittext",
+    "text": ""
   },
   {
     "action": [
@@ -59,7 +62,8 @@
       "500"
     ],
     "class": "android.widget.EditText",
-    "resource-id": "com.benoitletondor.easybudgetapp:id/amount_edittext"
+    "resource-id": "com.benoitletondor.easybudgetapp:id/amount_edittext",
+    "text": ""
   },
   {
     "action": [
@@ -74,6 +78,7 @@
       "click"
     ],
     "class": "android.widget.ImageButton",
-    "resource-id": "com.benoitletondor.easybudgetapp:id/save_expense_fab"
+    "resource-id": "com.benoitletondor.easybudgetapp:id/save_expense_fab",
+    "text": ""
   }
 ]

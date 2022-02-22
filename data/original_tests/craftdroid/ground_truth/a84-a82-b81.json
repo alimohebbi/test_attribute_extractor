@@ -5,14 +5,16 @@
     ],
     "resource-id": "br.com.activity:id/action_add",
     "class": "android.widget.TextView",
-    "content-desc": "New list"
+    "content-desc": "New list",
+    "text": ""
   },
   {
     "action": [
       "send_keys",
       "list1"
     ],
-    "class": "android.widget.EditText"
+    "class": "android.widget.EditText",
+    "text": ""
   },
   {
     "action": [
@@ -37,6 +39,7 @@
     ],
     "resource-id": "br.com.activity:id/action_done",
     "class": "android.widget.TextView",
-    "content-desc": "Add item"
+    "content-desc": "Add item",
+    "text": ""
   }
 ]
