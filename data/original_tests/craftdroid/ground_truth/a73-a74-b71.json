@@ -4,7 +4,9 @@
       "click"
     ],
     "class": "android.widget.ImageView",
-    "text": ""
+    "resource-id": "",
+    "text": "",
+    "content-desc": ""
   },
   {
     "action": [
@@ -13,7 +15,8 @@
     ],
     "resource-id": "chan.android.app.pocketnote:id/editor_$_edittext_title",
     "class": "android.widget.EditText",
-    "text": ""
+    "text": "",
+    "content-desc": ""
   },
   {
     "action": [
@@ -22,7 +25,8 @@
     ],
     "resource-id": "chan.android.app.pocketnote:id/editor_$_note_editor",
     "class": "android.widget.EditText",
-    "text": ""
+    "text": "",
+    "content-desc": ""
   },
   {
     "action": [

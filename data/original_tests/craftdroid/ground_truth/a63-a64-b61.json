@@ -5,7 +5,8 @@
     ],
     "class": "android.widget.Button",
     "resource-id": "com.blogspot.e_kanivets.moneytracker:id/btn_add_income",
-    "text": "ADD INCOME"
+    "text": "ADD INCOME",
+    "content-desc": ""
   },
   {
     "action": [
@@ -14,7 +15,8 @@
     ],
     "class": "android.widget.EditText",
     "resource-id": "com.blogspot.e_kanivets.moneytracker:id/et_title",
-    "text": ""
+    "text": "",
+    "content-desc": ""
   },
   {
     "action": [
@@ -23,7 +25,8 @@
     ],
     "class": "android.widget.EditText",
     "resource-id": "com.blogspot.e_kanivets.moneytracker:id/et_category",
-    "text": ""
+    "text": "",
+    "content-desc": ""
   },
   {
     "action": [
@@ -32,7 +35,8 @@
     ],
     "class": "android.widget.EditText",
     "resource-id": "com.blogspot.e_kanivets.moneytracker:id/et_price",
-    "text": ""
+    "text": "",
+    "content-desc": ""
   },
   {
     "action": [

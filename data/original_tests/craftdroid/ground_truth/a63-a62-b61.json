@@ -5,7 +5,8 @@
     ],
     "class": "android.widget.ImageButton",
     "resource-id": "luankevinferreira.expenses:id/fab",
-    "text": ""
+    "text": "",
+    "content-desc": ""
   },
   {
     "action": [
@@ -14,7 +15,8 @@
     ],
     "class": "android.widget.EditText",
     "resource-id": "luankevinferreira.expenses:id/expense_description",
-    "text": "Add a description"
+    "text": "Add a description",
+    "content-desc": ""
   },
   {
     "action": [
@@ -23,7 +25,8 @@
     ],
     "class": "android.widget.EditText",
     "resource-id": "luankevinferreira.expenses:id/expense_value",
-    "text": "0.00"
+    "text": "0.00",
+    "content-desc": ""
   },
   {
     "action": [
@@ -31,6 +34,7 @@
     ],
     "class": "android.widget.Button",
     "resource-id": "luankevinferreira.expenses:id/save_expense",
-    "text": "SAVE"
+    "text": "SAVE",
+    "content-desc": ""
   }
 ]

@@ -5,7 +5,8 @@
     ],
     "resource-id": "pl.com.andrzejgrzyb.shoppinglist:id/fab",
     "class": "android.widget.ImageButton",
-    "text": ""
+    "text": "",
+    "content-desc": ""
   },
   {
     "action": [
@@ -14,7 +15,8 @@
     ],
     "resource-id": "pl.com.andrzejgrzyb.shoppinglist:id/shoppingListNameEditText",
     "class": "android.widget.EditText",
-    "text": "Shopping list name"
+    "text": "Shopping list name",
+    "content-desc": ""
   },
   {
     "action": [
@@ -22,6 +24,7 @@
     ],
     "resource-id": "pl.com.andrzejgrzyb.shoppinglist:id/addShoppingListButton",
     "class": "android.widget.Button",
-    "text": "SAVE"
+    "text": "SAVE",
+    "content-desc": ""
   }
 ]

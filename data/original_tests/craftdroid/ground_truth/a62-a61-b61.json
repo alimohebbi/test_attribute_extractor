@@ -5,7 +5,8 @@
     ],
     "class": "android.widget.Button",
     "resource-id": "com.benoitletondor.easybudgetapp:id/onboarding_screen1_next_button",
-    "text": "Yes!"
+    "text": "Yes!",
+    "content-desc": ""
   },
   {
     "action": [
@@ -13,7 +14,8 @@
     ],
     "class": "android.widget.Button",
     "resource-id": "com.benoitletondor.easybudgetapp:id/onboarding_screen2_next_button",
-    "text": "Go with $"
+    "text": "Go with $",
+    "content-desc": ""
   },
   {
     "action": [
@@ -21,7 +23,8 @@
     ],
     "class": "android.widget.Button",
     "resource-id": "com.benoitletondor.easybudgetapp:id/onboarding_screen3_next_button",
-    "text": "Start with $0.00"
+    "text": "Start with $0.00",
+    "content-desc": ""
   },
   {
     "action": [
@@ -29,7 +32,8 @@
     ],
     "class": "android.widget.Button",
     "resource-id": "com.benoitletondor.easybudgetapp:id/onboarding_screen4_next_button",
-    "text": "Let's go!"
+    "text": "Let's go!",
+    "content-desc": ""
   },
   {
     "action": [
@@ -37,7 +41,8 @@
     ],
     "class": "android.widget.ImageButton",
     "resource-id": "com.benoitletondor.easybudgetapp:id/fab_expand_menu_button",
-    "text": ""
+    "text": "",
+    "content-desc": ""
   },
   {
     "action": [
@@ -45,7 +50,8 @@
     ],
     "class": "android.widget.ImageButton",
     "resource-id": "com.benoitletondor.easybudgetapp:id/fab_new_expense",
-    "text": ""
+    "text": "",
+    "content-desc": ""
   },
   {
     "action": [
@@ -54,7 +60,8 @@
     ],
     "class": "android.widget.EditText",
     "resource-id": "com.benoitletondor.easybudgetapp:id/amount_edittext",
-    "text": ""
+    "text": "",
+    "content-desc": ""
   },
   {
     "action": [
@@ -63,7 +70,8 @@
     ],
     "class": "android.widget.EditText",
     "resource-id": "com.benoitletondor.easybudgetapp:id/description_edittext",
-    "text": ""
+    "text": "",
+    "content-desc": ""
   },
   {
     "action": [
@@ -71,7 +79,8 @@
     ],
     "class": "android.widget.Button",
     "resource-id": "com.benoitletondor.easybudgetapp:id/date_button",
-    "text": "FEB 22 2022"
+    "text": "FEB 22 2022",
+    "content-desc": ""
   },
   {
     "action": [
@@ -79,7 +88,8 @@
     ],
     "class": "android.widget.Button",
     "resource-id": "android:id/button1",
-    "text": "OK"
+    "text": "OK",
+    "content-desc": ""
   },
   {
     "action": [
@@ -87,6 +97,7 @@
     ],
     "class": "android.widget.ImageButton",
     "resource-id": "com.benoitletondor.easybudgetapp:id/save_expense_fab",
-    "text": ""
+    "text": "",
+    "content-desc": ""
   }
 ]

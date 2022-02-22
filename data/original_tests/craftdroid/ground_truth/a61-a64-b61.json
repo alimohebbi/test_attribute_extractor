@@ -5,7 +5,8 @@
     ],
     "class": "android.widget.Button",
     "resource-id": "com.blogspot.e_kanivets.moneytracker:id/btn_add_expense",
-    "text": "ADD EXPENSE"
+    "text": "ADD EXPENSE",
+    "content-desc": ""
   },
   {
     "action": [
@@ -14,7 +15,8 @@
     ],
     "class": "android.widget.EditText",
     "resource-id": "com.blogspot.e_kanivets.moneytracker:id/et_category",
-    "text": ""
+    "text": "",
+    "content-desc": ""
   },
   {
     "action": [
@@ -23,7 +25,8 @@
     ],
     "class": "android.widget.EditText",
     "resource-id": "com.blogspot.e_kanivets.moneytracker:id/et_price",
-    "text": ""
+    "text": "",
+    "content-desc": ""
   },
   {
     "action": [
@@ -32,6 +35,7 @@
     "resource-id": "com.blogspot.e_kanivets.moneytracker:id/action_done",
     "content-desc": "Add",
     "class": "android.widget.TextView",
-    "text": ""
+    "text": "",
+    "content-desc": ""
   }
 ]

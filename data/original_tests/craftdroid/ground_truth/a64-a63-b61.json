@@ -4,6 +4,7 @@
       "click"
     ],
     "class": "android.widget.ImageButton",
+    "resource-id": "",
     "content-desc": "Open navigation drawer",
     "text": ""
   },
@@ -13,7 +14,8 @@
     ],
     "class": "android.widget.TextView",
     "resource-id": "android:id/text1",
-    "text": "INCOME"
+    "text": "INCOME",
+    "content-desc": ""
   },
   {
     "action": [
@@ -21,7 +23,8 @@
     ],
     "class": "android.widget.Button",
     "resource-id": "com.kvannli.simonkvannli.dailybudget:id/button2",
-    "text": "ADD INCOME"
+    "text": "ADD INCOME",
+    "content-desc": ""
   },
   {
     "action": [
@@ -38,7 +41,8 @@
     ],
     "class": "android.widget.Button",
     "resource-id": "com.kvannli.simonkvannli.dailybudget:id/button2",
-    "text": "ADD INCOME"
+    "text": "ADD INCOME",
+    "content-desc": ""
   },
   {
     "action": [
@@ -47,7 +51,8 @@
     ],
     "class": "android.widget.EditText",
     "resource-id": "com.kvannli.simonkvannli.dailybudget:id/editText",
-    "text": "Name"
+    "text": "Name",
+    "content-desc": ""
   },
   {
     "action": [
@@ -55,6 +60,7 @@
     ],
     "class": "android.widget.Button",
     "resource-id": "com.kvannli.simonkvannli.dailybudget:id/button2",
-    "text": "ADD INCOME"
+    "text": "ADD INCOME",
+    "content-desc": ""
   }
 ]

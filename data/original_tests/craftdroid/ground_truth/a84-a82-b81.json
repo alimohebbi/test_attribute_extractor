@@ -14,7 +14,9 @@
       "list1"
     ],
     "class": "android.widget.EditText",
-    "text": ""
+    "resource-id": "",
+    "text": "",
+    "content-desc": ""
   },
   {
     "action": [
@@ -22,7 +24,8 @@
     ],
     "resource-id": "android:id/button1",
     "class": "android.widget.Button",
-    "text": "OK"
+    "text": "OK",
+    "content-desc": ""
   },
   {
     "action": [
@@ -31,7 +34,8 @@
     ],
     "resource-id": "br.com.activity:id/edDescription",
     "class": "android.widget.EditText",
-    "text": "Add an item"
+    "text": "Add an item",
+    "content-desc": ""
   },
   {
     "action": [

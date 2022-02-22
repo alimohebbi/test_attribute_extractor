@@ -5,7 +5,8 @@
     ],
     "class": "android.widget.ImageButton",
     "resource-id": "com.kvannli.simonkvannli.dailybudget:id/imageButton2",
-    "text": ""
+    "text": "",
+    "content-desc": ""
   },
   {
     "action": [
@@ -14,7 +15,8 @@
     ],
     "class": "android.widget.EditText",
     "resource-id": "com.kvannli.simonkvannli.dailybudget:id/input_note",
-    "text": "Note (Optional)"
+    "text": "Note (Optional)",
+    "content-desc": ""
   },
   {
     "action": [
@@ -23,7 +25,8 @@
     ],
     "class": "android.widget.EditText",
     "resource-id": "com.kvannli.simonkvannli.dailybudget:id/input_amount",
-    "text": "Amount"
+    "text": "Amount",
+    "content-desc": ""
   },
   {
     "action": [
@@ -31,6 +34,7 @@
     ],
     "class": "android.widget.Button",
     "resource-id": "com.kvannli.simonkvannli.dailybudget:id/doneButton",
-    "text": "DONE"
+    "text": "DONE",
+    "content-desc": ""
   }
 ]

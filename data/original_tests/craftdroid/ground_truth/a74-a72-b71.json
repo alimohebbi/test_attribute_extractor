@@ -15,7 +15,8 @@
     ],
     "resource-id": "com.moonpi.swiftnotes:id/titleEdit",
     "class": "android.widget.EditText",
-    "text": "Title"
+    "text": "Title",
+    "content-desc": ""
   },
   {
     "action": [
@@ -24,14 +25,17 @@
     ],
     "resource-id": "com.moonpi.swiftnotes:id/bodyEdit",
     "class": "android.widget.EditText",
-    "text": "Note"
+    "text": "Note",
+    "content-desc": ""
   },
   {
     "action": [
       "click"
     ],
     "class": "android.widget.ImageButton",
-    "text": ""
+    "resource-id": "",
+    "text": "",
+    "content-desc": ""
   },
   {
     "action": [
@@ -39,6 +43,7 @@
     ],
     "resource-id": "android:id/button1",
     "class": "android.widget.Button",
-    "text": "YES"
+    "text": "YES",
+    "content-desc": ""
   }
 ]

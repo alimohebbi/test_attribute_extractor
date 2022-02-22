@@ -5,7 +5,8 @@
     ],
     "resource-id": "me.writeily:id/fab_expand_menu_button",
     "class": "android.widget.ImageButton",
-    "text": ""
+    "text": "",
+    "content-desc": ""
   },
   {
     "action": [
@@ -13,7 +14,8 @@
     ],
     "resource-id": "me.writeily:id/create_note",
     "class": "android.widget.ImageButton",
-    "text": ""
+    "text": "",
+    "content-desc": ""
   },
   {
     "action": [
@@ -22,7 +24,8 @@
     ],
     "resource-id": "me.writeily:id/edit_note_title",
     "class": "android.widget.EditText",
-    "text": "Title"
+    "text": "Title",
+    "content-desc": ""
   },
   {
     "action": [
@@ -31,13 +34,15 @@
     ],
     "resource-id": "me.writeily:id/note_content",
     "class": "android.widget.EditText",
-    "text": ""
+    "text": "",
+    "content-desc": ""
   },
   {
     "action": [
       "click"
     ],
     "class": "android.widget.ImageButton",
+    "resource-id": "",
     "content-desc": "Navigate up",
     "text": ""
   }

@@ -4,6 +4,7 @@
       "click"
     ],
     "class": "android.widget.ImageButton",
+    "resource-id": "",
     "content-desc": "More options",
     "text": ""
   },
@@ -13,7 +14,8 @@
     ],
     "resource-id": "android:id/title",
     "class": "android.widget.TextView",
-    "text": "New list"
+    "text": "New list",
+    "content-desc": ""
   },
   {
     "action": [
@@ -22,7 +24,8 @@
     ],
     "resource-id": "org.openintents.shopping:id/edittext",
     "class": "android.widget.EditText",
-    "text": "e.g. wishlist, family list"
+    "text": "e.g. wishlist, family list",
+    "content-desc": ""
   },
   {
     "action": [
@@ -30,6 +33,7 @@
     ],
     "resource-id": "android:id/button1",
     "class": "android.widget.Button",
-    "text": "OK"
+    "text": "OK",
+    "content-desc": ""
   }
 ]

@@ -5,7 +5,8 @@
     ],
     "resource-id": "privacyfriendlyshoppinglist.secuso.org.privacyfriendlyshoppinglist:id/btn_skip",
     "class": "android.widget.Button",
-    "text": "SKIP"
+    "text": "SKIP",
+    "content-desc": ""
   },
   {
     "action": [
@@ -13,7 +14,8 @@
     ],
     "resource-id": "privacyfriendlyshoppinglist.secuso.org.privacyfriendlyshoppinglist:id/fab_new_list",
     "class": "android.widget.ImageButton",
-    "text": ""
+    "text": "",
+    "content-desc": ""
   },
   {
     "action": [
@@ -22,7 +24,8 @@
     ],
     "resource-id": "privacyfriendlyshoppinglist.secuso.org.privacyfriendlyshoppinglist:id/list_name",
     "class": "android.widget.EditText",
-    "text": ""
+    "text": "",
+    "content-desc": ""
   },
   {
     "action": [
@@ -30,7 +33,8 @@
     ],
     "resource-id": "android:id/button1",
     "class": "android.widget.Button",
-    "text": "OKAY"
+    "text": "OKAY",
+    "content-desc": ""
   },
   {
     "action": [
@@ -38,7 +42,8 @@
     ],
     "resource-id": "privacyfriendlyshoppinglist.secuso.org.privacyfriendlyshoppinglist:id/fab_new_product",
     "class": "android.widget.ImageButton",
-    "text": ""
+    "text": "",
+    "content-desc": ""
   },
   {
     "action": [
@@ -47,7 +52,8 @@
     ],
     "resource-id": "privacyfriendlyshoppinglist.secuso.org.privacyfriendlyshoppinglist:id/product_name",
     "class": "android.widget.EditText",
-    "text": ""
+    "text": "",
+    "content-desc": ""
   },
   {
     "action": [
@@ -55,6 +61,7 @@
     ],
     "resource-id": "android:id/button1",
     "class": "android.widget.Button",
-    "text": "OKAY"
+    "text": "OKAY",
+    "content-desc": ""
   }
 ]
