@@ -14,6 +14,7 @@ data/**
 !data/json_tests/craftdroid/**/
 !data/json_tests/craftdroid/donor/**
 !data/json_tests/craftdroid/ground_truth/**
+!data/original_tests/atm/ground_truth/**
 !data/original_tests/craftdroid/donor/**
 !data/original_tests/craftdroid/ground_truth/**
 

@@ -1,0 +1,106 @@
+[
+  {
+    "action": [
+      "click"
+    ],
+    "event_type": "gui",
+    "get_element_by": [
+      {
+        "type": "xpath",
+        "value": "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.ImageButton"
+      },
+      {
+        "type": "classname",
+        "value": "android.widget.ImageButton"
+      },
+      {
+        "type": "resource-id",
+        "value": "luankevinferreira.expenses:id/fab"
+      }
+    ]
+  },
+  {
+    "action": [
+      "send_keys",
+      "Entertainment"
+    ],
+    "event_type": "gui",
+    "get_element_by": [
+      {
+        "type": "xpath",
+        "value": "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[2]/android.widget.LinearLayout/android.widget.ScrollView/android.widget.LinearLayout/android.widget.LinearLayout[2]/android.widget.EditText"
+      },
+      {
+        "type": "classname",
+        "value": "android.widget.EditText"
+      },
+      {
+        "type": "resource-id",
+        "value": "luankevinferreira.expenses:id/expense_description"
+      },
+      {
+        "type": "text",
+        "value": "Add a description"
+      }
+    ]
+  },
+  {
+    "action": [
+      "send_keys",
+      "45"
+    ],
+    "event_type": "gui",
+    "get_element_by": [
+      {
+        "type": "xpath",
+        "value": "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[2]/android.widget.LinearLayout/android.widget.ScrollView/android.widget.LinearLayout/android.widget.LinearLayout[1]/android.widget.EditText"
+      },
+      {
+        "type": "classname",
+        "value": "android.widget.EditText"
+      },
+      {
+        "type": "resource-id",
+        "value": "luankevinferreira.expenses:id/expense_value"
+      },
+      {
+        "type": "text",
+        "value": "0.00"
+      }
+    ]
+  },
+  {
+    "class": "SYS_EVENT",
+    "action": [
+      "KEY_BACK"
+    ],
+    "event_type": "SYS_EVENT"
+  },
+  {
+    "action": [
+      "wait_until_text_presence",
+      10,
+      "text",
+      "$0.00"
+    ],
+    "event_type": "gui",
+    "get_element_by": [
+      {
+        "type": "xpath",
+        "value": "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.LinearLayout[2]/android.widget.ScrollView/android.widget.LinearLayout/android.widget.Button"
+      },
+      {
+        "type": "classname",
+        "value": "android.widget.Button"
+      },
+      {
+        "type": "resource-id",
+        "value": "luankevinferreira.expenses:id/total_month"
+      },
+      {
+        "type": "text",
+        "value": "$0.00"
+      }
+    ]
+  }
+]

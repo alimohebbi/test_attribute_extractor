@@ -1,0 +1,156 @@
+[
+  {
+    "action": [
+      "click"
+    ],
+    "event_type": "gui",
+    "get_element_by": [
+      {
+        "type": "xpath",
+        "value": "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.support.v4.widget.DrawerLayout/android.view.ViewGroup/android.widget.ImageButton"
+      },
+      {
+        "type": "resource-id",
+        "value": "pl.com.andrzejgrzyb.shoppinglist:id/fab"
+      },
+      {
+        "type": "classname",
+        "value": "android.widget.ImageButton"
+      }
+    ]
+  },
+  {
+    "action": [
+      "send_keys",
+      "list1"
+    ],
+    "event_type": "gui",
+    "get_element_by": [
+      {
+        "type": "xpath",
+        "value": "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.LinearLayout[2]/android.widget.EditText[1]"
+      },
+      {
+        "type": "resource-id",
+        "value": "pl.com.andrzejgrzyb.shoppinglist:id/shoppingListNameEditText"
+      },
+      {
+        "type": "classname",
+        "value": "android.widget.EditText"
+      },
+      {
+        "type": "text",
+        "value": "Shopping list name"
+      }
+    ]
+  },
+  {
+    "action": [
+      "click"
+    ],
+    "event_type": "gui",
+    "get_element_by": [
+      {
+        "type": "xpath",
+        "value": "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.LinearLayout[2]/android.widget.Button"
+      },
+      {
+        "type": "resource-id",
+        "value": "pl.com.andrzejgrzyb.shoppinglist:id/addShoppingListButton"
+      },
+      {
+        "type": "classname",
+        "value": "android.widget.Button"
+      },
+      {
+        "type": "text",
+        "value": "SAVE"
+      }
+    ]
+  },
+  {
+    "action": [
+      "click"
+    ],
+    "event_type": "gui",
+    "get_element_by": [
+      {
+        "type": "xpath",
+        "value": "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.support.v4.widget.DrawerLayout/android.view.ViewGroup/android.widget.LinearLayout[2]/android.widget.ListView/android.widget.LinearLayout/android.widget.LinearLayout"
+      },
+      {
+        "type": "classname",
+        "value": "android.widget.LinearLayout"
+      }
+    ]
+  },
+  {
+    "action": [
+      "click"
+    ],
+    "event_type": "gui",
+    "get_element_by": [
+      {
+        "type": "xpath",
+        "value": "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.ImageButton"
+      },
+      {
+        "type": "resource-id",
+        "value": "pl.com.andrzejgrzyb.shoppinglist:id/fab"
+      },
+      {
+        "type": "classname",
+        "value": "android.widget.ImageButton"
+      }
+    ]
+  },
+  {
+    "action": [
+      "send_keys",
+      "item1"
+    ],
+    "event_type": "gui",
+    "get_element_by": [
+      {
+        "type": "xpath",
+        "value": "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.LinearLayout[2]/android.widget.EditText"
+      },
+      {
+        "type": "resource-id",
+        "value": "pl.com.andrzejgrzyb.shoppinglist:id/item_name_edit_text"
+      },
+      {
+        "type": "classname",
+        "value": "android.widget.EditText"
+      },
+      {
+        "type": "text",
+        "value": "Item name"
+      }
+    ]
+  },
+  {
+    "action": [
+      "click"
+    ],
+    "event_type": "gui",
+    "get_element_by": [
+      {
+        "type": "xpath",
+        "value": "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.LinearLayout[2]/android.widget.Button"
+      },
+      {
+        "type": "resource-id",
+        "value": "pl.com.andrzejgrzyb.shoppinglist:id/addShoppingListButton"
+      },
+      {
+        "type": "classname",
+        "value": "android.widget.Button"
+      },
+      {
+        "type": "text",
+        "value": "SAVE"
+      }
+    ]
+  }
+]
