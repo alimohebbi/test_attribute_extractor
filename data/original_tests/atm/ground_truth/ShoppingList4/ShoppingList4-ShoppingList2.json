@@ -62,6 +62,29 @@
   },
   {
     "action": [
+      "wait_until_text_presence",
+      10,
+      "text",
+      "list1"
+    ],
+    "event_type": "gui",
+    "get_element_by": [
+      {
+        "type": "classname",
+        "value": "android.widget.TextView"
+      },
+      {
+        "type": "resource-id",
+        "value": "android:id/action_bar_title"
+      },
+      {
+        "type": "text",
+        "value": "list1"
+      }
+    ]
+  },
+  {
+    "action": [
       "send_keys",
       "Item1"
     ],
@@ -102,6 +125,33 @@
       {
         "type": "contentdescription",
         "value": "Add item"
+      }
+    ]
+  },
+  {
+    "action": [
+      "wait_until_text_presence",
+      10,
+      "text",
+      "item1"
+    ],
+    "event_type": "gui",
+    "get_element_by": [
+      {
+        "type": "xpath",
+        "value": "/hierarchy/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[2]/android.widget.TableLayout/android.widget.RelativeLayout/android.widget.LinearLayout/android.widget.ListView/android.widget.TableLayout/android.widget.TableRow/android.widget.TextView[1]"
+      },
+      {
+        "type": "classname",
+        "value": "android.widget.TextView"
+      },
+      {
+        "type": "resource-id",
+        "value": "br.com.activity:id/descriptionItemShoppingList"
+      },
+      {
+        "type": "text",
+        "value": "item1"
       }
     ]
   }

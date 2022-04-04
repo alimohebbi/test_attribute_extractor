@@ -100,5 +100,28 @@
         "value": "Add item"
       }
     ]
+  },
+  {
+    "action": [
+      "wait_until_text_presence",
+      10,
+      "text",
+      "Grocery"
+    ],
+    "event_type": "gui",
+    "get_element_by": [
+      {
+        "type": "classname",
+        "value": "android.widget.TextView"
+      },
+      {
+        "type": "resource-id",
+        "value": "android:id/action_bar_title"
+      },
+      {
+        "type": "text",
+        "value": "Grocery"
+      }
+    ]
   }
 ]

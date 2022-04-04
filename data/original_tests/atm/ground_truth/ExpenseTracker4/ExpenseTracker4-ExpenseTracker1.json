@@ -137,6 +137,26 @@
   },
   {
     "action": [
+      "click"
+    ],
+    "event_type": "gui",
+    "get_element_by": [
+      {
+        "type": "xpath",
+        "value": "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.widget.ScrollView/android.widget.LinearLayout/android.widget.ImageButton"
+      },
+      {
+        "type": "classname",
+        "value": "android.widget.ImageButton"
+      },
+      {
+        "type": "resource-id",
+        "value": "com.benoitletondor.easybudgetapp:id/save_expense_fab"
+      }
+    ]
+  },
+  {
+    "action": [
       "send_keys",
       "1500"
     ],
@@ -153,6 +173,26 @@
       {
         "type": "resource-id",
         "value": "com.benoitletondor.easybudgetapp:id/amount_edittext"
+      }
+    ]
+  },
+  {
+    "action": [
+      "click"
+    ],
+    "event_type": "gui",
+    "get_element_by": [
+      {
+        "type": "xpath",
+        "value": "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.widget.ScrollView/android.widget.LinearLayout/android.widget.ImageButton"
+      },
+      {
+        "type": "classname",
+        "value": "android.widget.ImageButton"
+      },
+      {
+        "type": "resource-id",
+        "value": "com.benoitletondor.easybudgetapp:id/save_expense_fab"
       }
     ]
   },

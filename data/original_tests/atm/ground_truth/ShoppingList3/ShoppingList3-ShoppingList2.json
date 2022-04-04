@@ -15,7 +15,11 @@
       },
       {
         "type": "contentdescription",
-        "value": "New list"
+        "New list"
+      },
+      {
+        "type": "text",
+        "value": ""
       }
     ]
   },
@@ -57,6 +61,29 @@
       {
         "type": "text",
         "value": "OK"
+      }
+    ]
+  },
+  {
+    "action": [
+      "wait_until_text_presence",
+      10,
+      "text",
+      "grocery"
+    ],
+    "event_type": "gui",
+    "get_element_by": [
+      {
+        "type": "classname",
+        "value": "android.widget.TextView"
+      },
+      {
+        "type": "resource-id",
+        "value": "android:id/action_bar_title"
+      },
+      {
+        "type": "text",
+        "value": "grocery"
       }
     ]
   }

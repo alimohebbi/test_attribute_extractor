@@ -87,5 +87,28 @@
         "value": "OKAY"
       }
     ]
+  },
+  {
+    "action": [
+      "wait_until_text_presence",
+      10,
+      "text",
+      "List"
+    ],
+    "event_type": "gui",
+    "get_element_by": [
+      {
+        "type": "xpath",
+        "value": "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[1]/android.view.ViewGroup/android.widget.TextView"
+      },
+      {
+        "type": "classname",
+        "value": "android.widget.TextView"
+      },
+      {
+        "type": "text",
+        "value": "ListList"
+      }
+    ]
   }
 ]

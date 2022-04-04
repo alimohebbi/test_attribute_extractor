@@ -22,7 +22,7 @@
   {
     "action": [
       "send_keys",
-      "Grocery"
+      "grocery"
     ],
     "event_type": "gui",
     "get_element_by": [
@@ -65,6 +65,33 @@
       {
         "type": "text",
         "value": "SAVE"
+      }
+    ]
+  },
+  {
+    "action": [
+      "wait_until_text_presence",
+      10,
+      "text",
+      "grocery"
+    ],
+    "event_type": "gui",
+    "get_element_by": [
+      {
+        "type": "xpath",
+        "value": "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.support.v4.widget.DrawerLayout/android.view.ViewGroup/android.widget.LinearLayout[2]/android.widget.ListView/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.LinearLayout[1]/android.widget.TextView[1]"
+      },
+      {
+        "type": "classname",
+        "value": "android.widget.TextView"
+      },
+      {
+        "type": "resource-id",
+        "value": "pl.com.andrzejgrzyb.shoppinglist:id/shoppingListNameTextView"
+      },
+      {
+        "type": "text",
+        "value": "grocery"
       }
     ]
   }

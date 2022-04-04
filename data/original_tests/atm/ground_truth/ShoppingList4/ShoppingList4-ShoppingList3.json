@@ -90,6 +90,29 @@
   },
   {
     "action": [
+      "wait_until_text_presence",
+      10,
+      "text",
+      "list1"
+    ],
+    "event_type": "gui",
+    "get_element_by": [
+      {
+        "type": "xpath",
+        "value": "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[1]/android.view.ViewGroup/android.widget.TextView"
+      },
+      {
+        "type": "classname",
+        "value": "android.widget.TextView"
+      },
+      {
+        "type": "text",
+        "value": "list1"
+      }
+    ]
+  },
+  {
+    "action": [
       "click"
     ],
     "event_type": "gui",
@@ -150,6 +173,33 @@
       {
         "type": "text",
         "value": "OKAY"
+      }
+    ]
+  },
+  {
+    "action": [
+      "wait_until_text_presence",
+      10,
+      "text",
+      "item1"
+    ],
+    "event_type": "gui",
+    "get_element_by": [
+      {
+        "type": "xpath",
+        "value": "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[2]/android.widget.RelativeLayout/android.view.ViewGroup/android.support.v7.widget.RecyclerView/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.RelativeLayout/android.widget.TextView[1]"
+      },
+      {
+        "type": "classname",
+        "value": "android.widget.TextView"
+      },
+      {
+        "type": "resource-id",
+        "value": "privacyfriendlyshoppinglist.secuso.org.privacyfriendlyshoppinglist:id/textview_product_name"
+      },
+      {
+        "type": "text",
+        "value": "item1"
       }
     ]
   }

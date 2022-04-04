@@ -93,6 +93,26 @@
     "get_element_by": [
       {
         "type": "classname",
+        "value": "android.widget.TextView"
+      },
+      {
+        "type": "resource-id",
+        "value": "me.writeily:id/action_preview"
+      },
+      {
+        "type": "contentdescription",
+        "value": "Preview"
+      }
+    ]
+  },
+  {
+    "action": [
+      "click"
+    ],
+    "event_type": "gui",
+    "get_element_by": [
+      {
+        "type": "classname",
         "value": "android.widget.ImageButton"
       },
       {

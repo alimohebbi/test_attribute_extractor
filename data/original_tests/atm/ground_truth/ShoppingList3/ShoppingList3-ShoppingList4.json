@@ -1,4 +1,4 @@
-[
+  [
   {
     "action": [
       "click"
@@ -85,6 +85,29 @@
       {
         "type": "text",
         "value": "OK"
+      }
+    ]
+  },
+  {
+    "action": [
+      "wait_until_text_presence",
+      10,
+      "text",
+      "grocery"
+    ],
+    "event_type": "gui",
+    "get_element_by": [
+      {
+        "type": "classname",
+        "value": "android.widget.TextView"
+      },
+      {
+        "type": "resource-id",
+        "value": "android:id/text1"
+      },
+      {
+        "type": "text",
+        "value": "grocery"
       }
     ]
   }

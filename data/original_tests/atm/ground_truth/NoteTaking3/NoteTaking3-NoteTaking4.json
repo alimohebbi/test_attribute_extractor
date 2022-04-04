@@ -63,5 +63,32 @@
     ],
     "event_type": "SYS_EVENT",
     "get_element_by": []
+  },
+  {
+    "action": [
+      "wait_until_text_presence",
+      10,
+      "text",
+      "note"
+    ],
+    "event_type": "gui",
+    "get_element_by": [
+      {
+        "type": "xpath",
+        "value": "/hierarchy/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[2]/android.support.v4.widget.DrawerLayout/android.widget.RelativeLayout/android.widget.RelativeLayout/android.widget.ViewFlipper/android.widget.ListView/android.widget.RelativeLayout/android.widget.TextView[1]"
+      },
+      {
+        "type": "classname",
+        "value": "android.widget.TextView"
+      },
+      {
+        "type": "resource-id",
+        "value": "chan.android.app.pocketnote:id/note_item_$_textview_title"
+      },
+      {
+        "type": "text",
+        "value": "note"
+      }
+    ]
   }
 ]

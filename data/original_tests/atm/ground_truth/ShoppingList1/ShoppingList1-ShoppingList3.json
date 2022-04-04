@@ -46,7 +46,7 @@
   {
     "action": [
       "send_keys",
-      "grocery"
+      "Grocery"
     ],
     "event_type": "gui",
     "get_element_by": [
@@ -122,6 +122,33 @@
       {
         "type": "contentdescription",
         "value": "Navigate up"
+      }
+    ]
+  },
+  {
+    "action": [
+      "wait_until_text_presence",
+      10,
+      "text",
+      "Grocery"
+    ],
+    "event_type": "gui",
+    "get_element_by": [
+      {
+        "type": "xpath",
+        "value": "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.support.v4.widget.DrawerLayout/android.view.ViewGroup/android.support.v7.widget.RecyclerView/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.RelativeLayout/android.widget.TextView[1]"
+      },
+      {
+        "type": "classname",
+        "value": "android.widget.TextView"
+      },
+      {
+        "type": "resource-id",
+        "value": "privacyfriendlyshoppinglist.secuso.org.privacyfriendlyshoppinglist:id/textview_list_name"
+      },
+      {
+        "type": "text",
+        "value": "Grocery"
       }
     ]
   }
