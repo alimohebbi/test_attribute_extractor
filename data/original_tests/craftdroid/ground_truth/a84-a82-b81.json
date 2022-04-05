@@ -3,47 +3,156 @@
     "action": [
       "click"
     ],
-    "resource-id": "br.com.activity:id/action_add",
-    "class": "android.widget.TextView",
-    "content-desc": "New list",
-    "text": ""
+    "event_type": "gui",
+    "get_element_by": [
+      {
+        "type": "resource-id",
+        "value": "br.com.activity:id/action_add"
+      },
+      {
+        "type": "classname",
+        "value": "android.widget.TextView"
+      },
+      {
+        "type": "contentdescription",
+        "value": "New list"
+      }
+    ]
   },
   {
     "action": [
       "send_keys",
       "list1"
     ],
-    "class": "android.widget.EditText",
-    "resource-id": "",
-    "text": "",
-    "content-desc": ""
+    "event_type": "gui",
+    "get_element_by": [
+      {
+        "type": "xpath",
+        "value": "/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.EditText"
+      },
+      {
+        "type": "classname",
+        "value": "android.widget.EditText"
+      }
+    ]
   },
   {
     "action": [
       "click"
     ],
-    "resource-id": "android:id/button1",
-    "class": "android.widget.Button",
-    "text": "OK",
-    "content-desc": ""
+    "event_type": "gui",
+    "get_element_by": [
+      {
+        "type": "xpath",
+        "value": "/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.LinearLayout[3]/android.widget.LinearLayout/android.widget.Button[2]"
+      },
+      {
+        "type": "resource-id",
+        "value": "android:id/button1"
+      },
+      {
+        "type": "classname",
+        "value": "android.widget.Button"
+      },
+      {
+        "type": "text",
+        "value": "OK"
+      }
+    ]
+  },
+  {
+    "action": [
+      "wait_until_text_presence",
+      10,
+      "text",
+      "list1"
+    ],
+    "event_type": "gui",
+    "get_element_by": [
+      {
+        "type": "classname",
+        "value": "android.widget.TextView"
+      },
+      {
+        "type": "resource-id",
+        "value": "android:id/action_bar_title"
+      },
+      {
+        "type": "text",
+        "value": "list1"
+      }
+    ]
   },
   {
     "action": [
       "send_keys",
       "Item1"
     ],
-    "resource-id": "br.com.activity:id/edDescription",
-    "class": "android.widget.EditText",
-    "text": "Add an item",
-    "content-desc": ""
+    "event_type": "gui",
+    "get_element_by": [
+      {
+        "type": "xpath",
+        "value": "/hierarchy/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[2]/android.widget.TableLayout/android.widget.TableRow/android.widget.EditText[1]"
+      },
+      {
+        "type": "resource-id",
+        "value": "br.com.activity:id/edDescription"
+      },
+      {
+        "type": "classname",
+        "value": "android.widget.EditText"
+      },
+      {
+        "type": "text",
+        "value": "Add an item"
+      }
+    ]
   },
   {
     "action": [
       "click"
     ],
-    "resource-id": "br.com.activity:id/action_done",
-    "class": "android.widget.TextView",
-    "content-desc": "Add item",
-    "text": ""
+    "event_type": "gui",
+    "get_element_by": [
+      {
+        "type": "resource-id",
+        "value": "br.com.activity:id/action_done"
+      },
+      {
+        "type": "classname",
+        "value": "android.widget.TextView"
+      },
+      {
+        "type": "contentdescription",
+        "value": "Add item"
+      }
+    ]
+  },
+  {
+    "action": [
+      "wait_until_text_presence",
+      10,
+      "text",
+      "item1"
+    ],
+    "event_type": "gui",
+    "get_element_by": [
+      {
+        "type": "xpath",
+        "value": "/hierarchy/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[2]/android.widget.TableLayout/android.widget.RelativeLayout/android.widget.LinearLayout/android.widget.ListView/android.widget.TableLayout/android.widget.TableRow/android.widget.TextView[1]"
+      },
+      {
+        "type": "classname",
+        "value": "android.widget.TextView"
+      },
+      {
+        "type": "resource-id",
+        "value": "br.com.activity:id/descriptionItemShoppingList"
+      },
+      {
+        "type": "text",
+        "value": "item1"
+      }
+    ]
   }
 ]

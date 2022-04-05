@@ -3,47 +3,137 @@
     "action": [
       "click"
     ],
-    "resource-id": "com.moonpi.swiftnotes:id/newNote",
-    "class": "android.widget.ImageButton",
-    "content-desc": "New note",
-    "text": ""
+    "event_type": "gui",
+    "get_element_by": [
+      {
+        "type": "resource-id",
+        "value": "com.moonpi.swiftnotes:id/newNote"
+      },
+      {
+        "type": "classname",
+        "value": "android.widget.ImageButton"
+      },
+      {
+        "type": "contentdescription",
+        "value": "New note"
+      }
+    ]
   },
   {
     "action": [
       "send_keys",
       "To-do"
     ],
-    "resource-id": "com.moonpi.swiftnotes:id/titleEdit",
-    "class": "android.widget.EditText",
-    "text": "Title",
-    "content-desc": ""
+    "event_type": "gui",
+    "get_element_by": [
+      {
+        "type": "xpath",
+        "value": "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.widget.EditText"
+      },
+      {
+        "type": "resource-id",
+        "value": "com.moonpi.swiftnotes:id/titleEdit"
+      },
+      {
+        "type": "classname",
+        "value": "android.widget.EditText"
+      },
+      {
+        "type": "text",
+        "value": "Title"
+      }
+    ]
   },
   {
     "action": [
       "send_keys",
       "Go shopping"
     ],
-    "resource-id": "com.moonpi.swiftnotes:id/bodyEdit",
-    "class": "android.widget.EditText",
-    "text": "Note",
-    "content-desc": ""
+    "event_type": "gui",
+    "get_element_by": [
+      {
+        "type": "xpath",
+        "value": "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.widget.ScrollView/android.widget.EditText"
+      },
+      {
+        "type": "resource-id",
+        "value": "com.moonpi.swiftnotes:id/bodyEdit"
+      },
+      {
+        "type": "classname",
+        "value": "android.widget.EditText"
+      },
+      {
+        "type": "text",
+        "value": "Note"
+      }
+    ]
   },
   {
     "action": [
       "click"
     ],
-    "class": "android.widget.ImageButton",
-    "resource-id": "",
-    "text": "",
-    "content-desc": ""
+    "event_type": "",
+    "get_element_by": [
+      {
+        "type": "xpath",
+        "value": "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.view.ViewGroup/android.widget.ImageButton"
+      },
+      {
+        "type": "classname",
+        "value": "android.widget.ImageButton"
+      }
+    ]
   },
   {
     "action": [
       "click"
     ],
-    "resource-id": "android:id/button1",
-    "class": "android.widget.Button",
-    "text": "YES",
-    "content-desc": ""
+    "event_type": "",
+    "get_element_by": [
+      {
+        "type": "xpath",
+        "value": "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.ScrollView/android.widget.LinearLayout/android.widget.Button[2]"
+      },
+      {
+        "type": "resource-id",
+        "value": "android:id/button1"
+      },
+      {
+        "type": "classname",
+        "value": "android.widget.Button"
+      },
+      {
+        "type": "text",
+        "value": "YES"
+      }
+    ]
+  },
+  {
+    "action": [
+      "wait_until_text_presence",
+      10,
+      "text",
+      "To-do"
+    ],
+    "event_type": "gui",
+    "get_element_by": [
+      {
+        "type": "xpath",
+        "value": "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.widget.ListView/android.widget.RelativeLayout/android.widget.TextView[1]"
+      },
+      {
+        "type": "classname",
+        "value": "android.widget.TextView"
+      },
+      {
+        "type": "resource-id",
+        "value": "com.moonpi.swiftnotes:id/titleView"
+      },
+      {
+        "type": "text",
+        "value": "To-do"
+      }
+    ]
   }
 ]

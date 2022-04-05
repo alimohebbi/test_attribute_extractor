@@ -3,38 +3,104 @@
     "action": [
       "click"
     ],
-    "class": "android.widget.ImageButton",
-    "resource-id": "com.kvannli.simonkvannli.dailybudget:id/imageButton2",
-    "text": "",
-    "content-desc": ""
+    "event_type": "gui",
+    "get_element_by": [
+      {
+        "type": "xpath",
+        "value": "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[2]/android.support.v4.widget.DrawerLayout/android.widget.LinearLayout/android.widget.LinearLayout[3]/android.widget.ImageButton[2]"
+      },
+      {
+        "type": "classname",
+        "value": "android.widget.ImageButton"
+      },
+      {
+        "type": "resource-id",
+        "value": "com.kvannli.simonkvannli.dailybudget:id/imageButton"
+      }
+    ]
   },
   {
     "action": [
       "send_keys",
       "Entertainment"
     ],
-    "class": "android.widget.EditText",
-    "resource-id": "com.kvannli.simonkvannli.dailybudget:id/input_note",
-    "text": "Note (Optional)",
-    "content-desc": ""
+    "event_type": "gui",
+    "get_element_by": [
+      {
+        "type": "xpath",
+        "value": "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[2]/android.widget.LinearLayout/android.widget.LinearLayout[1]/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.EditText[2]"
+      },
+      {
+        "type": "classname",
+        "value": "android.widget.EditText"
+      },
+      {
+        "type": "resource-id",
+        "value": "com.kvannli.simonkvannli.dailybudget:id/input_note"
+      },
+      {
+        "type": "text",
+        "value": "Note (Optional)"
+      }
+    ]
   },
   {
     "action": [
       "send_keys",
       "45"
     ],
-    "class": "android.widget.EditText",
-    "resource-id": "com.kvannli.simonkvannli.dailybudget:id/input_amount",
-    "text": "Amount",
-    "content-desc": ""
+    "event_type": "gui",
+    "get_element_by": [
+      {
+        "type": "xpath",
+        "value": "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[2]/android.widget.LinearLayout/android.widget.LinearLayout[1]/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.EditText[1]"
+      },
+      {
+        "type": "classname",
+        "value": "android.widget.EditText"
+      },
+      {
+        "type": "resource-id",
+        "value": "com.kvannli.simonkvannli.dailybudget:id/input_amount"
+      },
+      {
+        "type": "text",
+        "value": "Amount"
+      }
+    ]
+  },
+  {
+    "class": "SYS_EVENT",
+    "action": [
+      "KEY_BACK"
+    ],
+    "event_type": "SYS_EVENT"
   },
   {
     "action": [
-      "click"
+      "wait_until_text_presence",
+      10,
+      "text",
+      "$ 0.00"
     ],
-    "class": "android.widget.Button",
-    "resource-id": "com.kvannli.simonkvannli.dailybudget:id/doneButton",
-    "text": "DONE",
-    "content-desc": ""
+    "event_type": "gui",
+    "get_element_by": [
+      {
+        "type": "xpath",
+        "value": "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[2]/android.support.v4.widget.DrawerLayout/android.widget.LinearLayout/android.widget.TextView"
+      },
+      {
+        "type": "classname",
+        "value": "android.widget.TextView"
+      },
+      {
+        "type": "resource-id",
+        "value": "com.kvannli.simonkvannli.dailybudget:id/current_money"
+      },
+      {
+        "type": "text",
+        "value": "$ 0.00"
+      }
+    ]
   }
 ]

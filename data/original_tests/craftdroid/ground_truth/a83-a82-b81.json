@@ -3,28 +3,88 @@
     "action": [
       "click"
     ],
-    "resource-id": "br.com.activity:id/action_add",
-    "class": "android.widget.TextView",
-    "content-desc": "New list",
-    "text": ""
+    "event_type": "gui",
+    "get_element_by": [
+      {
+        "type": "resource-id",
+        "value": "br.com.activity:id/action_add"
+      },
+      {
+        "type": "classname",
+        "value": "android.widget.TextView"
+      },
+      {
+        "type": "contentdescription",
+        "New list"
+      },
+      {
+        "type": "text",
+        "value": ""
+      }
+    ]
   },
   {
     "action": [
       "send_keys",
       "grocery"
     ],
-    "class": "android.widget.EditText",
-    "resource-id": "",
-    "text": "",
-    "content-desc": ""
+    "event_type": "gui",
+    "get_element_by": [
+      {
+        "type": "xpath",
+        "value": "/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.EditText"
+      },
+      {
+        "type": "classname",
+        "value": "android.widget.EditText"
+      }
+    ]
   },
   {
     "action": [
       "click"
     ],
-    "resource-id": "android:id/button1",
-    "class": "android.widget.Button",
-    "text": "OK",
-    "content-desc": ""
+    "event_type": "gui",
+    "get_element_by": [
+      {
+        "type": "xpath",
+        "value": "/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.LinearLayout[3]/android.widget.LinearLayout/android.widget.Button[2]"
+      },
+      {
+        "type": "resource-id",
+        "value": "android:id/button1"
+      },
+      {
+        "type": "classname",
+        "value": "android.widget.Button"
+      },
+      {
+        "type": "text",
+        "value": "OK"
+      }
+    ]
+  },
+  {
+    "action": [
+      "wait_until_text_presence",
+      10,
+      "text",
+      "grocery"
+    ],
+    "event_type": "gui",
+    "get_element_by": [
+      {
+        "type": "classname",
+        "value": "android.widget.TextView"
+      },
+      {
+        "type": "resource-id",
+        "value": "android:id/action_bar_title"
+      },
+      {
+        "type": "text",
+        "value": "grocery"
+      }
+    ]
   }
 ]
