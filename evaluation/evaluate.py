@@ -4,6 +4,8 @@ import pandas as pd
 import glob
 import json
 import mapping
+from Levenshtein import distance
+from fastDamerauLevenshtein import damerauLevenshtein
 
 with open('../config_template/config.toml', 'r') as file:
         config = toml.load(file)
@@ -17,6 +19,7 @@ def get_craftdroid_ground_truth_address(base_path, src_app, target_app):
         return base_path+src_app.split("-")[0]+"-"+target_app+".json"
     else:
         return base_path+target_app+".json"
+
 def empty_event(parsed_element):
     keys = parsed_element.keys()
     if "class" in keys and parsed_element["class"] == "EMPTY_EVENT":
@@ -89,11 +92,20 @@ def calculate_metrics(migration: mapping.Mapping) -> list:
     tn = migration.true_negative()
     fp = migration.false_positive()
     fn = migration.false_negative()
-    effort = migration.levenshtein_distance()
+    
+    gt_str, gen_str = migration.build_distance_strings()
+    if gt_str is None or gen_str is None:
+        effort_leveneshtein = None
+        effort_damerau_levenshtein = None
+    else:
+        effort_leveneshtein = distance(gt_str, gen_str)
+        effort_damerau_levenshtein = damerauLevenshtein(gt_str, gen_str)
+
     try:
         accuracy = (tp + tn) / (tp + fp + fn + tn)
     except Exception as e:
         accuracy = None
+
     try:
         precision = tp / (tp + fp)
     except Exception as e:
@@ -103,18 +115,30 @@ def calculate_metrics(migration: mapping.Mapping) -> list:
         recall = tp / (tp + fn)
     except Exception as e:
         recall = None
+
     try:
         f1_score = 2 * (recall * precision) / (recall + precision)
     except Exception as e:
         f1_score = None
+
     try:
-        reduction = (migration.gt_size - effort) / migration.gt_size
+        reduction_leveneshtein = (migration.gt_size - effort_leveneshtein) / migration.gt_size
     except Exception as e:
-        reduction = None
-    return [ migration.src_app, migration.tgt_app, tp, tn, fp, fn, effort, accuracy, precision, recall, f1_score, reduction ]
+        reduction_leveneshtein = None
+
+    try:
+        reduction_damerau_leveneshtein = (migration.gt_size - effort_damerau_levenshtein) / migration.gt_size
+    except Exception as e:
+        reduction_damerau_leveneshtein = None
+
+    return [ migration.src_app, migration.tgt_app, tp, tn, fp, fn,\
+    effort_leveneshtein, effort_damerau_levenshtein, accuracy, precision,\
+    recall, f1_score, reduction_leveneshtein, reduction_damerau_leveneshtein ]
 
 def calculate_results(mappings: dict, migration_config: str) -> pd.core.frame.DataFrame:
-    columns=["src_app", "target_app", "tp", "tn", "fp", "fn", "effort", "accuracy", "precision", "recall", "f1_score", "reduction"]
+    columns=["src_app", "target_app", "tp", "tn", "fp", "fn", "effort_leveneshtein",\
+    "effort_damerau_levenshtein", "accuracy", "precision", "recall", "f1_score",\
+    "reduction_leveneshtein", "reduction_damerau_leveneshtein"]
     results = []
     for k, v in mappings.items():
         if len(v.gt_gen):
