@@ -36,7 +36,7 @@ def remove_extra_events(generated: List[Dict[str, object]]) -> List[Dict[str, ob
     if generated is None:
         return generated
     generated = [x for x in generated if not empty_event(x)]
-    generated = [x for x in generated if not x["action"][0].startswith("wait") and not x["action"][0] == "KEY_BACK"]
+    # generated = [x for x in generated if not x["action"][0].startswith("wait") and not x["action"][0] == "KEY_BACK"]
     return generated
 
 

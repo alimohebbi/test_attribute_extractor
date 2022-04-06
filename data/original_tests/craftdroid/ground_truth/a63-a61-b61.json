@@ -117,7 +117,7 @@
         "value": "No income or expense yet."
       }
     ]
-  }
+  },
   {
     "action": [
       "click"
@@ -266,7 +266,7 @@
         "value": "$500.00"
       }
     ]
-  }
+  },
   {
     "action": [
       "wait_until_text_presence",

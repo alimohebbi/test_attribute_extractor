@@ -28,7 +28,7 @@ def empty_event(parsed_element):
 
 def remove_extra_events(obj: List[Dict[str, object]]) -> List[Dict[str, object]]:  
     obj = [x for x in obj if not empty_event(x)]
-    obj = [x for x in obj if not x["action"][0].startswith("wait") and not x["action"][0] == "KEY_BACK"]
+    # obj = [x for x in obj if not x["action"][0].startswith("wait") and not x["action"][0] == "KEY_BACK"]
     return obj
 
 def get_file_size(base_address: str) -> int:
@@ -99,7 +99,7 @@ def calculate_metrics(migration: mapping.Mapping) -> list:
         effort_damerau_levenshtein = None
     else:
         effort_leveneshtein = distance(gt_str, gen_str)
-        effort_damerau_levenshtein = damerauLevenshtein(gt_str, gen_str)
+        effort_damerau_levenshtein = int(damerauLevenshtein(gt_str, gen_str, similarity=False))
 
     try:
         accuracy = (tp + tn) / (tp + fp + fn + tn)

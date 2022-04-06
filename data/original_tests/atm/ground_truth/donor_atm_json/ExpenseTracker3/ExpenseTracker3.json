@@ -138,7 +138,7 @@
         "value": "ADD INCOME"
       }
     ]
-  }
+  },
   {
     "action": [
       "send_keys",

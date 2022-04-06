@@ -261,7 +261,7 @@
       {
         "type": "resource-id",
         "value": "com.benoitletondor.easybudgetapp:id/expense_amount"
-      }
+      },
       {
         "type": "text",
         "value": "-$45.00"
