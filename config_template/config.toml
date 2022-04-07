@@ -5,13 +5,17 @@ algorithm = "craftdroid"
     erroneous_address = '../data/broken_tests/atm/'
 
     [atm.src_gt]
-    address = "../data/mappings/atm/src_ground_truth/src_ground_truth.csv"
+    oracles_excluded = "../data/mappings/atm/src_ground_truth/oracles_excluded/src_ground_truth.csv"
+    oracles_included = "../data/mappings/atm/src_ground_truth/oracles_included/src_ground_truth.csv"
+    oracles_only = "../data/mappings/atm/src_ground_truth/oracles_only/src_ground_truth.csv"
 
     [atm.gt_gen]
     address = "../data/mappings/atm/ground_truth_generated/"
 
     [atm.result]
-    address = "../data/output/evaluation/atm/result_"
+    oracles_excluded = "../data/output/evaluation/atm/oracles_excluded/result_"
+    oracles_included = "../data/output/evaluation/atm/oracles_included/result_"
+    oracles_only = "../data/output/evaluation/atm/oracles_only/result_"
     aggregated_result_address = "../data/output/analyse/atm/atm_aggregated_result.csv"
 
     [atm.BASE_JSON_ADDRESS]
@@ -36,13 +40,17 @@ algorithm = "craftdroid"
     erroneous_address = '../data/broken_tests/craftdoid/'
 
     [craftdroid.src_gt]
-    address = "../data/mappings/craftdroid/src_ground_truth/src_ground_truth.csv"
+    oracles_excluded = "../data/mappings/craftdroid/src_ground_truth/oracles_excluded/src_ground_truth.csv"
+    oracles_included = "../data/mappings/craftdroid/src_ground_truth/oracles_included/src_ground_truth.csv"
+    oracles_only = "../data/mappings/craftdroid/src_ground_truth/oracles_only/src_ground_truth.csv"
 
     [craftdroid.gt_gen]
     address = "../data/mappings/craftdroid/ground_truth_generated/"
 
     [craftdroid.result]
-    address = "../data/output/evaluation/craftdroid/result_"
+    oracles_excluded = "../data/output/evaluation/craftdroid/oracles_excluded/result_"
+    oracles_included = "../data/output/evaluation/craftdroid/oracles_included/result_"
+    oracles_only = "../data/output/evaluation/craftdroid/oracles_only/result_"
     aggregated_result_address = "../data/output/analyse/craftdroid/craftdroid_aggregated_result.csv"
 
     [craftdroid.BASE_JSON_ADDRESS]

@@ -4,6 +4,7 @@ import json
 import glob
 import pandas as pd
 
+
 with open('../config_template/config.toml', 'r') as file:
     config = toml.load(file)
 ALGORITHM = str(config["algorithm"])
@@ -32,12 +33,17 @@ def empty_event(parsed_element):
         return True
     return False
 
-def remove_extra_events(generated: List[Dict[str, object]]) -> List[Dict[str, object]]:
-    if generated is None:
-        return generated
-    generated = [x for x in generated if not empty_event(x)]
-    # generated = [x for x in generated if not x["action"][0].startswith("wait") and not x["action"][0] == "KEY_BACK"]
-    return generated
+
+def remove_extra_events(obj: List[Dict[str, object]], oracle_stat: str) -> List[Dict[str, object]]:
+    if obj is None:
+        return obj
+    obj = [x for x in obj if not empty_event(x)]
+    obj = change_nulls_to_empty_strings(obj)
+    if oracle_stat == "oracles_only":
+        obj = [x for x in obj if x["action"][0].startswith("wait")]
+    elif oracle_stat == "oracles_excluded":
+        obj = [x for x in obj if not x["action"][0].startswith("wait")]
+    return obj
 
 
 def get_gt_filename(filename: str) -> str:
@@ -60,18 +66,18 @@ def find_ground_truth(filename: str) -> str:
     return None
     
 
-def load_json_file(file_address: str) -> list:
+def load_json_file(file_address: str, oracle_stat: str) -> list:
     json_file: List[Dict[str, object]] = None
     with open(file_address, 'r') as f:
         json_file = json.load(f)
-    json_file = remove_extra_events(json_file)
-    json_file = change_nulls_to_empty_strings(json_file)
+    json_file = remove_extra_events(json_file, oracle_stat)
+    
     return json_file
 
 
-def load_json_files(file: str, gt_file_address: str) -> Tuple[list, list]:
-    generated = load_json_file(file)
-    ground_truth = load_json_file(gt_file_address)
+def load_json_files(file: str, gt_file_address: str, oracle_stat: str) -> Tuple[list, list]:
+    generated = load_json_file(file, oracle_stat)
+    ground_truth = load_json_file(gt_file_address, oracle_stat)
 
     return generated, ground_truth
 
@@ -145,18 +151,29 @@ def add_corresponding_objects_to_map(result: pd.core.frame.DataFrame,
     return result
 
 
-def extract_ground_truth_generated_map(files: list, migration_config: str):
+def extract_ground_truth_generated_map(files: list, oracle_stat: str, result_address: str):
     result = pd.DataFrame(columns=['src_app', 'target_app', 'src_index', 'target_index'])
     for file in files:
         gt_file_address = find_ground_truth(file)
         if gt_file_address is None:
             continue
-        generated, ground_truth = load_json_files(file, gt_file_address)
+        generated, ground_truth = load_json_files(file, gt_file_address, oracle_stat)
         if generated is None or ground_truth is None:
             continue
         result = add_corresponding_objects_to_map(result, file, generated, ground_truth)
 
-    result.to_csv(config[ALGORITHM]['gt_gen']['address'] + migration_config + ".csv", index=False)
+    result.to_csv(result_address, index=False)
+
+
+def extract_ground_truth_generated_maps(files: list, migration_config: str):
+    result_address = config[ALGORITHM]['gt_gen']['address'] + "oracles_excluded/" + migration_config + ".csv"
+    extract_ground_truth_generated_map(files, "oracles_excluded", result_address)
+    
+    result_address = config[ALGORITHM]['gt_gen']['address'] + "oracles_included/" + migration_config + ".csv"
+    extract_ground_truth_generated_map(files, "oracles_included", result_address)
+    
+    result_address = config[ALGORITHM]['gt_gen']['address'] + "oracles_only/" + migration_config + ".csv"
+    extract_ground_truth_generated_map(files, "oracles_only", result_address)
 
 
 def extract_all_ground_truth_generated_maps():
@@ -165,7 +182,7 @@ def extract_all_ground_truth_generated_maps():
         migration_config = migration_config.split("/")[-1]
         files = glob.glob(
             config[ALGORITHM]['BASE_JSON_ADDRESS']['generated'] + migration_config + "/*/*.json")
-        extract_ground_truth_generated_map(files, migration_config)
+        extract_ground_truth_generated_maps(files, migration_config)
 
 
 def main():
