@@ -1,0 +1,163 @@
+[
+  {
+    "action": [
+      "wait_until_text_presence",
+      10,
+      "text",
+      "+ 0 NON"
+    ],
+    "event_type": "gui",
+    "get_element_by": [
+      {
+        "type": "xpath",
+        "value": "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.support.v4.widget.DrawerLayout/android.view.ViewGroup/android.widget.LinearLayout[2]/android.widget.ListView/android.widget.LinearLayout/android.widget.LinearLayout[2]/android.widget.TextView[2]"
+      },
+      {
+        "type": "classname",
+        "value": "android.widget.TextView"
+      },
+      {
+        "type": "resource-id",
+        "value": "com.blogspot.e_kanivets.moneytracker:id/tv_total_income"
+      },
+      {
+        "type": "text",
+        "value": "+ 0 NON"
+      }
+    ]
+  },
+  {
+    "action": [
+      "click"
+    ],
+    "event_type": "gui",
+    "get_element_by": [
+      {
+        "type": "xpath",
+        "value": "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.support.v4.widget.DrawerLayout/android.view.ViewGroup/android.widget.LinearLayout[2]/android.widget.LinearLayout/android.widget.Button[1]"
+      },
+      {
+        "type": "classname",
+        "value": "android.widget.Button"
+      },
+      {
+        "type": "resource-id",
+        "value": "com.blogspot.e_kanivets.moneytracker:id/btn_add_income"
+      },
+      {
+        "type": "text",
+        "value": "ADD INCOME"
+      }
+    ]
+  },
+  {
+    "action": [
+      "send_keys",
+      "uber"
+    ],
+    "event_type": "gui",
+    "get_element_by": [
+      {
+        "type": "xpath",
+        "value": "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.LinearLayout[2]/TextInputLayout[2]/android.widget.FrameLayout/android.widget.EditText"
+      },
+      {
+        "type": "classname",
+        "value": "android.widget.EditText"
+      },
+      {
+        "type": "resource-id",
+        "value": "com.blogspot.e_kanivets.moneytracker:id/et_title"
+      }
+    ]
+  },
+  {
+    "action": [
+      "send_keys",
+      "uber"
+    ],
+    "event_type": "gui",
+    "get_element_by": [
+      {
+        "type": "xpath",
+        "value": "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.LinearLayout[2]/TextInputLayout[3]/android.widget.FrameLayout/android.widget.EditText"
+      },
+      {
+        "type": "classname",
+        "value": "android.widget.EditText"
+      },
+      {
+        "type": "resource-id",
+        "value": "com.blogspot.e_kanivets.moneytracker:id/et_category"
+      }
+    ]
+  },
+  {
+    "action": [
+      "send_keys",
+      "500"
+    ],
+    "event_type": "gui",
+    "get_element_by": [
+      {
+        "type": "xpath",
+        "value": "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.LinearLayout[2]/TextInputLayout[1]/android.widget.FrameLayout/android.widget.EditText"
+      },
+      {
+        "type": "classname",
+        "value": "android.widget.EditText"
+      },
+      {
+        "type": "resource-id",
+        "value": "com.blogspot.e_kanivets.moneytracker:id/et_price"
+      }
+    ]
+  },
+  {
+    "action": [
+      "click"
+    ],
+    "event_type": "gui",
+    "get_element_by": [
+      {
+        "type": "resource-id",
+        "value": "com.blogspot.e_kanivets.moneytracker:id/action_done"
+      },
+      {
+        "type": "contentdescription",
+        "value": "Add"
+      },
+      {
+        "type": "classname",
+        "value": "android.widget.TextView"
+      }
+    ]
+  },
+  {
+    "action": [
+      "wait_until_text_presence",
+      10,
+      "text",
+      "+ 500 NON"
+    ],
+    "event_type": "gui",
+    "get_element_by": [
+      {
+        "type": "xpath",
+        "value": "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.support.v4.widget.DrawerLayout/android.view.ViewGroup/android.widget.LinearLayout[2]/android.widget.ListView/android.widget.LinearLayout/android.widget.LinearLayout[2]/android.widget.TextView[2]"
+      },
+      {
+        "type": "classname",
+        "value": "android.widget.TextView"
+      },
+      {
+        "type": "resource-id",
+        "value": "com.blogspot.e_kanivets.moneytracker:id/tv_total_income"
+      },
+      {
+        "type": "text",
+        "value": "+ 500 NON"
+      }
+    ]
+  }
+]
