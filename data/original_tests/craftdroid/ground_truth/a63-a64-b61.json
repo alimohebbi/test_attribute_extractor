@@ -6,7 +6,7 @@
       "text",
       "+ 0 NON"
     ],
-    "event_type": "gui",
+    "event_type": "oracle",
     "get_element_by": [
       {
         "type": "xpath",
@@ -138,36 +138,9 @@
       "wait_until_text_presence",
       10,
       "text",
-      "500  MONTHLY"
-    ],
-    "event_type": "gui",
-    "get_element_by": [
-      {
-        "type": "xpath",
-        "value": "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[2]/android.widget.LinearLayout/android.widget.ListView/android.widget.TableLayout/android.widget.TableRow/android.widget.TableLayout/android.widget.TableRow[2]/android.widget.TextView"
-      },
-      {
-        "type": "classname",
-        "value": "android.widget.TextView"
-      },
-      {
-        "type": "resource-id",
-        "value": "android:id/text1"
-      },
-      {
-        "type": "text",
-        "value": "500  MONTHLY"
-      }
-    ]
-  },
-  {
-    "action": [
-      "wait_until_text_presence",
-      10,
-      "text",
       "+ 500 NON"
     ],
-    "event_type": "gui",
+    "event_type": "oracle",
     "get_element_by": [
       {
         "type": "xpath",

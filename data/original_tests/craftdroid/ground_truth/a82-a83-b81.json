@@ -95,7 +95,7 @@
       "text",
       "List"
     ],
-    "event_type": "gui",
+    "event_type": "oracle",
     "get_element_by": [
       {
         "type": "xpath",
@@ -107,7 +107,7 @@
       },
       {
         "type": "text",
-        "value": "ListList"
+        "value": "List"
       }
     ]
   }

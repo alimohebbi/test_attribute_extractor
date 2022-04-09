@@ -6,7 +6,7 @@
       "text",
       "+ 0 NON"
     ],
-    "event_type": "gui",
+    "event_type": "oracle",
     "get_element_by": [
       {
         "type": "xpath",
@@ -140,7 +140,7 @@
       "text",
       "+ 500 NON"
     ],
-    "event_type": "gui",
+    "event_type": "oracle",
     "get_element_by": [
       {
         "type": "xpath",

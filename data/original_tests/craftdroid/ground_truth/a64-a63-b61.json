@@ -70,7 +70,7 @@
       "text",
       "Currently no income..."
     ],
-    "event_type": "gui",
+    "event_type": "oracle",
     "get_element_by": [
       {
         "type": "resource-id",
@@ -146,7 +146,7 @@
       "text",
       "Currently no income..."
     ],
-    "event_type": "gui",
+    "event_type": "oracle",
     "get_element_by": [
       {
         "type": "resource-id",
@@ -222,7 +222,7 @@
       "text",
       "GRA"
     ],
-    "event_type": "gui",
+    "event_type": "oracle",
     "get_element_by": [
       {
         "type": "resource-id",

@@ -70,7 +70,7 @@
       "text",
       "Currently no income..."
     ],
-    "event_type": "gui",
+    "event_type": "oracle",
     "get_element_by": [
       {
         "type": "xpath",
@@ -195,7 +195,7 @@
       "text",
       "500  MONTHLY"
     ],
-    "event_type": "gui",
+    "event_type": "oracle",
     "get_element_by": [
       {
         "type": "xpath",

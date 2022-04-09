@@ -95,7 +95,7 @@
       "text",
       "list1"
     ],
-    "event_type": "gui",
+    "event_type": "oracle",
     "get_element_by": [
       {
         "type": "xpath",
@@ -183,7 +183,7 @@
       "text",
       "item1"
     ],
-    "event_type": "gui",
+    "event_type": "oracle",
     "get_element_by": [
       {
         "type": "xpath",
