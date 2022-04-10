@@ -58,7 +58,7 @@
       },
       {
         "type": "classname",
-        "value": "android.widget.TextView"
+        "value": "android.widget.EditText"
       },
       {
         "type": "resource-id",

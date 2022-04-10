@@ -1,33 +1,6 @@
 [
   {
     "action": [
-      "wait_until_text_presence",
-      10,
-      "text",
-      "$0.00"
-    ],
-    "event_type": "oracle",
-    "get_element_by": [
-      {
-        "type": "xpath",
-        "value": "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.LinearLayout[2]/android.widget.ScrollView/android.widget.LinearLayout/android.widget.Button"
-      },
-      {
-        "type": "classname",
-        "value": "android.widget.Button"
-      },
-      {
-        "type": "resource-id",
-        "value": "luankevinferreira.expenses:id/total_month"
-      },
-      {
-        "type": "text",
-        "value": "$0.00"
-      }
-    ]
-  },
-  {
-    "action": [
       "click"
     ],
     "event_type": "gui",
@@ -43,6 +16,30 @@
       {
         "type": "resource-id",
         "value": "luankevinferreira.expenses:id/fab"
+      }
+    ]
+  },
+  {
+    "action": [
+      "click"
+    ],
+    "event_type": "gui",
+    "get_element_by": [
+      {
+        "type": "xpath",
+        "value": "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[2]/android.widget.LinearLayout/android.widget.ScrollView/android.widget.LinearLayout/android.widget.Button"
+      },
+      {
+        "type": "classname",
+        "value": "android.widget.Button"
+      },
+      {
+        "type": "resource-id",
+        "value": "luankevinferreira.expenses:id/save_expense"
+      },
+      {
+        "type": "text",
+        "value": "SAVE"
       }
     ]
   },
@@ -68,6 +65,30 @@
       {
         "type": "text",
         "value": "Add a description"
+      }
+    ]
+  },
+  {
+    "action": [
+      "click"
+    ],
+    "event_type": "gui",
+    "get_element_by": [
+      {
+        "type": "xpath",
+        "value": "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[2]/android.widget.LinearLayout/android.widget.ScrollView/android.widget.LinearLayout/android.widget.Button"
+      },
+      {
+        "type": "classname",
+        "value": "android.widget.Button"
+      },
+      {
+        "type": "resource-id",
+        "value": "luankevinferreira.expenses:id/save_expense"
+      },
+      {
+        "type": "text",
+        "value": "SAVE"
       }
     ]
   },

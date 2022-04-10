@@ -77,7 +77,7 @@
       },
       {
         "type": "resource-id",
-        "value": "me.writeily:id/ "
+        "value": "me.writeily:id/note_content"
       },
       {
         "type": "classname",
@@ -112,7 +112,7 @@
     "get_element_by": [
       {
         "type": "xpath",
-        "value": "/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.RelativeLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.widget.ListView/android.widget.LinearLayout[3]/android.widget.LinearLayout/android.widget.TextView[1]"
+        "value": "/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.RelativeLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.widget.ListView/android.widget.LinearLayout[2]/android.widget.LinearLayout/android.widget.TextView[1]"
       },
       {
         "type": "classname",

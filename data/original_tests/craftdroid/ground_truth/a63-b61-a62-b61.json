@@ -21,33 +21,32 @@
   },
   {
     "action": [
-      "send_keys",
-      "45"
+      "click"
     ],
     "event_type": "gui",
     "get_element_by": [
       {
         "type": "xpath",
-        "value": "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[2]/android.widget.LinearLayout/android.widget.ScrollView/android.widget.LinearLayout/android.widget.LinearLayout[1]/android.widget.EditText"
+        "value": "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[2]/android.widget.LinearLayout/android.widget.ScrollView/android.widget.LinearLayout/android.widget.Button"
       },
       {
         "type": "classname",
-        "value": "android.widget.EditText"
+        "value": "android.widget.Button"
       },
       {
         "type": "resource-id",
-        "value": "luankevinferreira.expenses:id/expense_value"
+        "value": "luankevinferreira.expenses:id/save_expense"
       },
       {
         "type": "text",
-        "value": "0.00"
+        "value": "SAVE"
       }
     ]
   },
   {
     "action": [
       "send_keys",
-      "restaurant"
+      "uber"
     ],
     "event_type": "gui",
     "get_element_by": [
@@ -77,7 +76,7 @@
     "get_element_by": [
       {
         "type": "xpath",
-        "value": "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[2]/android.widget.LinearLayout/android.widget.ScrollView/android.widget.LinearLayout/android.widget.LinearLayout[3]/android.widget.Button"
+        "value": "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[2]/android.widget.LinearLayout/android.widget.ScrollView/android.widget.LinearLayout/android.widget.Button"
       },
       {
         "type": "classname",
@@ -85,31 +84,36 @@
       },
       {
         "type": "resource-id",
-        "value": "luankevinferreira.expenses:id/date_picker"
+        "value": "luankevinferreira.expenses:id/save_expense"
+      },
+      {
+        "type": "text",
+        "value": "SAVE"
       }
     ]
   },
   {
     "action": [
-      "click"
+      "send_keys",
+      "500"
     ],
     "event_type": "gui",
     "get_element_by": [
       {
         "type": "xpath",
-        "value": "/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.ScrollView/android.widget.LinearLayout/android.widget.Button[2]"
+        "value": "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[2]/android.widget.LinearLayout/android.widget.ScrollView/android.widget.LinearLayout/android.widget.LinearLayout[1]/android.widget.EditText"
       },
       {
         "type": "classname",
-        "value": "android.widget.Button"
+        "value": "android.widget.EditText"
       },
       {
         "type": "resource-id",
-        "value": "android:id/button1"
+        "value": "luankevinferreira.expenses:id/expense_value"
       },
       {
         "type": "text",
-        "value": "OK"
+        "value": "0.00"
       }
     ]
   },
@@ -142,7 +146,7 @@
       "wait_until_text_presence",
       10,
       "text",
-      "$45.00"
+      "$500.00"
     ],
     "event_type": "oracle",
     "get_element_by": [
@@ -160,7 +164,7 @@
       },
       {
         "type": "text",
-        "value": "$45.00"
+        "value": "$500.00"
       }
     ]
   }

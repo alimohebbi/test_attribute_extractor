@@ -42,7 +42,7 @@
   {
     "action": [
       "send_keys",
-      "note"
+      "to-do"
     ],
     "event_type": "gui",
     "get_element_by": [
@@ -67,7 +67,7 @@
   {
     "action": [
       "send_keys",
-      "something"
+      "Go shopping"
     ],
     "event_type": "gui",
     "get_element_by": [
@@ -93,26 +93,6 @@
     "get_element_by": [
       {
         "type": "classname",
-        "value": "android.widget.TextView"
-      },
-      {
-        "type": "resource-id",
-        "value": "me.writeily:id/action_preview"
-      },
-      {
-        "type": "contentdescription",
-        "value": "Preview"
-      }
-    ]
-  },
-  {
-    "action": [
-      "click"
-    ],
-    "event_type": "gui",
-    "get_element_by": [
-      {
-        "type": "classname",
         "value": "android.widget.ImageButton"
       },
       {
@@ -126,13 +106,13 @@
       "wait_until_text_presence",
       10,
       "text",
-      "note"
+      "to-do"
     ],
     "event_type": "oracle",
     "get_element_by": [
       {
         "type": "xpath",
-        "value": "/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.RelativeLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.widget.ListView/android.widget.LinearLayout[5]/android.widget.LinearLayout/android.widget.TextView[1]"
+        "value": "/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.RelativeLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.widget.ListView/android.widget.LinearLayout[2]/android.widget.LinearLayout/android.widget.TextView[1]"
       },
       {
         "type": "classname",
@@ -144,7 +124,7 @@
       },
       {
         "type": "text",
-        "value": "note"
+        "value": "to-do"
       }
     ]
   }

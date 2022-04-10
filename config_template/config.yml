@@ -1,17 +1,18 @@
 #parsed_test_dir: "/Users/usiusi/Documents/Repositories/Craftdroid/craft_custom/test_attribute_extractor/data/parsed_test"
 parsed_test_dir: "/data/output/parsed_tests"
-results_dir: "data/output/evaluation/craftdroid"
-logs_dir: "/root/test-reuse/Craftdroid-Modified/test_attribute_extractor/data/output/logs"
+results_dir: "data/json_tests"
+# logs_dir: "/root/test-reuse/Craftdroid-Modified/test_attribute_extractor/data/output/logs"
 #logs_dir: "/Users/usiusi/Documents/Repositories/Craftdroid/craft_custom/test_attribute_extractor/data/output/logs"
+logs_dir: "data/output/logs"
 analyse_dir: "data/output/analyse/"
 tests:
   atm:
-    dir: "./data/atm_tests"
+    dir: "./data/original_tests/atm"
     file_globs: 
-      - "*/*/*.java"
+      # - "*/*/*.java"
       - "ground_truth/*/*.json"
   craftdroid:
-    dir: "./data/craftdroid_tests"
+    dir: "./data/original_tests/craftdroid"
     file_globs: 
       - "*/b*2/base/*.json"
       - "a3/b31/base/*.json"

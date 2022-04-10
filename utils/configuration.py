@@ -7,7 +7,7 @@ class Configuration(object):
 
     def __init__(self):
         THIS_FOLDER = os.path.dirname(os.path.abspath(__file__))
-        path = os.path.join(THIS_FOLDER, '../config.yml')
+        path = os.path.join(THIS_FOLDER, '../config_template/config.yml')
         with open(path, 'r') as ymlfile:
             self._config = yaml.load(ymlfile, Loader=yaml.FullLoader)
 

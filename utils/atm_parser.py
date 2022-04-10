@@ -199,7 +199,9 @@ def parse_test_section(lines):
 
 
 def atm_parse(fname):
-    parsed_file_name = get_parsed_file_name(fname)
+    # parsed_file_name = get_parsed_file_name(fname)
+    if fname.split("/")[-3] == "ground_truth":
+        return load_json_data(fname)
     lines = read_file(fname)
     section = get_test_section(lines)
     parsed_test = parse_test_section(section)

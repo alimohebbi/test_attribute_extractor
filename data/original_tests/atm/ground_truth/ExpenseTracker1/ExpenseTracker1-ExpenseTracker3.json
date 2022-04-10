@@ -75,32 +75,5 @@
       "KEY_BACK"
     ],
     "event_type": "SYS_EVENT"
-  },
-  {
-    "action": [
-      "wait_until_text_presence",
-      10,
-      "text",
-      "$ 0.00"
-    ],
-    "event_type": "oracle",
-    "get_element_by": [
-      {
-        "type": "xpath",
-        "value": "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[2]/android.support.v4.widget.DrawerLayout/android.widget.LinearLayout/android.widget.TextView"
-      },
-      {
-        "type": "classname",
-        "value": "android.widget.TextView"
-      },
-      {
-        "type": "resource-id",
-        "value": "com.kvannli.simonkvannli.dailybudget:id/current_money"
-      },
-      {
-        "type": "text",
-        "value": "$ 0.00"
-      }
-    ]
   }
 ]

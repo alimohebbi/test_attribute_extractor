@@ -12,7 +12,10 @@ from appium import webdriver
 from appium.webdriver.common.touch_action import TouchAction
 from utils.utils import *
 from utils.atm_parser import atm_parse
-from utils.craftdroid_parser import craftdroid_parse, config
+from utils.craftdroid_parser import craftdroid_parse
+from utils.configuration import Configuration
+
+config = Configuration()
 
 
 class TestAttributeExtractor(ABC):
@@ -30,7 +33,12 @@ class TestAttributeExtractor(ABC):
         if log_address == "":
             name = self._get_log_file_name()
             logger = logging.getLogger(name)
-            fh = logging.FileHandler(os.path.join(config.logs_dir, name), mode='w')
+            log_path = os.path.join(config.logs_dir, name)
+            log_directory = "/".join(log_path.split("/")[0:-1])
+            isExist = os.path.exists(log_directory)
+            if not isExist:
+                os.makedirs(log_directory)
+            fh = logging.FileHandler(log_path, mode='w')
         else:
             logger = logging.getLogger(log_address)
             fh = logging.FileHandler(log_address, mode='w')
@@ -69,47 +77,51 @@ class TestAttributeExtractor(ABC):
         return conditional, value
     
     def execute_check_element_invisible(self, parsed_event):
+        oracle_pass = True
         condition = [parsed_event["action"][2], parsed_event["action"][3]]
         elements = self.get_elements((condition[0], condition[1]))
         if len(elements) != 0:
             error_message = 40 * "#" + " ERROR! " + 40 * "#" + "\nFor check_element_invisible, an element with selector: " + str(
                 condition) + ", was found!\n\n\n"
             self.logger.error(error_message)
+            oracle_pass = False
+        return oracle_pass
 
     def execute_check_element_presence(self, element, parsed_event):
-        matched = True
+        oracle_pass = True
         i = 2
         while i < len(parsed_event["action"]):
             conditional, value = self.get_condition(parsed_event, i)
             if conditional == "isDisplayed":
                 if element.get_attribute("displayed") != value:
-                    matched = False
+                    oracle_pass = False
             elif conditional == "isEnabled":
                 if element.get_attribute("enabled") != value:
-                    matched = False
+                    oracle_pass = False
             elif conditional == "text":
                 if preprocess_text(value) not in preprocess_text(element.get_attribute("text")):
-                    matched = False
+                    oracle_pass = False
             elif conditional == 'contentdescription' or conditional == "content-desc":
                 if preprocess_text(value) not in preprocess_text(element.get_attribute("content-desc")):
-                    matched = False
+                    oracle_pass = False
             elif conditional == "id" or conditional == "resource-id":
                 if value != element.get_attribute(conditional):
                     if value != element.get_attribute(conditional).split("/")[1]:
-                        matched = False
+                        oracle_pass = False
             elif conditional in self.attribute_list:
                 if value != element.get_attribute(conditional):
-                    matched = False
+                    oracle_pass = False
             else:
                 error_message = 40 * "#" + " ERROR! " + 40 * "#" + "\nUnknown attribute for check: " + str(
                     (conditional, value)) + "\n\n\n"
                 self.logger.error(error_message)
-                matched = False
+                oracle_pass = False
             i += 2
-        if not matched:
+        if not oracle_pass:
             error_message = 40 * "#" + " ERROR! " + 40 * "#" + "\nConditions not fully satisfied in: " + str(
                 parsed_event) + "\n\n\n"
             self.logger.error(error_message)
+        return oracle_pass
 
     def execute_swipe(self, action, element):
         direction = action.split("_")[1]
@@ -147,6 +159,7 @@ class TestAttributeExtractor(ABC):
             self.driver.back()
 
     def execute_action(self, el, parsed_event):
+        oracle_pass = True
         executed = True
         action = parsed_event["action"][0]
         if action == "click":
@@ -165,30 +178,34 @@ class TestAttributeExtractor(ABC):
             self.execute_swipe(action, el)
         elif "wait" in action:
             if action == "wait_until_element_presence" or action == "wait_until_text_presence":
-                self.execute_check_element_presence(el, parsed_event)
+                oracle_pass = self.execute_check_element_presence(el, parsed_event)
             elif action == "wait_until_text_invisible":
-                self.execute_check_element_invisible(parsed_event)
+                oracle_pass = self.execute_check_element_invisible(parsed_event)
         else:
             executed = False
             self.logger.error("Unhendled event: " + str(action) + ", in line: " + str(parsed_event))
         time.sleep(5)
-        return executed
+        return executed, oracle_pass
 
     def is_a_match(self, element, selectors):
         for i in range(1, len(selectors)):
             selector = selectors[i]
             identifier = selector["type"]
             value = selector["value"]
+            if value is not None:
+                value = value.lower()
+            element_value = element.get_attribute(identifier)
+            if element_value is not None:
+                element_value = element_value.lower()
             if identifier == "isdisplayed":
                 if element.get_attribute("displayed") != 'true':
                     return False
             elif identifier == "text":
-                test_value = 'date' if is_date(value.lower()) else value.lower()
-                element_value = element.get_attribute(identifier).lower()
+                test_value = 'date' if is_date(value) else value
                 element_value = 'date' if is_date(element_value) else element_value
                 if test_value not in element_value:
                     return False
-            elif element.get_attribute(identifier).lower() != value.lower():
+            elif element_value != value:
                 return False
         return True
 
@@ -206,7 +223,7 @@ class TestAttributeExtractor(ABC):
             match = self.is_a_match(element, selectors)
             if match:
                 return element
-        if actions_need_element(parsed_event["action"]):
+        if parsed_event["action"]!= "wait_until_text_invisible" or parsed_event["action"]!= "KEY_BACK":
             error_message = 40 * "#" + " ERROR! " + 40 * "#" + "\nNone of the elements fully matches the given widget selectors in line: " + str(
                 parsed_event) + "\n\n\n"
             self.logger.error(error_message)
@@ -286,6 +303,24 @@ class TestAttributeExtractor(ABC):
         element_attributes['activity'] = self.driver.current_activity
         return element_attributes
 
+    def handle_wait(self, parsed_event, element_attributes_list):
+        oracle_pass = False
+        if parsed_event["action"][0] == "wait_until_text_invisible":
+            executed, oracle_pass = self.execute_action(None, parsed_event)
+            parsed_event['oracle_pass'] = oracle_pass
+            element_attributes_list.append(parsed_event)
+        else:
+            el = self.get_element(parsed_event)
+            if el is None:
+                parsed_event['oracle_pass'] = oracle_pass
+                element_attributes_list.append(parsed_event)
+            else:
+                executed, oracle_pass = self.execute_action(el, parsed_event)
+                element_attributes = self.get_element_attributes(el, parsed_event)
+                element_attributes['oracle_pass'] = oracle_pass
+                element_attributes_list.append(element_attributes)
+        return element_attributes_list
+
     def get_element_attributes_list(self, parsed_test):
         time.sleep(10)
         element_attributes_list = []
@@ -294,20 +329,23 @@ class TestAttributeExtractor(ABC):
             while self.driver.is_keyboard_shown():
                self.driver.back()
                time.sleep(5)
-            # if "wait" in parsed_event["action"][0]:
-            #     time.sleep(parsed_event["action"][1])
-            if not actions_need_element(parsed_event["action"]):
-                executed = self.execute_action(None, parsed_event)
+            if "wait" in parsed_event["action"][0]:
+                time.sleep(parsed_event["action"][1])
+                element_attributes_list = self.handle_wait(parsed_event, element_attributes_list)
             else:
-                el = self.get_element(parsed_event)
-                if el is None:
+                if parsed_event["action"][0] == "KEY_BACK":
+                    executed, execute_action = self.execute_action(None, parsed_event)
+                    element_attributes_list.append(parsed_event)
+                else:
+                    el = self.get_element(parsed_event)
+                    if el is None:
+                        completed = False
+                        break
+                    element_attributes_list.append(self.get_element_attributes(el, parsed_event))
+                    executed, execute_action = self.execute_action(el, parsed_event)
+                if not executed:
                     completed = False
                     break
-                element_attributes_list.append(self.get_element_attributes(el, parsed_event))
-                executed = self.execute_action(el, parsed_event)
-            if not executed:
-                completed = False
-                break
         return element_attributes_list, completed
 
     @abstractmethod
@@ -333,8 +371,7 @@ class TestAttributeExtractor(ABC):
             write_json(element_attributes_list, os.path.join(config.results_dir, self._get_result_file_name()))
         else:
             write_json(element_attributes_list, address)
-
-
+            
 
 class CraftdroidExtractor(TestAttributeExtractor):
 
@@ -368,7 +405,7 @@ class ATMExtractor(TestAttributeExtractor):
 
 def main():
     atm_globs = config.custom_tests_glob('atm')
-    craftdroid_globs = config.custom_tests_glob('craftdroid')
+    # craftdroid_globs = config.custom_tests_glob('craftdroid')
 
     for file in atm_globs:
         print(file)
@@ -377,12 +414,12 @@ def main():
         except Exception as e:
             print(f"Running {file} failed with error {e}")
 
-    for file in craftdroid_globs:
-        print(file)
-        try:
-            CraftdroidExtractor(file).write_results("")
-        except Exception as e:
-            print(f"Running {file} failed with error {e}")
+    # for file in craftdroid_globs:
+    #     print(file)
+    #     try:
+    #         CraftdroidExtractor(file).write_results("")
+    #     except Exception as e:
+    #         print(f"Running {file} failed with error {e}")
 
 
 if __name__ == '__main__':

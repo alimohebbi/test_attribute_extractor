@@ -97,29 +97,6 @@
   },
   {
     "action": [
-      "wait_until_text_presence",
-      10,
-      "text",
-      "No income or expense yet."
-    ],
-    "event_type": "oracle",
-    "get_element_by": [
-      {
-        "type": "xpath",
-        "value": "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[2]/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.LinearLayout[2]/android.widget.TextView"
-      },
-      {
-        "type": "classname",
-        "value": "android.widget.TextView"
-      },
-      {
-        "type": "text",
-        "value": "No income or expense yet."
-      }
-    ]
-  },
-  {
-    "action": [
       "click"
     ],
     "event_type": "gui",
@@ -160,6 +137,26 @@
   },
   {
     "action": [
+      "click"
+    ],
+    "event_type": "gui",
+    "get_element_by": [
+      {
+        "type": "xpath",
+        "value": "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.widget.ScrollView/android.widget.LinearLayout/android.widget.ImageButton"
+      },
+      {
+        "type": "classname",
+        "value": "android.widget.ImageButton"
+      },
+      {
+        "type": "resource-id",
+        "value": "com.benoitletondor.easybudgetapp:id/save_expense_fab"
+      }
+    ]
+  },
+  {
+    "action": [
       "send_keys",
       "Uber"
     ],
@@ -176,6 +173,26 @@
       {
         "type": "resource-id",
         "value": "com.benoitletondor.easybudgetapp:id/description_edittext"
+      }
+    ]
+  },
+  {
+    "action": [
+      "click"
+    ],
+    "event_type": "gui",
+    "get_element_by": [
+      {
+        "type": "xpath",
+        "value": "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.widget.ScrollView/android.widget.LinearLayout/android.widget.ImageButton"
+      },
+      {
+        "type": "classname",
+        "value": "android.widget.ImageButton"
+      },
+      {
+        "type": "resource-id",
+        "value": "com.benoitletondor.easybudgetapp:id/save_expense_fab"
       }
     ]
   },
@@ -264,29 +281,6 @@
       {
         "type": "text",
         "value": "$500.00"
-      }
-    ]
-  },
-  {
-    "action": [
-      "wait_until_text_presence",
-      10,
-      "text",
-      "MONTHLY"
-    ],
-    "event_type": "gui",
-    "get_element_by": [
-      {
-        "type": "xpath",
-        "value": "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[2]/android.widget.FrameLayout/android.widget.LinearLayout/android.support.v7.widget.RecyclerView/android.widget.RelativeLayout/android.widget.LinearLayout/android.widget.LinearLayout[2]/android.widget.TextView"
-      },
-      {
-        "type": "classname",
-        "value": "android.widget.TextView"
-      },
-      {
-        "type": "text",
-        "value": "MONTHLY"
       }
     ]
   }
