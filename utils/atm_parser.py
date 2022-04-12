@@ -185,7 +185,7 @@ def parse_test_section(lines):
             # Ignore if the action is oracle
             if parsed_event is None:
                 continue
-            if actions_need_element(parsed_event["action"]):
+            if actions_need_element(parsed_event["action"][0]):
                 parsed_event = extract_get_element_by(parsed_event, line)
             parsed_event_list.append(parsed_event)
         if "openActionBarOverflowOrOptionsMenu(getInstrumentation().getTargetContext());" in line:

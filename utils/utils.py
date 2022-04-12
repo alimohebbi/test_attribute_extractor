@@ -116,6 +116,12 @@ def is_date(input_date):
         return False
 
 
+def actions_need_element(action):
+    if action == "KEY_BACK" or action == "wait_until_text_invisible":
+        return False
+    else:
+        return True
+        
 def update_date(input_date):
     if not is_date(input_date):
         return input_date

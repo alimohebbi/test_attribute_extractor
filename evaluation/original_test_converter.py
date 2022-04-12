@@ -10,7 +10,7 @@ sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 import test_attribute_extractor
 from evaluation.emulator import start_emulator, stop_emulator
 
-with open('config.toml', 'r') as file:
+with open('../config_template/config.toml', 'r') as file:
     config = toml.load(file)
 ALGORITHM = str(config["algorithm"])
 
@@ -38,7 +38,7 @@ def already_exists(final_fname):
     return False
 
 
-def get_file_addressed(file):
+def get_file_addresses(file):
     migration = file.split("/")[-2]
     sm_config_id = file.split("/")[-3]
     test_file_name = file.split("/")[-1].split(".")[0]
@@ -60,11 +60,11 @@ def get_file_addressed(file):
 
 
 def run(file):
-    final_fname, log_fname = get_file_addressed(file)
+    final_fname, log_fname = get_file_addresses(file)
     if already_exists(final_fname):
         return
     print(final_fname + '\n')
-    start_emulator()
+    # start_emulator()
     if ALGORITHM == "atm":
         try:
             extractor = test_attribute_extractor.ATMExtractor(file, log_fname)
@@ -78,7 +78,7 @@ def run(file):
             print(f"Running {file} failed with error {e}")
     else:
         print("Unknown algorithm: " + str(algorithm))
-    stop_emulator()
+    # stop_emulator()
 
 
 def main():
