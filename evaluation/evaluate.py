@@ -13,6 +13,39 @@ with open('../config_template/config.toml', 'r') as file:
 ALGORITHM = str(config["algorithm"])
 
 
+def prune_df_with_oracle_pass(target_index_list, is_oracle_list, oracle_pass_list):
+    new_target_index_list = []
+    for i in range(len(is_oracle_list)):
+        if is_oracle_list[i] == 1:
+            new_matched_targets = []
+            matched_targets = str(target_index_list[i]).split(" ")
+            matched_oracle_pass_list = str(oracle_pass_list[i]).split(" ")
+            for j in range(len(matched_oracle_pass_list)):
+                if matched_oracle_pass_list[j] == "nan":
+                    new_target_index_list.append(' '.join(new_matched_targets))
+                elif int(float(matched_oracle_pass_list[j])):
+                    new_matched_targets.append(matched_targets[j])
+            new_target_index_list.append(' '.join(new_matched_targets))
+        else:
+            new_target_index_list.append(target_index_list[i])
+
+    return new_target_index_list
+
+
+def read_gt_gen(gt_gen_address: str, consider_oracle_pass: bool):
+    if not consider_oracle_pass:
+        df = pd.read_csv(gt_gen_address)
+    else:
+        df = pd.read_csv(gt_gen_address)
+        target_index_list = list(df["target_index"])
+        is_oracle_list = list(df["is_oracle"])
+        oracle_pass_list = list(df["oracle_pass"])
+        new_target_index_list = prune_df_with_oracle_pass(target_index_list, is_oracle_list, oracle_pass_list)
+        df = pd.DataFrame(list(zip(list(df["src_app"]), list(df["target_app"]), list(df["src_index"]), new_target_index_list)),
+               columns =['src_app', 'target_app', 'src_index', 'target_index'])
+    return df
+
+
 def atm_subject(src_app):
     return src_app.startswith("a6") or src_app.startswith("a7") or src_app.startswith("a8")
 
@@ -75,11 +108,12 @@ def get_new_mapping(src_app: str, target_app: str, migration_config: str) -> map
     return mapping.Mapping(src_app, target_app, src_size, gt_size, gen_size)
 
 
-def extract_sub_mappings(mappings: dict, map_name: str, migration_config: str, oracle_stat: str) -> dict:
+def extract_sub_mappings(mappings: dict, map_name: str, migration_config: str, oracle_stat: str, consider_oracle_pass: bool) -> dict:
     if map_name == "src_gt":
         df = pd.read_csv(config[ALGORITHM][map_name][oracle_stat])
     else:
-        df = pd.read_csv(config[ALGORITHM][map_name]['address']+oracle_stat+"/"+migration_config.split("/")[-1]+".csv")
+        gt_gen_address = config[ALGORITHM][map_name]['address']+oracle_stat+"/"+migration_config.split("/")[-1]+".csv"
+        df = read_gt_gen(gt_gen_address, consider_oracle_pass)
     for i in range(len(df)):
         mapping_id = mapping.Mapping.id(df['src_app'][i], df['target_app'][i])
         if mapping_id not in mappings:
@@ -91,9 +125,9 @@ def extract_sub_mappings(mappings: dict, map_name: str, migration_config: str, o
     return mappings
 
 
-def extract_mappings(migration_config: str, oracle_stat: str) -> dict:
-    mappings = extract_sub_mappings(dict(), "src_gt", migration_config, oracle_stat)
-    mappings = extract_sub_mappings(mappings, "gt_gen", migration_config, oracle_stat)
+def extract_mappings(migration_config: str, oracle_stat: str, consider_oracle_pass = False) -> dict:
+    mappings = extract_sub_mappings(dict(), "src_gt", migration_config, oracle_stat, consider_oracle_pass)
+    mappings = extract_sub_mappings(mappings, "gt_gen", migration_config, oracle_stat, consider_oracle_pass)
     for m in mappings.values():
         m.extract_one_to_one_gt_gen()
     return mappings
@@ -160,18 +194,30 @@ def calculate_results(mappings: dict, result_address: str) -> pd.core.frame.Data
     print(pd.DataFrame(results, columns=columns))
 
 
+def get_result_address(oracle_stat: str, file_name:str, consider_oracle_pass = False):
+    if oracle_stat == "oracles_excluded":
+        result_address = config[ALGORITHM]['result'][oracle_stat]+file_name
+    else:
+        if consider_oracle_pass:
+            result_address = config[ALGORITHM]['result'][oracle_stat]+"with_oracle_pass/"+file_name
+        else:
+            result_address = config[ALGORITHM]['result'][oracle_stat]+"without_oracle_pass/"+file_name
+    return result_address
+
+
 def evaluate_oracle_stats(migration_config: str):
-    mappings = extract_mappings(migration_config, "oracles_excluded")
-    result_address = config[ALGORITHM]['result']['oracles_excluded']+migration_config.split("/")[-1]+".csv"
-    calculate_results(mappings, result_address)
-
-    mappings = extract_mappings(migration_config, "oracles_included")
-    result_address = config[ALGORITHM]['result']['oracles_included']+migration_config.split("/")[-1]+".csv"
-    calculate_results(mappings, result_address)
-
-    mappings = extract_mappings(migration_config, "oracles_only")
-    result_address = config[ALGORITHM]['result']['oracles_only']+migration_config.split("/")[-1]+".csv"
-    calculate_results(mappings, result_address)
+    file_name = "result_" + migration_config.split("/")[-1]+".csv"
+    
+    for oracle_stat in ["oracles_excluded", "oracles_included", "oracles_only"]:
+        if oracle_stat == "oracles_excluded":
+            mappings = extract_mappings(migration_config, oracle_stat)
+            result_address = get_result_address(oracle_stat, file_name)
+            calculate_results(mappings, result_address)
+        else:
+            for consider_oracle_pass in [0, 1]:
+                mappings = extract_mappings(migration_config, oracle_stat, consider_oracle_pass)
+                result_address = get_result_address(oracle_stat, file_name, consider_oracle_pass)
+                calculate_results(mappings, result_address)
 
 
 def evaluate_all_configs():

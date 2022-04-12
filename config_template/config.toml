@@ -13,9 +13,9 @@ algorithm = "atm"
     address = "../data/mappings/atm/ground_truth_generated/"
 
     [atm.result]
-    oracles_excluded = "../data/output/evaluation/atm/oracles_excluded/result_"
-    oracles_included = "../data/output/evaluation/atm/oracles_included/result_"
-    oracles_only = "../data/output/evaluation/atm/oracles_only/result_"
+    oracles_excluded = "../data/output/evaluation/atm/oracles_excluded/"
+    oracles_included = "../data/output/evaluation/atm/oracles_included/"
+    oracles_only = "../data/output/evaluation/atm/oracles_only/"
     aggregated_result_address = "../data/output/analyse/atm/atm_aggregated_result.csv"
 
     [atm.BASE_JSON_ADDRESS]
@@ -48,9 +48,9 @@ algorithm = "atm"
     address = "../data/mappings/craftdroid/ground_truth_generated/"
 
     [craftdroid.result]
-    oracles_excluded = "../data/output/evaluation/craftdroid/oracles_excluded/result_"
-    oracles_included = "../data/output/evaluation/craftdroid/oracles_included/result_"
-    oracles_only = "../data/output/evaluation/craftdroid/oracles_only/result_"
+    oracles_excluded = "../data/output/evaluation/craftdroid/oracles_excluded/"
+    oracles_included = "../data/output/evaluation/craftdroid/oracles_included/"
+    oracles_only = "../data/output/evaluation/craftdroid/oracles_only/"
     aggregated_result_address = "../data/output/analyse/craftdroid/craftdroid_aggregated_result.csv"
 
     [craftdroid.BASE_JSON_ADDRESS]
