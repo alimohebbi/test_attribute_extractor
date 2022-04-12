@@ -11,6 +11,7 @@ tests:
     file_globs: 
       # - "*/*/*.java"
       - "ground_truth/*/*.json"
+      # - "donor/*/*.java"
   craftdroid:
     dir: "./data/original_tests/craftdroid"
     file_globs: 
