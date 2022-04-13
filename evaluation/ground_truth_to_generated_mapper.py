@@ -3,7 +3,7 @@ import toml
 import json
 import glob
 import pandas as pd
-
+from copy import deepcopy
 
 with open('../config_template/config.toml', 'r') as file:
     config = toml.load(file)
@@ -95,23 +95,28 @@ def drop_craftdroid_attributes(obj: dict) -> dict:
     return obj
 
 
-def drop_extra_attributes(obj: dict, file: str) -> dict:
+def drop_extra_attributes(obj: dict) -> dict:
+    obj_copy = dict(obj)
     try:
-        if "_and_hide_keyboard" in obj["action"][0]:
-            obj["action"][0] = obj["action"][0].split("_and_hide_keyboard")[0]
+        if "_and_hide_keyboard" in obj_copy["action"][0]:
+            obj_copy["action"][0] = obj_copy["action"][0].split("_and_hide_keyboard")[0]
     except KeyError:
         pass
     try:
-        obj.pop('page')
+        obj_copy.pop('page')
     except KeyError:
         pass
     try:
-        obj.pop('bounds')
+        obj_copy.pop('bounds')
+    except KeyError:
+        pass
+    try:
+        obj_copy.pop('oracle_pass')
     except KeyError:
         pass
     if ALGORITHM == "craftdroid":
-        obj = drop_craftdroid_attributes(obj)
-    return obj
+        obj_copy = drop_craftdroid_attributes(obj_copy)
+    return obj_copy
 
 
 def ordered(obj) -> str:
@@ -123,6 +128,13 @@ def ordered(obj) -> str:
         return [ordered(x) for x in obj]
     else:
         return str(obj).lower().strip()
+
+
+def check_is_oracle(gt):
+    if gt["action"][0].startswith("wait"):
+        return 1
+    else:
+        return 0
 
 
 def get_src_and_tgt(file: str) -> Tuple[str, str]:
@@ -141,18 +153,25 @@ def add_corresponding_objects_to_map(result: pd.core.frame.DataFrame,
                                      ground_truth: list) -> pd.core.frame.DataFrame:
     src_app, tgt_app = get_src_and_tgt(file)
     for i, gt in enumerate(ground_truth):
-        gt = drop_extra_attributes(gt, file)
+        is_oracle = check_is_oracle(gt)
+        gt = drop_extra_attributes(gt)
         equal_gens = []
+        oracle_pass_list = []
         for j, gen in enumerate(generated):
-            gen = drop_extra_attributes(gen, file)
-            if ordered(gen) == ordered(gt):
+            gen_pruned = drop_extra_attributes(gen)
+            if ordered(gen_pruned) == ordered(gt):
                 equal_gens.append(str(j))
-        result.loc[len(result)] = [src_app, tgt_app, i, ' '.join(equal_gens)]
+                if is_oracle:
+                    if gen["oracle_pass"]:
+                        oracle_pass_list.append(str(1))
+                    else:
+                        oracle_pass_list.append(str(0))
+        result.loc[len(result)] = [src_app, tgt_app, i, ' '.join(equal_gens), is_oracle, ' '.join(oracle_pass_list)]
     return result
 
 
 def extract_ground_truth_generated_map(files: list, oracle_stat: str, result_address: str):
-    result = pd.DataFrame(columns=['src_app', 'target_app', 'src_index', 'target_index'])
+    result = pd.DataFrame(columns=['src_app', 'target_app', 'src_index', 'target_index', 'is_oracle', 'oracle_pass'])
     for file in files:
         gt_file_address = find_ground_truth(file)
         if gt_file_address is None:

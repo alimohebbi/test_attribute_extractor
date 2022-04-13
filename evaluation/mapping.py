@@ -37,8 +37,8 @@ class Mapping:
             self.gt_gen[gt] = []
         for val in gen.split(" "):
             try:
-                if int(val) not in self.gt_gen[gt]:
-                    self.gt_gen[gt].append(int(val))
+                if int(float(val)) not in self.gt_gen[gt]:
+                    self.gt_gen[gt].append(int(float(val)))
             except ValueError:
                 pass
 

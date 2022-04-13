@@ -46,9 +46,9 @@ def get_capabilities(app_package, app_activity, no_reset):
 
 
 def get_app_name(fname):
-    category = fname.split("/")[-5]
-    if 'original' in category:
-        return fname.split("/")[-2].split("-")[1]
+    # category = fname.split("/")[-5]
+    # if 'original' in category:
+    #     return fname.split("/")[-2].split("-")[1]
     category = fname.split("/")[-3]
     if category == "migrated_tests":
         return fname.split("/")[-2].split("-")[1]
@@ -99,12 +99,6 @@ def preprocess_text(s):
     return " ".join(re.sub(r'[^\w\s]', '', s.lower()).split())
 
 
-def actions_need_element(action):
-    if action[0] not in ["KEY_BACK", "wait_until_text_invisible"]:
-        return True
-    return False
-
-
 def get_page_source(driver):
     driver.hide_keyboard()
     page = driver.page_source
@@ -122,6 +116,12 @@ def is_date(input_date):
         return False
 
 
+def actions_need_element(action):
+    if action == "KEY_BACK" or action == "wait_until_text_invisible":
+        return False
+    else:
+        return True
+        
 def update_date(input_date):
     if not is_date(input_date):
         return input_date

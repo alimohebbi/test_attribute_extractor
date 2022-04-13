@@ -24,13 +24,13 @@ a26,com.jeffprod.todo,com.jeffprod.todo.ActivityMain,0
 a31,com.contextlogic.geek,com.contextlogic.wish.activity.login.LoginActivity,0
 a32,com.contextlogic.wish,com.contextlogic.wish.activity.login.signin.SignInActivity,0
 a33,com.rainbowshops,com.rainbowshops.activity.ProfileActivity,0
-a34,com.etsy.android,com.etsy.android.ui.homescreen.HomescreenTabsActivity,
+a34,com.etsy.android,com.etsy.android.ui.homescreen.HomescreenTabsActivity,0
 a35,com.yelp.android,com.yelp.android.nearby.ui.ActivityNearby,0
 a43,ru.mail.mailapp,ru.mail.ui.SlideStackActivity,1
 a44,com.my.mail,ru.mail.mailapp.SplashScreenActivity,1
 a45,park.outlook.sign.in.client,ru.mail.ui.SlideStackActivity,1
 a51,anti.tip,anti.tip.Tip,0
-a52,com.appsbyvir.tipcalculator,com.appsbyvir.tipcalculator.MainActivity,1
+a52,com.appsbyvir.tipcalculator,com.appsbyvir.tipcalculator.MainActivity,0
 a53,com.tleapps.simpletipcalculator,com.tleapps.simpletipcalculator.MainActivity,0
 a54,com.zaidisoft.teninone,com.zaidisoft.teninone.Calculator,0
 a55,com.jpstudiosonline.tipcalculator,com.jpstudiosonline.tipcalculator.MainActivity,0

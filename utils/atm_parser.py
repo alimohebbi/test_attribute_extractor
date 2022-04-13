@@ -133,7 +133,7 @@ def contains_id(line):
 
 def add_selector(selector, selector_list):
     if "isDisplayed()" in selector:
-        widget_identifier = "isdisplayed"
+        widget_identifier = "displayed"
         value = "true"
     elif contains_id(selector):
         widget_identifier = "resource-id"
@@ -185,7 +185,7 @@ def parse_test_section(lines):
             # Ignore if the action is oracle
             if parsed_event is None:
                 continue
-            if actions_need_element(parsed_event["action"]):
+            if actions_need_element(parsed_event["action"][0]):
                 parsed_event = extract_get_element_by(parsed_event, line)
             parsed_event_list.append(parsed_event)
         if "openActionBarOverflowOrOptionsMenu(getInstrumentation().getTargetContext());" in line:
@@ -199,7 +199,9 @@ def parse_test_section(lines):
 
 
 def atm_parse(fname):
-    parsed_file_name = get_parsed_file_name(fname)
+    # parsed_file_name = get_parsed_file_name(fname)
+    if fname.split("/")[-3] == "ground_truth":
+        return load_json_data(fname)
     lines = read_file(fname)
     section = get_test_section(lines)
     parsed_test = parse_test_section(section)
