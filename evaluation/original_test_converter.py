@@ -64,7 +64,7 @@ def run(file):
     if already_exists(final_fname):
         return
     print(final_fname + '\n')
-    # start_emulator()
+    start_emulator()
     if ALGORITHM == "atm":
         try:
             extractor = test_attribute_extractor.ATMExtractor(file, log_fname)
@@ -78,7 +78,7 @@ def run(file):
             print(f"Running {file} failed with error {e}")
     else:
         print("Unknown algorithm: " + str(algorithm))
-    # stop_emulator()
+    stop_emulator()
 
 
 def main():
