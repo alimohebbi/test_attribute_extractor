@@ -195,29 +195,36 @@ def calculate_results(mappings: dict, result_address: str) -> pd.core.frame.Data
 
 
 def get_result_address(oracle_stat: str, file_name:str, consider_oracle_pass = False):
-    if oracle_stat == "oracles_excluded":
+    if ALGORITHM == "craftdroid":
         result_address = config[ALGORITHM]['result'][oracle_stat]+file_name
     else:
-        if consider_oracle_pass:
-            result_address = config[ALGORITHM]['result'][oracle_stat]+"with_oracle_pass/"+file_name
+        if oracle_stat == "oracles_excluded":
+            result_address = config[ALGORITHM]['result'][oracle_stat]+file_name
         else:
-            result_address = config[ALGORITHM]['result'][oracle_stat]+"without_oracle_pass/"+file_name
+            if consider_oracle_pass:
+                result_address = config[ALGORITHM]['result'][oracle_stat]+"with_oracle_pass/"+file_name
+            else:
+                result_address = config[ALGORITHM]['result'][oracle_stat]+"without_oracle_pass/"+file_name
     return result_address
 
 
 def evaluate_oracle_stats(migration_config: str):
-    file_name = "result_" + migration_config.split("/")[-1]+".csv"
-    
+    file_name = "result_" + migration_config.split("/")[-1]+".csv"  
     for oracle_stat in ["oracles_excluded", "oracles_included", "oracles_only"]:
-        if oracle_stat == "oracles_excluded":
+        if ALGORITHM == "craftdroid":
             mappings = extract_mappings(migration_config, oracle_stat)
             result_address = get_result_address(oracle_stat, file_name)
             calculate_results(mappings, result_address)
         else:
-            for consider_oracle_pass in [0, 1]:
-                mappings = extract_mappings(migration_config, oracle_stat, consider_oracle_pass)
-                result_address = get_result_address(oracle_stat, file_name, consider_oracle_pass)
+            if oracle_stat == "oracles_excluded":
+                mappings = extract_mappings(migration_config, oracle_stat)
+                result_address = get_result_address(oracle_stat, file_name)
                 calculate_results(mappings, result_address)
+            else:
+                for consider_oracle_pass in [0, 1]:
+                    mappings = extract_mappings(migration_config, oracle_stat, consider_oracle_pass)
+                    result_address = get_result_address(oracle_stat, file_name, consider_oracle_pass)
+                    calculate_results(mappings, result_address)
 
 
 def evaluate_all_configs():

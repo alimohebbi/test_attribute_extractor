@@ -147,10 +147,28 @@ def get_src_and_tgt(file: str) -> Tuple[str, str]:
     return src_app, tgt_app
 
 
-def add_corresponding_objects_to_map(result: pd.core.frame.DataFrame,
+def extract_craftdroid_objects_to_map(result_address: str,
                                      file: str,
                                      generated: list,
                                      ground_truth: list) -> pd.core.frame.DataFrame:
+    result = pd.DataFrame(columns=['src_app', 'target_app', 'src_index', 'target_index'])
+    src_app, tgt_app = get_src_and_tgt(file)
+    for i, gt in enumerate(ground_truth):
+        gt = drop_extra_attributes(gt)
+        equal_gens = []
+        for j, gen in enumerate(generated):
+            gen_pruned = drop_extra_attributes(gen)
+            if ordered(gen_pruned) == ordered(gt):
+                equal_gens.append(str(j))
+        result.loc[len(result)] = [src_app, tgt_app, i, ' '.join(equal_gens)]
+    result.to_csv(result_address, index=False)
+
+
+def extract_atm_objects_to_map(result_address: str,
+                                     file: str,
+                                     generated: list,
+                                     ground_truth: list) -> pd.core.frame.DataFrame:
+    result = pd.DataFrame(columns=['src_app', 'target_app', 'src_index', 'target_index', 'is_oracle', 'oracle_pass'])
     src_app, tgt_app = get_src_and_tgt(file)
     for i, gt in enumerate(ground_truth):
         is_oracle = check_is_oracle(gt)
@@ -167,11 +185,20 @@ def add_corresponding_objects_to_map(result: pd.core.frame.DataFrame,
                     else:
                         oracle_pass_list.append(str(0))
         result.loc[len(result)] = [src_app, tgt_app, i, ' '.join(equal_gens), is_oracle, ' '.join(oracle_pass_list)]
-    return result
+    result.to_csv(result_address, index=False)
 
 
+def add_corresponding_objects_to_map(result_address: str,
+                                     file: str,
+                                     generated: list,
+                                     ground_truth: list) -> pd.core.frame.DataFrame:
+    if ALGORITHM == "craftdroid":
+        extract_craftdroid_objects_to_map(result_address, file, generated, ground_truth)
+    elif ALGORITHM == "atm":
+        extract_atm_objects_to_map(result_address, file, generated, ground_truth)
+
+    
 def extract_ground_truth_generated_map(files: list, oracle_stat: str, result_address: str):
-    result = pd.DataFrame(columns=['src_app', 'target_app', 'src_index', 'target_index', 'is_oracle', 'oracle_pass'])
     for file in files:
         gt_file_address = find_ground_truth(file)
         if gt_file_address is None:
@@ -179,9 +206,7 @@ def extract_ground_truth_generated_map(files: list, oracle_stat: str, result_add
         generated, ground_truth = load_json_files(file, gt_file_address, oracle_stat)
         if generated is None or ground_truth is None:
             continue
-        result = add_corresponding_objects_to_map(result, file, generated, ground_truth)
-
-    result.to_csv(result_address, index=False)
+        result = add_corresponding_objects_to_map(result_address, file, generated, ground_truth)
 
 
 def extract_ground_truth_generated_maps(files: list, migration_config: str):
