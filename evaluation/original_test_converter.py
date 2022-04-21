@@ -13,6 +13,7 @@ from evaluation.emulator import start_emulator, stop_emulator
 with open('../config_template/config.toml', 'r') as file:
     config = toml.load(file)
 ALGORITHM = str(config["algorithm"])
+NUM_RUNS = 5
 
 
 def prune_files(files):
@@ -81,21 +82,29 @@ def run(file):
     stop_emulator()
 
 
-def main():
+def run_all_left_migrations():
     migration_configs = glob.glob(config[ALGORITHM]['MIGRATION_CONFIGS']['address'])
-    for migration_config in migration_configs:
-        print(migration_config + '\n')
-        if ALGORITHM == "atm":
-            files = prune_files(glob.glob(migration_config + "/*/*.java"))
-        else:
-            files = glob.glob(migration_config + "/*/*.json")
-        for file in files:
-            run(file)
-            # with open(log_fname) as f:
-            #     lines = f.readlines()
-            # if len(lines) and lines[0].startswith("UNABLE TO GRAB THE DRIVER WITH CAPABILITIES"):
-            #     print('\n' + "RUNNING AGAIN: " + '\n')
-            #     run(file)
+    for i in range(len(NUM_RUNS)):
+        for migration_config in migration_configs:
+             print(migration_config + '\n')
+            if ALGORITHM == "atm":
+                files = prune_files(glob.glob(migration_config + "/*/*.java"))
+            else:
+                files = glob.glob(migration_config + "/*/*.json")
+            migrations = glob.glob(migration_config + "/*")
+            for migration in migrations:
+                config_migration = "/".join(migration.split("/")[-2:])
+                try:
+                    if not len(glob.glob(config[ALGORITHM]['BASE_JSON_ADDRESS']['generated'] + config_migration + "/*_final.json")):
+                        for file in files:
+                            if config_migration in file:
+                                run(file)
+                except Exception as e:
+                    pass
+
+
+def main():
+    run_all_left_migrations():
 
 
 if __name__ == '__main__':

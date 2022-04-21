@@ -215,7 +215,7 @@ class TestAttributeExtractor(ABC):
             if len(elements) >= 1:
                 return elements[0]
             else:
-                if if parsed_event["action"].startswith("wait"):
+                if parsed_event["action"].startswith("wait"):
                     error_message = 40 * "#" + " ERROR! " + 40 * "#" + "\nNo element with selector: " + str(
                     selectors[0]) + ", was found on this page source." + "\nConditions not fully satisfied in: " + str(
                 parsed_event) + "\n\n\n"
