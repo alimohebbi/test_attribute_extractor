@@ -78,6 +78,7 @@ def aggregate_results():
             elif load_json_data(glob.glob(migration + "/*_final.json")[0]) is None:
                 num_blocking_errors += 1
             else:
+                # shutil.rmtree(migration)
                 num_oracle_errors += 1
         number_of_blocking_errors_list.append(num_blocking_errors)
         number_of_driver_errors_list.append(num_driver_errors)

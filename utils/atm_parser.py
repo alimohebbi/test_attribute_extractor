@@ -188,14 +188,38 @@ def parse_test_section(lines):
             if actions_need_element(parsed_event["action"][0]):
                 parsed_event = extract_get_element_by(parsed_event, line)
             parsed_event_list.append(parsed_event)
-        # if "openActionBarOverflowOrOptionsMenu(getInstrumentation().getTargetContext());" in line:
-        #     parsed_event = {}
-        #     parsed_event["action"] = ["click"]
-        #     parsed_event["get_element_by"] = [{"type": "contentdescription", "value": "More options"}]
-        #     parsed_event_list.append(parsed_event)
+        if "openActionBarOverflowOrOptionsMenu(getInstrumentation().getTargetContext());" in line:
+            parsed_event = {}
+            parsed_event["action"] = ["openActionBarOverflowOrOptionsMenu"]
+            # parsed_event["get_element_by"] = [{"type": "contentdescription", "value": "More options"}]
+            parsed_event_list.append(parsed_event)
     parsed_event_list = remove_atm_double_back(parsed_event_list)
 
     return parsed_event_list
+
+
+def is_not_repeated(parsed_event):
+    not_repeated = True
+    if parsed_event["action"][0] == ["openActionBarOverflowOrOptionsMenu"]:
+        repeated = False
+    elif parsed_event["action"][0] == ["click"]:
+        if parsed_event["get_element_by"] == [{"type": "contentdescription", "value": "More options"}]:
+            repeated = False
+    return repeated
+
+
+def remove_repeated_actions(parsed_event_list):
+    new_parsed_event_list = []
+    for (i, parsed_event) in enumerate(parsed_event_list):
+        if parsed_event["action"][0] == "openActionBarOverflowOrOptionsMenu":
+            try:
+                if is_not_repeated(parsed_event_list[i-1]) and is_not_repeated(parsed_event_list[i+1]):
+                    new_parsed_event_list.append(parsed_event)
+            except Exception as e:
+                pass
+        else:
+            new_parsed_event_list.append(parsed_event)
+    return new_parsed_event_list
 
 
 def atm_parse(fname):
@@ -205,6 +229,7 @@ def atm_parse(fname):
     lines = read_file(fname)
     section = get_test_section(lines)
     parsed_test = parse_test_section(section)
+    parsed_test = remove_repeated_actions(parsed_test)
     # write_json(parsed_test, parsed_file_name)
     return parsed_test
 

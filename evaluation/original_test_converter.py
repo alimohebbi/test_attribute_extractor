@@ -84,9 +84,9 @@ def run(file):
 
 def run_all_left_migrations():
     migration_configs = glob.glob(config[ALGORITHM]['MIGRATION_CONFIGS']['address'])
-    for i in range(len(NUM_RUNS)):
+    for i in range(NUM_RUNS):
         for migration_config in migration_configs:
-             print(migration_config + '\n')
+            print(migration_config + '\n')
             if ALGORITHM == "atm":
                 files = prune_files(glob.glob(migration_config + "/*/*.java"))
             else:
@@ -104,7 +104,7 @@ def run_all_left_migrations():
 
 
 def main():
-    run_all_left_migrations():
+    run_all_left_migrations()
 
 
 if __name__ == '__main__':
