@@ -140,7 +140,7 @@ def add_selector(selector, selector_list):
         value = re.search(r'R.id\.(.*?)\)', selector).group(1)
     elif "with" in selector:
         widget_identifier = re.search(r'with(.*?)\(', selector).group(1).lower()
-        value = re.search(r'\"(.*?)\"', selector).group(1)
+        value = re.search(r'\"(.*?)\"\)', selector).group(1)
     elif "IsInstanceOf" in selector:
         widget_identifier = "classname"
         value = re.search(r'instanceOf\((.*?)\.class', selector).group(1)
