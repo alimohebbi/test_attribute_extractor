@@ -135,6 +135,23 @@ def update_date(input_date):
     modified_date = today.strftime(inferred_format)
     return str(modified_date)
 
+def all_casings(input_string):
+    if not input_string:
+        yield ""
+    else:
+        first = input_string[:1]
+        if first.lower() == first.upper():
+            for sub_casing in all_casings(input_string[1:]):
+                yield first + sub_casing
+        else:
+            for sub_casing in all_casings(input_string[1:]):
+                yield first.lower() + sub_casing
+                yield first.upper() + sub_casing
+
+def Union(lst1, lst2):
+    final_list = list(set(lst1) | set(lst2))
+    return final_list
+
 
 if __name__ == '__main__':
     print(update_date('yesterday'))

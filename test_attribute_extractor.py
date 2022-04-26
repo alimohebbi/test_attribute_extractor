@@ -203,6 +203,10 @@ class TestAttributeExtractor(ABC):
             elif identifier == "text":
                 test_value = 'date' if is_date(value) else value
                 element_value = 'date' if is_date(element_value) else element_value
+                print("test_value")
+                print(test_value)
+                print("element_value")
+                print(element_value)
                 if test_value not in element_value:
                     return False
             elif element_value != value:
@@ -215,7 +219,7 @@ class TestAttributeExtractor(ABC):
             if len(elements) >= 1:
                 return elements[0]
             else:
-                if parsed_event["action"].startswith("wait"):
+                if parsed_event["action"][0].startswith("wait"):
                     error_message = 40 * "#" + " ERROR! " + 40 * "#" + "\nNo element with selector: " + str(
                     selectors[0]) + ", was found on this page source." + "\nConditions not fully satisfied in: " + str(
                 parsed_event) + "\n\n\n"
@@ -228,7 +232,7 @@ class TestAttributeExtractor(ABC):
             match = self.is_a_match(element, selectors)
             if match:
                 return element
-        if parsed_event["action"]!= "wait_until_text_invisible" or parsed_event["action"]!= "KEY_BACK":
+        if parsed_event["action"][0]!= "wait_until_text_invisible" or parsed_event["action"][0]!= "KEY_BACK":
             error_message = 40 * "#" + " ERROR! " + 40 * "#" + "\nNone of the elements fully matches the given widget selectors in line: " + str(
                 parsed_event) + "\n\n\n"
             self.logger.error(error_message)
@@ -248,6 +252,19 @@ class TestAttributeExtractor(ABC):
                 elements = self.driver.find_elements_by_id(str(resource_id))
         return elements
 
+    def get_elements_by_text(self, text):
+        elements = []
+        original_elements = self.driver.find_elements_by_android_uiautomator(
+                'new UiSelector().text(\"' + str(text) + '\")')
+        elements = Union(elements, original_elements)
+        if len(elements) == 0:
+            case_permutations = list(all_casings(text))
+            for permutation in case_permutations:
+                new_elements = self.driver.find_elements_by_android_uiautomator(
+                'new UiSelector().text(\"' + str(permutation) + '\")')
+                elements = Union(elements, new_elements)
+        return elements
+
     def get_elements(self, selector):
         identifier = selector[0]
         value = selector[1]
@@ -257,8 +274,7 @@ class TestAttributeExtractor(ABC):
             elements = self.driver.find_elements_by_android_uiautomator(
                 'new UiSelector().descriptionContains(\"' + str(value) + '\")')
         elif identifier == "text":
-            elements = self.driver.find_elements_by_android_uiautomator(
-                'new UiSelector().text(\"' + str(value) + '\")')
+            elements = self.get_elements_by_text(value)
         elif identifier == "xpath":
             elements = self.get_elements_by_xpath(value)
         elif identifier == "classname":
