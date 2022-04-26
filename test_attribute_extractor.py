@@ -203,10 +203,6 @@ class TestAttributeExtractor(ABC):
             elif identifier == "text":
                 test_value = 'date' if is_date(value) else value
                 element_value = 'date' if is_date(element_value) else element_value
-                print("test_value")
-                print(test_value)
-                print("element_value")
-                print(element_value)
                 if test_value not in element_value:
                     return False
             elif element_value != value:

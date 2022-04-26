@@ -193,7 +193,7 @@ def parse_test_section(lines):
             parsed_event["action"] = ["openActionBarOverflowOrOptionsMenu"]
             # parsed_event["get_element_by"] = [{"type": "contentdescription", "value": "More options"}]
             parsed_event_list.append(parsed_event)
-    parsed_event_list = remove_atm_double_back(parsed_event_list)
+    # parsed_event_list = remove_atm_double_back(parsed_event_list)
 
     return parsed_event_list
 

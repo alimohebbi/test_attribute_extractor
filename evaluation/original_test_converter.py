@@ -13,7 +13,7 @@ from evaluation.emulator import start_emulator, stop_emulator
 with open('../config_template/config.toml', 'r') as file:
     config = toml.load(file)
 ALGORITHM = str(config["algorithm"])
-NUM_RUNS = 1
+NUM_RUNS = 5
 
 
 def prune_files(files):
