@@ -282,9 +282,10 @@ class TestAttributeExtractor(ABC):
             return None
         return elements
 
-    def skip_internal_activity(parsed_event):
-        if self.driver.current_activity == "android/com.android.internal.app.ResolverActivity":
+    def skip_internal_activity(self, parsed_event):
+        if self.driver.current_activity == "com.android.internal.app.ResolverActivity":
             self.driver.back()
+            time.sleep(5)
             element = self.get_element(parsed_event, True)
             return element
         else:
@@ -294,7 +295,7 @@ class TestAttributeExtractor(ABC):
         identifier = parsed_event["get_element_by"][0]["type"]
         value = parsed_event["get_element_by"][0]["value"]
         elements = self.get_elements((identifier, value))
-        if elements is None:
+        if elements is None or not len(elements):
             if not skipped_internal_activity:
                 return self.skip_internal_activity(parsed_event)
             else:
