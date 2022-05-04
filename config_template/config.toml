@@ -1,4 +1,4 @@
-algorithm = "atm"
+algorithm = "craftdroid"
 [atm]
     [atm.MIGRATION_CONFIGS]
     address = '../data/original_tests/atm/generated/*'
