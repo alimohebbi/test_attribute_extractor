@@ -1,114 +1,51 @@
 [
   {
+    "class": "android.widget.Button",
+    "resource-id": "privacyfriendlyshoppinglist.secuso.org.privacyfriendlyshoppinglist:id/btn_skip",
+    "text": "SKIP",
+    "content-desc": "",
     "action": [
       "click"
-    ],
-    "event_type": "gui",
-    "get_element_by": [
-      {
-        "type": "xpath",
-        "value": "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.widget.Button[1]"
-      },
-      {
-        "type": "resource-id",
-        "value": "privacyfriendlyshoppinglist.secuso.org.privacyfriendlyshoppinglist:id/btn_skip"
-      },
-      {
-        "type": "classname",
-        "value": "android.widget.Button"
-      },
-      {
-        "type": "text",
-        "value": "SKIP"
-      }
     ]
   },
   {
+    "class": "android.widget.ImageButton",
+    "resource-id": "privacyfriendlyshoppinglist.secuso.org.privacyfriendlyshoppinglist:id/fab_new_list",
+    "text": "",
+    "content-desc": "",
     "action": [
       "click"
-    ],
-    "event_type": "gui",
-    "get_element_by": [
-      {
-        "type": "xpath",
-        "value": "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.support.v4.widget.DrawerLayout/android.view.ViewGroup/android.widget.ImageButton"
-      },
-      {
-        "type": "resource-id",
-        "value": "privacyfriendlyshoppinglist.secuso.org.privacyfriendlyshoppinglist:id/fab_new_list"
-      },
-      {
-        "type": "classname",
-        "value": "android.widget.ImageButton"
-      }
     ]
   },
   {
+    "class": "android.widget.EditText",
+    "resource-id": "privacyfriendlyshoppinglist.secuso.org.privacyfriendlyshoppinglist:id/list_name",
+    "text": "",
+    "content-desc": "",
     "action": [
       "send_keys",
       "List"
-    ],
-    "event_type": "gui",
-    "get_element_by": [
-      {
-        "type": "xpath",
-        "value": "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.ScrollView/android.widget.LinearLayout/android.widget.RelativeLayout/TextInputLayout/android.widget.FrameLayout/android.widget.EditText"
-      },
-      {
-        "type": "resource-id",
-        "value": "privacyfriendlyshoppinglist.secuso.org.privacyfriendlyshoppinglist:id/list_name"
-      },
-      {
-        "type": "classname",
-        "value": "android.widget.EditText"
-      }
     ]
   },
   {
+    "class": "android.widget.Button",
+    "resource-id": "android:id/button1",
+    "text": "OKAY",
+    "content-desc": "",
     "action": [
       "click"
-    ],
-    "event_type": "gui",
-    "get_element_by": [
-      {
-        "type": "xpath",
-        "value": "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.ScrollView/android.widget.LinearLayout/android.widget.Button[2]"
-      },
-      {
-        "type": "resource-id",
-        "value": "android:id/button1"
-      },
-      {
-        "type": "classname",
-        "value": "android.widget.Button"
-      },
-      {
-        "type": "text",
-        "value": "OKAY"
-      }
     ]
   },
   {
+    "class": "android.widget.TextView",
+    "resource-id": "",
+    "text": "List",
+    "content-desc": "",
     "action": [
       "wait_until_text_presence",
       10,
       "text",
       "List"
-    ],
-    "event_type": "oracle",
-    "get_element_by": [
-      {
-        "type": "xpath",
-        "value": "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[1]/android.view.ViewGroup/android.widget.TextView"
-      },
-      {
-        "type": "classname",
-        "value": "android.widget.TextView"
-      },
-      {
-        "type": "text",
-        "value": "List"
-      }
     ]
   }
 ]

@@ -1,131 +1,61 @@
 [
   {
+    "class": "android.widget.ImageButton",
+    "resource-id": "me.writeily:id/fab_expand_menu_button",
+    "text": "",
+    "content-desc": "",
     "action": [
       "click"
-    ],
-    "event_type": "gui",
-    "get_element_by": [
-      {
-        "type": "xpath",
-        "value": "/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.RelativeLayout/android.view.ViewGroup[2]/android.widget.ImageButton"
-      },
-      {
-        "type": "resource-id",
-        "value": "me.writeily:id/fab_expand_menu_button"
-      },
-      {
-        "type": "classname",
-        "value": "android.widget.ImageButton"
-      }
     ]
   },
   {
+    "class": "android.widget.ImageButton",
+    "resource-id": "me.writeily:id/create_note",
+    "text": "",
+    "content-desc": "",
     "action": [
       "click"
-    ],
-    "event_type": "gui",
-    "get_element_by": [
-      {
-        "type": "xpath",
-        "value": "/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.RelativeLayout/android.view.ViewGroup[2]/android.widget.ImageButton[1]"
-      },
-      {
-        "type": "resource-id",
-        "value": "me.writeily:id/create_note"
-      },
-      {
-        "type": "classname",
-        "value": "android.widget.ImageButton"
-      }
     ]
   },
   {
+    "class": "android.widget.EditText",
+    "resource-id": "me.writeily:id/edit_note_title",
+    "text": "Title",
+    "content-desc": "",
     "action": [
       "send_keys",
       "title1"
-    ],
-    "event_type": "gui",
-    "get_element_by": [
-      {
-        "type": "xpath",
-        "value": "/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.view.ViewGroup/android.widget.EditText"
-      },
-      {
-        "type": "resource-id",
-        "value": "me.writeily:id/edit_note_title"
-      },
-      {
-        "type": "classname",
-        "value": "android.widget.EditText"
-      },
-      {
-        "type": "text",
-        "value": "Title"
-      }
     ]
   },
   {
+    "class": "android.widget.EditText",
+    "resource-id": "me.writeily:id/note_content",
+    "text": "",
+    "content-desc": "",
     "action": [
       "send_keys",
       "Note1"
-    ],
-    "event_type": "gui",
-    "get_element_by": [
-      {
-        "type": "xpath",
-        "value": "/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.ScrollView/android.widget.EditText"
-      },
-      {
-        "type": "resource-id",
-        "value": "me.writeily:id/note_content"
-      },
-      {
-        "type": "classname",
-        "value": "android.widget.EditText"
-      }
     ]
   },
   {
+    "class": "android.widget.ImageButton",
+    "resource-id": "",
+    "text": "",
+    "content-desc": "Navigate up",
     "action": [
       "click"
-    ],
-    "event_type": "gui",
-    "get_element_by": [
-      {
-        "type": "classname",
-        "value": "android.widget.ImageButton"
-      },
-      {
-        "type": "contentdescription",
-        "value": "Navigate up"
-      }
     ]
   },
   {
+    "class": "android.widget.TextView",
+    "resource-id": "me.writeily:id/note_title",
+    "text": "title1",
+    "content-desc": "",
     "action": [
       "wait_until_text_presence",
       10,
       "text",
       "title1"
-    ],
-    "event_type": "oracle",
-    "get_element_by": [
-      {
-        "type": "xpath",
-        "value": "/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.RelativeLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.widget.ListView/android.widget.LinearLayout[2]/android.widget.LinearLayout/android.widget.TextView[1]"
-      },
-      {
-        "type": "classname",
-        "value": "android.widget.TextView"
-      },
-      {
-        "type": "resource-id",
-        "value": "me.writeily:id/note_title"
-      },
-      {
-        "type": "text",
-        "value": "title1"
-      }
     ]
   }
 ]

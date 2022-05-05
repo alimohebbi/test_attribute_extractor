@@ -1,287 +1,124 @@
 [
   {
+    "class": "android.widget.Button",
+    "resource-id": "com.benoitletondor.easybudgetapp:id/onboarding_screen1_next_button",
+    "text": "Yes!",
+    "content-desc": "",
     "action": [
       "click"
-    ],
-    "event_type": "gui",
-    "get_element_by": [
-      {
-        "type": "xpath",
-        "value": "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.support.v4.view.ViewPager/android.widget.RelativeLayout/android.widget.Button"
-      },
-      {
-        "type": "classname",
-        "value": "android.widget.Button"
-      },
-      {
-        "type": "resource-id",
-        "value": "com.benoitletondor.easybudgetapp:id/onboarding_screen1_next_button"
-      },
-      {
-        "type": "text",
-        "value": "Yes!"
-      }
+    ]
+ },
+ {
+    "class": "android.widget.Button",
+    "resource-id": "com.benoitletondor.easybudgetapp:id/onboarding_screen2_next_button",
+    "text": "Go with $",
+    "content-desc": "",
+    "action": [
+      "click"
     ]
   },
   {
+    "class": "android.widget.Button",
+    "resource-id": "com.benoitletondor.easybudgetapp:id/onboarding_screen3_next_button",
+    "text": "Start with $0.00",
+    "content-desc": "",
     "action": [
       "click"
-    ],
-    "event_type": "gui",
-    "get_element_by": [
-      {
-        "type": "xpath",
-        "value": "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.support.v4.view.ViewPager/android.widget.RelativeLayout/android.widget.Button"
-      },
-      {
-        "type": "classname",
-        "value": "android.widget.Button"
-      },
-      {
-        "type": "resource-id",
-        "value": "com.benoitletondor.easybudgetapp:id/onboarding_screen2_next_button"
-      },
-      {
-        "type": "text",
-        "value": "Go with $"
-      }
     ]
   },
   {
+    "class": "android.widget.Button",
+    "resource-id": "com.benoitletondor.easybudgetapp:id/onboarding_screen4_next_button",
+    "text": "Let's go!",
+    "content-desc": "",
     "action": [
       "click"
-    ],
-    "event_type": "gui",
-    "get_element_by": [
-      {
-        "type": "xpath",
-        "value": "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.support.v4.view.ViewPager/android.widget.RelativeLayout/android.widget.Button"
-      },
-      {
-        "type": "classname",
-        "value": "android.widget.Button"
-      },
-      {
-        "type": "resource-id",
-        "value": "com.benoitletondor.easybudgetapp:id/onboarding_screen3_next_button"
-      },
-      {
-        "type": "text",
-        "value": "Start with $0.00"
-      }
     ]
   },
   {
+    "class": "android.widget.ImageButton",
+    "resource-id": "com.benoitletondor.easybudgetapp:id/fab_expand_menu_button",
+    "text": "",
+    "content-desc": "",
     "action": [
       "click"
-    ],
-    "event_type": "gui",
-    "get_element_by": [
-      {
-        "type": "xpath",
-        "value": "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.support.v4.view.ViewPager/android.widget.RelativeLayout/android.widget.Button"
-      },
-      {
-        "type": "classname",
-        "value": "android.widget.Button"
-      },
-      {
-        "type": "resource-id",
-        "value": "com.benoitletondor.easybudgetapp:id/onboarding_screen4_next_button"
-      },
-      {
-        "type": "text",
-        "value": "Let's go!"
-      }
     ]
   },
   {
+    "class": "android.widget.ImageButton",
+    "resource-id": "com.benoitletondor.easybudgetapp:id/fab_new_recurring_expense",
+    "text": "",
+    "content-desc": "",
     "action": [
       "click"
-    ],
-    "event_type": "gui",
-    "get_element_by": [
-      {
-        "type": "xpath",
-        "value": "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[2]/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.widget.ImageButton"
-      },
-      {
-        "type": "classname",
-        "value": "android.widget.ImageButton"
-      },
-      {
-        "type": "resource-id",
-        "value": "com.benoitletondor.easybudgetapp:id/fab_expand_menu_button"
-      }
     ]
   },
   {
+    "class": "android.widget.ImageButton",
+    "resource-id": "com.benoitletondor.easybudgetapp:id/save_expense_fab",
+    "text": "",
+    "content-desc": "",
     "action": [
       "click"
-    ],
-    "event_type": "gui",
-    "get_element_by": [
-      {
-        "type": "xpath",
-        "value": "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[2]/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.widget.ImageButton[1]"
-      },
-      {
-        "type": "classname",
-        "value": "android.widget.ImageButton"
-      },
-      {
-        "type": "resource-id",
-        "value": "com.benoitletondor.easybudgetapp:id/fab_new_recurring_expense"
-      }
     ]
   },
   {
-    "action": [
-      "click"
-    ],
-    "event_type": "gui",
-    "get_element_by": [
-      {
-        "type": "xpath",
-        "value": "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.widget.ScrollView/android.widget.LinearLayout/android.widget.ImageButton"
-      },
-      {
-        "type": "classname",
-        "value": "android.widget.ImageButton"
-      },
-      {
-        "type": "resource-id",
-        "value": "com.benoitletondor.easybudgetapp:id/save_expense_fab"
-      }
-    ]
-  },
-  {
+    "class": "android.widget.EditText",
+    "resource-id": "com.benoitletondor.easybudgetapp:id/description_edittext",
+    "text": "",
+    "content-desc": "",
     "action": [
       "send_keys",
       "Uber"
-    ],
-    "event_type": "gui",
-    "get_element_by": [
-      {
-        "type": "xpath",
-        "value": "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.widget.ScrollView/android.widget.LinearLayout/android.widget.LinearLayout[1]/TextInputLayout/android.widget.FrameLayout/android.widget.EditText"
-      },
-      {
-        "type": "classname",
-        "value": "android.widget.EditText"
-      },
-      {
-        "type": "resource-id",
-        "value": "com.benoitletondor.easybudgetapp:id/description_edittext"
-      }
     ]
   },
   {
+    "class": "android.widget.ImageButton",
+    "resource-id": "com.benoitletondor.easybudgetapp:id/save_expense_fab",
+    "text": "",
+    "content-desc": "",
     "action": [
       "click"
-    ],
-    "event_type": "gui",
-    "get_element_by": [
-      {
-        "type": "xpath",
-        "value": "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.widget.ScrollView/android.widget.LinearLayout/android.widget.ImageButton"
-      },
-      {
-        "type": "classname",
-        "value": "android.widget.ImageButton"
-      },
-      {
-        "type": "resource-id",
-        "value": "com.benoitletondor.easybudgetapp:id/save_expense_fab"
-      }
     ]
   },
   {
+    "class": "android.widget.EditText",
+    "resource-id": "com.benoitletondor.easybudgetapp:id/amount_edittext",
+    "text": "",
+    "content-desc": "",
     "action": [
       "send_keys",
       "500"
-    ],
-    "event_type": "gui",
-    "get_element_by": [
-      {
-        "type": "xpath",
-        "value": "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.widget.ScrollView/android.widget.LinearLayout/android.widget.LinearLayout[1]/android.widget.LinearLayout/TextInputLayout/android.widget.FrameLayout/android.widget.EditText"
-      },
-      {
-        "type": "classname",
-        "value": "android.widget.EditText"
-      },
-      {
-        "type": "resource-id",
-        "value": "com.benoitletondor.easybudgetapp:id/amount_edittext"
-      }
     ]
   },
   {
+    "class": "android.widget.Switch",
+    "resource-id": "com.benoitletondor.easybudgetapp:id/expense_type_switch",
+    "text": "OFF",
+    "content-desc": "",
     "action": [
       "click"
-    ],
-    "event_type": "gui",
-    "get_element_by": [
-      {
-        "type": "xpath",
-        "value": "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.widget.ScrollView/android.widget.LinearLayout/android.widget.LinearLayout[2]/android.widget.LinearLayout[1]/android.widget.LinearLayout/android.widget.Switch"
-      },
-      {
-        "type": "classname",
-        "value": "android.widget.Switch"
-      },
-      {
-        "type": "resource-id",
-        "value": "com.benoitletondor.easybudgetapp:id/expense_type_switch"
-      },
-      {
-        "type": "text",
-        "value": "OFF"
-      }
     ]
   },
   {
+    "class": "android.widget.ImageButton",
+    "resource-id": "com.benoitletondor.easybudgetapp:id/save_expense_fab",
+    "text": "",
+    "content-desc": "",
     "action": [
       "click"
-    ],
-    "event_type": "gui",
-    "get_element_by": [
-      {
-        "type": "xpath",
-        "value": "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.widget.ScrollView/android.widget.LinearLayout/android.widget.ImageButton"
-      },
-      {
-        "type": "classname",
-        "value": "android.widget.ImageButton"
-      },
-      {
-        "type": "resource-id",
-        "value": "com.benoitletondor.easybudgetapp:id/save_expense_fab"
-      }
     ]
   },
   {
+    "class": "android.widget.TextView",
+    "resource-id": "",
+    "text": "$500.00",
+    "content-desc": "",
     "action": [
       "wait_until_text_presence",
       10,
       "text",
       "$500.00"
-    ],
-    "event_type": "gui",
-    "get_element_by": [
-      {
-        "type": "xpath",
-        "value": "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[2]/android.widget.FrameLayout/android.widget.LinearLayout/android.support.v7.widget.RecyclerView/android.widget.RelativeLayout/android.widget.LinearLayout/android.widget.LinearLayout[1]/android.widget.TextView[2]"
-      },
-      {
-        "type": "classname",
-        "value": "android.widget.TextView"
-      },
-      {
-        "type": "text",
-        "value": "$500.00"
-      }
     ]
   }
 ]

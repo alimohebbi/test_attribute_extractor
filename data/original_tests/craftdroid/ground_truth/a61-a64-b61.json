@@ -1,68 +1,31 @@
 [
   {
+    "class": "android.widget.Button",
+    "resource-id": "com.blogspot.e_kanivets.moneytracker:id/btn_add_expense",
+    "text": "ADD EXPENSE",
+    "content-desc": "",
     "action": [
       "click"
-    ],
-    "event_type": "gui",
-    "get_element_by": [
-      {
-        "type": "xpath",
-        "value": "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.support.v4.widget.DrawerLayout/android.view.ViewGroup/android.widget.LinearLayout[2]/android.widget.LinearLayout/android.widget.Button[2]"
-      },
-      {
-        "type": "classname",
-        "value": "android.widget.Button"
-      },
-      {
-        "type": "resource-id",
-        "value": "com.blogspot.e_kanivets.moneytracker:id/btn_add_expense"
-      },
-      {
-        "type": "text",
-        "value": "ADD EXPENSE"
-      }
     ]
   },
   {
+    "class": "android.widget.EditText",
+    "resource-id": "com.blogspot.e_kanivets.moneytracker:id/et_category",
+    "text": "",
+    "content-desc": "",
     "action": [
       "send_keys",
       "Entertainment"
-    ],
-    "event_type": "gui",
-    "get_element_by": [
-      {
-        "type": "xpath",
-        "value": "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.LinearLayout[2]/TextInputLayout[3]/android.widget.FrameLayout/android.widget.EditText"
-      },
-      {
-        "type": "classname",
-        "value": "android.widget.EditText"
-      },
-      {
-        "type": "resource-id",
-        "value": "com.blogspot.e_kanivets.moneytracker:id/et_category"
-      }
     ]
   },
   {
+    "class": "android.widget.EditText",
+    "resource-id": "com.blogspot.e_kanivets.moneytracker:id/et_price",
+    "text": "Amount",
+    "content-desc": "",
     "action": [
       "send_keys",
       "45"
-    ],
-    "event_type": "gui",
-    "get_element_by": [
-      {
-        "type": "xpath",
-        "value": "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.LinearLayout[2]/TextInputLayout[1]/android.widget.FrameLayout/android.widget.EditText"
-      },
-      {
-        "type": "classname",
-        "value": "android.widget.EditText"
-      },
-      {
-        "type": "resource-id",
-        "value": "com.blogspot.e_kanivets.moneytracker:id/et_price"
-      }
     ]
   },
   {

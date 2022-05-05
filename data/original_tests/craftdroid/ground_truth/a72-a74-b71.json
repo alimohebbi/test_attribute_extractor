@@ -1,60 +1,31 @@
 [
   {
+    "class": "android.widget.ImageButton",
+    "resource-id": "",
+    "text": "",
+    "content-desc": "",
     "action": [
       "click"
-    ],
-    "event_type": "gui",
-    "get_element_by": [
-      {
-        "type": "xpath",
-        "value": "/hierarchy/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[2]/android.support.v4.widget.DrawerLayout/android.widget.RelativeLayout/android.widget.RelativeLayout/android.widget.ViewFlipper/android.widget.LinearLayout/android.widget.ImageView"
-      },
-      {
-        "type": "classname",
-        "value": "android.widget.ImageView"
-      }
     ]
   },
   {
+    "class": "android.widget.EditText",
+    "resource-id": "chan.android.app.pocketnote:id/editor_$_edittext_title",
+    "text": "Title",
+    "content-desc": "",
     "action": [
       "send_keys",
       "Title1"
-    ],
-    "event_type": "",
-    "get_element_by": [
-      {
-        "type": "xpath",
-        "value": "/hierarchy/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[2]/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.EditText"
-      },
-      {
-        "type": "resource-id",
-        "value": "chan.android.app.pocketnote:id/editor_$_edittext_title"
-      },
-      {
-        "type": "classname",
-        "value": "android.widget.EditText"
-      }
     ]
   },
   {
+    "class": "android.widget.EditText",
+    "resource-id": "chan.android.app.pocketnote:id/editor_$_note_editor",
+    "text": "",
+    "content-desc": "",
     "action": [
       "send_keys",
       "Note1"
-    ],
-    "event_type": "",
-    "get_element_by": [
-      {
-        "type": "xpath",
-        "value": "/hierarchy/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[2]/android.widget.LinearLayout/android.widget.EditText"
-      },
-      {
-        "type": "resource-id",
-        "value": "chan.android.app.pocketnote:id/editor_$_note_editor"
-      },
-      {
-        "type": "classname",
-        "value": "android.widget.EditText"
-      }
     ]
   },
   {
@@ -65,57 +36,27 @@
     "get_element_by": []
   },
   {
+    "class": "android.widget.TextView",
+    "resource-id": "chan.android.app.pocketnote:id/note_item_$_textview_title",
+    "text": "title1",
+    "content-desc": "",
     "action": [
       "wait_until_text_presence",
       10,
       "text",
       "title1"
-    ],
-    "event_type": "oracle",
-    "get_element_by": [
-      {
-        "type": "xpath",
-        "value": "/hierarchy/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[2]/android.support.v4.widget.DrawerLayout/android.widget.RelativeLayout/android.widget.RelativeLayout/android.widget.ViewFlipper/android.widget.ListView/android.widget.RelativeLayout/android.widget.TextView[1]"
-      },
-      {
-        "type": "classname",
-        "value": "android.widget.TextView"
-      },
-      {
-        "type": "resource-id",
-        "value": "chan.android.app.pocketnote:id/note_item_$_textview_title"
-      },
-      {
-        "type": "text",
-        "value": "title1"
-      }
     ]
   },
   {
+    "class": "android.widget.TextView",
+    "resource-id": "chan.android.app.pocketnote:id/note_item_$_textview_content",
+    "text": "Note1",
+    "content-desc": "",
     "action": [
       "wait_until_text_presence",
       10,
       "text",
       "Note1"
-    ],
-    "event_type": "oracle",
-    "get_element_by": [
-      {
-        "type": "xpath",
-        "value": "/hierarchy/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[2]/android.support.v4.widget.DrawerLayout/android.widget.RelativeLayout/android.widget.RelativeLayout/android.widget.ViewFlipper/android.widget.ListView/android.widget.RelativeLayout/android.widget.TextView[3]"
-      },
-      {
-        "type": "classname",
-        "value": "android.widget.TextView"
-      },
-      {
-        "type": "resource-id",
-        "value": "chan.android.app.pocketnote:id/note_item_$_textview_content"
-      },
-      {
-        "type": "text",
-        "value": "Note1"
-      }
     ]
   }
 ]

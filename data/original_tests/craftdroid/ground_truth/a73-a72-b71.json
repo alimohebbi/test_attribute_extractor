@@ -1,139 +1,61 @@
 [
   {
+    "class": "android.widget.ImageButton",
+    "resource-id": "com.moonpi.swiftnotes:id/newNote",
+    "text": "",
+    "content-desc": "New note",
     "action": [
       "click"
-    ],
-    "event_type": "gui",
-    "get_element_by": [
-      {
-        "type": "resource-id",
-        "value": "com.moonpi.swiftnotes:id/newNote"
-      },
-      {
-        "type": "classname",
-        "value": "android.widget.ImageButton"
-      },
-      {
-        "type": "contentdescription",
-        "value": "New note"
-      }
     ]
   },
   {
+    "class": "android.widget.EditText",
+    "resource-id": "com.moonpi.swiftnotes:id/titleEdit",
+    "text": "Title",
+    "content-desc": "",
     "action": [
       "send_keys",
       "Note"
-    ],
-    "event_type": "gui",
-    "get_element_by": [
-      {
-        "type": "xpath",
-        "value": "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.widget.EditText"
-      },
-      {
-        "type": "resource-id",
-        "value": "com.moonpi.swiftnotes:id/titleEdit"
-      },
-      {
-        "type": "classname",
-        "value": "android.widget.EditText"
-      },
-      {
-        "type": "text",
-        "value": "Title"
-      }
     ]
   },
   {
+    "class": "android.widget.EditText",
+    "resource-id": "com.moonpi.swiftnotes:id/bodyEdit",
+    "text": "Note",
+    "content-desc": "",
     "action": [
       "send_keys",
       "Something"
-    ],
-    "event_type": "gui",
-    "get_element_by": [
-      {
-        "type": "xpath",
-        "value": "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.widget.ScrollView/android.widget.EditText"
-      },
-      {
-        "type": "resource-id",
-        "value": "com.moonpi.swiftnotes:id/bodyEdit"
-      },
-      {
-        "type": "classname",
-        "value": "android.widget.EditText"
-      },
-      {
-        "type": "text",
-        "value": "Note"
-      }
     ]
   },
   {
+    "class": "android.widget.ImageButton",
+    "resource-id": "",
+    "text": "",
+    "content-desc": "",
     "action": [
       "click"
-    ],
-    "event_type": "",
-    "get_element_by": [
-      {
-        "type": "xpath",
-        "value": "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.view.ViewGroup/android.widget.ImageButton"
-      },
-      {
-        "type": "classname",
-        "value": "android.widget.ImageButton"
-      }
     ]
   },
   {
+    "class": "android.widget.Button",
+    "resource-id": "android:id/button1",
+    "text": "YES",
+    "content-desc": "",
     "action": [
       "click"
-    ],
-    "event_type": "",
-    "get_element_by": [
-      {
-        "type": "xpath",
-        "value": "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.ScrollView/android.widget.LinearLayout/android.widget.Button[2]"
-      },
-      {
-        "type": "resource-id",
-        "value": "android:id/button1"
-      },
-      {
-        "type": "classname",
-        "value": "android.widget.Button"
-      },
-      {
-        "type": "text",
-        "value": "YES"
-      }
     ]
   },
   {
+    "class": "android.widget.TextView",
+    "resource-id": "com.moonpi.swiftnotes:id/titleView",
+    "text": "Note",
+    "content-desc": "",
     "action": [
       "wait_until_text_presence",
       10,
       "text",
       "Note"
-    ],
-    "event_type": "oracle",
-    "get_element_by": [
-      {
-        "type": "xpath",
-        "value": "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.widget.ListView/android.widget.RelativeLayout/android.widget.TextView[1]"
-      },
-      {
-        "type": "classname",
-        "value": "android.widget.TextView"
-      },
-      {
-        "type": "resource-id",
-        "value": "com.moonpi.swiftnotes:id/titleView"
-      },
-      {
-        "type": "text",
-        "value": "Note"
-      }
     ]
   }
 ]
