@@ -299,7 +299,7 @@ class TestAttributeExtractor(ABC):
         if elements is None or not len(elements):
             if not skipped_internal_activity:
                 self.skip_internal_activity()
-                elements = self.get_elements((identifier, value), True)
+                elements = self.get_elements((identifier, value))
         element = self.get_matching_element(parsed_event, elements)
         return element
 
