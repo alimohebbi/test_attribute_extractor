@@ -7,6 +7,10 @@ import pandas as pd
 import re
 from dateutil.parser import parse
 
+import toml
+with open('config_template/config.toml', 'r') as file:
+    config = toml.load(file)
+ALGORITHM = str(config["algorithm"])
 
 def read_file(fname):
     with open(fname, 'r') as f:
@@ -45,10 +49,7 @@ def get_capabilities(app_package, app_activity, no_reset):
     return caps
 
 
-def get_app_name(fname):
-    # category = fname.split("/")[-5]
-    # if 'original' in category:
-    #     return fname.split("/")[-2].split("-")[1]
+def get_atm_app_name(fname):
     category = fname.split("/")[-3]
     if category == "migrated_tests":
         return fname.split("/")[-2].split("-")[1]
@@ -68,9 +69,15 @@ def get_app_name(fname):
         else:
             return None
 
+def get_craftdroid_app_name(fname):
+    migration = fname.split("/")[-1]
+    return fname.split("/")[-1].split("-")[0]
 
 def get_package_activity(fname):
-    app_name = get_app_name(fname)
+    if ALGORITHM == "atm":
+        app_name = get_atm_app_name(fname)
+    else:
+        app_name = get_craftdroid_app_name(fname)
     if app_name is None:
         return None, None
     activity_file_path = str(pathlib.Path(__file__).parent.absolute()) + "/../app_name_to_package_activity.csv"
