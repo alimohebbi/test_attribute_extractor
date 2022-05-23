@@ -326,11 +326,13 @@ class TestAttributeExtractor(ABC):
         if parsed_event["action"][0] == "wait_until_text_invisible":
             executed, oracle_pass = self.execute_action(None, parsed_event)
             parsed_event['oracle_pass'] = oracle_pass
+            parsed_event['page'] = get_page_source(self.driver)
             element_attributes_list.append(parsed_event)
         else:
             el = self.get_element(parsed_event)
             if el is None:
                 parsed_event['oracle_pass'] = oracle_pass
+                parsed_event['page'] = get_page_source(self.driver)
                 element_attributes_list.append(parsed_event)
             else:
                 executed, oracle_pass = self.execute_action(el, parsed_event)
