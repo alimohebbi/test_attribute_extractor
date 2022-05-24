@@ -6,11 +6,11 @@ results_dir: "data/json_tests"
 logs_dir: "data/output/logs"
 analyse_dir: "data/output/analyse/"
 tests:
-  # atm:
-  #   dir: "./data/original_tests/atm"
-  #   file_globs: 
+  atm:
+    dir: "./data/original_tests/atm"
+    file_globs: 
   #     # - "*/*/*.java"
-  #     - "ground_truth/*/*.json"
+      - "ground_truth/*/*.json"
   #     # - "donor/*/*.java"
   craftdroid:
     dir: "./data/original_tests/craftdroid"
