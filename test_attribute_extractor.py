@@ -321,23 +321,29 @@ class TestAttributeExtractor(ABC):
         element_attributes['activity'] = self.driver.current_activity
         return element_attributes
 
+    def get_text_invisibl_element_attributes(self, parsed_event, oracle_pass):
+        element_attributes = {}
+        element_attributes['oracle_pass'] = oracle_pass
+        element_attributes["action"] = parsed_event["action"]
+        element_attributes["event_type"] = self.set_event_type(parsed_event["action"][0])
+        element_attributes['page'] = get_page_source(self.driver)
+        element_attributes['activity'] = self.driver.current_activity
+        for i, item in parsed_event["action"]:
+            if item in ['class', 'resource-id', 'text', 'content-desc', 'clickable', 'password']:
+                element_attributes[attr] = element.get_attribute(attr)
+        return element_attributes
+
     def handle_wait(self, parsed_event, element_attributes_list):
         oracle_pass = False
         if parsed_event["action"][0] == "wait_until_text_invisible":
             executed, oracle_pass = self.execute_action(None, parsed_event)
-            parsed_event['oracle_pass'] = oracle_pass
-            parsed_event["event_type"] = self.set_event_type(parsed_event["action"][0])
-            parsed_event['page'] = get_page_source(self.driver)
-            parsed_event['activity'] = self.driver.current_activity
-            element_attributes_list.append(parsed_event)
+            element_attributes = self.get_text_invisibl_element_attributes(parsed_event, oracle_pass)
+            element_attributes_list.append(element_attributes)
         else:
             el = self.get_element(parsed_event)
             if el is None:
-                parsed_event['oracle_pass'] = oracle_pass
-                parsed_event["event_type"] = self.set_event_type(parsed_event["action"][0])
-                parsed_event['page'] = get_page_source(self.driver)
-                parsed_event['activity'] = self.driver.current_activity
-                element_attributes_list.append(parsed_event)
+                element_attributes = self.get_text_invisibl_element_attributes(parsed_event, oracle_pass)
+                element_attributes_list.append(element_attributes)
             else:
                 executed, oracle_pass = self.execute_action(el, parsed_event)
                 element_attributes = self.get_element_attributes(el, parsed_event)
