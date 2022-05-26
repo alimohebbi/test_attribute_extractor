@@ -328,9 +328,11 @@ class TestAttributeExtractor(ABC):
         element_attributes["event_type"] = self.set_event_type(parsed_event["action"][0])
         element_attributes['page'] = get_page_source(self.driver)
         element_attributes['activity'] = self.driver.current_activity
-        for i, item in parsed_event["action"]:
+        element_attributes['enabled'] = "true"
+        element_attributes['bounds'] = "[-2000,-2000][-2000,-2000]"
+        for i, item in enumerate(parsed_event["action"]):
             if item in ['class', 'resource-id', 'text', 'content-desc', 'clickable', 'password']:
-                element_attributes[attr] = element.get_attribute(attr)
+                element_attributes[item] = parsed_event["action"][i+1]
         return element_attributes
 
     def handle_wait(self, parsed_event, element_attributes_list):
