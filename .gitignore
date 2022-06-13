@@ -20,6 +20,12 @@ data/**
 !data/original_tests/craftdroid/ground_truth/**
 
 
+analyse/f1_range/plots/*.pdf
+analyse/f1_range/table/*.csv
+analyse/f1_range/*.csv
+
+
+
 data.bak/
 .idea/
 **/.ipynb_checkpoints
