@@ -282,14 +282,15 @@ class TestAttributeExtractor(ABC):
             return None
         return elements
 
-    def skip_internal_activity(self, parsed_event):
-        if self.driver.current_activity == "com.android.internal.app.ResolverActivity":
-            self.driver.back()
-            time.sleep(5)
-            element = self.get_element(parsed_event, True)
-            return element
-        else:
-            return None
+    def skip_internal_activity(self):
+        i = 0
+        while(i< 5):
+            if self.driver.current_activity == "android/com.android.internal.app.ResolverActivity":
+                self.driver.back()
+                time.sleep(5)
+                i += 1
+            else:
+                break
 
     def get_element(self, parsed_event, skipped_internal_activity = False):
         identifier = parsed_event["get_element_by"][0]["type"]
@@ -297,9 +298,8 @@ class TestAttributeExtractor(ABC):
         elements = self.get_elements((identifier, value))
         if elements is None or not len(elements):
             if not skipped_internal_activity:
-                return self.skip_internal_activity(parsed_event)
-            else:
-                return None
+                self.skip_internal_activity()
+                elements = self.get_elements((identifier, value))
         element = self.get_matching_element(parsed_event, elements)
         return element
 
@@ -321,17 +321,31 @@ class TestAttributeExtractor(ABC):
         element_attributes['activity'] = self.driver.current_activity
         return element_attributes
 
+    def get_text_invisibl_element_attributes(self, parsed_event, oracle_pass):
+        element_attributes = {}
+        element_attributes['oracle_pass'] = oracle_pass
+        element_attributes["action"] = parsed_event["action"]
+        element_attributes["event_type"] = self.set_event_type(parsed_event["action"][0])
+        element_attributes['page'] = get_page_source(self.driver)
+        element_attributes['activity'] = self.driver.current_activity
+        element_attributes['enabled'] = "true"
+        element_attributes['bounds'] = "[-2000,-2000][-2000,-2000]"
+        for i, item in enumerate(parsed_event["action"]):
+            if item in ['class', 'resource-id', 'text', 'content-desc', 'clickable', 'password']:
+                element_attributes[item] = parsed_event["action"][i+1]
+        return element_attributes
+
     def handle_wait(self, parsed_event, element_attributes_list):
         oracle_pass = False
         if parsed_event["action"][0] == "wait_until_text_invisible":
             executed, oracle_pass = self.execute_action(None, parsed_event)
-            parsed_event['oracle_pass'] = oracle_pass
-            element_attributes_list.append(parsed_event)
+            element_attributes = self.get_text_invisibl_element_attributes(parsed_event, oracle_pass)
+            element_attributes_list.append(element_attributes)
         else:
             el = self.get_element(parsed_event)
             if el is None:
-                parsed_event['oracle_pass'] = oracle_pass
-                element_attributes_list.append(parsed_event)
+                element_attributes = self.get_text_invisibl_element_attributes(parsed_event, oracle_pass)
+                element_attributes_list.append(element_attributes)
             else:
                 executed, oracle_pass = self.execute_action(el, parsed_event)
                 element_attributes = self.get_element_attributes(el, parsed_event)

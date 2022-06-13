@@ -9,13 +9,14 @@ tests:
   atm:
     dir: "./data/original_tests/atm"
     file_globs: 
-      # - "*/*/*.java"
+  #     # - "*/*/*.java"
       - "ground_truth/*/*.json"
-      # - "donor/*/*.java"
+  #     # - "donor/*/*.java"
   craftdroid:
     dir: "./data/original_tests/craftdroid"
     file_globs: 
-      - "*/b*2/base/*.json"
-      - "a3/b31/base/*.json"
-      - "a4/b41/base/*.json"
+      # - "*/b*2/base/*.json"
+      # - "a3/b31/base/*.json"
+      # - "a4/b41/base/*.json"
+      - "donor/a5*.json"
 

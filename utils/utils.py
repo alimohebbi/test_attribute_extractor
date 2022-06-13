@@ -7,7 +7,6 @@ import pandas as pd
 import re
 from dateutil.parser import parse
 
-
 def read_file(fname):
     with open(fname, 'r') as f:
         lines = f.readlines()
@@ -46,9 +45,6 @@ def get_capabilities(app_package, app_activity, no_reset):
 
 
 def get_app_name(fname):
-    # category = fname.split("/")[-5]
-    # if 'original' in category:
-    #     return fname.split("/")[-2].split("-")[1]
     category = fname.split("/")[-3]
     if category == "migrated_tests":
         return fname.split("/")[-2].split("-")[1]
@@ -67,7 +63,6 @@ def get_app_name(fname):
             return fname.split("/")[-1].split(".")[0]
         else:
             return None
-
 
 def get_package_activity(fname):
     app_name = get_app_name(fname)
