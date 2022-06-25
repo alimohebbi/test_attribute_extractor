@@ -1,5 +1,5 @@
 
-algorithm = 'craftdroid'
+algorithm = 'atm'
 
 [atm]
     [atm.MIGRATION_CONFIGS]

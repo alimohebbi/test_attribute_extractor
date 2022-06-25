@@ -4,8 +4,9 @@ import sys
 
 from matplotlib import pyplot as plt
 import seaborn as sn
+from matplotlib.lines import Line2D
 
-from util import convert_config_names, make_config_column, reorder_columns
+from util import convert_config_names, make_config_column, reorder_columns, add_file_name_as_config
 
 sys.path.append("..")
 import pandas as pd
@@ -23,6 +24,7 @@ class Analyse:
         self.oracles = oracles
         self.oracles_pass = oracles_pass
         self.final_result = None
+        self.show_data_points_bp = False
 
     def run(self):
         results = self.read_results()
@@ -42,7 +44,7 @@ class Analyse:
         desc_map_files = []
         for path in glob.glob('../' + self.get_result_dir() + "/*.csv"):
             csv = read_csv(path, encoding='latin-1')
-            csv = self.add_file_name(csv, path)
+            csv = add_file_name_as_config(csv, path)
             desc_map_files.append(csv)
         results = pd.concat(desc_map_files, axis=0, ignore_index=True)
         results = self.filter_results(results)
@@ -82,19 +84,6 @@ class Analyse:
         configs_sm.set_index('config', inplace=True)
         return configs_sm
 
-    def add_file_name(self, csv, path):
-        file_name = os.path.basename(path).split('.')[0]
-        file_name = file_name.split('result_')[1]
-        if 'random' in file_name:
-            file_name = 'NA_NA_random_NA'
-        if self.approach == 'atm' and 'perfect' in file_name and not '3' in file_name:
-            return None
-        if 'perfect' in file_name:
-            file_name = 'NA_NA_perfect_NA'
-
-        csv['config'] = file_name
-        return csv
-
     def get_save_path(self, detail_lvl):
         oracle_status = 'oracle' if self.oracles else 'nooracle'
         oracle_pass = ''
@@ -102,12 +91,10 @@ class Analyse:
             oracle_pass = '_pass' if self.oracles_pass else '_passfree'
         options = f'{self.approach}_{self.subjects}_{oracle_status}{oracle_pass}_{detail_lvl}'
         if detail_lvl == 'boxplot':
-            save_path = 'config_f1_range/' + f'{options}.pdf'
+            save_path = 'config_f1_performance/' + f'{options}.pdf'
         else:
             save_path = '../' + config.analyse_dir + f'{detail_lvl}/{options}.csv'
         return save_path
-
-
 
     def save_short(self, results_converted_config):
         short_columns = ['Algorithm', 'Descriptors', 'Embedding', 'Training', 'E.L.', 'R.L.', 'Accuracy', 'Precision',
@@ -132,40 +119,71 @@ class Analyse:
     def make_bplots(self, df):
         save_path = self.get_save_path('boxplot')
         data = make_config_column(df)
-        order = data.groupby(by=["config"])["F1 score"].median().sort_values(ascending=True).index
+        order = data.groupby(by=["config"])["F1 score"].mean().sort_values(ascending=True).index
         plt.clf()
         plt.close()
         plt.figure(figsize=(20, 5))
-        ax = sn.boxplot(data=data, y='F1 score', x='config', order=order)
+        meanpointprops = Analyse.get_mean_props()
+        palette = Analyse.get_palette(data)
+        ax = sn.boxplot(data=data, y='F1 score', x='config', order=order, showmeans=True, meanprops=meanpointprops,
+                        palette=palette)
         ax.set_xticklabels(ax.get_xticklabels(), rotation=90)
-        sn.stripplot(data=data, y='F1 score', x='config', jitter=True,
-                     dodge=True,
-                     marker='o',
-                     alpha=0.5, order=order)
 
+        if self.show_data_points_bp:
+            sn.stripplot(data=data, y='F1 score', x='config', jitter=True, dodge=True, marker='o', alpha=0.5,
+                         order=order)
+        Analyse.add_legend()
         plt.savefig(save_path, bbox_inches='tight')
 
+    @staticmethod
+    def add_legend():
+        custom_lines = [
+            Line2D([0], [0], color='yellow', lw=4),
+            Line2D([0], [0], color='tab:red', lw=4),
+            Line2D([0], [0], color='limegreen', lw=4),
+            Line2D([0], [0], color='lavender', lw=4),
+            Line2D([0], [0], marker="^", markeredgecolor="green", markerfacecolor='red',markersize="7", lw=0)
+        ]
+        plt.legend(custom_lines, ['Syntactic Configs', 'Random', 'Perfect', 'Other Configs', 'Mean'], loc=2)
 
+    @staticmethod
+    def get_palette(data):
+        configs = list(data['config'])
+        palette = {}
+        for i in configs:
+            palette[i] = 'lavender'
+            if 'es' in i or 'js' in i:
+                palette[i] = 'yellow'
+        palette['random_NA_NA_NA'] = 'tab:red'
+        palette['perfect_NA_NA_NA'] = 'limegreen'
+        return palette
+
+    @staticmethod
+    def get_mean_props():
+        return {"marker": "^",
+                "markeredgecolor": "green",
+                'markerfacecolor': 'red',
+                "markersize": "8"}
 
 
 if __name__ == '__main__':
-    analyzor = Analyse('craftdroid', 'all', oracles=False)
-    analyzor.run()
-    analyzor = Analyse('craftdroid', 'craftdroid', oracles=False)
-    analyzor.run()
-    analyzor = Analyse('craftdroid', 'atm', oracles=False)
-    analyzor.run()
+    # analyzer = Analyse('craftdroid', 'all', oracles=False)
+    # analyzer.run()
+    # analyzer = Analyse('craftdroid', 'craftdroid', oracles=False)
+    # analyzer.run()
+    # analyzer = Analyse('craftdroid', 'atm', oracles=False)
+    # analyzer.run()
 
-    analyzor = Analyse('craftdroid', 'all', oracles=True)
-    analyzor.run()
-    analyzor = Analyse('craftdroid', 'craftdroid', oracles=True)
-    analyzor.run()
-    analyzor = Analyse('craftdroid', 'atm', oracles=True)
-    analyzor.run()
-
-    analyzor = Analyse('atm', 'atm', oracles=True, oracles_pass=True)
-    analyzor.run()
-    analyzor = Analyse('atm', 'atm', oracles=True, oracles_pass=False)
-    analyzor.run()
-    analyzor = Analyse('atm', 'atm', oracles=False)
-    analyzor.run()
+    # analyzer = Analyse('craftdroid', 'all', oracles=True)
+    # analyzer.run()
+    # analyzer = Analyse('craftdroid', 'craftdroid', oracles=True)
+    # analyzer.run()
+    # analyzer = Analyse('craftdroid', 'atm', oracles=True)
+    # analyzer.run()
+    #
+    # analyzer = Analyse('atm', 'atm', oracles=True, oracles_pass=True)
+    # analyzer.run()
+    analyzer = Analyse('atm', 'atm', oracles=True, oracles_pass=False)
+    analyzer.run()
+    # analyzer = Analyse('atm', 'atm', oracles=False)
+    # analyzer.run()

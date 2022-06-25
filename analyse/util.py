@@ -1,3 +1,6 @@
+import os
+
+
 def rename_subjects(x):
     res = x['mig_name'].replace('ExpenseTracker1', 'a61-b61')
     res = res.replace('ExpenseTracker2', 'a62-b61')
@@ -77,3 +80,14 @@ def add_mig_name(df):
 def add_unified_mig_name(df):
     add_mig_name(df)
     df['mig_name'] = df.apply(rename_subjects, axis=1)
+
+
+def add_file_name_as_config(csv, path):
+    file_name = os.path.basename(path).split('.')[0]
+    file_name = file_name.split('result_')[1]
+    if 'random' in file_name:
+        file_name = 'NA_NA_random_NA'
+    if 'perfect' in file_name:
+        file_name = 'NA_NA_perfect_NA'
+    csv['config'] = file_name
+    return csv

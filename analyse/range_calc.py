@@ -1,12 +1,16 @@
 import re
 from os import listdir
 
+from matplotlib.lines import Line2D
+from scipy.stats import ttest_1samp
+
 import pandas as pd
 from matplotlib import pyplot as plt
 import seaborn as sn
 from sklearn import preprocessing
 
-from util import rename_subjects, make_config_column, add_mig_name, add_unified_mig_name
+from analyse import Analyse
+from util import rename_subjects, make_config_column, add_mig_name, add_unified_mig_name, add_file_name_as_config
 
 
 def get_concat_result(path):
@@ -14,9 +18,8 @@ def get_concat_result(path):
     all_results = []
     for fname in results_fname:
         result_f = pd.read_csv(path + fname)
-        result_f['config'] = fname.replace('result_', '').split('.')[0]
+        add_file_name_as_config(result_f, fname)
         all_results.append(result_f)
-
     all_results_df = pd.concat(all_results)
     all_results_df = all_results_df[['src_app', 'target_app', 'f1_score', 'config']]
     return all_results_df.sort_values(by=['src_app', 'target_app'])
@@ -70,11 +73,22 @@ def creat_box_plots_sbs(df, column, save_path):
 
 def prepare_df_for_config_frange(df):
 
-    # df = normalize_delta(df.copy())
-    df = make_config_column(df).fillna(0)
-    df = df[~df['config'].str.contains('random')]
+    df = normalize_delta(df.copy().fillna(0))
+    df = make_config_column(df)
+    # df = df[~df['config'].str.contains('random')]
     add_unified_mig_name(df)
     df.drop(columns=['src_app', 'target_app', 'task'], inplace=True)
+    return df
+
+
+def config_normalization(df):
+    df1_grouped = df.groupby('config')
+    dfs = []
+    for group_name, df_group in df1_grouped:
+        df_group = normalize_delta(df_group)
+        dfs.append(df_group)
+    df = pd.concat(dfs, axis=0, ignore_index=True)
+    df = make_config_column(df)
     return df
 
 
@@ -86,27 +100,67 @@ def normalize_delta(df):
     return df
 
 
+def agg_atm_random_configs(atm_atm_df):
+    result = atm_atm_df.groupby(by=['config', 'mig_name'], as_index=False).agg("mean")
+    return result
+
+
 def config_delta_per_mig(atm_atm_df: pd.DataFrame, craft_atm_df: pd.DataFrame):
     atm_atm_df = prepare_df_for_config_frange(atm_atm_df)
     craft_atm_df = prepare_df_for_config_frange(craft_atm_df)
+    atm_atm_df = agg_atm_random_configs(atm_atm_df)
     joined_dfs = pd.merge(atm_atm_df, craft_atm_df, how='inner', on=["config", "mig_name"], suffixes=("_atm", "_craft"))
     joined_dfs['delta'] = joined_dfs['F1 score_atm'] - joined_dfs['F1 score_craft']
     creat_box_plots2(joined_dfs)
+
+
+def get_palette(data):
+    palette = {}
+    agg_df = data.groupby(by=['config'], as_index=False).agg({'delta': 'median'})
+    for index, row in agg_df.iterrows():
+        palette[row['config']] = 'tab:orange' if row['delta'] < 0.0 else 'tab:blue'
+        if 'es' in row['config'] or 'js' in row['config']:
+            palette[row['config']] = 'yellow'
+
+    palette['random_NA_NA_NA'] = 'red'
+    palette['perfect_NA_NA_NA'] = 'limegreen'
+    return palette
+
+
+def get_palette2(data):
+    palette = {}
+    configs = data['config'].unique()
+    for conf in configs:
+        sample = data[data['config'] == conf]
+        tscore, pvalue = ttest_1samp(sample['delta'], popmean=0.0)
+        if pvalue/2 < 0.05 and tscore < 0: # one tailed ttest
+            palette[conf] = 'tab:orange'
+        elif pvalue/2 < 0.05 and tscore > 0:
+            palette[conf]= 'tab:blue'
+        else:
+            palette[conf]= 'lavender'
+    return palette
 
 
 def creat_box_plots2(df):
     plt.clf()
     plt.close()
     plt.figure(figsize=(20, 5))
-    order = df.groupby(by=["config"])["delta"].median().sort_values(ascending=True).index
-
-    ax = sn.boxplot(data=df, y='delta', x='config', order=order)
+    order = df.groupby(by=["config"])["delta"].mean().sort_values(ascending=True).index
+    palette = get_palette2(df)
+    ax = sn.boxplot(data=df, y='delta', x='config', order=order, palette=palette, showmeans=True, meanprops= Analyse.get_mean_props())
     ax.set_xticklabels(ax.get_xticklabels(), rotation=90)
-    sn.stripplot(data=df, y='delta', x='config', jitter=True,
-                 dodge=True,
-                 marker='o',
-                 alpha=0.5, order=order)
-    plt.savefig('delta.pdf', bbox_inches='tight')
+    add_legend()
+    plt.savefig('delta/delta.pdf', bbox_inches='tight')
+
+
+def add_legend():
+    custom_lines = [Line2D([0], [0], color='lavender', lw=4),
+                    Line2D([0], [0], color='tab:blue', lw=4),
+                    Line2D([0], [0], color='tab:orange', lw=4),
+                    Line2D([0], [0], marker="^", markeredgecolor="green", markerfacecolor='red',markersize="7", lw=0)
+                    ]
+    plt.legend(custom_lines, ['Indifference', 'ATM benefited', 'CrafDroid benefited', 'Mean'])
 
 
 if __name__ == '__main__':
