@@ -43,7 +43,6 @@ def read_gt_gen(gt_gen_address: str, consider_oracle_pass: bool):
         new_target_index_list = prune_df_with_oracle_pass(target_index_list, is_oracle_list, oracle_pass_list)
         df = pd.DataFrame(list(zip(list(df["src_app"]), list(df["target_app"]), list(df["src_index"]), new_target_index_list)),
                columns =['src_app', 'target_app', 'src_index', 'target_index'])
-    print(df)
     return df
 
 
