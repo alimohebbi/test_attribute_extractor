@@ -20,9 +20,11 @@ data/**
 !data/original_tests/craftdroid/ground_truth/**
 
 
-analyse/f1_range/plots/*.pdf
-analyse/f1_range/table/*.csv
-analyse/f1_range/*.csv
+analyse/migration_f1_range/plots/*.pdf
+analyse/migration_f1_range/table/*.csv
+analyse/migration_f1_range/*.csv
+analyse/config_f1_performance/*.pdf
+analyse/delta/*.pdf
 
 
 
