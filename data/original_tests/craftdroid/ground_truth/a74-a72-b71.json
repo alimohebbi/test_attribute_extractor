@@ -52,7 +52,7 @@
     "text": "To-do",
     "content-desc": "",
     "action": [
-      "wait_until_text_presence",
+      "wait_until_element_presence",
       10,
       "text",
       "To-do"

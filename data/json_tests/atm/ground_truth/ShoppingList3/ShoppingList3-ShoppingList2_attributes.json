@@ -102,7 +102,7 @@
     "bounds": "[169,125][378,210]",
     "displayed": "true",
     "action": [
-      "wait_until_text_presence",
+      "wait_until_element_presence",
       10,
       "text",
       "grocery"

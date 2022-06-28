@@ -157,7 +157,7 @@
     "bounds": "[91,326][1198,471]",
     "displayed": "true",
     "action": [
-      "wait_until_text_presence",
+      "wait_until_element_presence",
       10,
       "text",
       "To-do"

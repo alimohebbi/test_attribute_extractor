@@ -101,7 +101,7 @@
     "bounds": "[441,1029][996,1098]",
     "displayed": "true",
     "action": [
-      "wait_until_text_presence",
+      "wait_until_element_presence",
       10,
       "text",
       "Currently no income..."
@@ -187,7 +187,7 @@
     "bounds": "[441,1029][996,1098]",
     "displayed": "true",
     "action": [
-      "wait_until_text_presence",
+      "wait_until_element_presence",
       10,
       "text",
       "Currently no income..."
@@ -273,7 +273,7 @@
     "bounds": "[441,1029][553,1098]",
     "displayed": "true",
     "action": [
-      "wait_until_text_presence",
+      "wait_until_element_presence",
       10,
       "text",
       "GRA"
