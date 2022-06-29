@@ -103,6 +103,21 @@ def drop_extra_attributes(obj: dict) -> dict:
     except KeyError:
         pass
     try:
+        if "wait" in obj_copy["action"][0]:
+            obj_copy["action"] = [x for x in obj_copy["action"] if not isinstance(x, int)]
+            if len(obj_copy["action"]) > 3:
+                if "isDisplayed" in obj_copy["action"]: 
+                    index = obj_copy["action"].index('isDisplayed')
+                    del obj_copy["action"][index]
+                    del obj_copy["action"][index]
+                if "isEnabled" in obj_copy["action"]: 
+                    index = obj_copy["action"].index('isEnabled')
+                    del obj_copy["action"][index]
+                    del obj_copy["action"][index]
+                
+    except KeyError:
+        pass
+    try:
         obj_copy.pop('page')
     except KeyError:
         pass
