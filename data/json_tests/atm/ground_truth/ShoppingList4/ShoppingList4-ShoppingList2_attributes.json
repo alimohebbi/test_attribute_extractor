@@ -102,7 +102,7 @@
     "bounds": "[169,125][288,210]",
     "displayed": "true",
     "action": [
-      "wait_until_text_presence",
+      "wait_until_element_presence",
       10,
       "text",
       "list1"
@@ -188,7 +188,7 @@
     "bounds": "[130,609][1019,680]",
     "displayed": "true",
     "action": [
-      "wait_until_text_presence",
+      "wait_until_element_presence",
       10,
       "text",
       "item1"

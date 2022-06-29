@@ -33,7 +33,7 @@
     "text": "list1",
     "content-desc": "",
     "action": [
-      "wait_until_text_presence",
+      "wait_until_element_presence",
       10,
       "text",
       "list1"
@@ -82,7 +82,7 @@
     "text": "item1",
     "content-desc": "",
     "action": [
-      "wait_until_text_presence",
+      "wait_until_element_presence",
       10,
       "text",
       "item1"

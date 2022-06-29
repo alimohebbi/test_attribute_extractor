@@ -64,13 +64,16 @@ def empty_event(parsed_element):
     return False
 
 
-def remove_extra_events(obj: List[Dict[str, object]]) -> List[Dict[str, object]]:  
+def remove_extra_events(obj: List[Dict[str, object]], oracle_stat: str) -> List[Dict[str, object]]:  
     obj = [x for x in obj if not empty_event(x)]
-    # obj = [x for x in obj if not x["action"][0].startswith("wait") and not x["action"][0] == "KEY_BACK"]
+    if oracle_stat == "oracles_only":
+        obj = [x for x in obj if x["action"][0].startswith("wait")]
+    elif oracle_stat == "oracles_excluded":
+        obj = [x for x in obj if not x["action"][0].startswith("wait")]
     return obj
 
 
-def get_file_size(base_address: str) -> int:
+def get_file_size(base_address: str, oracle_stat: str) -> int:
     address_list = glob.glob(base_address)
     if len(address_list):
         with open(address_list[0], 'r') as f:
@@ -78,7 +81,7 @@ def get_file_size(base_address: str) -> int:
     if len(address_list) == 0 or obj is None:
         return 0
     else:
-        obj = remove_extra_events(obj)
+        obj = remove_extra_events(obj, oracle_stat)
         return len(obj)
 
 
@@ -95,16 +98,16 @@ def get_file_addresses(src_app: str, target_app: str, migration_config: str) -> 
     return source_address, ground_truth_address, generated_address
 
 
-def get_file_sizes(src_app: str, target_app: str, migration_config: str) -> Tuple[int, int, int]:
+def get_file_sizes(src_app: str, target_app: str, migration_config: str, oracle_stat: str) -> Tuple[int, int, int]:
     source_address, ground_truth_address, generated_address = get_file_addresses(src_app, target_app, migration_config)
-    src_size = get_file_size(source_address)
-    gt_size = get_file_size(ground_truth_address)
-    gen_size = get_file_size(generated_address)
+    src_size = get_file_size(source_address, oracle_stat)
+    gt_size = get_file_size(ground_truth_address, oracle_stat)
+    gen_size = get_file_size(generated_address, oracle_stat)
     return src_size, gt_size, gen_size
 
 
-def get_new_mapping(src_app: str, target_app: str, migration_config: str) -> mapping.Mapping:
-    src_size, gt_size, gen_size = get_file_sizes(src_app, target_app, migration_config)
+def get_new_mapping(src_app: str, target_app: str, migration_config: str, oracle_stat: str) -> mapping.Mapping:
+    src_size, gt_size, gen_size = get_file_sizes(src_app, target_app, migration_config, oracle_stat)
     return mapping.Mapping(src_app, target_app, src_size, gt_size, gen_size)
 
 
@@ -117,7 +120,7 @@ def extract_sub_mappings(mappings: dict, map_name: str, migration_config: str, o
     for i in range(len(df)):
         mapping_id = mapping.Mapping.id(df['src_app'][i], df['target_app'][i])
         if mapping_id not in mappings:
-            mappings[mapping_id] = get_new_mapping(df['src_app'][i], df['target_app'][i], migration_config)        
+            mappings[mapping_id] = get_new_mapping(df['src_app'][i], df['target_app'][i], migration_config, oracle_stat)        
         if map_name == "src_gt":
             mappings[mapping_id].add_src_gt(df['src_index'][i], df['target_index'][i])
         elif map_name == "gt_gen":

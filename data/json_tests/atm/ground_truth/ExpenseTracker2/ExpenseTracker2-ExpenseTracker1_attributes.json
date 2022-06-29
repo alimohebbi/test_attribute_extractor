@@ -319,7 +319,7 @@
     "bounds": "[246,1495][419,1561]",
     "displayed": "true",
     "action": [
-      "wait_until_text_presence",
+      "wait_until_element_presence",
       10,
       "text",
       "-$45.00"

@@ -41,7 +41,7 @@
     "text": "title1",
     "content-desc": "",
     "action": [
-      "wait_until_text_presence",
+      "wait_until_element_presence",
       10,
       "text",
       "title1"
@@ -53,7 +53,7 @@
     "text": "Note1",
     "content-desc": "",
     "action": [
-      "wait_until_text_presence",
+      "wait_until_element_presence",
       10,
       "text",
       "Note1"

@@ -212,7 +212,7 @@
     "bounds": "[1144,546][1384,612]",
     "displayed": "true",
     "action": [
-      "wait_until_text_presence",
+      "wait_until_element_presence",
       10,
       "text",
       "+ 500 NON"

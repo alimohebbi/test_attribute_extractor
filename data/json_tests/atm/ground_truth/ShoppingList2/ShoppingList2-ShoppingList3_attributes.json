@@ -129,7 +129,7 @@
     "bounds": "[252,135][367,228]",
     "displayed": "true",
     "action": [
-      "wait_until_text_presence",
+      "wait_until_element_presence",
       10,
       "text",
       "List"
