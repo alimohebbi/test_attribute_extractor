@@ -1,9 +1,8 @@
 import glob
-import os
 import sys
 
-from matplotlib import pyplot as plt
 import seaborn as sn
+from matplotlib import pyplot as plt
 from matplotlib.lines import Line2D
 
 from util import convert_config_names, make_config_column, reorder_columns, add_file_name_as_config
@@ -142,7 +141,7 @@ class Analyse:
             Line2D([0], [0], color='tab:red', lw=4),
             Line2D([0], [0], color='limegreen', lw=4),
             Line2D([0], [0], color='lavender', lw=4),
-            Line2D([0], [0], marker="^", markeredgecolor="green", markerfacecolor='red',markersize="7", lw=0)
+            Line2D([0], [0], marker="^", markeredgecolor="green", markerfacecolor='red', markersize="7", lw=0)
         ]
         plt.legend(custom_lines, ['Syntactic Configs', 'Random', 'Perfect', 'Other Configs', 'Mean'], loc=2)
 
