@@ -1,4 +1,7 @@
 import os
+from os import listdir
+
+import pandas as pd
 
 
 def rename_subjects(x):
@@ -72,14 +75,22 @@ def make_config_column(df):
 
 
 def add_mig_name(df):
+    df = df.copy()
     if 'task' not in df.columns:
         df['task'] = ''
-    df['mig_name'] = df['src_app'] + ' - ' + df['target_app'] + ' - ' + df['task']
+    df['mig_name'] = ''
+    df['mig_name'] = df.apply(lambda x: mig_name_getter(x), axis =1)
+    return df
+
+
+def mig_name_getter(x):
+    return x['src_app'] + ' - ' + x['target_app'] + ' - ' + x['task']
 
 
 def add_unified_mig_name(df):
-    add_mig_name(df)
+    df = add_mig_name(df)
     df['mig_name'] = df.apply(rename_subjects, axis=1)
+    return df
 
 
 def add_file_name_as_config(csv, path):
@@ -91,3 +102,16 @@ def add_file_name_as_config(csv, path):
         file_name = 'NA_NA_perfect_NA'
     csv['config'] = file_name
     return csv
+
+def concat_config_results(path):
+    results_fname = [f for f in listdir(path) if '.csv' in f]
+    all_results = []
+    for fname in results_fname:
+        result_f = pd.read_csv(path + fname)
+        add_file_name_as_config(result_f, fname)
+        all_results.append(result_f)
+    all_results_df = pd.concat(all_results)
+    all_results_df = all_results_df[['src_app', 'target_app', 'f1_score', 'config']]
+    return all_results_df.sort_values(by=['src_app', 'target_app'])
+
+

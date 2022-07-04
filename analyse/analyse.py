@@ -1,5 +1,6 @@
 import glob
 import sys
+from enum import Enum
 
 import seaborn as sn
 from matplotlib import pyplot as plt
@@ -16,8 +17,14 @@ from utils.configuration import Configuration
 config = Configuration()
 
 
+class OracleStatus(Enum):
+    only = 'only'
+    included = 'included'
+    exclude = 'excluded'
+
+
 class Analyse:
-    def __init__(self, approach, subjects, oracles, oracles_pass=False):
+    def __init__(self, approach, subjects, oracles: OracleStatus, oracles_pass=False):
         self.approach = approach
         self.subjects = subjects
         self.oracles = oracles
@@ -59,8 +66,8 @@ class Analyse:
 
     def get_result_dir(self):
         results_dir = f"data/output/evaluation/{self.approach}/oracles_"
-        results_dir += 'included/' if self.oracles else 'excluded/'
-        if self.approach == 'atm' and self.oracles:
+        results_dir += self.oracles.value +'/'
+        if self.approach == 'atm' and self.oracles != OracleStatus.exclude:
             results_dir += 'with_oracle_pass' if self.oracles_pass else 'without_oracle_pass'
         return results_dir
 
@@ -84,9 +91,14 @@ class Analyse:
         return configs_sm
 
     def get_save_path(self, detail_lvl):
-        oracle_status = 'oracle' if self.oracles else 'nooracle'
+        if self.oracles == OracleStatus.only:
+            oracle_status = 'oracle_only'
+        elif self.oracles == OracleStatus.included:
+            oracle_status = 'oracle_included'
+        else:
+            oracle_status = 'oracle_excluded'
         oracle_pass = ''
-        if self.oracles and self.approach == 'atm':
+        if self.oracles != OracleStatus.exclude and self.approach == 'atm':
             oracle_pass = '_pass' if self.oracles_pass else '_passfree'
         options = f'{self.approach}_{self.subjects}_{oracle_status}{oracle_pass}_{detail_lvl}'
         if detail_lvl == 'boxplot':
@@ -182,7 +194,9 @@ if __name__ == '__main__':
     #
     # analyzer = Analyse('atm', 'atm', oracles=True, oracles_pass=True)
     # analyzer.run()
-    analyzer = Analyse('atm', 'atm', oracles=True, oracles_pass=False)
-    analyzer.run()
+    # analyzer = Analyse('atm', 'atm', oracles=OracleStatus.included, oracles_pass=False)
+    # analyzer.run()
     # analyzer = Analyse('atm', 'atm', oracles=False)
     # analyzer.run()
+    analyzer = Analyse('craftdroid', 'craftdroid', oracles=OracleStatus.only, oracles_pass=True)
+    analyzer.run()
