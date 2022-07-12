@@ -114,6 +114,10 @@ def drop_extra_attributes(obj: dict) -> dict:
                     index = obj_copy["action"].index('isEnabled')
                     del obj_copy["action"][index]
                     del obj_copy["action"][index]
+                if "class" in obj_copy["action"]: 
+                    index = obj_copy["action"].index('class')
+                    del obj_copy["action"][index]
+                    del obj_copy["action"][index]
                 
     except KeyError:
         pass
